@@ -1,6 +1,6 @@
 Flask==3.0.0
 yfinance==0.2.36
-pandas==2.2.0
+pandas==1.5.3
 requests==2.31.0
 lxml==5.1.0
 gunicorn==21.2.0
