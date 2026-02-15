@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Analysis - S&P 500 Screener</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-group">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="app-title">S&P 500 Screener</div>
+                    <div class="app-subtitle">Real-time Technicals & Fundamentals</div>
+                </div>
+            </div>
+
+            <nav class="header-nav">
+                <a href="/" class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    Screener
+                </a>
+                <a href="/sector" class="nav-link active">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                    </svg>
+                    Sector Analysis
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2 class="section-title" style="margin-bottom: 24px; color: var(--text-primary);">Sector Performance &
+            Valuation</h2>
+
+        <div id="loader" style="text-align: center; color: var(--text-secondary); margin-top: 40px;">
+            Loading sector analysis...
+        </div>
+
+        <div id="sectorContainer" style="display:none;">
+            <table id="sectorTable" class="display responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Sector</th>
+                        <th>Stock Count</th>
+                        <th>Total Market Cap</th>
+                        <th>Weighted P/E</th>
+                        <th>Avg 50D MA</th>
+                        <th>Avg 200D MA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Populated via JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const table = $('#sectorTable').DataTable({
+                responsive: true,
+                columns: [
+                    { data: 'Sector', class: 'font-bold' },
+                    { data: 'Stock Count' },
+                    {
+                        data: 'Market Cap',
+                        render: function (data) {
+                            if (!data) return 'N/A';
+                            if (data >= 1e12) return '$' + (data / 1e12).toFixed(2) + 'T';
+                            if (data >= 1e9) return '$' + (data / 1e9).toFixed(2) + 'B';
+                            return '$' + data;
+                        }
+                    },
+                    {
+                        data: 'Weighted P/E',
+                        render: function (data) {
+                            if (!data) return 'N/A';
+                            // Color code P/E: < 15 cheap (green), > 25 expensive (red), else neutral
+                            let color = 'text-neutral';
+                            if (data < 15) color = 'text-bullish';
+                            if (data > 25) color = 'text-bearish';
+                            return `<span class="${color}">${data}</span>`;
+                        }
+                    },
+                    { data: 'Avg 50D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    { data: 'Avg 200D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') }
+                ],
+                order: [[2, 'desc']], // Sort by Market Cap
+                paging: false,
+                info: false,
+                searching: false
+            });
+
+            fetch('/api/sector_data')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('sectorContainer').style.display = 'block';
+
+                    if (data.length === 0) {
+                        $('#sectorContainer').html('<div style="color:var(--text-muted); text-align:center;">No data available. Go to Screener and refresh data first.</div>');
+                        return;
+                    }
+
+                    table.clear().rows.add(data).draw();
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById('loader').innerText = 'Error loading sector data.';
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News for {{ symbol }} - S&P 500 Screener</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="logo-icon">▲</span>
+            <h1>S&P 500 Screener</h1>
+        </div>
+        <nav>
+            <a href="/" class="nav-link">Screener</a>
+            <a href="/sector" class="nav-link">Sector Analysis</a>
+            <a href="/market-news" class="nav-link">Market News</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div style="margin-bottom: 24px;">
+            <a href="/" style="color: var(--accent-primary); text-decoration: none;">&larr; Back to Screener</a>
+        </div>
+        <h2 class="section-title">Latest News for <span style="color:var(--accent-blue)">{{ symbol }}</span></h2>
+        <div id="loader" style="text-align: center; padding: 40px; color: var(--text-secondary);">
+            fetching news for {{ symbol }}...
+        </div>
+        <div id="newsGrid" class="news-grid"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const symbol = "{{ symbol }}";
+            fetch(`/api/news/${symbol}`)
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('loader').style.display = 'none';
+                    if (data.error) {
+                        document.getElementById('newsGrid').innerHTML = `<div style="color:red">Error: ${data.error}</div>`;
+                        return;
+                    }
+                    if (!data || data.length === 0) {
+                        document.getElementById('newsGrid').innerHTML = `<div>No news available for ${symbol} at the moment.</div>`;
+                        return;
+                    }
+
+                    const grid = document.getElementById('newsGrid');
+                    data.forEach(item => {
+                        // Google News RSS Item: { title, link, pubDate, source }
+                        const title = item.title;
+                        const link = item.link;
+                        const publisher = item.source;
+                        const time = item.pubDate ? new Date(item.pubDate).toLocaleDateString() : 'Recent';
+
+                        const imgUrl = 'https://via.placeholder.com/300x160?text=News';
+
+                        const card = document.createElement('a');
+                        card.href = link;
+                        card.target = "_blank";
+                        card.className = 'news-link';
+                        card.innerHTML = `
+                            <div class="news-card">
+                                <div class="news-content">
+                                    <div class="news-title">${title}</div>
+                                    <div class="news-meta">
+                                        <span>${publisher}</span>
+                                        <span>${time}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    document.getElementById('loader').innerText = 'Failed to load news.';
+                    console.error(err);
+                });
+        });
+    </script>
+</body>
+
+</html>

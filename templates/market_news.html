@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market News - S&P 500 Screener</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="logo-icon">▲</span>
+            <h1>S&P 500 Screener</h1>
+        </div>
+        <nav>
+            <a href="/" class="nav-link">Screener</a>
+            <a href="/sector" class="nav-link">Sector Analysis</a>
+            <a href="/market-news" class="nav-link active">Market News</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2 class="section-title">Top Market News</h2>
+        <div id="loader" style="text-align: center; padding: 40px; color: var(--text-secondary);">
+            fetching latest market insights...
+        </div>
+        <div id="newsGrid" class="news-grid"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/news/market')
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('loader').style.display = 'none';
+                    if (data.error) {
+                        document.getElementById('newsGrid').innerHTML = `<div style="color:red">Error: ${data.error}</div>`;
+                        return;
+                    }
+                    if (!data || data.length === 0) {
+                        document.getElementById('newsGrid').innerHTML = `<div>No news available at the moment.</div>`;
+                        return;
+                    }
+
+                    const grid = document.getElementById('newsGrid');
+                    data.forEach(item => {
+                        // Google News RSS Item: { title, link, pubDate, source }
+                        const title = item.title;
+                        const link = item.link;
+                        const publisher = item.source;
+                        // pubDate from RSS is usually a nice string already, but let's format if needed
+                        const time = item.pubDate ? new Date(item.pubDate).toLocaleDateString() : 'Recent';
+
+                        // Google News RSS doesn't provide thumbnails easily without parsing description HTML
+                        // Let's use a generic icon or try to extract from description if we add that later.
+                        // For now, clean generic look.
+                        const imgUrl = 'https://via.placeholder.com/300x160?text=News'; // Or maybe a nice gradient/icon
+
+                        const card = document.createElement('a');
+                        card.href = link;
+                        card.target = "_blank";
+                        card.className = 'news-link';
+                        card.innerHTML = `
+                            <div class="news-card">
+                                <div class="news-content">
+                                    <div class="news-title">${title}</div>
+                                    <div class="news-meta">
+                                        <span>${publisher}</span>
+                                        <span>${time}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    document.getElementById('loader').innerText = 'Failed to load news.';
+                    console.error(err);
+                });
+        });
+    </script>
+</body>
+
+</html>

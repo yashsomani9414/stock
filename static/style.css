@@ -1,0 +1,651 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   SEC Filing Analyzer — Premium Dark Theme
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Core palette */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #111118;
+    --bg-card: #16161f;
+    --bg-card-hover: #1c1c28;
+    --bg-glass: rgba(22, 22, 31, 0.85);
+
+    /* Accent */
+    --accent-indigo: #6366f1;
+    --accent-violet: #8b5cf6;
+    --accent-blue: #3b82f6;
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+
+    /* Sentiment colors */
+    --bullish: #22c55e;
+    --bullish-bg: rgba(34, 197, 94, 0.1);
+    --bearish: #ef4444;
+    --bearish-bg: rgba(239, 68, 68, 0.1);
+    --neutral: #f59e0b;
+    --neutral-bg: rgba(245, 158, 11, 0.1);
+
+    /* Text */
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-accent: #a5b4fc;
+
+    /* Borders */
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --border-accent: rgba(99, 102, 241, 0.3);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
+
+    /* Misc */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset & Base ──────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Animated gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
+    z-index: -1;
+    animation: bgShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-5%, -5%);
+    }
+}
+
+a {
+    color: var(--text-accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-violet);
+}
+
+/* ── Header ────────────────────────────────────────────────────────────── */
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0 24px;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 24px;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-sm);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.app-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.app-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* ── Navigation ────────────────────────────────────────────────────────── */
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+    background: var(--bg-card-hover);
+}
+
+.nav-link.active {
+    color: white;
+    background: var(--accent-gradient);
+    border-color: transparent;
+    box-shadow: var(--shadow-glow);
+}
+
+/* ── Main Content & Dashboard Layout ───────────────────────────────────── */
+
+.main-content {
+    max-width: 1600px;
+    /* Increased max-width for side-by-side */
+    margin: 0 auto;
+    padding: 24px;
+    min-height: calc(100vh - 160px);
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.table-panel {
+    flex: 1;
+    min-width: 0;
+    /* Prevents flex item from overflowing */
+}
+
+.chart-panel {
+    width: 400px;
+    flex-shrink: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    position: sticky;
+    top: 100px;
+    /* Sticky sidebar */
+    display: none;
+    /* Hidden by default until clicked */
+    box-shadow: var(--shadow-lg);
+}
+
+.dashboard-container.panel-open .chart-panel {
+    display: block;
+    animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.chart-header {
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+}
+
+#chartTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.chart-body {
+    height: 300px;
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .chart-panel {
+        width: 100%;
+        position: static;
+        margin-top: 24px;
+        display: none;
+        /* Keep hidden initially */
+    }
+
+    .dashboard-container.panel-open .chart-panel {
+        display: block;
+    }
+}
+
+/* ── UI Controls (Search & Count) ──────────────────────────────────────── */
+
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Customizing DataTables Search Input */
+.search-container input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    background: var(--bg-card);
+    border: 2px solid var(--accent-primary);
+    /* Prominent Border */
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.1);
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.stock-count-badge {
+    background: var(--bg-card);
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stock-count-badge span {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 13px;
+    background: var(--accent-primary);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-small:hover {
+    background: var(--accent-hover);
+}
+
+/* News Styles */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.news-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.news-image {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+    background: var(--bg-dark);
+}
+
+.news-content {
+    padding: 16px;
+}
+
+.news-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: var(--text-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.news-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Panel News List (Integrated in Dashboard) */
+.panel-news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.panel-news-item {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+}
+
+.panel-news-item:last-child {
+    border-bottom: none;
+}
+
+.panel-news-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.panel-news-link:hover .panel-news-title {
+    color: var(--accent-primary);
+}
+
+.panel-news-title {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.panel-news-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-news-source {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+
+/* ── DataTables Overrides ──────────────────────────────────────────────── */
+/* Replicating the clean table look for DataTables */
+
+.dataTables_wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    color: var(--text-secondary);
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: var(--text-secondary) !important;
+}
+
+table.dataTable {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+table.dataTable thead th {
+    background: var(--bg-secondary);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+table.dataTable tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    vertical-align: middle;
+}
+
+table.dataTable tbody tr {
+    background: transparent !important;
+    transition: background var(--transition);
+}
+
+table.dataTable tbody tr:hover {
+    background-color: var(--bg-card-hover) !important;
+}
+
+table.dataTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Pagination Buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: var(--bg-card) !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--radius-sm) !important;
+    margin-left: 5px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--bg-card-hover) !important;
+    color: white !important;
+    border-color: var(--accent-indigo) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--accent-indigo) !important;
+    color: white !important;
+    border: 1px solid var(--accent-indigo) !important;
+}
+
+/* Search Box override */
+.dataTables_filter input {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 50px !important;
+    padding: 6px 12px !important;
+    color: var(--text-primary) !important;
+    outline: none;
+}
+
+.dataTables_filter input:focus {
+    border-color: var(--accent-indigo) !important;
+}
+
+/* Action Button */
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+    white-space: nowrap;
+}
+
+.action-btn:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-glow);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Helper Classes */
+.text-bullish {
+    color: var(--bullish) !important;
+}
+
+.text-bearish {
+    color: var(--bearish) !important;
+}
+
+.text-neutral {
+    color: var(--neutral) !important;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* ── Sector Analysis Styles ────────────────────────────────────────────── */
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.sector-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    transition: border-color var(--transition);
+}
+
+.sector-card:hover {
+    border-color: var(--accent-indigo);
+}
+
+.sector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sector-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sector-metric {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.sector-metric span:last-child {
+    font-weight: 600;
+    color: var(--text-primary);
+}
