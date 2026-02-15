@@ -133,9 +133,12 @@ import os
 DATA_FILE = 'sp500_data.json'
 
 def fetch_all_data(force_refresh=False):
+    """
+    Fetch all S&P 500 data in small batches with caching and retry.
+    """
     global cached_data
     
-    # Load existing cache
+    # Load existing cache from memory or file
     existing_data = {}
     if cached_data:
         existing_data = {item['Symbol']: item for item in cached_data}
@@ -144,13 +147,13 @@ def fetch_all_data(force_refresh=False):
             with open(DATA_FILE, 'r') as f:
                 loaded = json.load(f)
                 existing_data = {item['Symbol']: item for item in loaded}
-                if not cached_data:
-                    cached_data = loaded
+                cached_data = loaded
         except:
             pass
 
-    # Use cached if valid and not forcing refresh
     today_str = datetime.date.today().isoformat()
+    
+    # Use cache if available and not forcing refresh
     if not force_refresh:
         if cached_data:
             print("Using in-memory cache.")
@@ -158,15 +161,14 @@ def fetch_all_data(force_refresh=False):
         if existing_data:
             print("Using file cache.")
             return list(existing_data.values())
-
+    
     tickers = get_sp500_tickers()
     if not tickers:
-        return []
+        return list(existing_data.values())  # fallback to cache
 
     # Determine which tickers need fetching
     tickers_to_fetch = []
     final_data = []
-
     for t in tickers:
         symbol = t['Symbol']
         if symbol in existing_data and existing_data[symbol].get("LastUpdated") == today_str:
@@ -177,15 +179,23 @@ def fetch_all_data(force_refresh=False):
     print(f"Skipping {len(final_data)} stocks already updated today.")
     print(f"Fetching data for {len(tickers_to_fetch)} stocks from Yahoo Finance...")
 
-    # Batch size to avoid API limits
-    batch_size = 20
+    # Helper: fetch with retry
+    def fetch_with_retry(ticker_obj, retries=3):
+        for i in range(retries):
+            data = get_stock_data(ticker_obj)
+            if data:
+                return data
+            time.sleep(2 ** i)  # exponential backoff
+        return None
+
+    # Small batch fetching
+    batch_size = 5
     for i in range(0, len(tickers_to_fetch), batch_size):
         batch = tickers_to_fetch[i:i+batch_size]
         print(f"Fetching batch {i//batch_size + 1} ({len(batch)} tickers)")
         
-        # Use ThreadPoolExecutor with 2 workers to limit memory usage
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-            future_to_stock = {executor.submit(get_stock_data, t): t for t in batch}
+            future_to_stock = {executor.submit(fetch_with_retry, t): t for t in batch}
             for future in concurrent.futures.as_completed(future_to_stock):
                 ticker_obj = future_to_stock[future]
                 symbol = ticker_obj['Symbol']
@@ -194,30 +204,31 @@ def fetch_all_data(force_refresh=False):
                     if res:
                         final_data.append(res)
                     else:
-                        # If fetch fails, use old cached data if available
+                        # Use cached data if fetch fails
                         if symbol in existing_data:
                             print(f"Fetch failed for {symbol}, using cached data.")
                             final_data.append(existing_data[symbol])
+                        else:
+                            print(f"No data for {symbol}.")
                 except Exception as e:
                     print(f"Exception for {symbol}: {e}")
                     if symbol in existing_data:
                         final_data.append(existing_data[symbol])
-        
-        # Short delay between batches to reduce rate-limit errors
+
+        # Short delay between batches to avoid rate limits
         time.sleep(1)
 
-    # Sort by symbol
-    final_data.sort(key=lambda x: x['Symbol'])
-
-    # Update cache
-    cached_data = final_data
-    if final_data:
+        # Save partial results to file after each batch
         try:
             with open(DATA_FILE, 'w') as f:
                 json.dump(final_data, f)
-            print(f"Data saved to cache file ({len(final_data)} stocks).")
+            print(f"Partial data saved ({len(final_data)} stocks).")
         except Exception as e:
             print(f"Error saving cache file: {e}")
+
+    # Sort final data
+    final_data.sort(key=lambda x: x['Symbol'])
+    cached_data = final_data
 
     return final_data
 
