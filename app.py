@@ -135,7 +135,7 @@ DATA_FILE = 'sp500_data.json'
 def fetch_all_data(force_refresh=False):
     global cached_data
     
-    # Load existing cache to preserve data if new fetch fails
+    # Load existing cache
     existing_data = {}
     if cached_data:
         existing_data = {item['Symbol']: item for item in cached_data}
@@ -146,71 +146,70 @@ def fetch_all_data(force_refresh=False):
                 existing_data = {item['Symbol']: item for item in loaded}
                 if not cached_data:
                     cached_data = loaded
-        except Exception:
+        except:
             pass
 
-    # 1. If force_refresh is False, try to load from memory or file
+    # Use cached if valid and not forcing refresh
+    today_str = datetime.date.today().isoformat()
     if not force_refresh:
         if cached_data:
             print("Using in-memory cache.")
             return cached_data
         if existing_data:
-             print("Using file cache.")
-             return list(existing_data.values())
-        return []
+            print("Using file cache.")
+            return list(existing_data.values())
 
     tickers = get_sp500_tickers()
     if not tickers:
         return []
 
-    # Identify which stocks actually need updating
-    from datetime import date
-    today_str = date.today().isoformat()
-    
+    # Determine which tickers need fetching
     tickers_to_fetch = []
     final_data = []
-    
-    # Pre-fill final_data with valid cached items that are from today
-    # Add other items to tickers_to_fetch
+
     for t in tickers:
         symbol = t['Symbol']
-        if symbol in existing_data:
-            cached_item = existing_data[symbol]
-            # If fetched today, keep it and skip fetch
-            if cached_item.get('LastUpdated') == today_str:
-                final_data.append(cached_item)
-                continue
-        
-        # If not in cache OR not from today, we need to fetch
-        tickers_to_fetch.append(t)
+        if symbol in existing_data and existing_data[symbol].get("LastUpdated") == today_str:
+            final_data.append(existing_data[symbol])
+        else:
+            tickers_to_fetch.append(t)
 
     print(f"Skipping {len(final_data)} stocks already updated today.")
     print(f"Fetching data for {len(tickers_to_fetch)} stocks from Yahoo Finance...")
-    
-    # Reduced workers to 2 to be very gentle
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        future_to_stock = {executor.submit(get_stock_data, t): t for t in tickers_to_fetch}
-        for future in concurrent.futures.as_completed(future_to_stock):
-            ticker_obj = future_to_stock[future]
-            symbol = ticker_obj['Symbol']
-            try:
-                res = future.result()
-                if res:
-                    final_data.append(res)
-                else:
-                    # Fetch failed/empty, try to use existing cache (even if old)
-                    if symbol in existing_data:
-                        print(f"Fetch failed for {symbol}, using cached data.")
-                        final_data.append(existing_data[symbol])
-            except Exception as e:
-                print(f"Exception for {symbol}: {e}")
-                if symbol in existing_data:
-                    final_data.append(existing_data[symbol])
 
-    # Sort data by symbol
+    # Batch size to avoid API limits
+    batch_size = 20
+    for i in range(0, len(tickers_to_fetch), batch_size):
+        batch = tickers_to_fetch[i:i+batch_size]
+        print(f"Fetching batch {i//batch_size + 1} ({len(batch)} tickers)")
+        
+        # Use ThreadPoolExecutor with 2 workers to limit memory usage
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            future_to_stock = {executor.submit(get_stock_data, t): t for t in batch}
+            for future in concurrent.futures.as_completed(future_to_stock):
+                ticker_obj = future_to_stock[future]
+                symbol = ticker_obj['Symbol']
+                try:
+                    res = future.result()
+                    if res:
+                        final_data.append(res)
+                    else:
+                        # If fetch fails, use old cached data if available
+                        if symbol in existing_data:
+                            print(f"Fetch failed for {symbol}, using cached data.")
+                            final_data.append(existing_data[symbol])
+                except Exception as e:
+                    print(f"Exception for {symbol}: {e}")
+                    if symbol in existing_data:
+                        final_data.append(existing_data[symbol])
+        
+        # Short delay between batches to reduce rate-limit errors
+        time.sleep(1)
+
+    # Sort by symbol
     final_data.sort(key=lambda x: x['Symbol'])
-    
-    # 3. Save to cache
+
+    # Update cache
     cached_data = final_data
     if final_data:
         try:
@@ -221,6 +220,7 @@ def fetch_all_data(force_refresh=False):
             print(f"Error saving cache file: {e}")
 
     return final_data
+
 
 def calculate_sector_data(data):
     """Aggregate data by sector."""
