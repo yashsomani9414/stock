@@ -505,24 +505,24 @@ a:hover {
 table.dataTable {
     width: 100% !important;
     border-collapse: collapse !important;
-    font-size: 14px;
+    font-size: 12px;
     border-bottom: 1px solid var(--border-subtle) !important;
 }
 
 table.dataTable thead th {
     background: var(--bg-secondary);
-    padding: 12px 16px;
+    padding: 8px 10px;
     text-align: left;
     font-weight: 600;
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border-subtle);
-    font-size: 12px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 table.dataTable tbody td {
-    padding: 12px 16px;
+    padding: 8px 10px;
     border-bottom: 1px solid var(--border-subtle);
     color: var(--text-muted);
     vertical-align: middle;
@@ -670,4 +670,63 @@ table.dataTable tbody tr:last-child td {
 .sector-metric span:last-child {
     font-weight: 600;
     color: var(--text-primary);
+}
+/* Decision Pills for Sector Analysis */
+.decision-pill-group {
+    display: flex;
+    gap: 4px;
+}
+
+.decision-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    cursor: help;
+}
+
+.decision-pill.strong-buy { background: var(--bullish); }
+.decision-pill.buy { background: #10b981; }
+.decision-pill.hold { background: var(--neutral); }
+.decision-pill.reduce { background: #f59e0b; }
+.decision-pill.sell { background: var(--bearish); }
+
+/* Sector Strategic Decision Badges - Aligned with Screener */
+.decision-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+.decision-badge-strong-buy {
+    background: var(--bullish-bg);
+    color: var(--bullish);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.decision-badge-buy {
+    background: var(--bullish-bg);
+    color: var(--bullish);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.decision-badge-hold {
+    background: var(--neutral-bg);
+    color: var(--neutral);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.decision-badge-sell {
+    background: var(--bearish-bg);
+    color: var(--bearish);
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }

@@ -74,10 +74,46 @@ def calculate_sector_data(data):
 
         avg_50d = group['50D MA'].mean()
         avg_200d = group['200D MA'].mean()
-        avg_trend = group['Trend Strength'].mean()
+        # Ensure Trend Strength is numeric before averaging
+        trend_series = pd.to_numeric(group['Trend Strength'], errors='coerce')
+        avg_trend = trend_series.mean()
+        
         avg_ret_5d = group.get('5D Return', pd.Series([None])).mean()
         avg_ret_1m = group.get('1M Return', pd.Series([None])).mean()
         avg_ret_6m = group.get('6M Return', pd.Series([None])).mean()
+
+        # Decision Breakdown
+        decisions = group['Trade Decision'].value_counts().to_dict()
+        breakdown = {
+            "Strong Buy": decisions.get("Strong Buy", 0),
+            "Buy (Small)": decisions.get("Buy (Small)", 0),
+            "Hold": decisions.get("Hold", 0),
+            "Reduce": decisions.get("Reduce", 0),
+            "Sell": decisions.get("Sell", 0),
+            "Rejected": decisions.get("Rejected – Universal Filter", 0)
+        }
+
+        # --- Aggregate Sector Decision Logic ---
+        # 1. Strong Buy: If Strong Buy > 10% of sector OR (Strong Buy + Buy) > 50%
+        # 2. Buy: If (Strong Buy + Buy) > 30%
+        # 3. Sell: If (Sell + Reduce) > 40% OR Sell > 25%
+        # 4. Hold: Default
+        
+        total_valid = sum([v for k, v in breakdown.items() if k != "Rejected"])
+        sector_decision = "Hold"
+        
+        if total_valid > 0:
+            pct_sb = (breakdown["Strong Buy"] / total_valid) * 100
+            pct_buy_combined = ((breakdown["Strong Buy"] + breakdown["Buy (Small)"]) / total_valid) * 100
+            pct_sell_combined = ((breakdown["Sell"] + breakdown["Reduce"]) / total_valid) * 100
+            pct_sell_only = (breakdown["Sell"] / total_valid) * 100
+            
+            if pct_sb > 10 or pct_buy_combined > 50:
+                sector_decision = "Strong Buy"
+            elif pct_buy_combined > 30:
+                sector_decision = "Buy"
+            elif pct_sell_combined > 40 or pct_sell_only > 25:
+                sector_decision = "Sell"
 
         sectors.append({
             "Sector": sector_name,
@@ -89,7 +125,9 @@ def calculate_sector_data(data):
             "Avg 5D Return": round(avg_ret_5d, 2) if avg_ret_5d is not None and not pd.isna(avg_ret_5d) else None,
             "Avg 1M Return": round(avg_ret_1m, 2) if avg_ret_1m is not None and not pd.isna(avg_ret_1m) else None,
             "Avg 6M Return": round(avg_ret_6m, 2) if avg_ret_6m is not None and not pd.isna(avg_ret_6m) else None,
-            "Stock Count": len(group)
+            "Stock Count": len(group),
+            "Decision Breakdown": breakdown,
+            "Sector Decision": sector_decision
         })
     return sectors
 
@@ -517,6 +555,10 @@ def fetch_and_update_data():
             if row['200D MA'] and row['200D MA'] != 0 else None, axis=1
         )
         
+        # Load existing data to preserve history
+        existing_stocks = load_sp500_data()
+        existing_data = {s['Symbol']: s for s in existing_stocks if 'Symbol' in s}
+        
         # --- QUANTITATIVE TRADING ENGINE ---
         print("Calculating sector medians and trading scores...")
         
@@ -524,9 +566,11 @@ def fetch_and_update_data():
         sector_pe_medians = final_df.groupby('Sector')['P/E Ratio'].median().to_dict()
         sector_vol_medians = final_df.groupby('Sector')['6M Volatility'].median().to_dict()
         
-        def calculate_score(row, sector_pe_medians, sector_vol_medians):
+        def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
             try:
                 score = 0
+                prev_score = history.get('Score') if history else None
+                prev_consecutive_low = history.get('ConsecutiveLowDays', 0) if history else 0
                 
                 # A) TREND (0–35 points)
                 price = row.get('Price') or 0
@@ -540,7 +584,7 @@ def fetch_and_update_data():
                     if price > ma200: score += 8
                     if trend_strength > 0: score += 11
                 else:
-                    score += 0 # Trend points = 0 if below 200D MA
+                    score = 0 # Trend points = 0 if below 200D MA
                 
                 # B) MOMENTUM (0–25 points)
                 ret5d = row.get('5D Return') or 0
@@ -590,17 +634,20 @@ def fetch_and_update_data():
                 
                 final_points = round(max(0, score))
 
+                # Track consecutive low days
+                new_consecutive_low = prev_consecutive_low + 1 if final_points < 45 else 0
+
                 # --- DECISION STEPS (1-7) ---
                 
                 # STEP 1: UNIVERSAL FILTER (HARD REJECTION)
                 avg_vol_20d = row.get('Volume') / (1 + (row.get('Vol Change 1D') or 0) / 100) if row.get('Volume') and row.get('Vol Change 1D') is not None else 0
                 if mcap < 2e9 or avg_vol_20d < 500000 or price < 10:
-                    return final_points, "Rejected – Universal Filter"
+                    return final_points, "Rejected – Universal Filter", new_consecutive_low
 
                 # STEP 2: HARD SELL (CAPITAL PROTECTION)
-                # Rules: Price < 200D MA, Down-day vol >= 2x, Trend strength < 0, Score < 45
-                if price < ma200 or (ret1d < 0 and vol1d_ratio >= 2.0) or trend_strength < 0 or final_points < 45:
-                    return final_points, "Sell"
+                # Rules: Price < 200D MA, Down-day vol >= 2x, Trend strength < 0, Score < 45 for 3 days
+                if price < ma200 or (ret1d < 0 and vol1d_ratio >= 2.0) or trend_strength < 0 or new_consecutive_low >= 3:
+                    return final_points, "Sell", new_consecutive_low
 
                 # STEP 3: EARNINGS RISK FREEZE
                 edate_str = row.get('EarningsDate')
@@ -610,13 +657,14 @@ def fetch_and_update_data():
                         today = datetime.date.today()
                         days_diff = (edate - today).days
                         if -1 <= days_diff <= 7:
-                            return final_points, "Hold"
+                            return final_points, "Hold", new_consecutive_low
                     except: pass
 
                 # STEP 4: REDUCE (RISK CONTROL)
-                # Rules: Score dropped (proxy < 65) OR BOTH 5D < 0 AND 1M < 0
-                if (final_points < 65) or (ret5d < 0 and ret1m < 0):
-                    return final_points, "Reduce"
+                # Rules: Score dropped from >=75 to <65 OR BOTH 5D < 0 AND 1M < 0
+                score_dropped = (prev_score is not None and prev_score >= 75 and final_points < 65)
+                if score_dropped or (ret5d < 0 and ret1m < 0):
+                    return final_points, "Reduce", new_consecutive_low
 
                 # STEP 5: STRONG BUY (ADD AGGRESSIVELY)
                 if (final_points >= 80 and price > ma50 and price > ma200 and vol5d_ratio >= 1.2 and ret6m > 0):
@@ -626,7 +674,7 @@ def fetch_and_update_data():
                             edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
                         except: pass
                     if edate_dist > 7:
-                        return final_points, "Strong Buy"
+                        return final_points, "Strong Buy", new_consecutive_low
 
                 # STEP 6: BUY (SMALL / ADD CAUTIOUSLY)
                 if (70 <= final_points <= 79 and price > ma50 and price > ma200 and ret6m > 0):
@@ -636,18 +684,21 @@ def fetch_and_update_data():
                             edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
                         except: pass
                     if edate_dist > 7:
-                        return final_points, "Buy (Small)"
+                        return final_points, "Buy (Small)", new_consecutive_low
 
                 # STEP 7: HOLD (DEFAULT)
-                return final_points, "Hold"
+                return final_points, "Hold", new_consecutive_low
 
             except Exception as e:
                 print(f"Error scoring {row.get('Symbol')}: {e}")
-                return 0, "ERROR"
+                return 0, "ERROR", 0
 
-        scores_decisions = final_df.apply(lambda r: calculate_score(r, sector_pe_medians, sector_vol_medians), axis=1)
+        scores_decisions = final_df.apply(
+            lambda r: calculate_score(r, sector_pe_medians, sector_vol_medians, existing_data.get(r['Symbol'])), axis=1
+        )
         final_df['Score'] = [s[0] for s in scores_decisions]
         final_df['Trade Decision'] = [s[1] for s in scores_decisions]
+        final_df['ConsecutiveLowDays'] = [s[2] for s in scores_decisions]
 
         final_df['LastUpdated'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 

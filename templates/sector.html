@@ -70,20 +70,52 @@
             Loading sector analysis...
         </div>
 
+        <!-- Rating Legend -->
+        <div id="legendContainer"
+            style="display:none; margin-bottom: 24px; padding: 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <div
+                style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+                Rating Breakdown Legend (Order)</div>
+            <div class="decision-pill-group" style="gap: 16px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="decision-pill strong-buy">SB</span>
+                    <span style="font-size: 12px; color: var(--text-primary);">Strong Buy</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="decision-pill buy">B</span>
+                    <span style="font-size: 12px; color: var(--text-primary);">Buy (Small)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="decision-pill hold">H</span>
+                    <span style="font-size: 12px; color: var(--text-primary);">Hold</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="decision-pill reduce">R</span>
+                    <span style="font-size: 12px; color: var(--text-primary);">Reduce</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="decision-pill sell">S</span>
+                    <span style="font-size: 12px; color: var(--text-primary);">Sell</span>
+                </div>
+            </div>
+        </div>
+
         <div id="sectorContainer" style="display:none;">
             <table id="sectorTable" class="display responsive nowrap" style="width:100%">
                 <thead>
                     <tr>
                         <th>Sector</th>
-                        <th>Stock Count</th>
-                        <th>Total Market Cap</th>
-                        <th>Weighted P/E</th>
-                        <th>Avg Trend Strength</th>
-                        <th>Avg 5D Ret</th>
-                        <th>Avg 1M Ret</th>
-                        <th>Avg 6M Ret</th>
-                        <th>Avg 50D MA</th>
-                        <th>Avg 200D MA</th>
+                        <th>Decision</th>
+                        <th>Stocks</th>
+                        <th>Market Cap</th>
+                        <th>P/E</th>
+                        <th>Trend</th>
+                        <th>5D %</th>
+                        <th>1M %</th>
+                        <th>6M %</th>
+                        <th>50D MA</th>
+                        <th>200D MA</th>
+                        <th>Breakdown</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,6 +135,18 @@
                 responsive: true,
                 columns: [
                     { data: 'Sector', class: 'font-bold' },
+                    {
+                        data: 'Sector Decision',
+                        render: function (data) {
+                            if (!data) return 'Hold';
+                            let colorClass = 'decision-badge-hold';
+                            if (data === 'Strong Buy') colorClass = 'decision-badge-strong-buy';
+                            else if (data === 'Buy') colorClass = 'decision-badge-buy';
+                            else if (data === 'Sell') colorClass = 'decision-badge-sell';
+
+                            return `<span class="decision-badge ${colorClass}">${data}</span>`;
+                        }
+                    },
                     { data: 'Stock Count' },
                     {
                         data: 'Market Cap',
@@ -154,9 +198,22 @@
                         }
                     },
                     { data: 'Avg 50D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
-                    { data: 'Avg 200D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') }
+                    { data: 'Avg 200D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    {
+                        data: 'Decision Breakdown',
+                        render: function (data) {
+                            if (!data) return 'N/A';
+                            return `<div class="decision-pill-group">
+                                <span class="decision-pill strong-buy" title="Strong Buy: ${data['Strong Buy']}">${data['Strong Buy']}</span>
+                                <span class="decision-pill buy" title="Buy (Small): ${data['Buy (Small)']}">${data['Buy (Small)']}</span>
+                                <span class="decision-pill hold" title="Hold: ${data['Hold']}">${data['Hold']}</span>
+                                <span class="decision-pill reduce" title="Reduce: ${data['Reduce']}">${data['Reduce']}</span>
+                                <span class="decision-pill sell" title="Sell: ${data['Sell']}">${data['Sell']}</span>
+                            </div>`;
+                        }
+                    }
                 ],
-                order: [[2, 'desc']], // Sort by Market Cap
+                order: [[3, 'desc']], // Sort by Market Cap (now 4th column)
                 paging: false,
                 info: false,
                 searching: false
@@ -167,6 +224,7 @@
                 .then(data => {
                     document.getElementById('loader').style.display = 'none';
                     document.getElementById('sectorContainer').style.display = 'block';
+                    document.getElementById('legendContainer').style.display = 'block';
 
                     if (data.length === 0) {
                         $('#sectorContainer').html('<div style="color:var(--text-muted); text-align:center;">No data available. Go to Screener and refresh data first.</div>');
