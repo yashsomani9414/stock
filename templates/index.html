@@ -13,6 +13,241 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+    <style>
+        /* Glossary Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--border-accent);
+            border-radius: 16px;
+            width: 80%;
+            max-width: 700px;
+            box-shadow: var(--shadow-xl);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 10px;
+        }
+
+        .close-modal {
+            color: var(--text-muted);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .glossary-section {
+            margin-bottom: 20px;
+        }
+
+        .glossary-title {
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .glossary-item {
+            margin-bottom: 6px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .glossary-label {
+            color: var(--text-secondary);
+        }
+
+        .glossary-points {
+            color: var(--bullish);
+            font-weight: 600;
+        }
+
+        /* Column Search Styles */
+        .header-filter {
+            display: block;
+            margin-top: 5px;
+            font-size: 11px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            color: white;
+            border-radius: 4px;
+            padding: 2px 4px;
+            width: 100%;
+        }
+
+        /* Table Scroll */
+        .table-panel {
+            overflow-x: auto;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .info-icon {
+            cursor: pointer;
+            margin-left: 4px;
+            vertical-align: middle;
+            color: var(--accent-blue);
+        }
+
+        /* Multi-select Dropdown Styles */
+        .filter-dropdown {
+            position: relative;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .filter-dropdown-btn {
+            width: 100%;
+            background: var(--bg-accent);
+            border: 1px solid var(--accent-blue);
+            color: white;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 11px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10001;
+        }
+
+        .filter-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #111827 !important;
+            /* Force opaque */
+            min-width: 220px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 1) !important;
+            border: 2px solid var(--accent-blue) !important;
+            border-radius: 8px;
+            z-index: 999999 !important;
+            /* Ultimate z-index */
+            padding: 12px;
+            margin-top: 8px;
+            left: 0;
+            top: 100%;
+            pointer-events: auto !important;
+        }
+
+        /* Force visibility when dropdown is active */
+        .dropdown-active,
+        .dropdown-active .dataTables_scroll {
+            overflow: visible !important;
+        }
+
+        .dropdown-active .dataTables_scrollHead {
+            overflow: visible !important;
+            z-index: 100000 !important;
+            /* Must be higher than body */
+        }
+
+        .dropdown-active .dataTables_scrollBody {
+            overflow: visible !important;
+            z-index: 1 !important;
+            /* Must be below head */
+        }
+
+        .dropdown-active .dataTables_scrollHeadInner {
+            overflow: visible !important;
+        }
+
+        /* Ensure header cell has proper stacking */
+        th.decision-header {
+            position: relative;
+            z-index: 100;
+        }
+
+        .filter-dropdown-content label {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            font-size: 13px;
+            color: white;
+            /* Maximum Contrast */
+            text-transform: none;
+            line-height: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .filter-dropdown-content label:last-child {
+            border-bottom: none;
+        }
+
+        .filter-dropdown-content label:hover {
+            background-color: var(--bg-secondary);
+            color: white;
+        }
+
+        .filter-dropdown-content input {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .filter-dropdown.show .filter-dropdown-content {
+            display: block;
+        }
+
+        /* Glossary Table */
+        .glossary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .glossary-table th,
+        .glossary-table td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .glossary-table th {
+            color: var(--text-secondary);
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .text-warning {
+            color: #f97316 !important;
+        }
+
+        /* Orange */
+        .text-accent {
+            color: var(--neutral) !important;
+        }
+
+        /* Amber/Yellow */
+    </style>
 </head>
 
 <body>
@@ -35,12 +270,10 @@
             <nav class="header-nav">
                 <a href="/" class="nav-link active">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="8" y1="6" x2="21" y2="6"></line>
-                        <line x1="8" y1="12" x2="21" y2="12"></line>
-                        <line x1="8" y1="18" x2="21" y2="18"></line>
-                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
                     Screener
                 </a>
@@ -51,6 +284,23 @@
                     </svg>
                     Sector Analysis
                 </a>
+                <a href="/earnings" class="nav-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Earnings
+                </a>
+                <div class="search-box-wrapper"
+                    style="margin-left: 20px; position: relative; display: flex; align-items: center;">
+                    <input type="text" id="globalStockSearch" placeholder="Search ticker or name..."
+                        style="background:var(--bg-secondary); border:1px solid var(--border-subtle); color:white; border-radius:50px; padding:6px 16px; font-size:13px; outline:none; width:220px;">
+                    <div id="searchSuggestions"
+                        style="position:absolute; top:100%; left:0; right:0; background:var(--bg-card); border:1px solid var(--border-accent); border-radius:8px; z-index:1000; display:none; max-height:300px; overflow-y:auto; margin-top:4px; box-shadow:var(--shadow-lg);">
+                    </div>
+                </div>
             </nav>
 
             <button id="fetchBtn" class="action-btn">
@@ -70,9 +320,15 @@
             <!-- Custom Search Box location (we will move DataTables search here) -->
             <div id="customSearchContainer" class="search-container"></div>
 
-            <!-- Stock Count Display -->
-            <div id="stockCountDisplay" class="stock-count-badge">
-                Showing <span id="visibleCount">0</span> / <span id="totalCount">0</span> Stocks
+            <!-- Last Refreshed Display -->
+            <div id="lastRefreshedDisplay" class="stock-count-badge"
+                style="background: var(--bg-card); border: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 12px;">
+                <div id="refreshProgressContainer" style="display: none; align-items: center; gap: 8px;">
+                    <span class="loader-ring small" style="width:12px; height:12px; border-width:2px;"></span>
+                    <span id="refreshStatusText"
+                        style="font-size: 11px; color: var(--accent-blue);">Refreshing...</span>
+                </div>
+                <span>Last Refreshed: <span id="lastRefreshed">Loading...</span></span>
             </div>
 
             <div id="status" class="status-msg"></div>
@@ -81,7 +337,7 @@
         <div class="dashboard-container">
             <!-- Left Panel: Table -->
             <div class="table-panel">
-                <table id="screenerTable" class="display responsive nowrap" style="width:100%">
+                <table id="screenerTable" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th>Symbol</th>
@@ -89,9 +345,39 @@
                             <th>50D MA</th>
                             <th>200D MA</th>
                             <th>Trend Strength</th>
+                            <th>Score <svg class="info-icon" id="openGlossary" width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg></th>
+                            <th class="decision-header">Decision <svg class="info-icon" id="openDecisionGlossary"
+                                    width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                                <div class="filter-dropdown" id="decisionDropdown">
+                                    <div class="filter-dropdown-btn">Filter Decisions <span
+                                            style="font-size:8px;">▼</span></div>
+                                    <div class="filter-dropdown-content">
+                                        <label><input type="checkbox" value="Strong Buy"> Strong Buy</label>
+                                        <label><input type="checkbox" value="Buy (Small)"> Buy (Small)</label>
+                                        <label><input type="checkbox" value="Hold"> Hold</label>
+                                        <label><input type="checkbox" value="Reduce"> Reduce</label>
+                                        <label><input type="checkbox" value="Sell"> Sell</label>
+                                        <label><input type="checkbox" value="Rejected"> Rejected (All Reasons)</label>
+                                    </div>
+                                </div>
+                            </th>
                             <th>5D Ret</th>
                             <th>1M Ret</th>
                             <th>6M Ret</th>
+                            <th>Volume</th>
+                            <th>Vol Chg 1D</th>
+                            <th>Vol Chg 5D</th>
                             <th>P/E</th>
                             <th>Mkt Cap</th>
                             <th>Sector</th>
@@ -107,6 +393,13 @@
             <div id="chartPanel" class="chart-panel">
                 <div class="chart-header">
                     <h3 id="chartTitle">Select a Stock</h3>
+                    <button id="closePanel" class="close-panel-btn" title="Close Panel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
                 <div class="chart-body">
                     <canvas id="stockChart"></canvas>
@@ -128,6 +421,133 @@
                         <!-- News items injected here -->
                     </div>
                 </div>
+                <div style="margin-top: 24px;">
+                    <a id="viewDetailBtn" href="#" class="action-btn" style="width:100%; justify-content:center;">
+                        View Full Analysis & Reports
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glossary Modal -->
+        <div id="glossaryModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="margin:0; font-size:20px;">Trading Engine Scoring Glossary</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+
+                <div class="glossary-section">
+                    <div class="glossary-title">Universe Filters (Auto-Reject)</div>
+                    <div class="glossary-item"><span class="glossary-label">Market Cap</span> <span
+                            class="glossary-points">≥ $2B</span></div>
+                    <div class="glossary-item"><span class="glossary-label">Avg 20D Volume</span> <span
+                            class="glossary-points">≥ 500,000 shares</span></div>
+                    <div class="glossary-item"><span class="glossary-label">Price</span> <span class="glossary-points">≥
+                            $10</span></div>
+                </div>
+
+                <div class="glossary-section">
+                    <div class="glossary-title">TREND (Max 35 pts)</div>
+                    <div class="glossary-item"><span class="glossary-label">Price > 50D MA</span> <span
+                            class="glossary-points">+8</span></div>
+                    <div class="glossary-item"><span class="glossary-label">50D MA > 200D MA</span> <span
+                            class="glossary-points">+8</span></div>
+                    <div class="glossary-item"><span class="glossary-label">Price > 200D MA</span> <span
+                            class="glossary-points">+8</span></div>
+                    <div class="glossary-item"><span class="glossary-label">Trend Strength > 0</span>
+                        <span class="glossary-points">+11</span>
+                    </div>
+                    <div style="font-size:12px; color:var(--bearish); margin-top:5px;">* If Price < 200D MA → Trend
+                            points=0</div>
+                    </div>
+
+                    <div class="glossary-section">
+                        <div class="glossary-title">MOMENTUM (Max 25 pts)</div>
+                        <div class="glossary-item"><span class="glossary-label">6M Return > 0</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">1M Return > 0</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">5D Return > 0</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">Hierarchy (6M > 1M > 5D)</span> <span
+                                class="glossary-points">+10</span></div>
+                        <div class="glossary-item"><span class="glossary-label">Pullback (5D < 0 while 1M> 0)</span>
+                            <span class="glossary-points">-5</span>
+                        </div>
+                    </div>
+
+                    <div class="glossary-section">
+                        <div class="glossary-title">VOLUME (Max 20 pts)</div>
+                        <div class="glossary-item"><span class="glossary-label">5D Avg Vol / 20D Avg ≥ 1.2</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">1D Vol / 20D Avg ≥ 1.5</span> <span
+                                class="glossary-points">+10</span></div>
+                        <div class="glossary-item"><span class="glossary-label">Rising Volume on Up Days</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">Down-day Spike (Vol ≥ 2× avg)</span>
+                            <span class="glossary-points">-10</span>
+                        </div>
+                    </div>
+
+                    <div class="glossary-section">
+                        <div class="glossary-title">RISK & VALUATION (Max 20 pts)</div>
+                        <div class="glossary-item"><span class="glossary-label">Market Cap > $10B</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">P/E < Sector Median</span> <span
+                                        class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">P/E > Median + Momentum</span> <span
+                                class="glossary-points">+3</span></div>
+                        <div class="glossary-item"><span class="glossary-label">6M Volatility < Sector Median</span>
+                                    <span class="glossary-points">+7</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decision Glossary Modal -->
+        <div id="decisionGlossaryModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="margin:0; font-size:20px;">Trade Decision Criteria</h2>
+                    <span class="close-modal" data-modal="decisionGlossaryModal">&times;</span>
+                </div>
+                <p style="color:var(--text-secondary); font-size:13px; margin-bottom:20px;">Decisions are based on the
+                    total Quantitative Score (0-100) and specific risk filters.</p>
+                <table class="glossary-table">
+                    <thead>
+                        <tr>
+                            <td><strong>Decision</strong></td>
+                            <td><strong>Description / Criteria</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color:var(--bullish);"><strong>Strong Buy</strong></td>
+                            <td>Score ≥ 80, Solid Trend/Vol/Mom, No imminent earnings.</td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--bullish);"><strong>Buy (Small)</strong></td>
+                            <td>Score 70–79, Positive Trend & Momentum.</td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--accent-yellow);"><strong>Hold</strong></td>
+                            <td>Default state OR Earnings risk window (±7 days).</td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--bearish);"><strong>Reduce</strong></td>
+                            <td>Score < 65 OR (Both 5D < 0 AND 1M < 0).</td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--bearish);"><strong>Sell</strong></td>
+                            <td>Price < 200D MA OR Trend Strength < 0 OR Score < 45.</td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--bearish); opacity:0.8;"><strong>Rejected</strong></td>
+                            <td>Fails Step 1: Market Cap < $2B, Avg 20D Vol < 500k, or Price < $10.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
@@ -147,54 +567,116 @@
             let chartInstance = null;
 
             const table = $('#screenerTable').DataTable({
-                responsive: true,
+                responsive: false,
+                scrollX: true,
                 dom: '<"top-controls"f>rt<"bottom-controls"lip>',
                 columns: [
                     {
                         data: 'Symbol',
                         render: function (data, type, row) {
                             return `<div style="display:flex; flex-direction:column;">
-                                    <span class="font-bold symbol-link" style="color:var(--accent-blue); cursor:pointer;">${data}</span>
+                                    <a href="/stock/${data}" class="font-bold" style="color:var(--accent-blue); text-decoration:none;">${data} <span style="font-size:10px;">↗</span></a>
                                     <span style="font-size:11px; color:var(--text-muted);">${row.Name || ''}</span>
                                   </div>`;
                         }
                     },
-                    { data: 'Price', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
-                    { data: '50D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
-                    { data: '200D MA', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    { data: 'Price', defaultContent: 'N/A', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    { data: '50D MA', defaultContent: 'N/A', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    { data: '200D MA', defaultContent: 'N/A', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                     {
                         data: 'Trend Strength',
+                        defaultContent: 'N/A',
                         render: function (data) {
-                            if (data === null) return 'N/A';
+                            if (data === null || data === undefined) return 'N/A';
                             const colorClass = data >= 0 ? 'text-bullish' : 'text-bearish';
                             const icon = data >= 0 ? '▲' : '▼';
                             return `<span class="${colorClass} font-bold">${icon} ${data}%</span>`;
                         }
                     },
                     {
-                        data: '5D Return',
+                        data: 'Score',
+                        defaultContent: 'N/A',
+                        render: function (data, type, row) {
+                            if (type === 'sort') {
+                                return (data === null || data === undefined) ? -1 : data;
+                            }
+                            if (data === null || data === undefined) return 'N/A';
+                            return `<span class="font-bold">${data}</span>`;
+                        }
+                    },
+                    {
+                        data: 'Trade Decision',
+                        defaultContent: 'N/A',
                         render: function (data) {
-                            if (data === null) return 'N/A';
+                            if (!data) return 'N/A';
+                            let normalized = data.toUpperCase();
+                            let colorClass = '';
+                            if (normalized === 'STRONG BUY') colorClass = 'text-bullish font-bold';
+                            else if (normalized === 'BUY (SMALL)') colorClass = 'text-bullish';
+                            else if (normalized === 'HOLD') colorClass = 'text-accent';
+                            else if (normalized === 'REDUCE') colorClass = 'text-bearish';
+                            else if (normalized === 'SELL') colorClass = 'text-bearish font-bold';
+                            else if (normalized.includes('REJECTED')) colorClass = 'text-bearish';
+                            else colorClass = 'text-muted';
+
+                            return `<span class="${colorClass}">${data}</span>`;
+                        }
+                    },
+                    {
+                        data: '5D Return',
+                        defaultContent: 'N/A',
+                        render: function (data) {
+                            if (data === null || data === undefined) return 'N/A';
                             return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
                         }
                     },
                     {
                         data: '1M Return',
+                        defaultContent: 'N/A',
                         render: function (data) {
-                            if (data === null) return 'N/A';
+                            if (data === null || data === undefined) return 'N/A';
                             return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
                         }
                     },
                     {
                         data: '6M Return',
+                        defaultContent: 'N/A',
                         render: function (data) {
-                            if (data === null) return 'N/A';
+                            if (data === null || data === undefined) return 'N/A';
                             return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
                         }
                     },
-                    { data: 'P/E Ratio' },
+                    {
+                        data: 'Volume',
+                        defaultContent: 'N/A',
+                        render: function (data) {
+                            if (!data) return 'N/A';
+                            if (data >= 1e9) return (data / 1e9).toFixed(2) + 'B';
+                            if (data >= 1e6) return (data / 1e6).toFixed(2) + 'M';
+                            if (data >= 1e3) return (data / 1e3).toFixed(2) + 'K';
+                            return data;
+                        }
+                    },
+                    {
+                        data: 'Vol Change 1D',
+                        defaultContent: 'N/A',
+                        render: function (data) {
+                            if (data === null || data === undefined) return 'N/A';
+                            return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
+                        }
+                    },
+                    {
+                        data: 'Vol Change 5D',
+                        defaultContent: 'N/A',
+                        render: function (data) {
+                            if (data === null || data === undefined) return 'N/A';
+                            return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
+                        }
+                    },
+                    { data: 'P/E Ratio', defaultContent: 'N/A' },
                     {
                         data: 'Market Cap',
+                        defaultContent: 'N/A',
                         render: function (data) {
                             if (!data) return 'N/A';
                             if (data >= 1e12) return (data / 1e12).toFixed(2) + 'T';
@@ -203,9 +685,9 @@
                             return data;
                         }
                     },
-                    { data: 'Sector' },
-                    { data: 'Industry' },
-                    { data: 'Name', visible: false }
+                    { data: 'Sector', defaultContent: 'N/A' },
+                    { data: 'Industry', defaultContent: 'N/A' },
+                    { data: 'Name', visible: true, defaultContent: 'N/A' }
                 ],
                 order: [[4, 'desc']],
                 pageLength: 25,
@@ -220,6 +702,67 @@
                     const info = api.page.info();
                     $('#visibleCount').text(info.recordsDisplay);
                     $('#totalCount').text(info.recordsTotal);
+                },
+                initComplete: function () {
+                    const dtApi = this.api();
+
+                    // Toggle Dropdown
+                    $('.filter-dropdown-btn').on('click', function (e) {
+                        e.stopPropagation();
+                        const $parent = $(this).parent();
+                        const isShowing = $parent.hasClass('show');
+
+                        // Clear others first
+                        $('.filter-dropdown').removeClass('show');
+                        $('.table-panel').removeClass('dropdown-active');
+
+                        if (!isShowing) {
+                            $parent.addClass('show');
+                            $('.table-panel').addClass('dropdown-active');
+                        }
+                    });
+
+                    $(document).on('click', function (e) {
+                        if (!$(e.target).closest('.filter-dropdown').length) {
+                            $('.filter-dropdown').removeClass('show');
+                            $('.table-panel').removeClass('dropdown-active');
+                        }
+                    });
+
+                    $('.filter-dropdown-btn').on('mousedown', function (e) {
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                    });
+
+                    $('.filter-dropdown-content').on('click', function (e) {
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                    });
+
+                    // Multi-select Filtering Logic
+                    $('#decisionDropdown input[type="checkbox"]').on('change', function () {
+                        const selectedValues = [];
+                        const checkedBoxes = $('#decisionDropdown input:checked');
+
+                        checkedBoxes.each(function () {
+                            let val = $(this).val();
+                            if (val === 'Rejected') {
+                                selectedValues.push('Rejected'); // Partial match for "Rejected – Universal Filter"
+                            } else {
+                                const escaped = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                                selectedValues.push('^' + escaped + '$');
+                            }
+                        });
+
+                        if (selectedValues.length === 0) {
+                            dtApi.column(6).search('').draw();
+                            $('.filter-dropdown-btn').html('Filter Decisions <span style="font-size:8px;">▼</span>');
+                        } else {
+                            const regexStr = selectedValues.join('|');
+                            dtApi.column(6).search(regexStr, true, false).draw();
+                            $('.filter-dropdown-btn').html(`Filtered (${selectedValues.length}) <span style="font-size:8px;">▼</span>`);
+                        }
+                    });
                 }
             });
 
@@ -227,14 +770,57 @@
             $('#screenerTable_filter').appendTo('#customSearchContainer');
 
             // Handle Row/Symbol Click
-            $('#screenerTable tbody').on('click', 'tr', function () {
+            $('#screenerTable tbody').on('click', 'tr', function (e) {
+                // Hyper-defensive: Ignore if dropdown is open anywhere OR if click is inside dropdown
+                if ($('.filter-dropdown').hasClass('show') ||
+                    $(e.target).closest('.filter-dropdown').length ||
+                    e.target.tagName === 'A') {
+                    return;
+                }
+
                 const data = table.row(this).data();
                 if (data) {
                     loadChart(data.Symbol);
                     loadNews(data.Symbol);
+                    $('#viewDetailBtn').attr('href', `/stock/${data.Symbol}`);
 
-                    // Open Side Panel handling handled by CSS layout, just ensure it's visible
+                    // Open Side Panel
                     $('.dashboard-container').addClass('panel-open');
+                }
+            });
+
+            // Handle Close Panel Click
+            $('#closePanel').on('click', function () {
+                $('.dashboard-container').removeClass('panel-open');
+            });
+
+            // Score Glossary Modal
+            $('#openGlossary').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#glossaryModal').fadeIn(200);
+            });
+
+            // Decision Glossary Modal
+            $('#openDecisionGlossary').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#decisionGlossaryModal').fadeIn(200);
+            });
+
+            $('.close-modal').on('click', function () {
+                const modalId = $(this).data('modal');
+                if (modalId) {
+                    $('#' + modalId).fadeOut(200);
+                } else {
+                    $(this).closest('.modal').fadeOut(200);
+                }
+            });
+
+            // Close modal when clicking outside
+            $(window).on('click', function (e) {
+                if ($(e.target).hasClass('modal')) {
+                    $('.modal').fadeOut(200);
                 }
             });
 
@@ -357,38 +943,158 @@
                     });
             }
 
+            function startPolling() {
+                $('#refreshProgressContainer').css('display', 'flex');
+
+                const pollInterval = setInterval(() => {
+                    fetch('/api/refresh_status')
+                        .then(r => r.json())
+                        .then(status => {
+                            if (!status.is_running) {
+                                clearInterval(pollInterval);
+                                $('#refreshProgressContainer').hide();
+
+                                if (status.status === 'success') {
+                                    $('#status').html(`<div style="color:var(--bullish)">${status.message} Reloading data...</div>`);
+                                    loadData(false); // Reload table from new file
+                                } else if (status.status === 'error') {
+                                    $('#status').html(`<div style="color:var(--bearish)">Refresh failed: ${status.message}</div>`);
+                                }
+                            } else {
+                                // Update progress text
+                                let progressMsg = status.message;
+                                if (status.total > 0) {
+                                    const percent = Math.round((status.current / status.total) * 100);
+                                    progressMsg = `${status.message} (${percent}%)`;
+                                }
+                                $('#refreshStatusText').text(progressMsg);
+                            }
+                        })
+                        .catch(e => {
+                            console.error("Polling error:", e);
+                            clearInterval(pollInterval);
+                            $('#refreshProgressContainer').hide();
+                        });
+                }, 2000);
+            }
+
             function loadData(forceRefresh = false) {
                 const btn = $('#fetchBtn');
                 const originalText = btn.html();
 
-                btn.prop('disabled', true).html('<span class="loader-ring small" style="width:16px;height:16px;border-width:2px;display:inline-block;margin-right:8px;"></span> Loading...');
-                $('#status').html('<div style="color:var(--text-accent)">Checking/Fetching stock data...</div>');
+                if (forceRefresh) {
+                    console.log("Refresh button clicked");
+                    if (!confirm("This will refresh all S&P 500 data from Yahoo Finance. It may take 10-15 minutes but will run in the background. Continue?")) {
+                        return;
+                    }
 
-                fetch(`/api/data?refresh=${forceRefresh}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        table.clear();
-                        if (data.length > 0) {
-                            table.rows.add(data).draw();
-                            $('#status').html(`<div style="color:var(--bullish)">Loaded ${data.length} stocks. Select a stock to view chart.</div>`);
-                        } else {
-                            $('#status').html('<div style="color:var(--text-muted)">No data found. Click "Refresh Data" to fetch from Yahoo.</div>');
-                        }
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        $('#status').html('<div style="color:var(--bearish)">Error fetching data. Check logs.</div>');
-                    })
-                    .finally(() => {
-                        btn.prop('disabled', false).html(originalText);
-                    });
+                    btn.prop('disabled', true).html('<span class="loader-ring small"></span> Refreshing...');
+                    $('#status').html('<div style="color:var(--text-accent)">Requesting refresh from server...</div>');
+
+                    fetch('/api/refresh?force=true')
+                        .then(response => {
+                            console.log("Refresh response status:", response.status);
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.status === 'success') {
+                                $('#status').html(`<div style="color:var(--accent-blue)">${data.message} You can continue using the app while it updates.</div>`);
+                                startPolling();
+                            } else {
+                                throw new Error(data.message || 'Refresh failed');
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Refresh request failed:", err);
+                            $('#status').html(`<div style="color:var(--bearish)">Error: ${err.message}</div>`);
+                            btn.prop('disabled', false).html(originalText);
+                        })
+                        .finally(() => {
+                            // We don't re-enable the button if polling started
+                        });
+
+                } else {
+                    // Normal load from cache
+                    btn.prop('disabled', true);
+                    $('#status').html('<div style="color:var(--text-accent)">Loading current data...</div>');
+
+                    fetch('/api/data')
+                        .then(response => response.json())
+                        .then(data => {
+                            table.clear();
+                            if (data && data.length > 0) {
+                                table.rows.add(data).draw();
+                                $('#status').html(`<div style="color:var(--bullish)">Loaded ${data.length} stocks. Select a stock to view chart.</div>`);
+
+                                // Update last refreshed date
+                                if (data[0] && data[0].LastUpdated) {
+                                    $('#lastRefreshed').text(data[0].LastUpdated);
+                                }
+                            } else {
+                                $('#status').html('<div style="color:var(--text-muted)">No data found. Click "Refresh Data" to fetch from Yahoo.</div>');
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Data load failed:", err);
+                            $('#status').html('<div style="color:var(--bearish)">Error loading data.</div>');
+                        })
+                        .finally(() => {
+                            btn.prop('disabled', false);
+                        });
+                }
             }
 
-            // Initial load (cached only, will be empty if new session and no cache file)
+            // Initial load (cached only)
             loadData(false);
 
             $('#fetchBtn').click(function () {
                 loadData(true);
+            });
+            // Global Search Logic
+            const $searchInput = $('#globalStockSearch');
+            const $suggestions = $('#searchSuggestions');
+            let allStocks = [];
+
+            fetch('/api/data')
+                .then(r => r.json())
+                .then(data => { allStocks = data; });
+
+            $searchInput.on('input', function () {
+                const val = $(this).val().toUpperCase();
+                $suggestions.empty().hide();
+                if (!val) return;
+
+                const matches = allStocks.filter(s =>
+                    s.Symbol.toUpperCase().includes(val) ||
+                    (s.Name && s.Name.toUpperCase().includes(val))
+                ).slice(0, 8);
+
+                if (matches.length > 0) {
+                    matches.forEach(m => {
+                        const div = $(`<div style="padding:10px 16px; cursor:pointer; border-bottom:1px solid var(--border-subtle); display:flex; justify-content:space-between;">
+                            <span class="font-bold">${m.Symbol}</span>
+                            <span style="font-size:12px; color:var(--text-muted);">${m.Name || ''}</span>
+                        </div>`);
+                        div.on('click', () => {
+                            window.location.href = `/stock/${m.Symbol}`;
+                        });
+                        $suggestions.append(div);
+                    });
+                    $suggestions.show();
+                }
+            });
+
+            $(document).on('click', (e) => {
+                if (!$(e.target).closest('.search-box-wrapper').length) {
+                    $suggestions.hide();
+                }
+            });
+
+            $searchInput.on('keypress', function (e) {
+                if (e.which === 13) {
+                    const val = $(this).val().toUpperCase();
+                    if (val) window.location.href = `/stock/${val}`;
+                }
             });
         });
     </script>

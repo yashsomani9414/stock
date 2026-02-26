@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ symbol }} Detail - S&P 500 Screener</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric-box {
+            background: var(--bg-secondary);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .insight-section {
+            margin-top: 20px;
+        }
+
+        .insight-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .insight-content {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-box {
+            line-height: 1.6;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .valuation-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .valence-Fair {
+            background: var(--neutral-bg);
+            color: var(--neutral);
+            border: 1px solid var(--neutral);
+        }
+
+        .valence-Undervalued {
+            background: var(--bullish-bg);
+            color: var(--bullish);
+            border: 1px solid var(--bullish);
+        }
+
+        .valence-Overvalued {
+            background: var(--bearish-bg);
+            color: var(--bearish);
+            border: 1px solid var(--bearish);
+        }
+
+        @media (max-width: 900px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="logo-icon">▲</span>
+            <h1>S&P 500 Screener</h1>
+        </div>
+        <nav>
+            <a href="/" class="nav-link">Screener</a>
+            <a href="/sector" class="nav-link">Sector Analysis</a>
+            <a href="/earnings" class="nav-link">Earnings</a>
+            <a href="/market-news" class="nav-link">Market News</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div style="margin-bottom: 24px;">
+            <a href="/" style="color: var(--accent-primary); text-decoration: none;">&larr; Back to Screener</a>
+        </div>
+
+        <div id="loader" style="text-align: center; padding: 100px;">
+            <span class="loader-ring"></span>
+            <p style="margin-top: 16px; color: var(--text-muted);">Analyzing filings for {{ symbol }}...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="dashboard-header" style="margin-bottom:32px;">
+                <div style="display: flex; align-items: baseline; gap: 16px;">
+                    <h1 id="tickerTitle" style="font-size: 32px; font-weight: 800;"></h1>
+                    <h2 id="companyName" style="font-size: 18px; color: var(--text-secondary); font-weight: 500;"></h2>
+                    <div id="valuationLabel" class="valuation-badge"></div>
+                </div>
+            </div>
+
+            <!-- Summary & Basic Metrics -->
+            <div class="info-card" style="margin-bottom: 24px;">
+                <h3 style="margin-bottom: 16px; font-size: 16px;">Business Overview</h3>
+                <div id="businessSummary" class="summary-box"></div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric-box">
+                    <div class="metric-label">Market Cap</div>
+                    <div id="mcap" class="metric-value">-</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">P/E Ratio</div>
+                    <div id="pe" class="metric-value">-</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Forward P/E</div>
+                    <div id="fpe" class="metric-value">-</div>
+                </div>
+            </div>
+
+            <div class="detail-grid">
+                <!-- Financials Card -->
+                <div class="info-card">
+                    <h3 style="margin-bottom: 20px;">Financial Trends (Last 4 Years)</h3>
+                    <div style="height: 300px; position: relative;">
+                        <canvas id="finChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- SEC Insights Card -->
+                <div class="info-card">
+                    <h3 style="margin-bottom: 20px;">SEC Filing Insights (10-K/10-Q)</h3>
+
+                    <div class="insight-section">
+                        <div class="insight-title">🚀 Business Opportunities</div>
+                        <ul id="insight-ops" class="insight-content" style="padding-left: 20px;"></ul>
+                    </div>
+
+                    <div class="insight-section">
+                        <div class="insight-title">⚠️ Risk Factors (Threats)</div>
+                        <ul id="insight-threats" class="insight-content" style="padding-left: 20px;"></ul>
+                    </div>
+
+                    <div class="insight-section">
+                        <div class="insight-title">👥 Major Customers</div>
+                        <ul id="insight-customers" class="insight-content" style="padding-left: 20px;"></ul>
+                    </div>
+
+                    <div class="insight-section">
+                        <div class="insight-title">⚖️ Impact of Tariffs & Global Policy</div>
+                        <ul id="insight-tariff" class="insight-content" style="padding-left: 20px;"></ul>
+                    </div>
+
+                    <div class="insight-section">
+                        <div class="insight-title">📅 One-time Events & Impacts</div>
+                        <ul id="insight-onetime" class="insight-content" style="padding-left: 20px;"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Sections -->
+            <div class="detail-grid" style="margin-top: 48px;">
+                <div>
+                    <h3 class="section-title">Latest Stock News</h3>
+                    <div id="stockNews" class="panel-news-list" style="margin-top:20px;"></div>
+                </div>
+                <div>
+                    <h3 class="section-title">Global Market News</h3>
+                    <div id="globalNews" class="panel-news-list" style="margin-top:20px;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const symbol = "{{ symbol }}";
+
+        function formatCurrency(n) {
+            if (n >= 1e12) return (n / 1e12).toFixed(2) + 'T';
+            if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+            if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+            return n.toLocaleString();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch Details
+            fetch(`/api/stock_details/${symbol}`)
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+
+                    document.getElementById('tickerTitle').innerText = data.ticker;
+                    document.getElementById('companyName').innerText = data.company_name;
+                    document.getElementById('businessSummary').innerText = data.summary;
+
+                    const m = data.metrics;
+                    document.getElementById('mcap').innerText = formatCurrency(m.market_cap || 0);
+                    document.getElementById('pe').innerText = (m.pe_ratio || 'N/A');
+                    document.getElementById('fpe').innerText = (m.forward_pe || 'N/A');
+
+                    const valLabel = document.getElementById('valuationLabel');
+                    valLabel.innerText = data.insights.valuation;
+                    valLabel.className = 'valuation-badge valence-' + (data.insights.valuation === "Undervalued" ? "Undervalued" : (data.insights.valuation === "Overvalued" ? "Overvalued" : "Fair"));
+
+                    // Insights
+                    const renderBullets = (id, items) => {
+                        const el = document.getElementById(id);
+                        el.innerHTML = '';
+                        if (Array.isArray(items)) {
+                            items.forEach(item => {
+                                const li = document.createElement('li');
+                                li.style.marginBottom = '8px';
+                                li.innerText = item;
+                                el.appendChild(li);
+                            });
+                        } else {
+                            const li = document.createElement('li');
+                            li.innerText = items;
+                            el.appendChild(li);
+                        }
+                    };
+
+                    renderBullets('insight-ops', data.insights.opportunities);
+                    renderBullets('insight-threats', data.insights.threats);
+                    renderBullets('insight-customers', data.insights.customers);
+                    renderBullets('insight-tariff', data.insights.tariff_impact);
+                    renderBullets('insight-onetime', data.insights.one_time);
+
+                    // Chart
+                    const ctx = document.getElementById('finChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.financials.map(f => f.date),
+                            datasets: [
+                                {
+                                    label: 'Revenue',
+                                    data: data.financials.map(f => f.revenue),
+                                    backgroundColor: 'rgba(99, 102, 241, 0.7)',
+                                    borderColor: 'rgba(99, 102, 241, 1)',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Net Income',
+                                    data: data.financials.map(f => f.net_income),
+                                    backgroundColor: 'rgba(34, 197, 94, 0.7)',
+                                    borderColor: 'rgba(34, 197, 94, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: 'rgba(255,255,255,0.05)' },
+                                    ticks: {
+                                        color: '#94a3b8',
+                                        callback: value => '$' + formatCurrency(value)
+                                    }
+                                },
+                                x: { ticks: { color: '#94a3b8' }, grid: { display: false } }
+                            },
+                            plugins: {
+                                legend: { labels: { color: '#94a3b8' } }
+                            }
+                        }
+                    });
+
+                    // Stock News
+                    const stockNewsEl = document.getElementById('stockNews');
+                    data.news.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'panel-news-item';
+                        div.innerHTML = `
+                            <a href="${item.link}" target="_blank" class="panel-news-link">
+                                <div class="panel-news-title">${item.title}</div>
+                                <div class="panel-news-meta">
+                                    <span class="panel-news-source">${item.publisher}</span>
+                                    <span>${item.pubDate ? new Date(item.pubDate).toLocaleDateString() : 'Recent'}</span>
+                                </div>
+                            </a>
+                        `;
+                        stockNewsEl.appendChild(div);
+                    });
+                });
+
+            // Fetch Global News
+            fetch('/api/global_news')
+                .then(r => r.json())
+                .then(data => {
+                    const globalNewsEl = document.getElementById('globalNews');
+                    data.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'panel-news-item';
+                        div.innerHTML = `
+                            <a href="${item.link}" target="_blank" class="panel-news-link">
+                                <div class="panel-news-title">${item.title}</div>
+                                <div class="panel-news-meta">
+                                    <span class="panel-news-source">${item.publisher}</span>
+                                    <span>${item.pubDate ? new Date(item.pubDate).toLocaleDateString() : 'Recent'}</span>
+                                </div>
+                            </a>
+                        `;
+                        globalNewsEl.appendChild(div);
+                    });
+                });
+        });
+    </script>
+</body>
+
+</html>

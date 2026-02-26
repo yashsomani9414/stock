@@ -4,3 +4,13 @@ venv/
 .env
 .DS_Store
 sp500_data.json
+*.log
+*.txt
+debug_*.py
+test_*.py
+analyze_*.py
+venv/
+.env
+.idea/
+.vscode/
+node_modules/
