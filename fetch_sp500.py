@@ -9,6 +9,106 @@ from bs4 import BeautifulSoup
 
 DATA_FILE = 'sp500_data.json'
 
+def sanitize_data(obj):
+    """Recursively replace NaN values with None for JSON serializability."""
+    if isinstance(obj, dict):
+        return {k: sanitize_data(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [sanitize_data(x) for x in obj]
+    elif isinstance(obj, float):
+        if pd.isna(obj):
+            return None
+    return obj
+
+def load_sp500_data():
+    """Load S&P 500 stock data from JSON file."""
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, 'r') as f:
+                data = json.load(f)
+            return data
+        except Exception as e:
+            print(f"Error loading {DATA_FILE}: {e}")
+            return []
+    return []
+
+def calculate_sector_data(data):
+    """Aggregate data by sector."""
+    if not data:
+        return []
+    
+    df = pd.DataFrame(data)
+    if df.empty or 'Sector' not in df.columns:
+        return []
+
+    sectors = []
+    for sector_name, group in df.groupby("Sector"):
+        if sector_name == "N/A":
+            continue
+
+        total_mcap = sum([x for x in group['Market Cap'] if x is not None])
+
+        # Weighted P/E
+        pe_group = group.dropna(subset=['P/E Ratio', 'Market Cap'])
+        if not pe_group.empty and total_mcap > 0:
+            weighted_pe = (pe_group['P/E Ratio'] * pe_group['Market Cap']).sum() / pe_group['Market Cap'].sum()
+        else:
+            weighted_pe = None
+
+        avg_50d = group['50D MA'].mean()
+        avg_200d = group['200D MA'].mean()
+        # Ensure Trend Strength is numeric before averaging
+        trend_series = pd.to_numeric(group['Trend Strength'], errors='coerce')
+        avg_trend = trend_series.mean()
+        
+        avg_ret_5d = group.get('5D Return', pd.Series([None])).mean()
+        avg_ret_1m = group.get('1M Return', pd.Series([None])).mean()
+        avg_ret_6m = group.get('6M Return', pd.Series([None])).mean()
+
+        # Decision Breakdown
+        decisions = group['Trade Decision'].value_counts().to_dict()
+        breakdown = {
+            "Strong Buy": decisions.get("Strong Buy", 0),
+            "Buy (Small)": decisions.get("Buy (Small)", 0),
+            "Hold": decisions.get("Hold", 0),
+            "Reduce": decisions.get("Reduce", 0),
+            "Sell": decisions.get("Sell", 0),
+            "Rejected": decisions.get("Rejected – Universal Filter", 0)
+        }
+
+        # --- Aggregate Sector Decision Logic ---
+        total_valid = sum([v for k, v in breakdown.items() if k != "Rejected"])
+        sector_decision = "Hold"
+        
+        if total_valid > 0:
+            pct_sb = (breakdown["Strong Buy"] / total_valid) * 100
+            pct_buy_combined = ((breakdown["Strong Buy"] + breakdown["Buy (Small)"]) / total_valid) * 100
+            pct_sell_combined = ((breakdown["Sell"] + breakdown["Reduce"]) / total_valid) * 100
+            pct_sell_only = (breakdown["Sell"] / total_valid) * 100
+            
+            if pct_sb > 10 or pct_buy_combined > 50:
+                sector_decision = "Strong Buy"
+            elif pct_buy_combined > 30:
+                sector_decision = "Buy"
+            elif pct_sell_combined > 40 or pct_sell_only > 25:
+                sector_decision = "Sell"
+
+        sectors.append({
+            "Sector": sector_name,
+            "Market Cap": total_mcap,
+            "Weighted P/E": round(weighted_pe, 2) if weighted_pe and not pd.isna(weighted_pe) else None,
+            "Avg 50D MA": round(avg_50d, 2) if avg_50d and not pd.isna(avg_50d) else None,
+            "Avg 200D MA": round(avg_200d, 2) if avg_200d and not pd.isna(avg_200d) else None,
+            "Avg Trend Strength": round(avg_trend, 2) if avg_trend is not None and not pd.isna(avg_trend) else None,
+            "Avg 5D Return": round(avg_ret_5d, 2) if avg_ret_5d is not None and not pd.isna(avg_ret_5d) else None,
+            "Avg 1M Return": round(avg_ret_1m, 2) if avg_ret_1m is not None and not pd.isna(avg_ret_1m) else None,
+            "Avg 6M Return": round(avg_ret_6m, 2) if avg_ret_6m is not None and not pd.isna(avg_ret_6m) else None,
+            "Stock Count": len(group),
+            "Decision Breakdown": breakdown,
+            "Sector Decision": sector_decision
+        })
+    return sectors
+
 def get_sp500_tickers():
     """Scrape S&P 500 tickers from Wikipedia."""
     try:
