@@ -200,7 +200,9 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         # C) VOLUME
         ret1d = row.get('1D Return') or 0
         vol1d_ratio = 1 + (row.get('Vol Change 1D') or 0) / 100
-        if (row.get('Vol Change 5D') or 0) / 100 + 1 >= 1.2: score += 5
+        vol5d_ratio = 1 + (row.get('Vol Change 5D') or 0) / 100
+        
+        if vol5d_ratio >= 1.2: score += 5
         if vol1d_ratio >= 1.5: score += 10
         if ret1d > 0 and (row.get('Vol Change 1D') or 0) > 0: score += 5
         if ret1d < 0 and vol1d_ratio >= 2.0: score -= 10
@@ -229,20 +231,21 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
             return final_points, "Sell", new_low
 
         edate_str = row.get('EarningsDate')
+        edate_dist = 999
         if edate_str:
             try:
-                days_diff = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
-                if -1 <= days_diff <= 7: return final_points, "Hold", new_low
+                edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
+                if -1 <= edate_dist <= 7: return final_points, "Hold", new_low
             except: pass
 
         if (prev_score and prev_score >= 75 and final_points < 65) or (ret5d < 0 and ret1m < 0):
             return final_points, "Reduce", new_low
 
-        if (final_points >= 80 and price > ma50 and price > ma200 and ret6m > 0):
-            return final_points, "Strong Buy", new_low
+        if (final_points >= 80 and price > ma50 and price > ma200 and vol5d_ratio >= 1.2 and ret6m > 0):
+            if edate_dist > 7: return final_points, "Strong Buy", new_low
 
         if (70 <= final_points <= 79 and price > ma50 and price > ma200 and ret6m > 0):
-            return final_points, "Buy (Small)", new_low
+            if edate_dist > 7: return final_points, "Buy (Small)", new_low
 
         return final_points, "Hold", new_low
     except Exception as e:

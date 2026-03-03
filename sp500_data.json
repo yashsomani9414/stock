@@ -20,9 +20,9 @@
     "EarningsDate": "2026-04-21",
     "Trend Strength": 4.06,
     "Score": 42,
-    "Trade Decision": "Hold",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AOS",
@@ -47,7 +47,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ABT",
@@ -71,8 +71,8 @@
     "Trend Strength": -7.17,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ABBV",
@@ -95,9 +95,9 @@
     "EarningsDate": "2026-05-01",
     "Trend Strength": 6.52,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ACN",
@@ -121,8 +121,8 @@
     "Trend Strength": -3.89,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ADBE",
@@ -146,8 +146,8 @@
     "Trend Strength": -12.95,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AMD",
@@ -172,7 +172,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AES",
@@ -197,7 +197,7 @@
     "Score": 57,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AFL",
@@ -222,7 +222,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "A",
@@ -246,8 +246,8 @@
     "Trend Strength": 3.85,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "APD",
@@ -271,8 +271,8 @@
     "Trend Strength": -1.3,
     "Score": 33,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ABNB",
@@ -297,7 +297,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AKAM",
@@ -322,7 +322,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ALB",
@@ -347,7 +347,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ARE",
@@ -371,8 +371,8 @@
     "Trend Strength": -18.34,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ALGN",
@@ -397,7 +397,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ALLE",
@@ -422,7 +422,7 @@
     "Score": 49,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LNT",
@@ -447,7 +447,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ALL",
@@ -472,7 +472,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GOOGL",
@@ -497,7 +497,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GOOG",
@@ -522,7 +522,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MO",
@@ -547,7 +547,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AMZN",
@@ -571,8 +571,8 @@
     "Trend Strength": 0.88,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AMCR",
@@ -597,7 +597,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AEE",
@@ -622,7 +622,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AEP",
@@ -647,7 +647,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AXP",
@@ -671,8 +671,8 @@
     "Trend Strength": 7.29,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AIG",
@@ -696,8 +696,8 @@
     "Trend Strength": -1.11,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AMT",
@@ -721,8 +721,8 @@
     "Trend Strength": -7.3,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AWK",
@@ -746,33 +746,8 @@
     "Trend Strength": -3.93,
     "Score": 34,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
-  },
-  {
-    "Symbol": "AMP",
-    "50D MA": 497.41,
-    "200D MA": 495.31,
-    "1D Return": 1.11,
-    "5D Return": 4.75,
-    "1M Return": -9.57,
-    "6M Return": -7.07,
-    "6M Volatility": 27.53,
-    "Volume": 487600,
-    "Vol Change 1D": -38.31,
-    "Vol Change 5D": -19.27,
-    "Name": "Ameriprise Financial, Inc.",
-    "Sector": "Financial Services",
-    "Industry": "Asset Management",
-    "Market Cap": 44160872448,
-    "P/E Ratio": 14.369104,
-    "Price": 475.33,
-    "EarningsDate": "2026-04-23",
-    "Trend Strength": 0.42,
-    "Score": 15,
-    "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AME",
@@ -797,7 +772,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AMGN",
@@ -822,7 +797,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "APH",
@@ -847,7 +822,7 @@
     "Score": 50,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ADI",
@@ -872,7 +847,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AON",
@@ -896,8 +871,8 @@
     "Trend Strength": -3.51,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "APA",
@@ -922,7 +897,7 @@
     "Score": 90,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "APO",
@@ -946,8 +921,8 @@
     "Trend Strength": -0.22,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AAPL",
@@ -972,7 +947,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AMAT",
@@ -997,7 +972,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "APP",
@@ -1021,8 +996,8 @@
     "Trend Strength": 6.59,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "APTV",
@@ -1046,8 +1021,8 @@
     "Trend Strength": 3.91,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ACGL",
@@ -1072,7 +1047,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ADM",
@@ -1097,7 +1072,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ARES",
@@ -1121,8 +1096,8 @@
     "Trend Strength": -7.38,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ANET",
@@ -1146,8 +1121,8 @@
     "Trend Strength": 5.15,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AJG",
@@ -1171,8 +1146,8 @@
     "Trend Strength": -13.44,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AIZ",
@@ -1197,7 +1172,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "T",
@@ -1221,8 +1196,8 @@
     "Trend Strength": -3.15,
     "Score": 33,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ATO",
@@ -1247,7 +1222,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ADSK",
@@ -1271,8 +1246,8 @@
     "Trend Strength": -10.46,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ADP",
@@ -1296,8 +1271,8 @@
     "Trend Strength": -12.46,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AZO",
@@ -1322,7 +1297,7 @@
     "Score": 61,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AVB",
@@ -1346,8 +1321,8 @@
     "Trend Strength": -4.21,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AVY",
@@ -1372,7 +1347,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AXON",
@@ -1396,8 +1371,8 @@
     "Trend Strength": -19.52,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BKR",
@@ -1422,7 +1397,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BALL",
@@ -1447,7 +1422,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BAC",
@@ -1471,8 +1446,8 @@
     "Trend Strength": 7.5,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BAX",
@@ -1496,8 +1471,8 @@
     "Trend Strength": -13.81,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BDX",
@@ -1522,7 +1497,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BRK-B",
@@ -1546,8 +1521,8 @@
     "Trend Strength": 0.57,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BBY",
@@ -1571,8 +1546,8 @@
     "Trend Strength": -4.89,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TECH",
@@ -1596,8 +1571,8 @@
     "Trend Strength": 9.8,
     "Score": 40,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BIIB",
@@ -1622,7 +1597,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BLK",
@@ -1646,8 +1621,8 @@
     "Trend Strength": 1.23,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 4,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 5,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BX",
@@ -1671,8 +1646,8 @@
     "Trend Strength": -6.14,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "XYZ",
@@ -1696,8 +1671,8 @@
     "Trend Strength": -9.72,
     "Score": 40,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BK",
@@ -1722,7 +1697,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BA",
@@ -1746,8 +1721,8 @@
     "Trend Strength": 6.81,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BKNG",
@@ -1771,8 +1746,8 @@
     "Trend Strength": -6.81,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BSX",
@@ -1796,8 +1771,8 @@
     "Trend Strength": -10.85,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BMY",
@@ -1822,7 +1797,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "AVGO",
@@ -1845,9 +1820,9 @@
     "EarningsDate": "2026-03-04",
     "Trend Strength": 5.36,
     "Score": 40,
-    "Trade Decision": "Hold",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BR",
@@ -1871,8 +1846,8 @@
     "Trend Strength": -11.45,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BRO",
@@ -1896,8 +1871,8 @@
     "Trend Strength": -16.24,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BF-B",
@@ -1921,8 +1896,8 @@
     "Trend Strength": -2.07,
     "Score": 31,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BLDR",
@@ -1946,8 +1921,8 @@
     "Trend Strength": -4.78,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BG",
@@ -1972,7 +1947,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BXP",
@@ -1996,8 +1971,8 @@
     "Trend Strength": -4.99,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CHRW",
@@ -2022,7 +1997,7 @@
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CDNS",
@@ -2046,8 +2021,8 @@
     "Trend Strength": -5.58,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CPT",
@@ -2072,7 +2047,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CPB",
@@ -2096,8 +2071,8 @@
     "Trend Strength": -9.16,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "COF",
@@ -2121,8 +2096,8 @@
     "Trend Strength": 4.84,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CAH",
@@ -2147,7 +2122,7 @@
     "Score": 73,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CCL",
@@ -2172,7 +2147,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CARR",
@@ -2196,8 +2171,8 @@
     "Trend Strength": -6.53,
     "Score": 34,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CVNA",
@@ -2221,8 +2196,8 @@
     "Trend Strength": 12.78,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CAT",
@@ -2247,7 +2222,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CBOE",
@@ -2272,7 +2247,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CBRE",
@@ -2296,8 +2271,8 @@
     "Trend Strength": 5.43,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CDW",
@@ -2321,8 +2296,8 @@
     "Trend Strength": -15.25,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "COR",
@@ -2347,7 +2322,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CNC",
@@ -2372,7 +2347,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CNP",
@@ -2397,7 +2372,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CF",
@@ -2422,7 +2397,7 @@
     "Score": 90,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CRL",
@@ -2446,8 +2421,8 @@
     "Trend Strength": 15.32,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SCHW",
@@ -2472,7 +2447,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CHTR",
@@ -2496,8 +2471,8 @@
     "Trend Strength": -22.62,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CVX",
@@ -2520,9 +2495,9 @@
     "EarningsDate": "2026-05-01",
     "Trend Strength": 9.97,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CMG",
@@ -2546,8 +2521,8 @@
     "Trend Strength": -8.52,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CB",
@@ -2570,9 +2545,9 @@
     "EarningsDate": "2026-04-28",
     "Trend Strength": 8.67,
     "Score": 82,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CHD",
@@ -2597,7 +2572,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CIEN",
@@ -2622,7 +2597,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CI",
@@ -2646,8 +2621,8 @@
     "Trend Strength": -3.23,
     "Score": 36,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CINF",
@@ -2670,9 +2645,9 @@
     "EarningsDate": "2026-04-27",
     "Trend Strength": 5.15,
     "Score": 82,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CTAS",
@@ -2696,8 +2671,8 @@
     "Trend Strength": -4.59,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CSCO",
@@ -2722,7 +2697,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "C",
@@ -2744,10 +2719,10 @@
     "Price": 111.45,
     "EarningsDate": "2026-04-14",
     "Trend Strength": 18.01,
-    "Score": 52,
+    "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CFG",
@@ -2772,7 +2747,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CLX",
@@ -2797,7 +2772,7 @@
     "Score": 48,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CME",
@@ -2822,7 +2797,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CMS",
@@ -2847,7 +2822,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KO",
@@ -2872,7 +2847,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CTSH",
@@ -2896,8 +2871,8 @@
     "Trend Strength": 4.51,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "COIN",
@@ -2921,8 +2896,8 @@
     "Trend Strength": -27.97,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CL",
@@ -2947,7 +2922,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CMCSA",
@@ -2972,7 +2947,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FIX",
@@ -2997,7 +2972,7 @@
     "Score": 68,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CAG",
@@ -3021,8 +2996,8 @@
     "Trend Strength": -2.62,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "COP",
@@ -3045,9 +3020,9 @@
     "EarningsDate": "2026-05-07",
     "Trend Strength": 8.86,
     "Score": 92,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ED",
@@ -3072,7 +3047,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "STZ",
@@ -3097,7 +3072,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CEG",
@@ -3121,8 +3096,8 @@
     "Trend Strength": -4.48,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "COO",
@@ -3147,7 +3122,7 @@
     "Score": 75,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CPRT",
@@ -3171,8 +3146,8 @@
     "Trend Strength": -12.16,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GLW",
@@ -3197,7 +3172,7 @@
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CPAY",
@@ -3222,7 +3197,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CTVA",
@@ -3247,7 +3222,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CSGP",
@@ -3271,8 +3246,8 @@
     "Trend Strength": -21.88,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "COST",
@@ -3297,7 +3272,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CTRA",
@@ -3322,7 +3297,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CRH",
@@ -3347,7 +3322,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CRWD",
@@ -3371,8 +3346,8 @@
     "Trend Strength": -6.62,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CCI",
@@ -3396,8 +3371,8 @@
     "Trend Strength": -7.35,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CSX",
@@ -3422,7 +3397,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CMI",
@@ -3447,7 +3422,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CVS",
@@ -3472,7 +3447,7 @@
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DHR",
@@ -3496,8 +3471,8 @@
     "Trend Strength": 7.21,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DRI",
@@ -3522,7 +3497,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DDOG",
@@ -3546,8 +3521,8 @@
     "Trend Strength": -8.91,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DVA",
@@ -3571,8 +3546,8 @@
     "Trend Strength": -4.51,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DECK",
@@ -3597,7 +3572,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DE",
@@ -3622,7 +3597,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DELL",
@@ -3647,7 +3622,7 @@
     "Score": 51,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DAL",
@@ -3672,7 +3647,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DVN",
@@ -3697,7 +3672,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DXCM",
@@ -3721,8 +3696,8 @@
     "Trend Strength": -4.86,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FANG",
@@ -3747,7 +3722,7 @@
     "Score": 88,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DLR",
@@ -3772,7 +3747,7 @@
     "Score": 49,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DG",
@@ -3797,7 +3772,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DLTR",
@@ -3822,7 +3797,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "D",
@@ -3847,7 +3822,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DPZ",
@@ -3871,8 +3846,8 @@
     "Trend Strength": -5.88,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DASH",
@@ -3896,8 +3871,8 @@
     "Trend Strength": -11.48,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DOV",
@@ -3922,7 +3897,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DOW",
@@ -3947,7 +3922,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DHI",
@@ -3972,7 +3947,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DTE",
@@ -3997,7 +3972,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DUK",
@@ -4022,7 +3997,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DD",
@@ -4047,7 +4022,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ETN",
@@ -4072,7 +4047,7 @@
     "Score": 49,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EBAY",
@@ -4097,7 +4072,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ECL",
@@ -4122,7 +4097,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EIX",
@@ -4147,7 +4122,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EW",
@@ -4172,7 +4147,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EA",
@@ -4197,7 +4172,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ELV",
@@ -4221,8 +4196,8 @@
     "Trend Strength": 3.5,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EME",
@@ -4247,7 +4222,7 @@
     "Score": 65,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EMR",
@@ -4272,7 +4247,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ETR",
@@ -4297,7 +4272,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EOG",
@@ -4322,7 +4297,7 @@
     "Score": 68,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EPAM",
@@ -4346,8 +4321,8 @@
     "Trend Strength": 9.63,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EQT",
@@ -4372,7 +4347,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EFX",
@@ -4396,8 +4371,8 @@
     "Trend Strength": -10.9,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EQIX",
@@ -4422,7 +4397,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EQR",
@@ -4446,8 +4421,8 @@
     "Trend Strength": -1.24,
     "Score": 33,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ERIE",
@@ -4471,8 +4446,8 @@
     "Trend Strength": -11.6,
     "Score": 15,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ESS",
@@ -4496,8 +4471,8 @@
     "Trend Strength": -2.49,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EL",
@@ -4521,8 +4496,8 @@
     "Trend Strength": 19.29,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EG",
@@ -4546,8 +4521,8 @@
     "Trend Strength": -0.62,
     "Score": 36,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EVRG",
@@ -4572,7 +4547,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ES",
@@ -4597,7 +4572,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EXC",
@@ -4622,7 +4597,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EXE",
@@ -4647,7 +4622,7 @@
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EXPE",
@@ -4671,8 +4646,8 @@
     "Trend Strength": 17.56,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EXPD",
@@ -4695,9 +4670,9 @@
     "EarningsDate": "2026-05-05",
     "Trend Strength": 18.91,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "EXR",
@@ -4722,7 +4697,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "XOM",
@@ -4745,9 +4720,9 @@
     "EarningsDate": "2026-05-01",
     "Trend Strength": 16.06,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FFIV",
@@ -4771,8 +4746,8 @@
     "Trend Strength": -5.98,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FDS",
@@ -4796,8 +4771,8 @@
     "Trend Strength": -23.05,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FICO",
@@ -4821,8 +4796,8 @@
     "Trend Strength": -5.96,
     "Score": 10,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FAST",
@@ -4847,7 +4822,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FRT",
@@ -4872,7 +4847,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FDX",
@@ -4897,7 +4872,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FIS",
@@ -4921,8 +4896,8 @@
     "Trend Strength": -14.32,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FITB",
@@ -4947,7 +4922,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FSLR",
@@ -4971,8 +4946,8 @@
     "Trend Strength": 12.37,
     "Score": 30,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FE",
@@ -4997,7 +4972,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FISV",
@@ -5021,8 +4996,8 @@
     "Trend Strength": -42.63,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "F",
@@ -5045,9 +5020,9 @@
     "EarningsDate": "2026-04-28",
     "Trend Strength": 13.41,
     "Score": 37,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FTNT",
@@ -5071,8 +5046,8 @@
     "Trend Strength": -8.55,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FTV",
@@ -5097,7 +5072,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FOXA",
@@ -5121,8 +5096,8 @@
     "Trend Strength": 10.54,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FOX",
@@ -5146,8 +5121,8 @@
     "Trend Strength": 9.92,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "BEN",
@@ -5172,7 +5147,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "FCX",
@@ -5197,7 +5172,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GRMN",
@@ -5222,7 +5197,7 @@
     "Score": 48,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IT",
@@ -5246,8 +5221,8 @@
     "Trend Strength": -25.27,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GE",
@@ -5272,7 +5247,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GEHC",
@@ -5297,7 +5272,7 @@
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GEV",
@@ -5322,7 +5297,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GEN",
@@ -5346,8 +5321,8 @@
     "Trend Strength": -9.04,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GNRC",
@@ -5372,7 +5347,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GD",
@@ -5397,7 +5372,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GIS",
@@ -5421,8 +5396,8 @@
     "Trend Strength": -4.65,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GM",
@@ -5445,9 +5420,9 @@
     "EarningsDate": "2026-04-28",
     "Trend Strength": 27.25,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GPC",
@@ -5471,8 +5446,8 @@
     "Trend Strength": 1.27,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GILD",
@@ -5497,7 +5472,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GPN",
@@ -5521,8 +5496,8 @@
     "Trend Strength": -4.67,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GL",
@@ -5547,7 +5522,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GDDY",
@@ -5571,8 +5546,8 @@
     "Trend Strength": -24.59,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GS",
@@ -5597,7 +5572,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HAL",
@@ -5622,7 +5597,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HIG",
@@ -5647,7 +5622,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HAS",
@@ -5672,7 +5647,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HCA",
@@ -5697,7 +5672,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DOC",
@@ -5721,8 +5696,8 @@
     "Trend Strength": -1.58,
     "Score": 39,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HSIC",
@@ -5747,7 +5722,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HSY",
@@ -5772,7 +5747,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HPE",
@@ -5796,8 +5771,8 @@
     "Trend Strength": 3.5,
     "Score": 42,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HLT",
@@ -5822,7 +5797,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HOLX",
@@ -5847,7 +5822,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HD",
@@ -5871,8 +5846,8 @@
     "Trend Strength": -0.82,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HON",
@@ -5897,7 +5872,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HRL",
@@ -5921,8 +5896,8 @@
     "Trend Strength": -5.4,
     "Score": 13,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HST",
@@ -5947,7 +5922,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HWM",
@@ -5972,7 +5947,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HPQ",
@@ -5996,8 +5971,8 @@
     "Trend Strength": -16.39,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HUBB",
@@ -6022,7 +5997,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HUM",
@@ -6046,8 +6021,8 @@
     "Trend Strength": -7.91,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HBAN",
@@ -6071,8 +6046,8 @@
     "Trend Strength": 6.91,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 4,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 5,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HII",
@@ -6097,7 +6072,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IBM",
@@ -6121,8 +6096,8 @@
     "Trend Strength": 3.09,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IEX",
@@ -6147,7 +6122,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IDXX",
@@ -6170,9 +6145,9 @@
     "EarningsDate": "2026-04-30",
     "Trend Strength": 7.01,
     "Score": 37,
-    "Trade Decision": "Hold",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ITW",
@@ -6197,7 +6172,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "INCY",
@@ -6222,7 +6197,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IR",
@@ -6247,7 +6222,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PODD",
@@ -6271,8 +6246,8 @@
     "Trend Strength": -11.5,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "INTC",
@@ -6297,7 +6272,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IBKR",
@@ -6322,7 +6297,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ICE",
@@ -6346,8 +6321,8 @@
     "Trend Strength": -2.25,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IFF",
@@ -6372,7 +6347,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IP",
@@ -6396,8 +6371,8 @@
     "Trend Strength": -3.85,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "INTU",
@@ -6421,8 +6396,8 @@
     "Trend Strength": -19.6,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ISRG",
@@ -6446,8 +6421,8 @@
     "Trend Strength": 3.13,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IVZ",
@@ -6471,8 +6446,8 @@
     "Trend Strength": 23.24,
     "Score": 42,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "INVH",
@@ -6496,8 +6471,8 @@
     "Trend Strength": -7.78,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IQV",
@@ -6521,8 +6496,8 @@
     "Trend Strength": 9.54,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "IRM",
@@ -6546,8 +6521,8 @@
     "Trend Strength": -1.36,
     "Score": 39,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "JBHT",
@@ -6572,7 +6547,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "JBL",
@@ -6597,7 +6572,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "JKHY",
@@ -6621,8 +6596,8 @@
     "Trend Strength": 4.27,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "J",
@@ -6646,8 +6621,8 @@
     "Trend Strength": -2.02,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "JNJ",
@@ -6672,7 +6647,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "JCI",
@@ -6697,7 +6672,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "JPM",
@@ -6720,9 +6695,9 @@
     "EarningsDate": "2026-04-14",
     "Trend Strength": 5.09,
     "Score": 36,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KVUE",
@@ -6746,8 +6721,8 @@
     "Trend Strength": -4.97,
     "Score": 26,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KDP",
@@ -6771,8 +6746,8 @@
     "Trend Strength": -3.87,
     "Score": 44,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KEY",
@@ -6794,10 +6769,10 @@
     "Price": 20.91,
     "EarningsDate": "2026-04-16",
     "Trend Strength": 15.65,
-    "Score": 49,
+    "Score": 42,
     "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 1,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KEYS",
@@ -6822,7 +6797,7 @@
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KMB",
@@ -6846,8 +6821,8 @@
     "Trend Strength": -12.01,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KIM",
@@ -6872,7 +6847,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KMI",
@@ -6895,9 +6870,9 @@
     "EarningsDate": "2026-04-15",
     "Trend Strength": 6.93,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KKR",
@@ -6921,8 +6896,8 @@
     "Trend Strength": -8.32,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KLAC",
@@ -6947,7 +6922,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KHC",
@@ -6971,8 +6946,8 @@
     "Trend Strength": -4.83,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "KR",
@@ -6997,7 +6972,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LHX",
@@ -7022,7 +6997,7 @@
     "Score": 88,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LH",
@@ -7047,7 +7022,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LRCX",
@@ -7072,7 +7047,7 @@
     "Score": 58,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LW",
@@ -7096,8 +7071,8 @@
     "Trend Strength": -14.96,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LVS",
@@ -7122,7 +7097,7 @@
     "Score": 47,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LDOS",
@@ -7147,7 +7122,7 @@
     "Score": 54,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LEN",
@@ -7171,8 +7146,8 @@
     "Trend Strength": -4.44,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LII",
@@ -7196,8 +7171,8 @@
     "Trend Strength": -3.66,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LLY",
@@ -7222,7 +7197,7 @@
     "Score": 50,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LIN",
@@ -7247,7 +7222,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LYV",
@@ -7271,8 +7246,8 @@
     "Trend Strength": -1.15,
     "Score": 31,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LMT",
@@ -7297,7 +7272,7 @@
     "Score": 97,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "L",
@@ -7322,7 +7297,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LOW",
@@ -7347,7 +7322,7 @@
     "Score": 64,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LULU",
@@ -7371,8 +7346,8 @@
     "Trend Strength": -5.8,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LYB",
@@ -7397,7 +7372,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MTB",
@@ -7422,7 +7397,7 @@
     "Score": 67,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MPC",
@@ -7447,7 +7422,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MAR",
@@ -7472,7 +7447,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MRSH",
@@ -7496,8 +7471,8 @@
     "Trend Strength": -7.12,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MLM",
@@ -7522,7 +7497,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MAS",
@@ -7547,7 +7522,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MA",
@@ -7571,8 +7546,8 @@
     "Trend Strength": -2.74,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MTCH",
@@ -7596,8 +7571,8 @@
     "Trend Strength": -3.66,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MKC",
@@ -7621,8 +7596,8 @@
     "Trend Strength": -1.45,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MCD",
@@ -7647,7 +7622,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MCK",
@@ -7672,7 +7647,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MDT",
@@ -7697,7 +7672,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MRK",
@@ -7722,7 +7697,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "META",
@@ -7746,8 +7721,8 @@
     "Trend Strength": -4.92,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MET",
@@ -7771,8 +7746,8 @@
     "Trend Strength": 0.15,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MTD",
@@ -7797,7 +7772,7 @@
     "Score": 57,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MGM",
@@ -7822,7 +7797,7 @@
     "Score": 48,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MCHP",
@@ -7847,7 +7822,7 @@
     "Score": 55,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MU",
@@ -7872,7 +7847,7 @@
     "Score": 58,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MSFT",
@@ -7896,8 +7871,8 @@
     "Trend Strength": -8.4,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MAA",
@@ -7921,8 +7896,8 @@
     "Trend Strength": -2.18,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MRNA",
@@ -7947,7 +7922,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MOH",
@@ -7971,8 +7946,8 @@
     "Trend Strength": -13.4,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TAP",
@@ -7996,8 +7971,8 @@
     "Trend Strength": 1.58,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MDLZ",
@@ -8021,8 +7996,8 @@
     "Trend Strength": -5.28,
     "Score": 30,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MPWR",
@@ -8047,7 +8022,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MNST",
@@ -8072,7 +8047,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MCO",
@@ -8096,8 +8071,8 @@
     "Trend Strength": 0.4,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MS",
@@ -8122,7 +8097,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MOS",
@@ -8146,8 +8121,8 @@
     "Trend Strength": -11.38,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MSI",
@@ -8172,7 +8147,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "MSCI",
@@ -8197,7 +8172,7 @@
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NDAQ",
@@ -8221,8 +8196,8 @@
     "Trend Strength": 3.05,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NTAP",
@@ -8246,8 +8221,8 @@
     "Trend Strength": -4.65,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NFLX",
@@ -8271,8 +8246,8 @@
     "Trend Strength": -21.5,
     "Score": 28,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NEM",
@@ -8297,7 +8272,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NWSA",
@@ -8321,8 +8296,8 @@
     "Trend Strength": -7.52,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NWS",
@@ -8346,8 +8321,8 @@
     "Trend Strength": -7.55,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NEE",
@@ -8372,7 +8347,7 @@
     "Score": 63,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NKE",
@@ -8396,8 +8371,8 @@
     "Trend Strength": -5.49,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NI",
@@ -8422,7 +8397,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NDSN",
@@ -8447,7 +8422,7 @@
     "Score": 77,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NSC",
@@ -8472,7 +8447,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NTRS",
@@ -8497,7 +8472,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NOC",
@@ -8520,9 +8495,9 @@
     "EarningsDate": "2026-04-21",
     "Trend Strength": 13.66,
     "Score": 92,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NCLH",
@@ -8547,7 +8522,7 @@
     "Score": 47,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NRG",
@@ -8572,7 +8547,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NUE",
@@ -8597,7 +8572,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NVDA",
@@ -8622,7 +8597,7 @@
     "Score": 67,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NVR",
@@ -8646,8 +8621,8 @@
     "Trend Strength": -0.51,
     "Score": 17,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NXPI",
@@ -8671,8 +8646,8 @@
     "Trend Strength": 5.6,
     "Score": 44,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ORLY",
@@ -8696,8 +8671,8 @@
     "Trend Strength": -2.63,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "OXY",
@@ -8722,7 +8697,7 @@
     "Score": 73,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ODFL",
@@ -8747,7 +8722,7 @@
     "Score": 73,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "OMC",
@@ -8772,7 +8747,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ON",
@@ -8797,7 +8772,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "OKE",
@@ -8822,7 +8797,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ORCL",
@@ -8846,8 +8821,8 @@
     "Trend Strength": -21.16,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "OTIS",
@@ -8872,7 +8847,7 @@
     "Score": 53,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PCAR",
@@ -8897,7 +8872,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PKG",
@@ -8922,7 +8897,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PLTR",
@@ -8946,8 +8921,8 @@
     "Trend Strength": -0.85,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PANW",
@@ -8971,8 +8946,8 @@
     "Trend Strength": -8.93,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PSKY",
@@ -8996,8 +8971,8 @@
     "Trend Strength": -14.24,
     "Score": 33,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PH",
@@ -9020,9 +8995,9 @@
     "EarningsDate": "2026-04-30",
     "Trend Strength": 18.86,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PAYX",
@@ -9046,8 +9021,8 @@
     "Trend Strength": -16.9,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PAYC",
@@ -9071,8 +9046,8 @@
     "Trend Strength": -27.31,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PYPL",
@@ -9096,8 +9071,8 @@
     "Trend Strength": -20.03,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PNR",
@@ -9121,8 +9096,8 @@
     "Trend Strength": -1.43,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PEP",
@@ -9147,7 +9122,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PFE",
@@ -9172,7 +9147,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PCG",
@@ -9197,7 +9172,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PM",
@@ -9222,7 +9197,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PSX",
@@ -9245,9 +9220,9 @@
     "EarningsDate": "2026-04-24",
     "Trend Strength": 9.56,
     "Score": 82,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PNW",
@@ -9272,7 +9247,7 @@
     "Score": 82,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PNC",
@@ -9297,7 +9272,7 @@
     "Score": 64,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "POOL",
@@ -9321,8 +9296,8 @@
     "Trend Strength": -12.0,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PPG",
@@ -9347,7 +9322,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PPL",
@@ -9372,7 +9347,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PFG",
@@ -9397,7 +9372,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PG",
@@ -9421,8 +9396,8 @@
     "Trend Strength": -0.9,
     "Score": 38,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PGR",
@@ -9446,8 +9421,8 @@
     "Trend Strength": -7.24,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PLD",
@@ -9470,9 +9445,9 @@
     "EarningsDate": "2026-04-15",
     "Trend Strength": 12.7,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PRU",
@@ -9496,8 +9471,8 @@
     "Trend Strength": 4.24,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PEG",
@@ -9522,7 +9497,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PTC",
@@ -9546,8 +9521,8 @@
     "Trend Strength": -10.94,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PSA",
@@ -9571,8 +9546,8 @@
     "Trend Strength": -0.35,
     "Score": 39,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PHM",
@@ -9597,7 +9572,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "PWR",
@@ -9622,7 +9597,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "QCOM",
@@ -9646,8 +9621,8 @@
     "Trend Strength": -1.45,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DGX",
@@ -9672,7 +9647,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RL",
@@ -9697,7 +9672,7 @@
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RJF",
@@ -9721,8 +9696,8 @@
     "Trend Strength": 2.3,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RTX",
@@ -9747,7 +9722,7 @@
     "Score": 95,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "O",
@@ -9772,7 +9747,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "REG",
@@ -9795,9 +9770,9 @@
     "EarningsDate": "2026-04-29",
     "Trend Strength": 2.91,
     "Score": 82,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "REGN",
@@ -9822,7 +9797,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RF",
@@ -9847,7 +9822,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RSG",
@@ -9871,8 +9846,8 @@
     "Trend Strength": -4.45,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RMD",
@@ -9896,8 +9871,8 @@
     "Trend Strength": -2.28,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RVTY",
@@ -9921,8 +9896,8 @@
     "Trend Strength": 7.79,
     "Score": 40,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "HOOD",
@@ -9946,8 +9921,8 @@
     "Trend Strength": -6.99,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ROK",
@@ -9972,7 +9947,7 @@
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ROL",
@@ -9997,7 +9972,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ROP",
@@ -10021,8 +9996,8 @@
     "Trend Strength": -19.15,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ROST",
@@ -10047,7 +10022,7 @@
     "Score": 75,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "RCL",
@@ -10072,7 +10047,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SPGI",
@@ -10096,8 +10071,8 @@
     "Trend Strength": -3.27,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "CRM",
@@ -10121,8 +10096,8 @@
     "Trend Strength": -8.81,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SNDK",
@@ -10147,7 +10122,7 @@
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SBAC",
@@ -10171,8 +10146,8 @@
     "Trend Strength": -6.98,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SLB",
@@ -10197,7 +10172,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "STX",
@@ -10222,7 +10197,7 @@
     "Score": 48,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SRE",
@@ -10247,7 +10222,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "NOW",
@@ -10271,8 +10246,8 @@
     "Trend Strength": -25.59,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SHW",
@@ -10297,7 +10272,7 @@
     "Score": 47,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SPG",
@@ -10322,7 +10297,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SWKS",
@@ -10346,8 +10321,8 @@
     "Trend Strength": -11.62,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SJM",
@@ -10371,8 +10346,8 @@
     "Trend Strength": -0.35,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SW",
@@ -10397,7 +10372,7 @@
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SNA",
@@ -10422,7 +10397,7 @@
     "Score": 77,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SOLV",
@@ -10446,8 +10421,8 @@
     "Trend Strength": 4.22,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SO",
@@ -10472,7 +10447,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "LUV",
@@ -10497,7 +10472,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SWK",
@@ -10522,7 +10497,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SBUX",
@@ -10547,7 +10522,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "STT",
@@ -10572,7 +10547,7 @@
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "STLD",
@@ -10597,7 +10572,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "STE",
@@ -10622,7 +10597,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SYK",
@@ -10646,8 +10621,8 @@
     "Trend Strength": -2.74,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SMCI",
@@ -10671,8 +10646,8 @@
     "Trend Strength": -25.61,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SYF",
@@ -10696,8 +10671,8 @@
     "Trend Strength": 7.7,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SNPS",
@@ -10721,8 +10696,8 @@
     "Trend Strength": -5.24,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "SYY",
@@ -10747,7 +10722,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TMUS",
@@ -10771,8 +10746,8 @@
     "Trend Strength": -9.61,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TROW",
@@ -10796,8 +10771,8 @@
     "Trend Strength": 1.07,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TTWO",
@@ -10821,8 +10796,8 @@
     "Trend Strength": -3.37,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TPR",
@@ -10847,7 +10822,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TRGP",
@@ -10870,9 +10845,9 @@
     "EarningsDate": "2026-04-30",
     "Trend Strength": 15.03,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TGT",
@@ -10897,7 +10872,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TEL",
@@ -10922,7 +10897,7 @@
     "Score": 57,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TDY",
@@ -10947,7 +10922,7 @@
     "Score": 75,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TER",
@@ -10972,7 +10947,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TSLA",
@@ -10997,7 +10972,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TXN",
@@ -11022,7 +10997,7 @@
     "Score": 65,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TPL",
@@ -11047,7 +11022,7 @@
     "Score": 73,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TXT",
@@ -11072,7 +11047,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TMO",
@@ -11097,7 +11072,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TJX",
@@ -11122,7 +11097,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TKO",
@@ -11147,7 +11122,7 @@
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TTD",
@@ -11171,8 +11146,8 @@
     "Trend Strength": -38.35,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TSCO",
@@ -11196,8 +11171,8 @@
     "Trend Strength": -3.85,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TT",
@@ -11222,7 +11197,7 @@
     "Score": 56,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TDG",
@@ -11246,8 +11221,8 @@
     "Trend Strength": 0.24,
     "Score": 25,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TRV",
@@ -11272,7 +11247,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TRMB",
@@ -11296,8 +11271,8 @@
     "Trend Strength": -6.0,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TFC",
@@ -11322,7 +11297,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TYL",
@@ -11346,8 +11321,8 @@
     "Trend Strength": -20.43,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "TSN",
@@ -11372,7 +11347,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "USB",
@@ -11397,7 +11372,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UBER",
@@ -11421,8 +11396,8 @@
     "Trend Strength": -10.65,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UDR",
@@ -11446,8 +11421,8 @@
     "Trend Strength": -0.54,
     "Score": 43,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 3,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 4,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ULTA",
@@ -11472,7 +11447,7 @@
     "Score": 70,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UNP",
@@ -11497,7 +11472,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UAL",
@@ -11520,9 +11495,9 @@
     "EarningsDate": "2026-04-14",
     "Trend Strength": 14.08,
     "Score": 37,
-    "Trade Decision": "Hold",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UPS",
@@ -11547,7 +11522,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "URI",
@@ -11571,8 +11546,8 @@
     "Trend Strength": 1.95,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UNH",
@@ -11596,8 +11571,8 @@
     "Trend Strength": -0.27,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "UHS",
@@ -11622,7 +11597,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VLO",
@@ -11645,9 +11620,9 @@
     "EarningsDate": "2026-04-23",
     "Trend Strength": 15.89,
     "Score": 83,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VTR",
@@ -11672,7 +11647,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VLTO",
@@ -11696,8 +11671,8 @@
     "Trend Strength": -3.12,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VRSN",
@@ -11721,8 +11696,8 @@
     "Trend Strength": -8.85,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VRSK",
@@ -11746,8 +11721,8 @@
     "Trend Strength": -17.05,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VZ",
@@ -11772,7 +11747,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VRTX",
@@ -11797,7 +11772,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VTRS",
@@ -11822,7 +11797,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VICI",
@@ -11846,8 +11821,8 @@
     "Trend Strength": -5.44,
     "Score": 43,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "V",
@@ -11871,8 +11846,8 @@
     "Trend Strength": -2.61,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VST",
@@ -11896,8 +11871,8 @@
     "Trend Strength": -9.96,
     "Score": 8,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "VMC",
@@ -11922,7 +11897,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WRB",
@@ -11947,7 +11922,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "GWW",
@@ -11972,7 +11947,7 @@
     "Score": 77,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WAB",
@@ -11997,7 +11972,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WMT",
@@ -12022,7 +11997,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "DIS",
@@ -12046,8 +12021,8 @@
     "Trend Strength": -2.35,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WBD",
@@ -12072,7 +12047,7 @@
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WM",
@@ -12097,7 +12072,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WAT",
@@ -12121,8 +12096,8 @@
     "Trend Strength": 7.24,
     "Score": 13,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WEC",
@@ -12147,7 +12122,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WFC",
@@ -12171,8 +12146,8 @@
     "Trend Strength": 8.83,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 4,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 5,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WELL",
@@ -12195,9 +12170,9 @@
     "EarningsDate": "2026-04-27",
     "Trend Strength": 10.5,
     "Score": 80,
-    "Trade Decision": "Strong Buy",
+    "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WST",
@@ -12222,7 +12197,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WDC",
@@ -12247,7 +12222,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WY",
@@ -12271,8 +12246,8 @@
     "Trend Strength": 2.91,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WSM",
@@ -12295,9 +12270,9 @@
     "EarningsDate": "2026-03-18",
     "Trend Strength": 8.41,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WMB",
@@ -12322,7 +12297,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WTW",
@@ -12346,8 +12321,8 @@
     "Trend Strength": -0.34,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WDAY",
@@ -12371,8 +12346,8 @@
     "Trend Strength": -18.48,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "WYNN",
@@ -12396,8 +12371,8 @@
     "Trend Strength": 2.13,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "XEL",
@@ -12422,7 +12397,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "XYL",
@@ -12446,8 +12421,8 @@
     "Trend Strength": -0.69,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "YUM",
@@ -12472,7 +12447,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ZBRA",
@@ -12496,8 +12471,8 @@
     "Trend Strength": -12.91,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ZBH",
@@ -12521,8 +12496,8 @@
     "Trend Strength": -3.5,
     "Score": 38,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   },
   {
     "Symbol": "ZTS",
@@ -12546,7 +12521,7 @@
     "Trend Strength": -10.52,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-03 00:37:59"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-03 01:04:32"
   }
 ]
