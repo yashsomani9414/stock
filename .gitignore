@@ -3,9 +3,12 @@ __pycache__/
 venv/
 .env
 .DS_Store
-sp500_data.json
 *.log
-*.txt
+# Keep logs and data files private
+sp500_data.json
+# Allow deployment configs
+!requirements.txt
+!runtime.txt
 debug_*.py
 test_*.py
 analyze_*.py

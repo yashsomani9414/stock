@@ -1,9 +1,8 @@
-numpy==1.24.4
-pandas==1.5.3
-Flask==3.0.0
-yfinance==0.2.36
-requests==2.31.0
-lxml==5.1.0
-gunicorn==21.2.0
-beautifulsoup4==4.12.3
-
+Flask
+pandas
+numpy
+yfinance
+requests
+lxml
+beautifulsoup4
+gunicorn
