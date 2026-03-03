@@ -3,9 +3,10 @@ __pycache__/
 venv/
 .env
 .DS_Store
+# Keep logs private
 *.log
-# Keep logs and data files private
-sp500_data.json
+# Track data file for GCP persistence
+!sp500_data.json
 # Allow deployment configs
 !requirements.txt
 !runtime.txt

@@ -9,9 +9,9 @@ import yfinance as yf
 from bs4 import BeautifulSoup
 import threading
 import re
+from fetch_sp500 import load_sp500_data, calculate_sector_data, fetch_and_save, DATA_FILE, sanitize_data
 
 app = Flask(__name__)
-
 
 # Global state for background refresh
 refresh_status = {
@@ -23,113 +23,6 @@ refresh_status = {
 }
 refresh_lock = threading.Lock()
 
-# Path to JSON data
-DATA_FILE = 'sp500_data.json'
-
-def sanitize_data(obj):
-    """Recursively replace NaN values with None for JSON serializability."""
-    if isinstance(obj, dict):
-        return {k: sanitize_data(v) for k, v in obj.items()}
-    elif isinstance(obj, list):
-        return [sanitize_data(x) for x in obj]
-    elif isinstance(obj, float):
-        if pd.isna(obj):
-            return None
-    return obj
-
-def load_sp500_data():
-    """Load S&P 500 stock data from JSON file."""
-    if os.path.exists(DATA_FILE):
-        try:
-            with open(DATA_FILE, 'r') as f:
-                data = json.load(f)
-            return data
-        except Exception as e:
-            print(f"Error loading {DATA_FILE}: {e}")
-            return []
-    return []
-
-def calculate_sector_data(data):
-    """Aggregate data by sector."""
-    if not data:
-        return []
-    
-    df = pd.DataFrame(data)
-    if df.empty or 'Sector' not in df.columns:
-        return []
-
-    sectors = []
-    for sector_name, group in df.groupby("Sector"):
-        if sector_name == "N/A":
-            continue
-
-        total_mcap = sum([x for x in group['Market Cap'] if x is not None])
-
-        # Weighted P/E
-        pe_group = group.dropna(subset=['P/E Ratio', 'Market Cap'])
-        if not pe_group.empty and total_mcap > 0:
-            weighted_pe = (pe_group['P/E Ratio'] * pe_group['Market Cap']).sum() / pe_group['Market Cap'].sum()
-        else:
-            weighted_pe = None
-
-        avg_50d = group['50D MA'].mean()
-        avg_200d = group['200D MA'].mean()
-        # Ensure Trend Strength is numeric before averaging
-        trend_series = pd.to_numeric(group['Trend Strength'], errors='coerce')
-        avg_trend = trend_series.mean()
-        
-        avg_ret_5d = group.get('5D Return', pd.Series([None])).mean()
-        avg_ret_1m = group.get('1M Return', pd.Series([None])).mean()
-        avg_ret_6m = group.get('6M Return', pd.Series([None])).mean()
-
-        # Decision Breakdown
-        decisions = group['Trade Decision'].value_counts().to_dict()
-        breakdown = {
-            "Strong Buy": decisions.get("Strong Buy", 0),
-            "Buy (Small)": decisions.get("Buy (Small)", 0),
-            "Hold": decisions.get("Hold", 0),
-            "Reduce": decisions.get("Reduce", 0),
-            "Sell": decisions.get("Sell", 0),
-            "Rejected": decisions.get("Rejected – Universal Filter", 0)
-        }
-
-        # --- Aggregate Sector Decision Logic ---
-        # 1. Strong Buy: If Strong Buy > 10% of sector OR (Strong Buy + Buy) > 50%
-        # 2. Buy: If (Strong Buy + Buy) > 30%
-        # 3. Sell: If (Sell + Reduce) > 40% OR Sell > 25%
-        # 4. Hold: Default
-        
-        total_valid = sum([v for k, v in breakdown.items() if k != "Rejected"])
-        sector_decision = "Hold"
-        
-        if total_valid > 0:
-            pct_sb = (breakdown["Strong Buy"] / total_valid) * 100
-            pct_buy_combined = ((breakdown["Strong Buy"] + breakdown["Buy (Small)"]) / total_valid) * 100
-            pct_sell_combined = ((breakdown["Sell"] + breakdown["Reduce"]) / total_valid) * 100
-            pct_sell_only = (breakdown["Sell"] / total_valid) * 100
-            
-            if pct_sb > 10 or pct_buy_combined > 50:
-                sector_decision = "Strong Buy"
-            elif pct_buy_combined > 30:
-                sector_decision = "Buy"
-            elif pct_sell_combined > 40 or pct_sell_only > 25:
-                sector_decision = "Sell"
-
-        sectors.append({
-            "Sector": sector_name,
-            "Market Cap": total_mcap,
-            "Weighted P/E": round(weighted_pe, 2) if weighted_pe and not pd.isna(weighted_pe) else None,
-            "Avg 50D MA": round(avg_50d, 2) if avg_50d and not pd.isna(avg_50d) else None,
-            "Avg 200D MA": round(avg_200d, 2) if avg_200d and not pd.isna(avg_200d) else None,
-            "Avg Trend Strength": round(avg_trend, 2) if avg_trend is not None and not pd.isna(avg_trend) else None,
-            "Avg 5D Return": round(avg_ret_5d, 2) if avg_ret_5d is not None and not pd.isna(avg_ret_5d) else None,
-            "Avg 1M Return": round(avg_ret_1m, 2) if avg_ret_1m is not None and not pd.isna(avg_ret_1m) else None,
-            "Avg 6M Return": round(avg_ret_6m, 2) if avg_ret_6m is not None and not pd.isna(avg_ret_6m) else None,
-            "Stock Count": len(group),
-            "Decision Breakdown": breakdown,
-            "Sector Decision": sector_decision
-        })
-    return sectors
 
 @app.route('/')
 def index():
@@ -256,474 +149,27 @@ def stock_news_page(symbol):
     return render_template('stock_news.html', symbol=symbol)
 
 
-# -----------------------------------
-# MOVING AVERAGES: SINGLE HISTORY CALL
-# -----------------------------------
-
-def get_sp500_tickers():
-    """Scrape S&P 500 tickers from Wikipedia using robust manual parsing."""
-    try:
-        headers = {
-            "User-Agent": "Mozilla/5.0"
-        }
-        url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-        response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
-        table = soup.find('table', {'id': 'constituents'})
-        
-        if not table:
-            print("Could not find table with id 'constituents'")
-            return []
-
-        tickers = []
-        rows = table.find_all('tr')
-        # Skip header row
-        for row in rows[1:]:
-            cells = row.find_all('td')
-            if len(cells) > 0:
-                # The first cell is usually the Symbol
-                symbol = cells[0].text.strip()
-                # Clean symbol (e.g. BRK.B -> BRK-B)
-                sym = symbol.replace('.', '-')
-                tickers.append(sym)
-        
-        print(f"Manually scraped {len(tickers)} tickers.")
-        return tickers
-    except Exception as e:
-        print(f"Error fetching tickers: {e}")
-        return []
-
-def get_stock_info(symbol, delay=1.5):
-    """Fetch fundamental data for a single ticker with rate limiting."""
-    try:
-        time.sleep(delay)
-        stock = yf.Ticker(symbol)
-        info = stock.info
-        
-        return {
-            "Ticker": symbol,
-            "Name": info.get("shortName", "N/A"),
-            "Sector": info.get("sector", "N/A"),
-            "Industry": info.get("industry", "N/A"),
-            "Market Cap": info.get("marketCap"),
-            "P/E Ratio": info.get("trailingPE"),
-            "Price": info.get("currentPrice") or info.get("regularMarketPrice"),
-            "EarningsDate": extract_earnings_date(stock, info)
-        }
-    except Exception as e:
-        print(f"Error fetching info for {symbol}: {e}")
-        return {
-            "Ticker": symbol,
-            "Name": "N/A",
-            "Sector": "N/A",
-            "Industry": "N/A",
-            "Market Cap": None,
-            "P/E Ratio": None,
-            "Price": None,
-            "EarningsDate": None
-        }
-
-def extract_earnings_date(ticker_obj, info):
-    """Robustly extract the next earnings date from yfinance data."""
-    # 1. Try info timestamps
-    for key in ['earningsTimestampStart', 'earningsTimestamp', 'earningsCallTimestampStart']:
-        ts = info.get(key)
-        if ts:
-            try:
-                # If it's a list (sometimes happens), take first
-                if isinstance(ts, list): ts = ts[0]
-                dt = datetime.datetime.fromtimestamp(ts)
-                return dt.strftime('%Y-%m-%d')
-            except:
-                continue
-
-    # 2. Try calendar
-    try:
-        cal = ticker_obj.calendar
-        if cal and 'Earnings Date' in cal:
-            edates = cal['Earnings Date']
-            if edates and isinstance(edates, list) and len(edates) > 0:
-                return edates[0].strftime('%Y-%m-%d')
-    except:
-        pass
-    
-    return None
-
-def get_batch_stock_info(symbols, delay=1.5):
-    """Fetch fundamental data for a batch of tickers."""
-    batch_results = []
-    # yfinance Tickers object allows batch operations
-    tickers_obj = yf.Tickers(" ".join(symbols))
-    
-    for symbol in symbols:
-        try:
-            # Note: yfinance still performs individual info calls under the hood 
-            # for the .info property, but this groups the logic into batches of 20
-            # as requested by the user.
-            info = tickers_obj.tickers[symbol].info
-            batch_results.append({
-                "Ticker": symbol,
-                "Name": info.get("shortName", "N/A"),
-                "Sector": info.get("sector", "N/A"),
-                "Industry": info.get("industry", "N/A"),
-                "Market Cap": info.get("marketCap"),
-                "P/E Ratio": info.get("trailingPE"),
-                "Price": info.get("currentPrice") or info.get("regularMarketPrice"),
-                "EarningsDate": extract_earnings_date(tickers_obj.tickers[symbol], info)
-            })
-        except Exception as e:
-            print(f"Error fetching fundamental info for {symbol}: {e}")
-            batch_results.append({
-                "Ticker": symbol,
-                "Name": "N/A",
-                "Sector": "N/A",
-                "Industry": "N/A",
-                "Market Cap": None,
-                "P/E Ratio": None,
-                "Price": None,
-                "EarningsDate": None
-            })
-    
-    # Delay after processing the batch
-    time.sleep(delay)
-    return batch_results
-
-
-# -----------------------------------
-# BULK DOWNLOAD & PROCESSING
-# -----------------------------------
-
-def fetch_and_update_data():
-    """Orchestrates the split fetching process using bulk download."""
+def fetch_and_update_data_wrapper():
+    """Wrapper to maintain background status reporting if needed, 
+    or just call fetch_and_save directly."""
     global refresh_status
-    
     try:
         with refresh_lock:
             refresh_status["is_running"] = True
-            refresh_status["status"] = "starting"
-            refresh_status["message"] = "Starting data refresh..."
-            refresh_status["current"] = 0
-            refresh_status["total"] = 0
-
-        print("Starting data refresh...")
-        tickers = get_sp500_tickers()
+            refresh_status["status"] = "running"
+            refresh_status["message"] = "Starting data refresh via shared logic..."
         
-        with refresh_lock:
-            refresh_status["total"] = len(tickers)
-            refresh_status["status"] = "fetching_ohlcv"
-            refresh_status["message"] = f"Found {len(tickers)} tickers. Fetching OHLCV data..."
-
-        print(f"Found {len(tickers)} tickers. Fetching OHLCV data in bulk...")
-        
-        ma_rows = []
-        
-        # Batch download to be safe (e.g. 50 tickers at a time)
-        batch_size = 50
-        for i in range(0, len(tickers), batch_size):
-            batch = tickers[i:i+batch_size]
-            print(f"Downloading batch {i//batch_size + 1}/{(len(tickers)-1)//batch_size + 1} ({len(batch)} tickers)...")
-            
-            with refresh_lock:
-                refresh_status["message"] = f"Downloading batch {i//batch_size + 1}..."
-
-            try:
-                # Download 1y history for the batch
-                data = yf.download(batch, period="1y", group_by='ticker', progress=False)
-                
-                # Iterate through the batch tickers and calculate MAs
-                for symbol in batch:
-                    try:
-                        if len(batch) > 1:
-                            if symbol not in data.columns.levels[0]:
-                                continue
-                            stock_hist = data[symbol]
-                        else:
-                            stock_hist = data
-                        
-                        close = stock_hist['Close'].dropna()
-                        volume = stock_hist['Volume'].dropna()
-                        if len(close) < 200 or len(volume) < 20:
-                            continue
-                            
-                        # Price Metrics
-                        ma_50d = close.tail(50).mean()
-                        ma_200d = close.tail(200).mean()
-                        
-                        ret_1d = ((close.iloc[-1] / close.iloc[-2]) - 1) * 100 if len(close) >= 2 else None
-                        ret_5d = ((close.iloc[-1] / close.iloc[-6]) - 1) * 100 if len(close) >= 6 else None
-                        ret_1m = ((close.iloc[-1] / close.iloc[-21]) - 1) * 100 if len(close) >= 21 else None
-                        ret_6m = ((close.iloc[-1] / close.iloc[-126]) - 1) * 100 if len(close) >= 126 else None
-
-                        # 6M Volatility (Annualized StdDev of daily returns)
-                        if len(close) >= 126:
-                            daily_rets = close.tail(126).pct_change().dropna()
-                            vol_6m = daily_rets.std() * (252**0.5) * 100
-                        else:
-                            vol_6m = None
-
-                        # Volume Metrics
-                        # 1D Volume / Avg(20D Volume) - 1
-                        # 5D Volume / Avg(20D Volume) - 1
-                        avg_vol_20d = volume.tail(20).mean()
-                        if isinstance(avg_vol_20d, pd.Series): avg_vol_20d = avg_vol_20d.iloc[0]
-                        avg_vol_20d = float(avg_vol_20d)
-
-                        current_vol = volume.iloc[-1]
-                        if isinstance(current_vol, pd.Series): current_vol = current_vol.iloc[0]
-                        current_vol = float(current_vol)
-
-                        avg_vol_5d = volume.tail(5).mean()
-                        if isinstance(avg_vol_5d, pd.Series): avg_vol_5d = avg_vol_5d.iloc[0]
-                        avg_vol_5d = float(avg_vol_5d)
-
-                        vol_chg_1d = (current_vol / avg_vol_20d - 1) * 100 if avg_vol_20d > 0 else None
-                        vol_chg_5d = (avg_vol_5d / avg_vol_20d - 1) * 100 if avg_vol_20d > 0 else None
-
-                        ma_rows.append({
-                            "Symbol": symbol,
-                            "50D MA": round(ma_50d, 2),
-                            "200D MA": round(ma_200d, 2),
-                            "1D Return": round(ret_1d, 2) if ret_1d is not None else None,
-                            "5D Return": round(ret_5d, 2) if ret_5d is not None else None,
-                            "1M Return": round(ret_1m, 2) if ret_1m is not None else None,
-                            "6M Return": round(ret_6m, 2) if ret_6m is not None else None,
-                            "6M Volatility": round(vol_6m, 2) if vol_6m is not None else None,
-                            "Volume": int(current_vol),
-                            "Vol Change 1D": round(vol_chg_1d, 2) if vol_chg_1d is not None else None,
-                            "Vol Change 5D": round(vol_chg_5d, 2) if vol_chg_5d is not None else None
-                        })
-                    except Exception as e:
-                        print(f"Error calculating MA for {symbol}: {e}")
-            except Exception as e:
-                print(f"Batch download failed: {e}")
-            time.sleep(1)
-
-        if not ma_rows:
-            with refresh_lock:
-                refresh_status["is_running"] = False
-                refresh_status["status"] = "error"
-                refresh_status["message"] = "No MA data found."
-            return 0
-
-        ma_df = pd.DataFrame(ma_rows)
-        print(f"Calculated MAs for {len(ma_df)} stocks. Fetching Fundamentals...")
-
-        with refresh_lock:
-            refresh_status["status"] = "fetching_fundamentals"
-            refresh_status["total"] = len(ma_df)
-
-        info_rows = []
-        symbols = ma_df["Symbol"].tolist()
-        batch_size = 20
-        total = len(symbols)
-        
-        for i in range(0, total, batch_size):
-            batch = symbols[i : i + batch_size]
-            print(f"[{min(i + batch_size, total)}/{total}] Fetching fundamental batch...")
-            
-            with refresh_lock:
-                refresh_status["current"] = i
-                refresh_status["message"] = f"Fetching fundamentals: {i}/{total}"
-
-            batch_info = get_batch_stock_info(batch, delay=1.5)
-            info_rows.extend(batch_info)
-        
-        info_df = pd.DataFrame(info_rows)
-
-        final_df = (
-            ma_df
-            .merge(info_df, left_on="Symbol", right_on="Ticker", how="left")
-            .drop(columns=["Ticker"])
-        )
-
-        # Fallback for EarningsDate if not in info
-        # Some yfinance versions put it in .calendar
-        print("Scraping additional earnings data for stocks with missing dates...")
-        for idx, row in final_df.iterrows():
-            if not row.get('EarningsDate'):
-                try:
-                    # Only do this for a subset or if missing to avoid too many calls
-                    # but for now let's try to get it if it's a key stock or just try a few
-                    pass # We will rely on info mostly, or we could add a specific fetcher later
-                except:
-                    pass
-        
-        final_df['Trend Strength'] = final_df.apply(
-            lambda row: round(((row['50D MA'] / row['200D MA']) - 1) * 100, 2) 
-            if row['200D MA'] and row['200D MA'] != 0 else None, axis=1
-        )
-        
-        # Load existing data to preserve history
-        existing_stocks = load_sp500_data()
-        existing_data = {s['Symbol']: s for s in existing_stocks if 'Symbol' in s}
-        
-        # --- QUANTITATIVE TRADING ENGINE ---
-        print("Calculating sector medians and trading scores...")
-        
-        # Calculate Sector Medians for P/E and Volatility
-        sector_pe_medians = final_df.groupby('Sector')['P/E Ratio'].median().to_dict()
-        sector_vol_medians = final_df.groupby('Sector')['6M Volatility'].median().to_dict()
-        
-        def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
-            try:
-                score = 0
-                prev_score = history.get('Score') if history else None
-                prev_consecutive_low = history.get('ConsecutiveLowDays', 0) if history else 0
-                
-                # A) TREND (0–35 points)
-                price = row.get('Price') or 0
-                ma50 = row.get('50D MA') or 0
-                ma200 = row.get('200D MA') or 0
-                trend_strength = row.get('Trend Strength') or 0
-                
-                if price >= ma200:
-                    if price > ma50: score += 8
-                    if ma50 > ma200: score += 8
-                    if price > ma200: score += 8
-                    if trend_strength > 0: score += 11
-                else:
-                    score = 0 # Trend points = 0 if below 200D MA
-                
-                # B) MOMENTUM (0–25 points)
-                ret5d = row.get('5D Return') or 0
-                ret1m = row.get('1M Return') or 0
-                ret6m = row.get('6M Return') or 0
-                
-                if ret6m > 0: score += 5
-                if ret1m > 0: score += 5
-                if ret5d > 0: score += 5
-                if ret6m > ret1m > ret5d: score += 10
-                if ret5d < 0 and ret1m > 0: score -= 5
-                
-                # C) VOLUME (0–20 points)
-                ret1d = row.get('1D Return') or 0
-                vol1d_ratio = 1 + (row.get('Vol Change 1D') or 0) / 100
-                vol5d_ratio = 1 + (row.get('Vol Change 5D') or 0) / 100
-                
-                if vol5d_ratio >= 1.2: score += 5
-                if vol1d_ratio >= 1.5: score += 10
-                
-                # Rising volume on up days
-                if ret1d > 0 and (row.get('Vol Change 1D') or 0) > 0:
-                    score += 5
-                # Down-day volume >= 2x avg
-                if ret1d < 0 and vol1d_ratio >= 2.0:
-                    score -= 10
-                
-                # D) RISK & VALUATION (0–20 points)
-                mcap = row.get('Market Cap') or 0
-                if mcap > 10e9: score += 5
-                
-                pe = row.get('P/E Ratio')
-                sector = row.get('Sector')
-                median_pe = sector_pe_medians.get(sector)
-                
-                if pe and median_pe:
-                    if pe < median_pe:
-                        score += 5
-                    elif pe > median_pe and (ret1m > 0 or ret6m > 0):
-                        score += 3
-                
-                # NEW: Volatility (6M) < sector median
-                vol6m = row.get('6M Volatility')
-                median_vol = sector_vol_medians.get(sector)
-                if vol6m and median_vol and vol6m < median_vol:
-                    score += 7
-                
-                final_points = round(max(0, score))
-
-                # Track consecutive low days
-                new_consecutive_low = prev_consecutive_low + 1 if final_points < 45 else 0
-
-                # --- DECISION STEPS (1-7) ---
-                
-                # STEP 1: UNIVERSAL FILTER (HARD REJECTION)
-                avg_vol_20d = row.get('Volume') / (1 + (row.get('Vol Change 1D') or 0) / 100) if row.get('Volume') and row.get('Vol Change 1D') is not None else 0
-                if mcap < 2e9 or avg_vol_20d < 500000 or price < 10:
-                    return final_points, "Rejected – Universal Filter", new_consecutive_low
-
-                # STEP 2: HARD SELL (CAPITAL PROTECTION)
-                # Rules: Price < 200D MA, Down-day vol >= 2x, Trend strength < 0, Score < 45 for 3 days
-                if price < ma200 or (ret1d < 0 and vol1d_ratio >= 2.0) or trend_strength < 0 or new_consecutive_low >= 3:
-                    return final_points, "Sell", new_consecutive_low
-
-                # STEP 3: EARNINGS RISK FREEZE
-                edate_str = row.get('EarningsDate')
-                if edate_str:
-                    try:
-                        edate = datetime.datetime.strptime(edate_str, '%Y-%m-%d').date()
-                        today = datetime.date.today()
-                        days_diff = (edate - today).days
-                        if -1 <= days_diff <= 7:
-                            return final_points, "Hold", new_consecutive_low
-                    except: pass
-
-                # STEP 4: REDUCE (RISK CONTROL)
-                # Rules: Score dropped from >=75 to <65 OR BOTH 5D < 0 AND 1M < 0
-                score_dropped = (prev_score is not None and prev_score >= 75 and final_points < 65)
-                if score_dropped or (ret5d < 0 and ret1m < 0):
-                    return final_points, "Reduce", new_consecutive_low
-
-                # STEP 5: STRONG BUY (ADD AGGRESSIVELY)
-                if (final_points >= 80 and price > ma50 and price > ma200 and vol5d_ratio >= 1.2 and ret6m > 0):
-                    edate_dist = 999
-                    if edate_str:
-                        try:
-                            edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
-                        except: pass
-                    if edate_dist > 7:
-                        return final_points, "Strong Buy", new_consecutive_low
-
-                # STEP 6: BUY (SMALL / ADD CAUTIOUSLY)
-                if (70 <= final_points <= 79 and price > ma50 and price > ma200 and ret6m > 0):
-                    edate_dist = 999
-                    if edate_str:
-                        try:
-                            edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
-                        except: pass
-                    if edate_dist > 7:
-                        return final_points, "Buy (Small)", new_consecutive_low
-
-                # STEP 7: HOLD (DEFAULT)
-                return final_points, "Hold", new_consecutive_low
-
-            except Exception as e:
-                print(f"Error scoring {row.get('Symbol')}: {e}")
-                return 0, "ERROR", 0
-
-        scores_decisions = final_df.apply(
-            lambda r: calculate_score(r, sector_pe_medians, sector_vol_medians, existing_data.get(r['Symbol'])), axis=1
-        )
-        final_df['Score'] = [s[0] for s in scores_decisions]
-        final_df['Trade Decision'] = [s[1] for s in scores_decisions]
-        final_df['ConsecutiveLowDays'] = [s[2] for s in scores_decisions]
-
-        final_df['LastUpdated'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-        all_data = final_df.where(pd.notnull(final_df), None).to_dict(orient='records')
-
-        with open(DATA_FILE, 'w') as f:
-            json.dump(all_data, f, indent=2)
-        
-        print(f"Saved {len(all_data)} stocks to {DATA_FILE}")
+        count = fetch_and_save()
         
         with refresh_lock:
             refresh_status["is_running"] = False
             refresh_status["status"] = "success"
-            refresh_status["current"] = total
-            refresh_status["message"] = f"Successfully refreshed {len(all_data)} stocks."
-            
-        return len(all_data)
-        
+            refresh_status["message"] = f"Successfully refreshed stocks."
     except Exception as e:
-        print(f"Refresh task failed: {e}")
         with refresh_lock:
             refresh_status["is_running"] = False
             refresh_status["status"] = "error"
             refresh_status["message"] = f"Error: {str(e)}"
-        return 0
 
 @app.route('/api/refresh')
 def api_refresh():
@@ -733,37 +179,21 @@ def api_refresh():
     
     with refresh_lock:
         if refresh_status["is_running"]:
-            return jsonify({
-                "status": "error", 
-                "message": "Refresh already in progress.",
-                "details": refresh_status
-            }), 400
+            return jsonify({"status": "error", "message": "Refresh already in progress."}), 400
 
-    # Check if we already have data for today
     if not force:
         data = load_sp500_data()
         if data and len(data) > 0:
             last_updated = data[0].get('LastUpdated')
             if last_updated:
-                # Extract date part 2026-02-22 from 2026-02-22 19:10:13
                 last_date = last_updated.split(' ')[0]
-                today = datetime.date.today().isoformat()
-                if last_date == today:
-                    return jsonify({
-                        "status": "success", 
-                        "message": "Data is already up to date for today. Use ?force=true to override.",
-                        "count": len(data)
-                    }), 200
+                if last_date == datetime.date.today().isoformat():
+                    return jsonify({"status": "success", "message": "Data is already up to date."}), 200
 
-    # Start refresh in background
-    thread = threading.Thread(target=fetch_and_update_data)
+    thread = threading.Thread(target=fetch_and_update_data_wrapper)
     thread.daemon = True
     thread.start()
-    
-    return jsonify({
-        "status": "success", 
-        "message": "Data refresh started in background."
-    }), 202
+    return jsonify({"status": "success", "message": "Data refresh started in background."}), 202
 
 @app.route('/api/refresh_status')
 def api_refresh_status():
