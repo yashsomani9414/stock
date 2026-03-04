@@ -6,6 +6,7 @@ import requests
 import time
 import yfinance as yf
 from bs4 import BeautifulSoup
+from zoneinfo import ZoneInfo
 
 DATA_FILE = 'sp500_data.json'
 
@@ -309,9 +310,11 @@ def fetch_and_save():
     pe_med = final_df.groupby('Sector')['P/E Ratio'].median().to_dict()
     vol_med = final_df.groupby('Sector')['6M Volatility'].median().to_dict()
     
-    results = final_df.apply(lambda r: calculate_score(r, pe_med, vol_med, hist_map.get(r['Symbol'])), axis=1)
     final_df['Score'], final_df['Trade Decision'], final_df['ConsecutiveLowDays'] = [r[0] for r in results], [r[1] for r in results], [r[2] for r in results]
-    final_df['LastUpdated'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Get current time in Pacific Time
+    pacific_time = datetime.datetime.now(ZoneInfo("America/Los_Angeles"))
+    final_df['LastUpdated'] = pacific_time.strftime("%Y-%m-%d %H:%M:%S")
     
     output = final_df.where(pd.notnull(final_df), None).to_dict(orient='records')
     with open(DATA_FILE, 'w') as f: json.dump(output, f, indent=2)

@@ -4,6 +4,7 @@ FROM python:3.11-slim
 
 # Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
+ENV TZ=America/Los_Angeles
 
 # Copy local code to the container image.
 ENV APP_HOME /app
