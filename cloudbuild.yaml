@@ -1,11 +1,11 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/stock-app', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/stock', '.']
 
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/stock-app']
+    args: ['push', 'gcr.io/$PROJECT_ID/stock']
 
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -13,9 +13,9 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'stock-app' # Use your actual Cloud Run service name if different
+      - 'stock' # Corrected to match your existing service name
       - '--image'
-      - 'gcr.io/$PROJECT_ID/stock-app'
+      - 'gcr.io/$PROJECT_ID/stock'
       - '--region'
       - 'europe-west1'
       - '--platform'
