@@ -1,0 +1,24 @@
+
+Found 'Risk Factors' at line 54
+  +1: Legal Proceedings
+  +2: Management and Auditor's Reports
+  +3: Audited
+  +4: Financial Statements and Notes
+  +5: Statement of
+  +6: Operations
+  +7: Statement of Financial Position
+  +8: Statement of Cash Flow
+  +9: Statement of Comprehensive Income (Loss)
+
+=== Looking for section heading patterns ===
+  Line 191: [LEGACY BUSINESSES.]
+  Line 201: [BUSINESS OVERVIEW AND ENVIRONMENT.]
+  Line 544: [FOREIGN EXCHANGE AND INTEREST RATE RISKS.]
+  Line 1020: [RISK FACTORS.]
+  Line 1022: [STRATEGIC RISKS.]
+  Line 1047: [OPERATIONAL RISKS.]
+  Line 1066: [FINANCIAL RISKS.]
+  Line 1075: [LEGAL AND COMPLIANCE RISKS.]
+  Line 1086: [MANAGEMENT AND AUDITOR’S REPORTS]
+  Line 1087: [MANAGEMENT’S DISCUSSION OF FINANCIAL RESPONSIBILITY]
+  Line 1092: [MANAGEMENT’S ANNUAL REPORT ON INTERNAL CONTROL OVER FINANCIAL REPORTING.]

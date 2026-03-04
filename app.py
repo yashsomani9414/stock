@@ -23,9 +23,41 @@ refresh_status = {
 }
 refresh_lock = threading.Lock()
 
+def check_stale_and_refresh():
+    """Trigger background refresh if data is older than 24h OR never refreshed.
+    Safe for Cloud Run (non-blocking)."""
+    global refresh_status
+    try:
+        data = load_sp500_data()
+        needs_refresh = False
+        
+        if not data or len(data) == 0:
+            needs_refresh = True
+        else:
+            last_updated = data[0].get('LastUpdated')
+            if last_updated:
+                # LastUpdated is "2024-03-03 17:00:00"
+                last_dt = datetime.datetime.strptime(last_updated, "%Y-%m-%d %H:%M:%S")
+                # If more than 24 hours since last refresh
+                if (datetime.datetime.now() - last_dt).total_seconds() > 86400:
+                    needs_refresh = True
+            else:
+                needs_refresh = True
+        
+        if needs_refresh:
+            with refresh_lock:
+                if not refresh_status["is_running"]:
+                    thread = threading.Thread(target=fetch_and_update_data_wrapper)
+                    thread.daemon = True
+                    thread.start()
+                    print("On-visit refresh triggered.")
+    except Exception as e:
+        print(f"Error in on-visit check: {e}")
+
 
 @app.route('/')
 def index():
+    check_stale_and_refresh()
     return render_template('index.html')
 
 @app.route('/sector')
@@ -46,6 +78,7 @@ def market_news_page():
 
 @app.route('/api/data')
 def api_data():
+    check_stale_and_refresh()
     data = load_sp500_data()
     return jsonify(sanitize_data(data))
 
@@ -157,14 +190,14 @@ def fetch_and_update_data_wrapper():
         with refresh_lock:
             refresh_status["is_running"] = True
             refresh_status["status"] = "running"
-            refresh_status["message"] = "Starting data refresh via shared logic..."
+            refresh_status["message"] = "Refreshing S&P 500 data (PT schedule)..."
         
         count = fetch_and_save()
         
         with refresh_lock:
             refresh_status["is_running"] = False
             refresh_status["status"] = "success"
-            refresh_status["message"] = f"Successfully refreshed stocks."
+            refresh_status["message"] = f"Successfully refreshed data."
     except Exception as e:
         with refresh_lock:
             refresh_status["is_running"] = False
@@ -177,15 +210,19 @@ def api_refresh():
     global refresh_status
     force = request.args.get('force', 'false').lower() == 'true'
     
+    # Check if this is a Cloud Scheduler trigger (optional security)
+    is_scheduler = request.headers.get('X-Cloud-Scheduler') == 'true'
+    
     with refresh_lock:
         if refresh_status["is_running"]:
             return jsonify({"status": "error", "message": "Refresh already in progress."}), 400
 
-    if not force:
+    if not force and not is_scheduler:
         data = load_sp500_data()
         if data and len(data) > 0:
             last_updated = data[0].get('LastUpdated')
             if last_updated:
+                # Basic check: if updated today, skip unless forced
                 last_date = last_updated.split(' ')[0]
                 if last_date == datetime.date.today().isoformat():
                     return jsonify({"status": "success", "message": "Data is already up to date."}), 200
@@ -197,8 +234,17 @@ def api_refresh():
 
 @app.route('/api/refresh_status')
 def api_refresh_status():
-    """Return the current refresh status."""
-    return jsonify(refresh_status)
+    """Return the current refresh status with local time context."""
+    data = load_sp500_data()
+    last_updated = "Unknown"
+    if data and len(data) > 0:
+        last_updated = data[0].get('LastUpdated', "Unknown")
+    
+    return jsonify({
+        **refresh_status,
+        "last_updated_raw": last_updated,
+        "is_scheduler": request.headers.get('X-Cloud-Scheduler') == 'true'
+    })
 
 def _get_clean_filing_lines(url):
     """Fetch a SEC filing, strip XBRL/metadata, return clean text lines."""

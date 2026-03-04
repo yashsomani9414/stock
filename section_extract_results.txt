@@ -1,0 +1,66 @@
+Filing URL: https://cdn.yahoofinance.com/prod/sec-filings/0000040545/000004054526000008/ge-20251231.htm
+Clean lines: 1863
+
+=== BUSINESS SECTION (10331 chars) ===
+As a global aerospace company, our worldwide operations can be affected by industrial, economic, and political factors on both a regional and global level. Demand for our equipment and services is demonstrated by our backlog of engine orders and services and growth in our installed base, and tends to follow commercial air travel and freight demand and government funding for defense budgets. We also expect a significant ramp in our delivery of engine units and services for newer product platforms
+
+=== RISK FACTORS (12290 chars) ===
+Legal Proceedings
+Management and Auditor's Reports
+Audited
+Financial Statements and Notes
+Statement of
+Operations
+Statement of Financial Position
+Statement of Cash Flow
+Statement of Comprehensive Income (Loss)
+Statement of Changes in Shareholders' Equity
+Note 1   Basis of Presentation and Summary of Significant Accounting Policies
+Note 2   Discontinued Operations
+Note 3   Investment Securities
+Note 4   Current and Long-Term Receivables
+Note 5   Inventories, Including Deferred Inventory Costs
+Not
+
+=== MD&A (297 chars) ===
+Consolidated Results
+Segment Operations
+Corporate
+& Other
+Other Consolidated Information
+Capital Resources and Liquidity
+Critical Accounting Estimates
+Other Items
+Non-GAAP Financial Measures
+Other Financial Data
+Cybersecurity
+Risk Factors
+Legal Proceedings
+Management and Auditor's Reports
+Audited
+
+
+========= EXTRACTED INSIGHTS =========
+
+🚀 Business Opportunities:
+  • Demand for our equipment and services is demonstrated by our backlog of engine orders and services and growth in our installed base, and tends to follow commercial air travel and freight demand and government funding for defense budgets.
+  • We also expect a significant ramp in our delivery of engine units and services for newer product platforms in the years ahead to meet this demand.
+  • Additionally, we are expanding capacity across our global maintenance, repair and overhaul (MRO) network to support aftermarket demand.
+  • In 2025, demand for commercial air travel grew with departures up 3%.
+  • We are in frequent communication with our airline, airframe and MRO customers about the outlook for commercial air travel, new aircraft production, fleet retirements and after-market services, including shop visit and spare parts demand.
+
+⚠️ Risk Factors:
+
+⚖️ Tariff Impact:
+  • As we operate in a highly dynamic tariff environment, we are focused on continuing to deliver our products and services to our customers.
+  • established a zero-for-zero tariff agreement on aerospace equipment with the EU, UK, Japan and Korea, establishing a mutual elimination of tariffs.
+  • We are continuing to monitor the tariff environment, including relevant U.S.
+
+👥 Major Customers:
+  • Demand for our equipment and services is demonstrated by our backlog of engine orders and services and growth in our installed base, and tends to follow commercial air travel and freight demand and government funding for defense budgets.
+  • We are investing in our manufacturing facilities, overhaul facilities and our supply chain to increase production and strengthen yield in order to improve delivery to our customers.
+  • Remaining performance obligation (RPO) is unfilled customer orders for products and product services (expected life of contract sales for product services) excluding any purchase order that provides the customer with the ability to cancel or terminate without incurring a substantive penalty.
+  • In 2025, we announced an Indefinite Delivery/Indefinite Quantity (IDIQ) contract from the U.S.
+  • In addition, we received an order from Hindustan Aeronautics (HAL) valued at $1.6 billion for F404-GE-IN20 engines.
+
+📅 One-time Events:

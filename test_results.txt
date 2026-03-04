@@ -1,0 +1,12 @@
+Testing AAPL...
+Testing TSLA...
+Testing NVDA...
+Traceback (most recent call last):
+  File "/Users/yashsomani/Desktop/stock/test_insight_extraction.py", line 9, in <module>
+    insights = extract_comprehensive_insights(t)
+  File "/Users/yashsomani/Desktop/stock/app.py", line 565, in extract_comprehensive_insights
+    "risks": get_sentences(["risk", "threat", "competition", "economic", "regulatory", "litigation"], text),
+             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashsomani/Desktop/stock/app.py", line 549, in get_sentences
+    matches = pattern.findall(text)
+KeyboardInterrupt

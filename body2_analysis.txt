@@ -1,0 +1,93 @@
+Total clean lines: 1863
+  Section at line 1730: [Item 1.]
+    Next: [Business]
+    Next: [4-7, 9-10, 71-73]
+
+  Section at line 1733: [Item 1A.]
+    Next: [Risk Factors]
+    Next: [24-31]
+
+  Section at line 1736: [Item 1B.]
+    Next: [Unresolved Staff Comments]
+    Next: [Not applicable]
+
+  Section at line 1739: [Item 1C.]
+    Next: [Cybersecurity]
+    Next: [Item 2.]
+
+  Section at line 1741: [Item 2.]
+    Next: [Properties]
+    Next: [Item 3.]
+
+  Section at line 1743: [Item 3.]
+    Next: [Legal Proceedings]
+    Next: [70-71]
+
+  Section at line 1746: [Item 4.]
+    Next: [Mine Safety Disclosures]
+    Next: [Not applicable]
+
+  Section at line 1750: [Item 5.]
+    Next: [Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Se]
+    Next: [Item 6.]
+
+  Section at line 1752: [Item 6.]
+    Next: [[Reserved]]
+    Next: [Not applicable]
+
+  Section at line 1755: [Item 7.]
+    Next: [Management’s Discussion and Analysis of Financial Condition and Results of Operations]
+    Next: [7-22]
+
+  Section at line 1758: [Item 7A.]
+    Next: [Quantitative and Qualitative Disclosures About Market Risk]
+    Next: [13, 68-69]
+
+  Section at line 1761: [Item 8.]
+    Next: [Financial Statements and Supplementary Data]
+    Next: [36-73]
+
+  Section at line 1764: [Item 9.]
+    Next: [Changes in and Disagreements With Accountants on Accounting and Financial Disclosure]
+    Next: [Not applicable]
+
+  Section at line 1767: [Item 9A.]
+    Next: [Controls and Procedures]
+    Next: [Item 9B.]
+
+  Section at line 1769: [Item 9B.]
+    Next: [Not applicable]
+    Next: [Item 9C.]
+
+  Section at line 1771: [Item 9C.]
+    Next: [Disclosure Regarding Foreign Jurisdictions that Prevent Inspections]
+    Next: [Not applicable]
+
+  Section at line 1775: [Item 10.]
+    Next: [Directors, Executive Officers and Corporate Governance]
+    Next: [74, (a)]
+
+  Section at line 1778: [Item 11.]
+    Next: [Executive Compensation]
+    Next: [(b)]
+
+  Section at line 1781: [Item 12.]
+    Next: [Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters]
+    Next: [(c)]
+
+  Section at line 1784: [Item 13.]
+    Next: [Certain Relationships and Related Transactions, and Director Independence]
+    Next: [(d)]
+
+  Section at line 1787: [Item 14.]
+    Next: [Principal Accountant Fees and Services]
+    Next: [(e)]
+
+  Section at line 1791: [Item 15.]
+    Next: [Exhibits and Financial Statement Schedules]
+    Next: [75-78]
+
+  Section at line 1794: [Item 16.]
+    Next: [Form 10-K Summary]
+    Next: [Not applicable]
+

@@ -323,12 +323,15 @@
             <!-- Last Refreshed Display -->
             <div id="lastRefreshedDisplay" class="stock-count-badge"
                 style="background: var(--bg-card); border: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 12px;">
+                <div id="refreshStatusIndicator"
+                    style="width: 10px; height: 10px; border-radius: 50%; background: var(--text-muted); transition: background 0.3s;"
+                    title="Status Unknown"></div>
                 <div id="refreshProgressContainer" style="display: none; align-items: center; gap: 8px;">
                     <span class="loader-ring small" style="width:12px; height:12px; border-width:2px;"></span>
                     <span id="refreshStatusText"
                         style="font-size: 11px; color: var(--accent-blue);">Refreshing...</span>
                 </div>
-                <span>Last Refreshed: <span id="lastRefreshed">Loading...</span></span>
+                <span>Last Refreshed (PT): <span id="lastRefreshed">Loading...</span></span>
             </div>
 
             <div id="status" class="status-msg"></div>
@@ -1028,7 +1031,25 @@
 
                                 // Update last refreshed date
                                 if (data[0] && data[0].LastUpdated) {
-                                    $('#lastRefreshed').text(data[0].LastUpdated);
+                                    const lastUpdated = data[0].LastUpdated;
+                                    $('#lastRefreshed').text(lastUpdated);
+
+                                    // Update indicator color based on age
+                                    try {
+                                        const lastDate = new Date(lastUpdated.replace(' ', 'T'));
+                                        const diffHours = (new Date() - lastDate) / (1000 * 60 * 60);
+
+                                        const indicator = $('#refreshStatusIndicator');
+                                        if (diffHours < 24) {
+                                            indicator.css('background', 'var(--bullish)').attr('title', 'Data is fresh (updated < 24h ago)');
+                                        } else if (diffHours < 48) {
+                                            indicator.css('background', 'var(--neutral)').attr('title', 'Data is becoming stale (> 24h ago)');
+                                        } else {
+                                            indicator.css('background', 'var(--bearish)').attr('title', 'Data is stale (> 48h ago)');
+                                        }
+                                    } catch (e) {
+                                        console.error("Error calculating data age:", e);
+                                    }
                                 }
                             } else {
                                 $('#status').html('<div style="color:var(--text-muted)">No data found. Click "Refresh Data" to fetch from Yahoo.</div>');

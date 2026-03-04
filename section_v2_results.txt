@@ -1,0 +1,38 @@
+Clean lines: 1863
+
+Business section: 12795 chars
+Risk section: 14289 chars
+MD&A section: 12788 chars
+
+========= EXTRACTED INSIGHTS =========
+
+🚀 Business Opportunities:
+  • or other government defense spending, including as a result of changes in policy, budgetary positions or priorities in connection with elections or otherwise, can negatively impact the results and growth prospects of our defense business.
+  • Changes in government priorities and funding related to the future of combat, such as greater reliance on uncrewed aircraft systems, could also adversely affect the demand for our defense products and services.
+  • In addition, our government contracts are subject to extensive procurement regulations, and new regulations or changes to existing requirements could increase our compliance costs.
+  • Climate and environmental factors - Our business and financial performance may be adversely affected by climate and environmental factors, including changes in regulations, customer demand, technologies and extreme weather.
+  • The aerospace sector’s ambition to reduce carbon emissions over the coming decades is likely to depend in part on technologies that are not yet developed, deployed or widely adopted today, and it will likely require a combination of changes such as continued technological innovation in the fuel efficiency of engines, expanded use of low carbon fuels and the development of electric flight and hydrogen-based aviation technologies.
+
+⚠️ Risk Factors:
+  • and other markets that we serve, including factors such as inflationary pressures, interest rates, economic growth rates, the availability of skilled labor, monetary policy, exchange rates, currency volatility, commodity prices and sovereign debt levels.
+  • Deterioration of economic conditions or outlooks, such as lower rates of investment, lower economic growth, recession or fears of recession in the U.S., Europe, China or other key markets, may adversely affect the demand for or profitability of our products and services, and the impact from developments outside the U.S.
+  • Increased geopolitical tensions and outbreaks of armed conflict, as well as sanctions or other measures imposed in response, have in the past and in the future may cause disruption and instability in global markets, particular regions or countries, supply chains or commercial activity that adversely impact our business, financial condition, results of operations and cash flows and pose reputational risks.
+  • In addition, market uncertainty and volatility in various geographies may be magnified as a result of shifts in trade, economic and other policies.
+  • Developments that reduce the flying public’s demand for travel could adversely affect future growth in commercial air traffic capacity and the demand for or profitability of our products and services.
+
+⚖️ Tariff Impact:
+
+👥 Major Customers:
+  • Government programs and contracts - Our business is subject to risks from changes in government spending and policies that can adversely affect our business strategy or financial performance, in addition to risks related to regulations and compliance with government contracts.
+  • Our defense business is heavily influenced by the spending and policy actions of the U.S.
+  • federal government, as well as allied governments that rely on U.S.
+  • suppliers to provide products and services important to their national defense.
+  • or other government defense spending, including as a result of changes in policy, budgetary positions or priorities in connection with elections or otherwise, can negatively impact the results and growth prospects of our defense business.
+
+📅 One-time Events:
+  • If either of the GE HealthCare or GE Vernova separation transactions were ultimately determined to be taxable, the Company would incur a significant tax liability, and the distributions to the Company’s shareholders would become taxable and the independent companies might incur income tax liabilities.
+  • Corporate & Other operating profit includes Corporate functions and operations costs, certain costs of our principal retirement plans, significant, higher-cost restructuring programs, separation costs, profit (loss) of our run-off insurance operations, U.S.
+  • Additionally, included costs of $363 million for the settlement of the Sjunde AP-Fonden shareholder lawsuit for the year ended December 31, 2024.
+  • Adjusted Corporate & Other operating costs* excludes gains (losses) on purchases and sales of business interests, gains (losses) on retained and sold ownership interests and other equity securities, higher-cost restructuring programs, separation costs, our run-off insurance operations, U.S.
+  • OTHER CONSOLIDATED INFORMATION
+RESTRUCTURING AND SEPARATION COSTS.

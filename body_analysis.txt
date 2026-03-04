@@ -1,0 +1,47 @@
+Total lines: 13782
+=== First 20 non-empty lines ===
+  10: ge-20251231
+  11: false
+  12: 0000040545
+  13: FY
+  14: 2025
+  15: http://fasb.org/us-gaap/2025#ResearchAndDevelopmentExpense
+  16: http://fasb.org/us-gaap/2025#ResearchAndDevelopmentExpense
+  17: http://fasb.org/us-gaap/2025#ResearchAndDevelopmentExpense
+  18: http://fasb.org/us-gaap/2025#CostOfGoodsAndServicesSold
+  19: http://fasb.org/us-gaap/2025#CostOfGoodsAndServicesSold
+  20: http://fasb.org/us-gaap/2025#CostOfGoodsAndServicesSold
+  21: http://fasb.org/us-gaap/2025#OtherAssetsCurrent
+  22: http://fasb.org/us-gaap/2025#OtherAssetsCurrent
+  23: http://www.ge.com/20251231#PropertyPlantAndEquipmentAndOperatingLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmort
+  24: http://www.ge.com/20251231#PropertyPlantAndEquipmentAndOperatingLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmort
+  25: http://fasb.org/us-gaap/2025#OtherLiabilitiesCurrent
+  26: http://fasb.org/us-gaap/2025#OtherLiabilitiesCurrent
+  27: http://fasb.org/us-gaap/2025#OtherLiabilitiesNoncurrent
+  28: http://fasb.org/us-gaap/2025#OtherLiabilitiesNoncurrent
+  29: http://fasb.org/us-gaap/2025#AccountsPayableCurrent
+
+=== Looking for Item headers in bold/span tags ===
+  Tag: <span> Text: [Item 1.] Parent: [Item 1.]
+  Tag: <span> Text: [Item 1A.] Parent: [Item 1A.]
+  Tag: <span> Text: [Item 1B.] Parent: [Item 1B.]
+  Tag: <span> Text: [Item 1C.] Parent: [Item 1C.]
+  Tag: <span> Text: [Item 2.] Parent: [Item 2.]
+  Tag: <span> Text: [Item 3.] Parent: [Item 3.]
+  Tag: <span> Text: [Item 4.] Parent: [Item 4.]
+  Tag: <span> Text: [Item 5.] Parent: [Item 5.]
+  Tag: <span> Text: [Item 6.] Parent: [Item 6.]
+  Tag: <span> Text: [Item 7.] Parent: [Item 7.]
+  Tag: <span> Text: [Item 7A.] Parent: [Item 7A.]
+  Tag: <span> Text: [Item 8.] Parent: [Item 8.]
+  Tag: <span> Text: [Item 9.] Parent: [Item 9.]
+  Tag: <span> Text: [Item 9A.] Parent: [Item 9A.]
+  Tag: <span> Text: [Item 9B.] Parent: [Item 9B.]
+  Tag: <span> Text: [Item 9C.] Parent: [Item 9C.]
+  Tag: <span> Text: [Item 10.] Parent: [Item 10.]
+  Tag: <span> Text: [Item 11.] Parent: [Item 11.]
+  Tag: <span> Text: [Item 12.] Parent: [Item 12.]
+  Tag: <span> Text: [Item 13.] Parent: [Item 13.]
+  Tag: <span> Text: [Item 14.] Parent: [Item 14.]
+  Tag: <span> Text: [Item 15.] Parent: [Item 15.]
+  Tag: <span> Text: [Item 16.] Parent: [Item 16.]
