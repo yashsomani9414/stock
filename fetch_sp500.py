@@ -310,6 +310,9 @@ def fetch_and_save():
     pe_med = final_df.groupby('Sector')['P/E Ratio'].median().to_dict()
     vol_med = final_df.groupby('Sector')['6M Volatility'].median().to_dict()
     
+    # Calculate scores and decisions for each stock
+    results = final_df.apply(lambda r: calculate_score(r, pe_med, vol_med, hist_map.get(r['Symbol'])), axis=1)
+    
     final_df['Score'], final_df['Trade Decision'], final_df['ConsecutiveLowDays'] = [r[0] for r in results], [r[1] for r in results], [r[2] for r in results]
     
     # Get current time in Pacific Time
