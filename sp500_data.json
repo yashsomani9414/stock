@@ -15,14 +15,14 @@
     "Sector": "Industrials",
     "Industry": "Conglomerates",
     "Market Cap": 84740759552,
-    "P/E Ratio": 26.770382,
+    "P/E Ratio": 26.815,
     "Price": 160.89,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 3.93,
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AOS",
@@ -47,7 +47,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ABT",
@@ -71,8 +71,8 @@
     "Trend Strength": -7.44,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ABBV",
@@ -97,7 +97,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ACN",
@@ -115,14 +115,14 @@
     "Sector": "Technology",
     "Industry": "Information Technology Services",
     "Market Cap": 130229166080,
-    "P/E Ratio": 17.369726,
+    "P/E Ratio": 17.355371,
     "Price": 210.0,
     "EarningsDate": "2026-03-19",
     "Trend Strength": -4.43,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ADBE",
@@ -146,8 +146,8 @@
     "Trend Strength": -13.59,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMD",
@@ -165,14 +165,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 329457139712,
-    "P/E Ratio": 77.12596,
+    "P/E Ratio": 77.42146,
     "Price": 202.07,
     "EarningsDate": "2026-05-05",
     "Trend Strength": 16.26,
     "Score": 40,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AES",
@@ -197,7 +197,7 @@
     "Score": 62,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AFL",
@@ -222,7 +222,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "A",
@@ -246,8 +246,8 @@
     "Trend Strength": 3.27,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "APD",
@@ -271,8 +271,8 @@
     "Trend Strength": -0.87,
     "Score": 28,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ABNB",
@@ -297,7 +297,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AKAM",
@@ -322,7 +322,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ALB",
@@ -347,7 +347,7 @@
     "Score": 55,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ARE",
@@ -371,8 +371,8 @@
     "Trend Strength": -17.81,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ALGN",
@@ -390,14 +390,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Instruments & Supplies",
     "Market Cap": 13204117504,
-    "P/E Ratio": 32.297874,
+    "P/E Ratio": 32.240707,
     "Price": 182.16,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 8.09,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ALLE",
@@ -421,8 +421,8 @@
     "Trend Strength": 1.67,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LNT",
@@ -447,7 +447,7 @@
     "Score": 82,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ALL",
@@ -465,14 +465,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance - Property & Casualty",
     "Market Cap": 55587385344,
-    "P/E Ratio": 5.6259522,
+    "P/E Ratio": 5.62743,
     "Price": 214.18,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 1.31,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GOOGL",
@@ -490,14 +490,14 @@
     "Sector": "Communication Services",
     "Industry": "Internet Content & Information",
     "Market Cap": 3666963857408,
-    "P/E Ratio": 28.041628,
+    "P/E Ratio": 28.015713,
     "Price": 303.13,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 27.27,
-    "Score": 49,
+    "Score": 44,
     "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 1,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GOOG",
@@ -515,14 +515,14 @@
     "Sector": "Communication Services",
     "Industry": "Internet Content & Information",
     "Market Cap": 3670834937856,
-    "P/E Ratio": 28.07123,
+    "P/E Ratio": 28.097223,
     "Price": 303.45,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 27.1,
-    "Score": 44,
+    "Score": 47,
     "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 0,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MO",
@@ -547,7 +547,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMZN",
@@ -571,8 +571,8 @@
     "Trend Strength": 0.66,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMCR",
@@ -597,7 +597,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AEE",
@@ -622,7 +622,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AEP",
@@ -647,7 +647,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AXP",
@@ -665,14 +665,14 @@
     "Sector": "Financial Services",
     "Industry": "Credit Services",
     "Market Cap": 214377512960,
-    "P/E Ratio": 20.221571,
+    "P/E Ratio": 20.247885,
     "Price": 311.21,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 6.47,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AIG",
@@ -696,8 +696,8 @@
     "Trend Strength": -1.45,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMT",
@@ -714,15 +714,15 @@
     "Name": "American Tower Corporation (REI",
     "Sector": "Real Estate",
     "Industry": "REIT - Specialty",
-    "Market Cap": 89342337024,
-    "P/E Ratio": 30.382166,
+    "Market Cap": 89322381312,
+    "P/E Ratio": 35.333332,
     "Price": 190.8,
     "EarningsDate": "2026-04-28",
     "Trend Strength": -6.91,
-    "Score": 20,
+    "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AWK",
@@ -746,8 +746,8 @@
     "Trend Strength": -3.84,
     "Score": 34,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMP",
@@ -765,14 +765,14 @@
     "Sector": "Financial Services",
     "Industry": "Asset Management",
     "Market Cap": 43564417024,
-    "P/E Ratio": 14.468065,
+    "P/E Ratio": 12.92119,
     "Price": 468.91,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 0.37,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AME",
@@ -790,14 +790,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 54040358912,
-    "P/E Ratio": 36.679688,
+    "P/E Ratio": 36.622467,
     "Price": 234.75,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 13.97,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMGN",
@@ -815,14 +815,14 @@
     "Sector": "Healthcare",
     "Industry": "Drug Manufacturers - General",
     "Market Cap": 204452184064,
-    "P/E Ratio": 26.690357,
+    "P/E Ratio": 26.671589,
     "Price": 379.27,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 13.69,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "APH",
@@ -840,14 +840,14 @@
     "Sector": "Technology",
     "Industry": "Electronic Components",
     "Market Cap": 163178283008,
-    "P/E Ratio": 39.74551,
+    "P/E Ratio": 39.626865,
     "Price": 132.75,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 18.05,
     "Score": 55,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ADI",
@@ -872,7 +872,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AON",
@@ -896,8 +896,8 @@
     "Trend Strength": -3.61,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "APA",
@@ -922,7 +922,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "APO",
@@ -946,8 +946,8 @@
     "Trend Strength": -1.09,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AAPL",
@@ -965,14 +965,14 @@
     "Sector": "Technology",
     "Industry": "Consumer Electronics",
     "Market Cap": 3858499371008,
-    "P/E Ratio": 33.18837,
+    "P/E Ratio": 33.230377,
     "Price": 262.52,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 8.79,
     "Score": 57,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AMAT",
@@ -997,7 +997,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "APP",
@@ -1015,14 +1015,14 @@
     "Sector": "Communication Services",
     "Industry": "Advertising Agencies",
     "Market Cap": 163168059392,
-    "P/E Ratio": 48.040794,
+    "P/E Ratio": 48.088646,
     "Price": 482.81,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 4.72,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "APTV",
@@ -1046,8 +1046,8 @@
     "Trend Strength": 3.61,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ACGL",
@@ -1072,7 +1072,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ADM",
@@ -1097,7 +1097,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ARES",
@@ -1121,8 +1121,8 @@
     "Trend Strength": -8.38,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ANET",
@@ -1147,7 +1147,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AJG",
@@ -1165,14 +1165,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance Brokers",
     "Market Cap": 57996619776,
-    "P/E Ratio": 39.299652,
+    "P/E Ratio": 39.368237,
     "Price": 225.58,
     "EarningsDate": "2026-04-30",
     "Trend Strength": -13.48,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AIZ",
@@ -1197,7 +1197,7 @@
     "Score": 54,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "T",
@@ -1222,7 +1222,7 @@
     "Score": 53,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ATO",
@@ -1240,14 +1240,14 @@
     "Sector": "Utilities",
     "Industry": "Utilities - Regulated Gas",
     "Market Cap": 30899032064,
-    "P/E Ratio": 24.382507,
+    "P/E Ratio": 24.319012,
     "Price": 186.77,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 4.16,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ADSK",
@@ -1265,14 +1265,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 54930571264,
-    "P/E Ratio": 50.173157,
+    "P/E Ratio": 49.978687,
     "Price": 257.89,
     "EarningsDate": "2026-05-21",
     "Trend Strength": -10.9,
     "Score": 30,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ADP",
@@ -1296,8 +1296,8 @@
     "Trend Strength": -12.85,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AZO",
@@ -1315,14 +1315,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Auto Parts",
     "Market Cap": 61823610880,
-    "P/E Ratio": 25.93859,
+    "P/E Ratio": 25.90605,
     "Price": 3717.0,
     "EarningsDate": "2026-05-26",
     "Trend Strength": -5.48,
     "Score": 30,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AVB",
@@ -1346,8 +1346,8 @@
     "Trend Strength": -4.15,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AVY",
@@ -1365,14 +1365,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Packaging & Containers",
     "Market Cap": 14469697536,
-    "P/E Ratio": 21.296928,
+    "P/E Ratio": 21.272726,
     "Price": 187.2,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 7.01,
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AXON",
@@ -1390,14 +1390,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 45811396608,
-    "P/E Ratio": 377.3576,
+    "P/E Ratio": 370.0065,
     "Price": 569.81,
     "EarningsDate": "2026-05-06",
     "Trend Strength": -19.23,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BKR",
@@ -1422,7 +1422,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BALL",
@@ -1447,7 +1447,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BAC",
@@ -1472,7 +1472,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BAX",
@@ -1496,8 +1496,8 @@
     "Trend Strength": -13.4,
     "Score": 0,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BDX",
@@ -1515,14 +1515,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Instruments & Supplies",
     "Market Cap": 62129987584,
-    "P/E Ratio": 28.067104,
+    "P/E Ratio": 28.021244,
     "Price": 171.49,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 10.75,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BRK-B",
@@ -1540,14 +1540,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance - Diversified",
     "Market Cap": 1051657568256,
-    "P/E Ratio": 15.579418,
+    "P/E Ratio": 15.574442,
     "Price": 487.48,
     "EarningsDate": "2026-05-02",
     "Trend Strength": 0.45,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BBY",
@@ -1571,8 +1571,8 @@
     "Trend Strength": -5.14,
     "Score": 30,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TECH",
@@ -1596,8 +1596,8 @@
     "Trend Strength": 9.64,
     "Score": 35,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BIIB",
@@ -1615,14 +1615,14 @@
     "Sector": "Healthcare",
     "Industry": "Drug Manufacturers - General",
     "Market Cap": 27875315712,
-    "P/E Ratio": 21.584091,
+    "P/E Ratio": 21.608646,
     "Price": 189.94,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 18.86,
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BLK",
@@ -1640,14 +1640,14 @@
     "Sector": "Financial Services",
     "Industry": "Asset Management",
     "Market Cap": 162788982784,
-    "P/E Ratio": 29.756948,
+    "P/E Ratio": 29.672792,
     "Price": 1049.23,
     "EarningsDate": "2026-04-10",
     "Trend Strength": 1.09,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 7,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 8,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BX",
@@ -1671,8 +1671,8 @@
     "Trend Strength": -6.99,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "XYZ",
@@ -1689,15 +1689,15 @@
     "Name": "Block, Inc.",
     "Sector": "Technology",
     "Industry": "Software - Infrastructure",
-    "Market Cap": 39769260032,
-    "P/E Ratio": 13.1267605,
+    "Market Cap": 39644065792,
+    "P/E Ratio": 31.066668,
     "Price": 65.24,
     "EarningsDate": "2026-04-30",
     "Trend Strength": -9.81,
-    "Score": 25,
+    "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BK",
@@ -1722,7 +1722,7 @@
     "Score": 57,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BA",
@@ -1740,14 +1740,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 178517245952,
-    "P/E Ratio": 91.289154,
+    "P/E Ratio": 91.65726,
     "Price": 227.31,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 7.05,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BKNG",
@@ -1765,14 +1765,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Travel Services",
     "Market Cap": 137109118976,
-    "P/E Ratio": 25.664173,
+    "P/E Ratio": 25.707602,
     "Price": 4253.58,
     "EarningsDate": "2026-04-28",
     "Trend Strength": -7.5,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BSX",
@@ -1796,8 +1796,8 @@
     "Trend Strength": -11.48,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BMY",
@@ -1822,7 +1822,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "AVGO",
@@ -1840,14 +1840,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 1505496662016,
-    "P/E Ratio": 66.56813,
+    "P/E Ratio": 66.70798,
     "Price": 317.53,
     "EarningsDate": "2026-03-04",
     "Trend Strength": 4.93,
     "Score": 28,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BR",
@@ -1871,8 +1871,8 @@
     "Trend Strength": -11.95,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BRO",
@@ -1896,8 +1896,8 @@
     "Trend Strength": -16.28,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BF-B",
@@ -1921,8 +1921,8 @@
     "Trend Strength": -2.08,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BLDR",
@@ -1946,8 +1946,8 @@
     "Trend Strength": -4.87,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BG",
@@ -1972,7 +1972,7 @@
     "Score": 60,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BXP",
@@ -1996,8 +1996,8 @@
     "Trend Strength": -5.62,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CHRW",
@@ -2015,14 +2015,14 @@
     "Sector": "Industrials",
     "Industry": "Integrated Freight & Logistics",
     "Market Cap": 22522535936,
-    "P/E Ratio": 39.31056,
+    "P/E Ratio": 39.392113,
     "Price": 189.87,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 31.02,
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CDNS",
@@ -2039,15 +2039,15 @@
     "Name": "Cadence Design Systems, Inc.",
     "Sector": "Technology",
     "Industry": "Software - Application",
-    "Market Cap": 83275792384,
+    "Market Cap": 84260651008,
     "P/E Ratio": 75.229065,
     "Price": 305.43,
     "EarningsDate": "2026-04-27",
     "Trend Strength": -5.67,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CPT",
@@ -2065,14 +2065,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Residential",
     "Market Cap": 11570492416,
-    "P/E Ratio": 30.720339,
+    "P/E Ratio": 30.633802,
     "Price": 108.75,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 1.26,
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CPB",
@@ -2096,8 +2096,8 @@
     "Trend Strength": -9.28,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "COF",
@@ -2115,14 +2115,14 @@
     "Sector": "Financial Services",
     "Industry": "Credit Services",
     "Market Cap": 121792864256,
-    "P/E Ratio": 58.45672,
+    "P/E Ratio": 58.109795,
     "Price": 195.83,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 4.0,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CAH",
@@ -2140,14 +2140,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Distribution",
     "Market Cap": 52517826560,
-    "P/E Ratio": 32.11223,
+    "P/E Ratio": 32.1585,
     "Price": 223.18,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 20.53,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CCL",
@@ -2171,8 +2171,8 @@
     "Trend Strength": 8.12,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CARR",
@@ -2196,8 +2196,8 @@
     "Trend Strength": -5.81,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CVNA",
@@ -2215,14 +2215,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Auto & Truck Dealerships",
     "Market Cap": 69306064896,
-    "P/E Ratio": 37.42722,
+    "P/E Ratio": 37.471565,
     "Price": 316.26,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 11.22,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CAT",
@@ -2240,14 +2240,14 @@
     "Sector": "Industrials",
     "Industry": "Farm & Heavy Construction Machinery",
     "Market Cap": 342547005440,
-    "P/E Ratio": 38.976036,
+    "P/E Ratio": 38.913876,
     "Price": 731.97,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 31.37,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CBOE",
@@ -2265,14 +2265,14 @@
     "Sector": "Financial Services",
     "Industry": "Financial Data & Stock Exchanges",
     "Market Cap": 31465201664,
-    "P/E Ratio": 28.878002,
+    "P/E Ratio": 28.822626,
     "Price": 300.62,
     "EarningsDate": "2026-05-01",
     "Trend Strength": 9.36,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CBRE",
@@ -2290,14 +2290,14 @@
     "Sector": "Real Estate",
     "Industry": "Real Estate Services",
     "Market Cap": 42180833280,
-    "P/E Ratio": 36.815586,
+    "P/E Ratio": 36.72021,
     "Price": 141.74,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 4.88,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CDW",
@@ -2321,8 +2321,8 @@
     "Trend Strength": -15.38,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "COR",
@@ -2347,7 +2347,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CNC",
@@ -2372,7 +2372,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CNP",
@@ -2397,7 +2397,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CF",
@@ -2422,7 +2422,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CRL",
@@ -2446,8 +2446,8 @@
     "Trend Strength": 14.66,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SCHW",
@@ -2472,7 +2472,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CHTR",
@@ -2496,8 +2496,8 @@
     "Trend Strength": -21.76,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CVX",
@@ -2515,14 +2515,14 @@
     "Sector": "Energy",
     "Industry": "Oil & Gas Integrated",
     "Market Cap": 371939737600,
-    "P/E Ratio": 28.058823,
+    "P/E Ratio": 28.10121,
     "Price": 186.03,
     "EarningsDate": "2026-05-01",
     "Trend Strength": 10.65,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CMG",
@@ -2546,8 +2546,8 @@
     "Trend Strength": -8.24,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CB",
@@ -2565,14 +2565,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance - Property & Casualty",
     "Market Cap": 131501088768,
-    "P/E Ratio": 13.0116825,
+    "P/E Ratio": 13.001556,
     "Price": 334.14,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 8.81,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CHD",
@@ -2597,7 +2597,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CIEN",
@@ -2615,14 +2615,14 @@
     "Sector": "Technology",
     "Industry": "Communication Equipment",
     "Market Cap": 48599769088,
-    "P/E Ratio": 394.88504,
+    "P/E Ratio": 399.4767,
     "Price": 343.55,
     "EarningsDate": "2026-03-05",
     "Trend Strength": 64.69,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CI",
@@ -2640,14 +2640,14 @@
     "Sector": "Healthcare",
     "Industry": "Healthcare Plans",
     "Market Cap": 76061401088,
-    "P/E Ratio": 12.843482,
+    "P/E Ratio": 12.837691,
     "Price": 284.74,
     "EarningsDate": "2026-04-30",
     "Trend Strength": -3.03,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CINF",
@@ -2672,7 +2672,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CTAS",
@@ -2696,8 +2696,8 @@
     "Trend Strength": -4.27,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CSCO",
@@ -2722,7 +2722,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "C",
@@ -2747,7 +2747,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CFG",
@@ -2770,9 +2770,9 @@
     "EarningsDate": "2026-04-16",
     "Trend Strength": 19.88,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CLX",
@@ -2796,8 +2796,8 @@
     "Trend Strength": -2.75,
     "Score": 33,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CME",
@@ -2815,14 +2815,14 @@
     "Sector": "Financial Services",
     "Industry": "Financial Data & Stock Exchanges",
     "Market Cap": 115043975168,
-    "P/E Ratio": 28.699553,
+    "P/E Ratio": 28.648165,
     "Price": 320.0,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 5.22,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CMS",
@@ -2847,7 +2847,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KO",
@@ -2872,7 +2872,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CTSH",
@@ -2896,8 +2896,8 @@
     "Trend Strength": 3.73,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "COIN",
@@ -2921,8 +2921,8 @@
     "Trend Strength": -28.46,
     "Score": 33,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CL",
@@ -2947,7 +2947,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CMCSA",
@@ -2972,7 +2972,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FIX",
@@ -2990,14 +2990,14 @@
     "Sector": "Industrials",
     "Industry": "Engineering & Construction",
     "Market Cap": 50452295680,
-    "P/E Ratio": 49.42571,
+    "P/E Ratio": 49.51125,
     "Price": 1430.38,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 39.6,
     "Score": 58,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CAG",
@@ -3021,8 +3021,8 @@
     "Trend Strength": -2.18,
     "Score": 26,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "COP",
@@ -3047,7 +3047,7 @@
     "Score": 82,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ED",
@@ -3072,7 +3072,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "STZ",
@@ -3096,8 +3096,8 @@
     "Trend Strength": 0.86,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CEG",
@@ -3115,14 +3115,14 @@
     "Sector": "Utilities",
     "Industry": "Utilities - Independent Power Producers",
     "Market Cap": 116868579328,
-    "P/E Ratio": 43.569504,
+    "P/E Ratio": 43.687416,
     "Price": 322.85,
     "EarningsDate": "2026-05-11",
     "Trend Strength": -4.92,
     "Score": 13,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "COO",
@@ -3139,7 +3139,7 @@
     "Name": "The Cooper Companies, Inc.",
     "Sector": "Healthcare",
     "Industry": "Medical Instruments & Supplies",
-    "Market Cap": 16298356736,
+    "Market Cap": 16066279424,
     "P/E Ratio": 43.839573,
     "Price": 81.98,
     "EarningsDate": "2026-03-05",
@@ -3147,7 +3147,7 @@
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CPRT",
@@ -3171,8 +3171,8 @@
     "Trend Strength": -11.77,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GLW",
@@ -3190,14 +3190,14 @@
     "Sector": "Technology",
     "Industry": "Electronic Components",
     "Market Cap": 124265201664,
-    "P/E Ratio": 79.14754,
+    "P/E Ratio": 79.58241,
     "Price": 144.84,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 38.78,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CPAY",
@@ -3222,7 +3222,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CTVA",
@@ -3247,7 +3247,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CSGP",
@@ -3271,8 +3271,8 @@
     "Trend Strength": -22.53,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "COST",
@@ -3290,14 +3290,14 @@
     "Sector": "Consumer Defensive",
     "Industry": "Discount Stores",
     "Market Cap": 446949982208,
-    "P/E Ratio": 54.00966,
+    "P/E Ratio": 54.067665,
     "Price": 1006.74,
     "EarningsDate": "2026-03-05",
     "Trend Strength": 0.1,
     "Score": 75,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CTRA",
@@ -3322,7 +3322,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CRH",
@@ -3339,15 +3339,15 @@
     "Name": "CRH PLC",
     "Sector": "Basic Materials",
     "Industry": "Building Materials",
-    "Market Cap": 75889278976,
-    "P/E Ratio": 20.555353,
+    "Market Cap": 75878383616,
+    "P/E Ratio": 20.592728,
     "Price": 113.26,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 11.06,
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CRWD",
@@ -3371,8 +3371,8 @@
     "Trend Strength": -7.18,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CCI",
@@ -3396,8 +3396,8 @@
     "Trend Strength": -7.17,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CSX",
@@ -3422,7 +3422,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CMI",
@@ -3440,14 +3440,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 79315263488,
-    "P/E Ratio": 28.002926,
+    "P/E Ratio": 28.016594,
     "Price": 574.06,
     "EarningsDate": "2026-05-04",
     "Trend Strength": 28.83,
     "Score": 50,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CVS",
@@ -3472,7 +3472,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DHR",
@@ -3496,8 +3496,8 @@
     "Trend Strength": 6.78,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DRI",
@@ -3522,7 +3522,7 @@
     "Score": 54,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DDOG",
@@ -3546,8 +3546,8 @@
     "Trend Strength": -9.54,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DVA",
@@ -3565,14 +3565,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Care Facilities",
     "Market Cap": 10347555840,
-    "P/E Ratio": 16.259453,
+    "P/E Ratio": 16.293684,
     "Price": 154.79,
     "EarningsDate": "2026-05-04",
     "Trend Strength": -3.49,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DECK",
@@ -3597,7 +3597,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DE",
@@ -3615,14 +3615,14 @@
     "Sector": "Industrials",
     "Industry": "Farm & Heavy Construction Machinery",
     "Market Cap": 166450561024,
-    "P/E Ratio": 33.17342,
+    "P/E Ratio": 33.227272,
     "Price": 614.04,
     "EarningsDate": "2026-05-21",
     "Trend Strength": 8.69,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DELL",
@@ -3640,14 +3640,14 @@
     "Sector": "Technology",
     "Industry": "Computer Hardware",
     "Market Cap": 98586451968,
-    "P/E Ratio": 19.665775,
+    "P/E Ratio": 16.947004,
     "Price": 147.1,
     "EarningsDate": "2026-05-28",
     "Trend Strength": -4.69,
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DAL",
@@ -3671,8 +3671,8 @@
     "Trend Strength": 15.81,
     "Score": 42,
     "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DVN",
@@ -3697,7 +3697,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DXCM",
@@ -3721,8 +3721,8 @@
     "Trend Strength": -4.3,
     "Score": 8,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FANG",
@@ -3747,7 +3747,7 @@
     "Score": 80,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DLR",
@@ -3772,7 +3772,7 @@
     "Score": 49,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DG",
@@ -3790,14 +3790,14 @@
     "Sector": "Consumer Defensive",
     "Industry": "Discount Stores",
     "Market Cap": 33370021888,
-    "P/E Ratio": 26.228374,
+    "P/E Ratio": 26.183075,
     "Price": 151.6,
     "EarningsDate": "2026-03-12",
     "Trend Strength": 24.62,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DLTR",
@@ -3822,7 +3822,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "D",
@@ -3847,7 +3847,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DPZ",
@@ -3865,14 +3865,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Restaurants",
     "Market Cap": 13674181632,
-    "P/E Ratio": 23.156036,
+    "P/E Ratio": 23.142857,
     "Price": 406.62,
     "EarningsDate": "2026-04-27",
     "Trend Strength": -5.98,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DASH",
@@ -3890,14 +3890,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Internet Retail",
     "Market Cap": 77219282944,
-    "P/E Ratio": 83.844345,
+    "P/E Ratio": 83.4507,
     "Price": 177.75,
     "EarningsDate": "2026-05-11",
     "Trend Strength": -12.26,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DOV",
@@ -3915,14 +3915,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 30426068992,
-    "P/E Ratio": 27.83438,
+    "P/E Ratio": 27.869347,
     "Price": 221.84,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 13.57,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DOW",
@@ -3947,7 +3947,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DHI",
@@ -3970,9 +3970,9 @@
     "EarningsDate": "2026-04-21",
     "Trend Strength": 3.11,
     "Score": 37,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DTE",
@@ -3990,14 +3990,14 @@
     "Sector": "Utilities",
     "Industry": "Utilities - Regulated Electric",
     "Market Cap": 31193421824,
-    "P/E Ratio": 21.322443,
+    "P/E Ratio": 21.352774,
     "Price": 150.11,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 1.1,
     "Score": 82,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DUK",
@@ -4015,14 +4015,14 @@
     "Sector": "Utilities",
     "Industry": "Utilities - Regulated Electric",
     "Market Cap": 102557966336,
-    "P/E Ratio": 20.90016,
+    "P/E Ratio": 20.933334,
     "Price": 131.88,
     "EarningsDate": "2026-05-05",
     "Trend Strength": 1.47,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DD",
@@ -4047,7 +4047,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ETN",
@@ -4065,14 +4065,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 137991274496,
-    "P/E Ratio": 33.919617,
+    "P/E Ratio": 33.887188,
     "Price": 354.46,
     "EarningsDate": "2026-04-30",
     "Trend Strength": -1.19,
     "Score": 39,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EBAY",
@@ -4097,7 +4097,7 @@
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ECL",
@@ -4115,14 +4115,14 @@
     "Sector": "Basic Materials",
     "Industry": "Specialty Chemicals",
     "Market Cap": 84370235392,
-    "P/E Ratio": 40.917583,
+    "P/E Ratio": 40.973866,
     "Price": 297.88,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 4.68,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EIX",
@@ -4147,7 +4147,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EW",
@@ -4172,7 +4172,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EA",
@@ -4190,14 +4190,14 @@
     "Sector": "Communication Services",
     "Industry": "Electronic Gaming & Multimedia",
     "Market Cap": 50483679232,
-    "P/E Ratio": 75.272385,
+    "P/E Ratio": 75.83834,
     "Price": 201.73,
     "EarningsDate": "2026-05-05",
     "Trend Strength": 11.13,
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ELV",
@@ -4215,14 +4215,14 @@
     "Sector": "Healthcare",
     "Industry": "Healthcare Plans",
     "Market Cap": 64324378624,
-    "P/E Ratio": 11.556305,
+    "P/E Ratio": 11.560889,
     "Price": 291.45,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 3.08,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EME",
@@ -4240,14 +4240,14 @@
     "Sector": "Industrials",
     "Industry": "Engineering & Construction",
     "Market Cap": 33165684736,
-    "P/E Ratio": 29.86175,
+    "P/E Ratio": 29.849718,
     "Price": 740.87,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 13.46,
     "Score": 65,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EMR",
@@ -4265,14 +4265,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 81651892224,
-    "P/E Ratio": 35.67813,
+    "P/E Ratio": 35.590687,
     "Price": 145.21,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 8.35,
     "Score": 40,
     "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ETR",
@@ -4297,7 +4297,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EOG",
@@ -4315,14 +4315,14 @@
     "Sector": "Energy",
     "Industry": "Oil & Gas E&P",
     "Market Cap": 69354938368,
-    "P/E Ratio": 14.030736,
+    "P/E Ratio": 14.0,
     "Price": 127.82,
     "EarningsDate": "2026-04-30",
     "Trend Strength": -0.3,
     "Score": 48,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EPAM",
@@ -4340,14 +4340,14 @@
     "Sector": "Technology",
     "Industry": "Information Technology Services",
     "Market Cap": 7783684608,
-    "P/E Ratio": 20.998508,
+    "P/E Ratio": 20.967262,
     "Price": 140.9,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 8.42,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EQT",
@@ -4372,7 +4372,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EFX",
@@ -4396,8 +4396,8 @@
     "Trend Strength": -10.86,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EQIX",
@@ -4415,14 +4415,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Specialty",
     "Market Cap": 95212953600,
-    "P/E Ratio": 70.22028,
+    "P/E Ratio": 70.424416,
     "Price": 969.04,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 4.14,
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EQR",
@@ -4446,8 +4446,8 @@
     "Trend Strength": -1.08,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ERIE",
@@ -4465,14 +4465,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance Brokers",
     "Market Cap": 14232779776,
-    "P/E Ratio": 25.462116,
+    "P/E Ratio": 25.438318,
     "Price": 272.19,
     "EarningsDate": "2026-04-23",
     "Trend Strength": -11.55,
     "Score": 10,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ESS",
@@ -4496,8 +4496,8 @@
     "Trend Strength": -2.47,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EL",
@@ -4521,8 +4521,8 @@
     "Trend Strength": 18.51,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EG",
@@ -4540,14 +4540,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance - Reinsurance",
     "Market Cap": 14025287680,
-    "P/E Ratio": 8.838889,
+    "P/E Ratio": 8.841228,
     "Price": 334.11,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -0.56,
     "Score": 10,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EVRG",
@@ -4572,7 +4572,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ES",
@@ -4597,7 +4597,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EXC",
@@ -4622,7 +4622,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EXE",
@@ -4646,8 +4646,8 @@
     "Trend Strength": 0.07,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EXPE",
@@ -4665,14 +4665,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Travel Services",
     "Market Cap": 27169656832,
-    "P/E Ratio": 22.602446,
+    "P/E Ratio": 22.62551,
     "Price": 221.73,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 16.09,
     "Score": 47,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EXPD",
@@ -4697,7 +4697,7 @@
     "Score": 47,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "EXR",
@@ -4715,14 +4715,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Industrial",
     "Market Cap": 33319088128,
-    "P/E Ratio": 32.829697,
+    "P/E Ratio": 32.758167,
     "Price": 150.36,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 0.7,
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "XOM",
@@ -4747,7 +4747,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FFIV",
@@ -4771,8 +4771,8 @@
     "Trend Strength": -5.62,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FDS",
@@ -4796,8 +4796,8 @@
     "Trend Strength": -23.22,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FICO",
@@ -4815,14 +4815,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 34729443328,
-    "P/E Ratio": 54.06241,
+    "P/E Ratio": 54.343353,
     "Price": 1464.01,
     "EarningsDate": "2026-04-28",
     "Trend Strength": -6.3,
     "Score": 18,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FAST",
@@ -4847,7 +4847,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FRT",
@@ -4872,7 +4872,7 @@
     "Score": 72,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FDX",
@@ -4890,14 +4890,14 @@
     "Sector": "Industrials",
     "Industry": "Integrated Freight & Logistics",
     "Market Cap": 90628128768,
-    "P/E Ratio": 21.267443,
+    "P/E Ratio": 21.279224,
     "Price": 384.09,
     "EarningsDate": "2026-03-19",
     "Trend Strength": 28.1,
     "Score": 82,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FIS",
@@ -4921,8 +4921,8 @@
     "Trend Strength": -14.93,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FITB",
@@ -4945,9 +4945,9 @@
     "EarningsDate": "2026-04-17",
     "Trend Strength": 14.37,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FSLR",
@@ -4971,8 +4971,8 @@
     "Trend Strength": 11.2,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FE",
@@ -4997,7 +4997,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FISV",
@@ -5021,8 +5021,8 @@
     "Trend Strength": -42.17,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "F",
@@ -5047,7 +5047,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FTNT",
@@ -5071,8 +5071,8 @@
     "Trend Strength": -8.23,
     "Score": 30,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FTV",
@@ -5097,7 +5097,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FOXA",
@@ -5121,8 +5121,8 @@
     "Trend Strength": 9.61,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FOX",
@@ -5146,8 +5146,8 @@
     "Trend Strength": 9.11,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "BEN",
@@ -5172,7 +5172,7 @@
     "Score": 58,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "FCX",
@@ -5197,7 +5197,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GRMN",
@@ -5215,14 +5215,14 @@
     "Sector": "Technology",
     "Industry": "Scientific & Technical Instruments",
     "Market Cap": 48347332608,
-    "P/E Ratio": 29.206974,
+    "P/E Ratio": 29.240976,
     "Price": 251.18,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -1.27,
     "Score": 38,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IT",
@@ -5240,14 +5240,14 @@
     "Sector": "Technology",
     "Industry": "Information Technology Services",
     "Market Cap": 12029674496,
-    "P/E Ratio": 17.277431,
+    "P/E Ratio": 17.295338,
     "Price": 166.9,
     "EarningsDate": "2026-05-05",
     "Trend Strength": -25.74,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GE",
@@ -5272,7 +5272,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GEHC",
@@ -5297,7 +5297,7 @@
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GEV",
@@ -5315,14 +5315,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 228253761536,
-    "P/E Ratio": 47.583145,
+    "P/E Ratio": 47.610073,
     "Price": 841.27,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 18.91,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GEN",
@@ -5346,8 +5346,8 @@
     "Trend Strength": -9.65,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GNRC",
@@ -5365,14 +5365,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 12962723840,
-    "P/E Ratio": 81.81111,
+    "P/E Ratio": 82.11524,
     "Price": 220.89,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 7.88,
     "Score": 48,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GD",
@@ -5390,14 +5390,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 98995101696,
-    "P/E Ratio": 23.681759,
+    "P/E Ratio": 23.697088,
     "Price": 366.12,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 8.73,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GIS",
@@ -5407,7 +5407,7 @@
     "5D Return": -2.2,
     "1M Return": -6.32,
     "6M Return": -10.09,
-    "6M Volatility": 24.97,
+    "6M Volatility": 24.96,
     "Volume": 7112067,
     "Vol Change 1D": -6.7,
     "Vol Change 5D": -15.4,
@@ -5421,8 +5421,8 @@
     "Trend Strength": -4.85,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GM",
@@ -5446,8 +5446,8 @@
     "Trend Strength": 26.51,
     "Score": 42,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GPC",
@@ -5471,8 +5471,8 @@
     "Trend Strength": 0.99,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GILD",
@@ -5490,14 +5490,14 @@
     "Sector": "Healthcare",
     "Industry": "Drug Manufacturers - General",
     "Market Cap": 184003346432,
-    "P/E Ratio": 21.82916,
+    "P/E Ratio": 21.893648,
     "Price": 148.22,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 14.19,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GPN",
@@ -5521,8 +5521,8 @@
     "Trend Strength": -4.84,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GL",
@@ -5540,14 +5540,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance - Life",
     "Market Cap": 11725261824,
-    "P/E Ratio": 10.295163,
+    "P/E Ratio": 10.287847,
     "Price": 144.75,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 5.67,
     "Score": 77,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GDDY",
@@ -5571,8 +5571,8 @@
     "Trend Strength": -25.12,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GS",
@@ -5590,14 +5590,14 @@
     "Sector": "Financial Services",
     "Industry": "Capital Markets",
     "Market Cap": 262534856704,
-    "P/E Ratio": 16.89887,
+    "P/E Ratio": 16.892286,
     "Price": 867.25,
     "EarningsDate": "2026-04-13",
     "Trend Strength": 17.72,
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HAL",
@@ -5622,7 +5622,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HIG",
@@ -5647,7 +5647,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HAS",
@@ -5672,7 +5672,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HCA",
@@ -5690,14 +5690,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Care Facilities",
     "Market Cap": 121742163968,
-    "P/E Ratio": 19.20995,
+    "P/E Ratio": 19.230307,
     "Price": 544.41,
     "EarningsDate": "2026-04-24",
     "Trend Strength": 14.56,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DOC",
@@ -5721,8 +5721,8 @@
     "Trend Strength": -1.29,
     "Score": 39,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HSIC",
@@ -5747,7 +5747,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HSY",
@@ -5765,14 +5765,14 @@
     "Sector": "Consumer Defensive",
     "Industry": "Confectioners",
     "Market Cap": 47056285696,
-    "P/E Ratio": 53.591225,
+    "P/E Ratio": 53.46774,
     "Price": 232.05,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 11.48,
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HPE",
@@ -5796,8 +5796,8 @@
     "Trend Strength": 2.89,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HLT",
@@ -5815,14 +5815,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Lodging",
     "Market Cap": 70871810048,
-    "P/E Ratio": 49.821896,
+    "P/E Ratio": 49.74062,
     "Price": 304.91,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 10.07,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HOLX",
@@ -5847,7 +5847,7 @@
     "Score": 80,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HD",
@@ -5865,14 +5865,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Home Improvement Retail",
     "Market Cap": 367453241344,
-    "P/E Ratio": 25.920645,
+    "P/E Ratio": 25.902454,
     "Price": 369.11,
     "EarningsDate": "2026-05-19",
     "Trend Strength": -0.69,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HON",
@@ -5890,14 +5890,14 @@
     "Sector": "Industrials",
     "Industry": "Conglomerates",
     "Market Cap": 165751734272,
-    "P/E Ratio": 32.535713,
+    "P/E Ratio": 32.449867,
     "Price": 245.97,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 7.14,
-    "Score": 80,
+    "Score": 82,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HRL",
@@ -5921,8 +5921,8 @@
     "Trend Strength": -5.14,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HST",
@@ -5947,7 +5947,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HWM",
@@ -5965,14 +5965,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 104686223360,
-    "P/E Ratio": 70.29459,
+    "P/E Ratio": 69.916664,
     "Price": 260.09,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 15.59,
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HPQ",
@@ -5996,8 +5996,8 @@
     "Trend Strength": -16.93,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HUBB",
@@ -6008,21 +6008,21 @@
     "1M Return": -2.33,
     "6M Return": 15.15,
     "6M Volatility": 27.9,
-    "Volume": 440141,
-    "Vol Change 1D": 2.25,
-    "Vol Change 5D": -79.54,
+    "Volume": 362837,
+    "Vol Change 1D": -14.94,
+    "Vol Change 5D": -82.98,
     "Name": "Hubbell Inc",
     "Sector": "Industrials",
     "Industry": "Electrical Equipment & Parts",
     "Market Cap": 26090649600,
-    "P/E Ratio": 29.636475,
+    "P/E Ratio": 29.672308,
     "Price": 490.78,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 11.14,
-    "Score": 65,
+    "Score": 60,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HUM",
@@ -6040,14 +6040,14 @@
     "Sector": "Healthcare",
     "Industry": "Healthcare Plans",
     "Market Cap": 22082328576,
-    "P/E Ratio": 18.60874,
+    "P/E Ratio": 18.62767,
     "Price": 183.11,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -8.99,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HBAN",
@@ -6071,8 +6071,8 @@
     "Trend Strength": 6.66,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 7,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 8,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HII",
@@ -6090,14 +6090,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 17150231552,
-    "P/E Ratio": 28.360155,
+    "P/E Ratio": 28.415474,
     "Price": 437.03,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 32.4,
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IBM",
@@ -6115,14 +6115,14 @@
     "Sector": "Technology",
     "Industry": "Information Technology Services",
     "Market Cap": 234564894720,
-    "P/E Ratio": 22.447037,
+    "P/E Ratio": 22.467205,
     "Price": 250.06,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 2.37,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IEX",
@@ -6140,14 +6140,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 15621078016,
-    "P/E Ratio": 32.507786,
+    "P/E Ratio": 32.558502,
     "Price": 208.7,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 11.26,
-    "Score": 72,
+    "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IDXX",
@@ -6165,14 +6165,14 @@
     "Sector": "Healthcare",
     "Industry": "Diagnostics & Research",
     "Market Cap": 51799556096,
-    "P/E Ratio": 49.556915,
+    "P/E Ratio": 49.519085,
     "Price": 648.7,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 6.44,
     "Score": 40,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ITW",
@@ -6190,14 +6190,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 82762399744,
-    "P/E Ratio": 27.349525,
+    "P/E Ratio": 27.40172,
     "Price": 287.17,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 5.97,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "INCY",
@@ -6220,9 +6220,9 @@
     "EarningsDate": "2026-04-28",
     "Trend Strength": 16.44,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IR",
@@ -6247,7 +6247,7 @@
     "Score": 48,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PODD",
@@ -6265,14 +6265,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Devices",
     "Market Cap": 17098447872,
-    "P/E Ratio": 69.795975,
+    "P/E Ratio": 69.997116,
     "Price": 242.89,
     "EarningsDate": "2026-05-07",
     "Trend Strength": -11.91,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "INTC",
@@ -6297,7 +6297,7 @@
     "Score": 50,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IBKR",
@@ -6320,9 +6320,9 @@
     "EarningsDate": "2026-04-14",
     "Trend Strength": 11.39,
     "Score": 40,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ICE",
@@ -6346,8 +6346,8 @@
     "Trend Strength": -2.09,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IFF",
@@ -6372,7 +6372,7 @@
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IP",
@@ -6396,8 +6396,8 @@
     "Trend Strength": -3.35,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "INTU",
@@ -6415,14 +6415,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 122534977536,
-    "P/E Ratio": 30.229395,
+    "P/E Ratio": 30.208649,
     "Price": 440.14,
     "EarningsDate": "2026-05-21",
     "Trend Strength": -20.72,
-    "Score": 30,
+    "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ISRG",
@@ -6440,14 +6440,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Instruments & Supplies",
     "Market Cap": 177984176128,
-    "P/E Ratio": 63.763355,
+    "P/E Ratio": 63.68234,
     "Price": 501.18,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 2.79,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IVZ",
@@ -6472,7 +6472,7 @@
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "INVH",
@@ -6496,8 +6496,8 @@
     "Trend Strength": -7.63,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IQV",
@@ -6515,14 +6515,14 @@
     "Sector": "Healthcare",
     "Industry": "Diagnostics & Research",
     "Market Cap": 30292965376,
-    "P/E Ratio": 22.659874,
+    "P/E Ratio": 22.688776,
     "Price": 177.88,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 8.39,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "IRM",
@@ -6546,8 +6546,8 @@
     "Trend Strength": -0.28,
     "Score": 39,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "JBHT",
@@ -6565,14 +6565,14 @@
     "Sector": "Industrials",
     "Industry": "Integrated Freight & Logistics",
     "Market Cap": 22368692224,
-    "P/E Ratio": 38.38562,
+    "P/E Ratio": 38.323,
     "Price": 234.92,
     "EarningsDate": "2026-04-14",
     "Trend Strength": 27.47,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "JBL",
@@ -6597,7 +6597,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "JKHY",
@@ -6621,8 +6621,8 @@
     "Trend Strength": 3.91,
     "Score": 32,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "J",
@@ -6646,8 +6646,8 @@
     "Trend Strength": -1.93,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "JNJ",
@@ -6665,14 +6665,14 @@
     "Sector": "Healthcare",
     "Industry": "Drug Manufacturers - General",
     "Market Cap": 591148220416,
-    "P/E Ratio": 22.239347,
+    "P/E Ratio": 22.219204,
     "Price": 245.3,
     "EarningsDate": "2026-04-14",
     "Trend Strength": 20.19,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "JCI",
@@ -6690,14 +6690,14 @@
     "Sector": "Industrials",
     "Industry": "Building Products & Equipment",
     "Market Cap": 85689262080,
-    "P/E Ratio": 47.138046,
+    "P/E Ratio": 46.979866,
     "Price": 140.0,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 11.97,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "JPM",
@@ -6722,7 +6722,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KVUE",
@@ -6746,8 +6746,8 @@
     "Trend Strength": -4.55,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KDP",
@@ -6771,8 +6771,8 @@
     "Trend Strength": -3.6,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KEY",
@@ -6797,7 +6797,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KEYS",
@@ -6822,7 +6822,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KMB",
@@ -6846,8 +6846,8 @@
     "Trend Strength": -11.72,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KIM",
@@ -6872,7 +6872,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KMI",
@@ -6897,7 +6897,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KKR",
@@ -6921,8 +6921,8 @@
     "Trend Strength": -9.31,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KLAC",
@@ -6940,14 +6940,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductor Equipment & Materials",
     "Market Cap": 193923268608,
-    "P/E Ratio": 43.02945,
+    "P/E Ratio": 42.91684,
     "Price": 1475.91,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 29.69,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KHC",
@@ -6971,8 +6971,8 @@
     "Trend Strength": -4.84,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "KR",
@@ -6997,7 +6997,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LHX",
@@ -7015,14 +7015,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 68975738880,
-    "P/E Ratio": 43.179157,
+    "P/E Ratio": 43.280514,
     "Price": 368.75,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 17.28,
     "Score": 63,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LH",
@@ -7040,14 +7040,14 @@
     "Sector": "Healthcare",
     "Industry": "Diagnostics & Research",
     "Market Cap": 23282464768,
-    "P/E Ratio": 26.824259,
+    "P/E Ratio": 26.875599,
     "Price": 280.85,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 1.52,
     "Score": 57,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LRCX",
@@ -7065,14 +7065,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductor Equipment & Materials",
     "Market Cap": 280082120704,
-    "P/E Ratio": 45.7885,
+    "P/E Ratio": 45.882717,
     "Price": 222.99,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 51.07,
     "Score": 58,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LW",
@@ -7096,8 +7096,8 @@
     "Trend Strength": -15.83,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LVS",
@@ -7122,7 +7122,7 @@
     "Score": 47,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LDOS",
@@ -7140,14 +7140,14 @@
     "Sector": "Technology",
     "Industry": "Information Technology Services",
     "Market Cap": 22592008192,
-    "P/E Ratio": 15.847534,
+    "P/E Ratio": 15.87601,
     "Price": 176.7,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 4.45,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LEN",
@@ -7171,8 +7171,8 @@
     "Trend Strength": -4.51,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LII",
@@ -7190,14 +7190,14 @@
     "Sector": "Industrials",
     "Industry": "Building Products & Equipment",
     "Market Cap": 19313528832,
-    "P/E Ratio": 24.141603,
+    "P/E Ratio": 24.152193,
     "Price": 550.67,
     "EarningsDate": "2026-04-22",
     "Trend Strength": -3.13,
     "Score": 41,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LLY",
@@ -7222,7 +7222,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LIN",
@@ -7240,14 +7240,14 @@
     "Sector": "Basic Materials",
     "Industry": "Specialty Chemicals",
     "Market Cap": 231321731072,
-    "P/E Ratio": 34.191093,
+    "P/E Ratio": 34.120983,
     "Price": 499.19,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 0.85,
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LYV",
@@ -7271,8 +7271,8 @@
     "Trend Strength": -0.65,
     "Score": 31,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LMT",
@@ -7290,14 +7290,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 153759203328,
-    "P/E Ratio": 30.906046,
+    "P/E Ratio": 30.963654,
     "Price": 664.48,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 19.21,
     "Score": 82,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "L",
@@ -7322,7 +7322,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LOW",
@@ -7340,14 +7340,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Home Improvement Retail",
     "Market Cap": 145073274880,
-    "P/E Ratio": 21.391232,
+    "P/E Ratio": 21.842905,
     "Price": 258.62,
     "EarningsDate": "2026-05-20",
     "Trend Strength": 8.93,
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LULU",
@@ -7371,8 +7371,8 @@
     "Trend Strength": -5.88,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LYB",
@@ -7397,7 +7397,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MTB",
@@ -7422,7 +7422,7 @@
     "Score": 57,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MPC",
@@ -7440,14 +7440,14 @@
     "Sector": "Energy",
     "Industry": "Oil & Gas Refining & Marketing",
     "Market Cap": 66364014592,
-    "P/E Ratio": 16.687077,
+    "P/E Ratio": 16.699697,
     "Price": 220.77,
     "EarningsDate": "2026-05-05",
     "Trend Strength": 2.92,
     "Score": 80,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MAR",
@@ -7472,7 +7472,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MRSH",
@@ -7490,14 +7490,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance Brokers",
     "Market Cap": 90554908672,
-    "P/E Ratio": 21.900475,
+    "P/E Ratio": 21.926453,
     "Price": 184.84,
     "EarningsDate": "2026-04-16",
     "Trend Strength": -6.96,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MLM",
@@ -7515,14 +7515,14 @@
     "Sector": "Basic Materials",
     "Industry": "Building Materials",
     "Market Cap": 39842136064,
-    "P/E Ratio": 40.403667,
+    "P/E Ratio": 40.47794,
     "Price": 660.6,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 7.68,
     "Score": 65,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MAS",
@@ -7545,9 +7545,9 @@
     "EarningsDate": "2026-04-30",
     "Trend Strength": 3.33,
     "Score": 37,
-    "Trade Decision": "Hold",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MA",
@@ -7571,8 +7571,8 @@
     "Trend Strength": -2.94,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MTCH",
@@ -7596,8 +7596,8 @@
     "Trend Strength": -3.9,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MKC",
@@ -7621,8 +7621,8 @@
     "Trend Strength": -1.45,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MCD",
@@ -7640,14 +7640,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Restaurants",
     "Market Cap": 236731121664,
-    "P/E Ratio": 27.737457,
+    "P/E Ratio": 27.78392,
     "Price": 331.74,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 3.81,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MCK",
@@ -7672,7 +7672,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MDT",
@@ -7697,7 +7697,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MRK",
@@ -7715,14 +7715,14 @@
     "Sector": "Healthcare",
     "Industry": "Drug Manufacturers - General",
     "Market Cap": 297379299328,
-    "P/E Ratio": 16.499313,
+    "P/E Ratio": 16.521976,
     "Price": 120.28,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 24.04,
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "META",
@@ -7740,14 +7740,14 @@
     "Sector": "Communication Services",
     "Industry": "Internet Content & Information",
     "Market Cap": 1689059983360,
-    "P/E Ratio": 28.38988,
+    "P/E Ratio": 28.414042,
     "Price": 667.73,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -4.91,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MET",
@@ -7771,8 +7771,8 @@
     "Trend Strength": -0.22,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MTD",
@@ -7790,14 +7790,14 @@
     "Sector": "Healthcare",
     "Industry": "Diagnostics & Research",
     "Market Cap": 26284462080,
-    "P/E Ratio": 30.634762,
+    "P/E Ratio": 30.58379,
     "Price": 1286.66,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 6.66,
     "Score": 45,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MGM",
@@ -7822,7 +7822,7 @@
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MCHP",
@@ -7845,9 +7845,9 @@
     "EarningsDate": "2026-05-07",
     "Trend Strength": 11.13,
     "Score": 37,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MU",
@@ -7865,14 +7865,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 451070328832,
-    "P/E Ratio": 38.096004,
+    "P/E Ratio": 38.16857,
     "Price": 400.77,
     "EarningsDate": "2026-03-18",
     "Trend Strength": 74.93,
     "Score": 58,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MSFT",
@@ -7890,14 +7890,14 @@
     "Sector": "Technology",
     "Industry": "Software - Infrastructure",
     "Market Cap": 3011599663104,
-    "P/E Ratio": 25.325,
+    "P/E Ratio": 25.388472,
     "Price": 405.2,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -8.93,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MAA",
@@ -7915,14 +7915,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Residential",
     "Market Cap": 16056755200,
-    "P/E Ratio": 35.391533,
+    "P/E Ratio": 35.298153,
     "Price": 133.78,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -2.09,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MRNA",
@@ -7947,7 +7947,7 @@
     "Score": 80,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MOH",
@@ -7965,14 +7965,14 @@
     "Sector": "Healthcare",
     "Industry": "Healthcare Plans",
     "Market Cap": 7727059456,
-    "P/E Ratio": 16.820627,
+    "P/E Ratio": 16.80179,
     "Price": 150.04,
     "EarningsDate": "2026-04-22",
     "Trend Strength": -12.97,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TAP",
@@ -7996,8 +7996,8 @@
     "Trend Strength": 1.68,
     "Score": 0,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MDLZ",
@@ -8021,8 +8021,8 @@
     "Trend Strength": -4.88,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MPWR",
@@ -8040,14 +8040,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 53532164096,
-    "P/E Ratio": 85.92807,
+    "P/E Ratio": 86.19765,
     "Price": 1099.02,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 19.42,
     "Score": 58,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MNST",
@@ -8072,7 +8072,7 @@
     "Score": 62,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MCO",
@@ -8090,14 +8090,14 @@
     "Sector": "Financial Services",
     "Industry": "Financial Data & Stock Exchanges",
     "Market Cap": 83510075392,
-    "P/E Ratio": 34.50623,
+    "P/E Ratio": 34.48097,
     "Price": 471.01,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 0.18,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MS",
@@ -8120,9 +8120,9 @@
     "EarningsDate": "2026-04-15",
     "Trend Strength": 13.9,
     "Score": 40,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MOS",
@@ -8139,15 +8139,15 @@
     "Name": "Mosaic Company (The)",
     "Sector": "Basic Materials",
     "Industry": "Agricultural Inputs",
-    "Market Cap": 8255798784,
+    "Market Cap": 8258311680,
     "P/E Ratio": 15.299999,
     "Price": 26.01,
     "EarningsDate": "2026-05-05",
     "Trend Strength": -10.85,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MSI",
@@ -8172,7 +8172,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "MSCI",
@@ -8190,14 +8190,14 @@
     "Sector": "Financial Services",
     "Industry": "Financial Data & Stock Exchanges",
     "Market Cap": 43007614976,
-    "P/E Ratio": 36.52648,
+    "P/E Ratio": 36.50319,
     "Price": 572.37,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 1.77,
     "Score": 53,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NDAQ",
@@ -8221,8 +8221,8 @@
     "Trend Strength": 2.69,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NTAP",
@@ -8246,8 +8246,8 @@
     "Trend Strength": -5.07,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NFLX",
@@ -8271,8 +8271,8 @@
     "Trend Strength": -21.23,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NEM",
@@ -8297,7 +8297,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NWSA",
@@ -8321,8 +8321,8 @@
     "Trend Strength": -7.64,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NWS",
@@ -8346,8 +8346,8 @@
     "Trend Strength": -7.79,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NEE",
@@ -8372,7 +8372,7 @@
     "Score": 63,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NKE",
@@ -8396,8 +8396,8 @@
     "Trend Strength": -5.85,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NI",
@@ -8422,7 +8422,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NDSN",
@@ -8440,14 +8440,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 16089106432,
-    "P/E Ratio": 31.214289,
+    "P/E Ratio": 31.248108,
     "Price": 288.42,
     "EarningsDate": "2026-02-18",
     "Trend Strength": 16.15,
     "Score": 67,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NSC",
@@ -8465,14 +8465,14 @@
     "Sector": "Industrials",
     "Industry": "Railroads",
     "Market Cap": 71375724544,
-    "P/E Ratio": 24.927841,
+    "P/E Ratio": 24.947409,
     "Price": 317.83,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 6.64,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NTRS",
@@ -8490,14 +8490,14 @@
     "Sector": "Financial Services",
     "Industry": "Asset Management",
     "Market Cap": 26958041088,
-    "P/E Ratio": 16.5984,
+    "P/E Ratio": 16.617413,
     "Price": 145.07,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 12.08,
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NOC",
@@ -8515,14 +8515,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 107588100096,
-    "P/E Ratio": 25.93189,
+    "P/E Ratio": 25.905155,
     "Price": 753.84,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 14.43,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NCLH",
@@ -8546,8 +8546,8 @@
     "Trend Strength": 3.25,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NRG",
@@ -8565,14 +8565,14 @@
     "Sector": "Utilities",
     "Industry": "Utilities - Independent Power Producers",
     "Market Cap": 35108364288,
-    "P/E Ratio": 40.885,
+    "P/E Ratio": 40.78304,
     "Price": 163.54,
     "EarningsDate": "2026-05-11",
     "Trend Strength": 0.31,
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NUE",
@@ -8597,7 +8597,7 @@
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NVDA",
@@ -8615,14 +8615,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 4448787103744,
-    "P/E Ratio": 37.3551,
+    "P/E Ratio": 37.279022,
     "Price": 183.04,
     "EarningsDate": "2026-05-20",
     "Trend Strength": 5.93,
     "Score": 62,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NVR",
@@ -8640,14 +8640,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Residential Construction",
     "Market Cap": 20589488128,
-    "P/E Ratio": 16.611921,
+    "P/E Ratio": 16.61116,
     "Price": 7251.27,
     "EarningsDate": "2026-04-21",
     "Trend Strength": -0.64,
     "Score": 17,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NXPI",
@@ -8671,8 +8671,8 @@
     "Trend Strength": 5.44,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ORLY",
@@ -8696,8 +8696,8 @@
     "Trend Strength": -2.61,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "OXY",
@@ -8722,7 +8722,7 @@
     "Score": 63,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ODFL",
@@ -8740,14 +8740,14 @@
     "Sector": "Industrials",
     "Industry": "Trucking",
     "Market Cap": 45204992000,
-    "P/E Ratio": 44.57526,
+    "P/E Ratio": 44.667355,
     "Price": 216.19,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 14.84,
     "Score": 73,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "OMC",
@@ -8772,7 +8772,7 @@
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ON",
@@ -8797,7 +8797,7 @@
     "Score": 50,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "OKE",
@@ -8822,7 +8822,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ORCL",
@@ -8846,8 +8846,8 @@
     "Trend Strength": -21.64,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "OTIS",
@@ -8872,7 +8872,7 @@
     "Score": 58,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PCAR",
@@ -8897,7 +8897,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PKG",
@@ -8915,14 +8915,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Packaging & Containers",
     "Market Cap": 20924565504,
-    "P/E Ratio": 27.072176,
+    "P/E Ratio": 27.10373,
     "Price": 232.55,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 8.6,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PLTR",
@@ -8946,8 +8946,8 @@
     "Trend Strength": -1.75,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PANW",
@@ -8965,14 +8965,14 @@
     "Sector": "Technology",
     "Industry": "Software - Infrastructure",
     "Market Cap": 129384955904,
-    "P/E Ratio": 88.08889,
+    "P/E Ratio": 87.60221,
     "Price": 158.56,
     "EarningsDate": "2026-05-20",
     "Trend Strength": -9.34,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PSKY",
@@ -8996,8 +8996,8 @@
     "Trend Strength": -14.46,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PH",
@@ -9015,14 +9015,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 124675424256,
-    "P/E Ratio": 36.063892,
+    "P/E Ratio": 36.103436,
     "Price": 987.79,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 19.01,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PAYX",
@@ -9046,8 +9046,8 @@
     "Trend Strength": -17.13,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PAYC",
@@ -9065,14 +9065,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 7363459584,
-    "P/E Ratio": 16.597773,
+    "P/E Ratio": 16.61834,
     "Price": 134.11,
     "EarningsDate": "2026-05-06",
     "Trend Strength": -27.53,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PYPL",
@@ -9096,8 +9096,8 @@
     "Trend Strength": -20.53,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PNR",
@@ -9121,8 +9121,8 @@
     "Trend Strength": -1.68,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PEP",
@@ -9147,7 +9147,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PFE",
@@ -9172,7 +9172,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PCG",
@@ -9197,7 +9197,7 @@
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PM",
@@ -9215,14 +9215,14 @@
     "Sector": "Consumer Defensive",
     "Industry": "Tobacco",
     "Market Cap": 278707896320,
-    "P/E Ratio": 24.661156,
+    "P/E Ratio": 24.627234,
     "Price": 179.04,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 5.1,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PSX",
@@ -9247,7 +9247,7 @@
     "Score": 82,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PNW",
@@ -9264,15 +9264,15 @@
     "Name": "Pinnacle West Capital Corporati",
     "Sector": "Utilities",
     "Industry": "Utilities - Regulated Electric",
-    "Market Cap": 12326914048,
-    "P/E Ratio": 21.235052,
+    "Market Cap": 12452045824,
+    "P/E Ratio": 20.394058,
     "Price": 102.99,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 4.3,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PNC",
@@ -9297,7 +9297,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "POOL",
@@ -9321,8 +9321,8 @@
     "Trend Strength": -11.95,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PPG",
@@ -9340,14 +9340,14 @@
     "Sector": "Basic Materials",
     "Industry": "Specialty Chemicals",
     "Market Cap": 26305327104,
-    "P/E Ratio": 16.984127,
+    "P/E Ratio": 17.00867,
     "Price": 117.7,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 6.44,
     "Score": 67,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PPL",
@@ -9372,7 +9372,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PFG",
@@ -9397,7 +9397,7 @@
     "Score": 55,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PG",
@@ -9414,15 +9414,15 @@
     "Name": "Procter & Gamble Company (The)",
     "Sector": "Consumer Defensive",
     "Industry": "Household & Personal Products",
-    "Market Cap": 370498830336,
-    "P/E Ratio": 23.41716,
+    "Market Cap": 369904910336,
+    "P/E Ratio": 23.486649,
     "Price": 158.3,
     "EarningsDate": "2026-04-24",
     "Trend Strength": -0.57,
     "Score": 38,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PGR",
@@ -9440,14 +9440,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance - Property & Casualty",
     "Market Cap": 123859263488,
-    "P/E Ratio": 10.99896,
+    "P/E Ratio": 10.987526,
     "Price": 211.4,
     "EarningsDate": "2026-04-15",
     "Trend Strength": -7.03,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PLD",
@@ -9465,14 +9465,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Industrial",
     "Market Cap": 129599111168,
-    "P/E Ratio": 39.27324,
+    "P/E Ratio": 39.16292,
     "Price": 139.42,
     "EarningsDate": "2026-04-15",
     "Trend Strength": 12.79,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PRU",
@@ -9496,8 +9496,8 @@
     "Trend Strength": 3.68,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PEG",
@@ -9522,7 +9522,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PTC",
@@ -9540,14 +9540,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 19392796672,
-    "P/E Ratio": 24.036873,
+    "P/E Ratio": 23.966175,
     "Price": 162.97,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -11.17,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PSA",
@@ -9565,14 +9565,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Industrial",
     "Market Cap": 54540386304,
-    "P/E Ratio": 34.52889,
+    "P/E Ratio": 34.490566,
     "Price": 310.76,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 0.22,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PHM",
@@ -9597,7 +9597,7 @@
     "Score": 52,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "PWR",
@@ -9615,14 +9615,14 @@
     "Sector": "Industrials",
     "Industry": "Engineering & Construction",
     "Market Cap": 85040685056,
-    "P/E Ratio": 83.7084,
+    "P/E Ratio": 83.34017,
     "Price": 568.38,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 14.69,
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "QCOM",
@@ -9640,14 +9640,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 149002960896,
-    "P/E Ratio": 28.127014,
+    "P/E Ratio": 28.070423,
     "Price": 139.51,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -2.24,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DGX",
@@ -9672,7 +9672,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RL",
@@ -9690,14 +9690,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Apparel Manufacturing",
     "Market Cap": 21819115520,
-    "P/E Ratio": 24.493534,
+    "P/E Ratio": 24.443613,
     "Price": 359.81,
     "EarningsDate": "2026-02-05",
     "Trend Strength": 13.01,
     "Score": 59,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RJF",
@@ -9721,8 +9721,8 @@
     "Trend Strength": 2.14,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RTX",
@@ -9740,14 +9740,14 @@
     "Sector": "Industrials",
     "Industry": "Aerospace & Defense",
     "Market Cap": 280296521728,
-    "P/E Ratio": 42.100807,
+    "P/E Ratio": 42.016098,
     "Price": 208.82,
     "EarningsDate": "2026-04-21",
     "Trend Strength": 17.26,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "O",
@@ -9772,7 +9772,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "REG",
@@ -9797,7 +9797,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "REGN",
@@ -9815,14 +9815,14 @@
     "Sector": "Healthcare",
     "Industry": "Biotechnology",
     "Market Cap": 83254345728,
-    "P/E Ratio": 18.985054,
+    "P/E Ratio": 18.975904,
     "Price": 787.5,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 20.67,
     "Score": 70,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RF",
@@ -9845,9 +9845,9 @@
     "EarningsDate": "2026-04-17",
     "Trend Strength": 12.12,
     "Score": 42,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RSG",
@@ -9872,7 +9872,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RMD",
@@ -9896,8 +9896,8 @@
     "Trend Strength": -2.1,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RVTY",
@@ -9922,7 +9922,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "HOOD",
@@ -9946,8 +9946,8 @@
     "Trend Strength": -8.54,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ROK",
@@ -9965,14 +9965,14 @@
     "Sector": "Industrials",
     "Industry": "Specialty Industrial Machinery",
     "Market Cap": 43101261824,
-    "P/E Ratio": 43.711514,
+    "P/E Ratio": 43.861557,
     "Price": 383.35,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 12.16,
     "Score": 40,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ROL",
@@ -9996,8 +9996,8 @@
     "Trend Strength": 5.4,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ROP",
@@ -10021,8 +10021,8 @@
     "Trend Strength": -19.56,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ROST",
@@ -10040,14 +10040,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Apparel Retail",
     "Market Cap": 69442314240,
-    "P/E Ratio": 33.3625,
+    "P/E Ratio": 33.310455,
     "Price": 213.52,
     "EarningsDate": "2026-05-21",
     "Trend Strength": 19.69,
     "Score": 95,
     "Trade Decision": "Strong Buy",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "RCL",
@@ -10065,14 +10065,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Travel Services",
     "Market Cap": 78325882880,
-    "P/E Ratio": 18.399103,
+    "P/E Ratio": 18.387323,
     "Price": 287.21,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 1.37,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SPGI",
@@ -10090,14 +10090,14 @@
     "Sector": "Financial Services",
     "Industry": "Financial Data & Stock Exchanges",
     "Market Cap": 134897401856,
-    "P/E Ratio": 30.409557,
+    "P/E Ratio": 30.388813,
     "Price": 445.5,
     "EarningsDate": "2026-04-28",
     "Trend Strength": -3.64,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "CRM",
@@ -10121,8 +10121,8 @@
     "Trend Strength": -9.49,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SNDK",
@@ -10147,7 +10147,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SBAC",
@@ -10165,14 +10165,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Specialty",
     "Market Cap": 20932169728,
-    "P/E Ratio": 24.708176,
+    "P/E Ratio": 24.677135,
     "Price": 196.43,
     "EarningsDate": "2026-04-27",
     "Trend Strength": -6.74,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SLB",
@@ -10197,7 +10197,7 @@
     "Score": 60,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "STX",
@@ -10215,14 +10215,14 @@
     "Sector": "Technology",
     "Industry": "Computer Hardware",
     "Market Cap": 84011761664,
-    "P/E Ratio": 42.46999,
+    "P/E Ratio": 42.374012,
     "Price": 375.01,
     "EarningsDate": "2026-05-05",
     "Trend Strength": 54.11,
     "Score": 48,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SRE",
@@ -10247,7 +10247,7 @@
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "NOW",
@@ -10265,14 +10265,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 120138579968,
-    "P/E Ratio": 67.77381,
+    "P/E Ratio": 68.17964,
     "Price": 113.86,
     "EarningsDate": "2026-04-22",
     "Trend Strength": -26.16,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SHW",
@@ -10295,9 +10295,9 @@
     "EarningsDate": "2026-04-28",
     "Trend Strength": 1.14,
     "Score": 39,
-    "Trade Decision": "Reduce",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SPG",
@@ -10314,7 +10314,7 @@
     "Name": "Simon Property Group, Inc.",
     "Sector": "Real Estate",
     "Industry": "REIT - Retail",
-    "Market Cap": 76605906944,
+    "Market Cap": 65998012416,
     "P/E Ratio": 14.32299,
     "Price": 203.1,
     "EarningsDate": "2026-05-11",
@@ -10322,7 +10322,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SWKS",
@@ -10346,8 +10346,8 @@
     "Trend Strength": -11.87,
     "Score": 5,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SJM",
@@ -10372,7 +10372,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SW",
@@ -10395,9 +10395,9 @@
     "EarningsDate": "2026-04-30",
     "Trend Strength": 2.78,
     "Score": 43,
-    "Trade Decision": "Hold",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "Trade Decision": "Sell",
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SNA",
@@ -10415,14 +10415,14 @@
     "Sector": "Industrials",
     "Industry": "Tools & Accessories",
     "Market Cap": 19944898560,
-    "P/E Ratio": 19.984365,
+    "P/E Ratio": 19.994785,
     "Price": 383.5,
     "EarningsDate": "2026-04-16",
     "Trend Strength": 9.34,
     "Score": 67,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SOLV",
@@ -10439,15 +10439,15 @@
     "Name": "Solventum Corporation",
     "Sector": "Healthcare",
     "Industry": "Medical Instruments & Supplies",
-    "Market Cap": 12210707456,
-    "P/E Ratio": 8.082664,
+    "Market Cap": 12213908480,
+    "P/E Ratio": 7.927928,
     "Price": 70.4,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 3.73,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SO",
@@ -10472,7 +10472,7 @@
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "LUV",
@@ -10497,7 +10497,7 @@
     "Score": 48,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SWK",
@@ -10522,7 +10522,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SBUX",
@@ -10547,7 +10547,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "STT",
@@ -10565,14 +10565,14 @@
     "Sector": "Financial Services",
     "Industry": "Asset Management",
     "Market Cap": 35344195584,
-    "P/E Ratio": 13.447396,
+    "P/E Ratio": 13.461702,
     "Price": 126.54,
     "EarningsDate": "2026-04-16",
     "Trend Strength": 12.92,
     "Score": 59,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "STLD",
@@ -10590,14 +10590,14 @@
     "Sector": "Basic Materials",
     "Industry": "Steel",
     "Market Cap": 28544442368,
-    "P/E Ratio": 24.23875,
+    "P/E Ratio": 24.269087,
     "Price": 193.91,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 21.68,
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "STE",
@@ -10621,8 +10621,8 @@
     "Trend Strength": 3.46,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 2,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 3,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SYK",
@@ -10640,14 +10640,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Devices",
     "Market Cap": 146144985088,
-    "P/E Ratio": 45.5716,
+    "P/E Ratio": 45.4631,
     "Price": 381.89,
     "EarningsDate": "2026-04-30",
     "Trend Strength": -2.39,
     "Score": 31,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SMCI",
@@ -10671,8 +10671,8 @@
     "Trend Strength": -25.2,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SYF",
@@ -10696,8 +10696,8 @@
     "Trend Strength": 6.79,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 6,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 7,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SNPS",
@@ -10715,14 +10715,14 @@
     "Sector": "Technology",
     "Industry": "Software - Infrastructure",
     "Market Cap": 82559410176,
-    "P/E Ratio": 66.0,
+    "P/E Ratio": 66.20277,
     "Price": 430.98,
     "EarningsDate": "2026-02-25",
     "Trend Strength": -5.29,
     "Score": 13,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "SYY",
@@ -10747,7 +10747,7 @@
     "Score": 67,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TMUS",
@@ -10765,14 +10765,14 @@
     "Sector": "Communication Services",
     "Industry": "Telecom Services",
     "Market Cap": 245747105792,
-    "P/E Ratio": 22.60391,
+    "P/E Ratio": 22.62719,
     "Price": 219.71,
     "EarningsDate": "2026-04-23",
     "Trend Strength": -9.18,
     "Score": 27,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TROW",
@@ -10796,8 +10796,8 @@
     "Trend Strength": 0.64,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TTWO",
@@ -10821,8 +10821,8 @@
     "Trend Strength": -3.77,
     "Score": 15,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TPR",
@@ -10840,14 +10840,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Luxury Goods",
     "Market Cap": 32111595520,
-    "P/E Ratio": 60.817833,
+    "P/E Ratio": 61.054478,
     "Price": 156.91,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 24.78,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TRGP",
@@ -10865,14 +10865,14 @@
     "Sector": "Energy",
     "Industry": "Oil & Gas Midstream",
     "Market Cap": 52244033536,
-    "P/E Ratio": 28.627798,
+    "P/E Ratio": 28.661558,
     "Price": 243.05,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 15.96,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TGT",
@@ -10897,7 +10897,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TEL",
@@ -10915,14 +10915,14 @@
     "Sector": "Technology",
     "Industry": "Electronic Components",
     "Market Cap": 61354790912,
-    "P/E Ratio": 30.074821,
+    "P/E Ratio": 30.118156,
     "Price": 209.02,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 8.9,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TDY",
@@ -10940,14 +10940,14 @@
     "Sector": "Technology",
     "Industry": "Scientific & Technical Instruments",
     "Market Cap": 32056727552,
-    "P/E Ratio": 36.18283,
+    "P/E Ratio": 36.106293,
     "Price": 682.77,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 10.11,
     "Score": 75,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TER",
@@ -10965,14 +10965,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductor Equipment & Materials",
     "Market Cap": 47780880384,
-    "P/E Ratio": 87.953896,
+    "P/E Ratio": 87.70115,
     "Price": 305.2,
     "EarningsDate": "2026-04-29",
     "Trend Strength": 62.47,
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TSLA",
@@ -10997,7 +10997,7 @@
     "Score": 45,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TXN",
@@ -11015,14 +11015,14 @@
     "Sector": "Technology",
     "Industry": "Semiconductors",
     "Market Cap": 183896211456,
-    "P/E Ratio": 37.13578,
+    "P/E Ratio": 37.204044,
     "Price": 202.39,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 7.13,
     "Score": 55,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TPL",
@@ -11040,14 +11040,14 @@
     "Sector": "Energy",
     "Industry": "Oil & Gas E&P",
     "Market Cap": 36960256000,
-    "P/E Ratio": 77.0273,
+    "P/E Ratio": 76.91679,
     "Price": 536.11,
     "EarningsDate": "2026-05-06",
     "Trend Strength": 10.77,
     "Score": 68,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TXT",
@@ -11072,7 +11072,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TMO",
@@ -11090,14 +11090,14 @@
     "Sector": "Healthcare",
     "Industry": "Diagnostics & Research",
     "Market Cap": 192621772800,
-    "P/E Ratio": 28.916527,
+    "P/E Ratio": 28.900227,
     "Price": 512.69,
     "EarningsDate": "2026-04-22",
     "Trend Strength": 11.96,
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TJX",
@@ -11115,14 +11115,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Apparel Retail",
     "Market Cap": 179995574272,
-    "P/E Ratio": 35.62335,
+    "P/E Ratio": 33.209446,
     "Price": 161.73,
     "EarningsDate": "2026-05-20",
     "Trend Strength": 10.14,
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TKO",
@@ -11139,15 +11139,15 @@
     "Name": "TKO Group Holdings, Inc.",
     "Sector": "Communication Services",
     "Industry": "Entertainment",
-    "Market Cap": 17760458752,
-    "P/E Ratio": 82.53053,
+    "Market Cap": 17065381888,
+    "P/E Ratio": 95.25551,
     "Price": 216.23,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 10.69,
     "Score": 73,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TTD",
@@ -11165,14 +11165,14 @@
     "Sector": "Communication Services",
     "Industry": "Advertising Agencies",
     "Market Cap": 12306692096,
-    "P/E Ratio": 28.602272,
+    "P/E Ratio": 27.966667,
     "Price": 25.17,
     "EarningsDate": "2026-05-07",
     "Trend Strength": -38.64,
-    "Score": 20,
+    "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TSCO",
@@ -11196,8 +11196,8 @@
     "Trend Strength": -3.98,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TT",
@@ -11215,14 +11215,14 @@
     "Sector": "Industrials",
     "Industry": "Building Products & Equipment",
     "Market Cap": 98684944384,
-    "P/E Ratio": 33.844105,
+    "P/E Ratio": 33.895657,
     "Price": 445.05,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -0.52,
     "Score": 46,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TDG",
@@ -11246,8 +11246,8 @@
     "Trend Strength": 0.41,
     "Score": 30,
     "Trade Decision": "Rejected \u2013 Universal Filter",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TRV",
@@ -11272,7 +11272,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TRMB",
@@ -11296,8 +11296,8 @@
     "Trend Strength": -6.49,
     "Score": 25,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TFC",
@@ -11322,7 +11322,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TYL",
@@ -11340,14 +11340,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 15825482752,
-    "P/E Ratio": 51.133335,
+    "P/E Ratio": 50.99169,
     "Price": 368.16,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -20.8,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "TSN",
@@ -11372,7 +11372,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "USB",
@@ -11397,7 +11397,7 @@
     "Score": 49,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UBER",
@@ -11421,8 +11421,8 @@
     "Trend Strength": -10.65,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UDR",
@@ -11444,10 +11444,10 @@
     "Price": 37.75,
     "EarningsDate": "2026-04-29",
     "Trend Strength": -0.27,
-    "Score": 46,
+    "Score": 48,
     "Trade Decision": "Sell",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ULTA",
@@ -11465,14 +11465,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Specialty Retail",
     "Market Cap": 29653405696,
-    "P/E Ratio": 25.34841,
+    "P/E Ratio": 25.377592,
     "Price": 661.34,
     "EarningsDate": "2026-03-12",
     "Trend Strength": 20.38,
     "Score": 67,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UNP",
@@ -11490,14 +11490,14 @@
     "Sector": "Industrials",
     "Industry": "Railroads",
     "Market Cap": 158257512448,
-    "P/E Ratio": 22.243538,
+    "P/E Ratio": 22.280703,
     "Price": 266.7,
     "EarningsDate": "2026-04-23",
     "Trend Strength": 6.45,
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UAL",
@@ -11522,7 +11522,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UPS",
@@ -11547,7 +11547,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "URI",
@@ -11571,8 +11571,8 @@
     "Trend Strength": 2.01,
     "Score": 37,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UNH",
@@ -11590,14 +11590,14 @@
     "Sector": "Healthcare",
     "Industry": "Healthcare Plans",
     "Market Cap": 264468627456,
-    "P/E Ratio": 22.084719,
+    "P/E Ratio": 22.068027,
     "Price": 291.96,
     "EarningsDate": "2026-04-16",
     "Trend Strength": -0.78,
     "Score": 20,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "UHS",
@@ -11615,14 +11615,14 @@
     "Sector": "Healthcare",
     "Industry": "Medical Care Facilities",
     "Market Cap": 12358437888,
-    "P/E Ratio": 8.754219,
+    "P/E Ratio": 8.758008,
     "Price": 202.31,
     "EarningsDate": "2026-04-28",
     "Trend Strength": 7.45,
     "Score": 57,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VLO",
@@ -11647,7 +11647,7 @@
     "Score": 78,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VTR",
@@ -11672,7 +11672,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VLTO",
@@ -11696,8 +11696,8 @@
     "Trend Strength": -3.27,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VRSN",
@@ -11715,14 +11715,14 @@
     "Sector": "Technology",
     "Industry": "Software - Infrastructure",
     "Market Cap": 22139541504,
-    "P/E Ratio": 27.139772,
+    "P/E Ratio": 27.108967,
     "Price": 238.83,
     "EarningsDate": "2026-04-23",
     "Trend Strength": -8.8,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VRSK",
@@ -11746,8 +11746,8 @@
     "Trend Strength": -16.82,
     "Score": 18,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VZ",
@@ -11772,7 +11772,7 @@
     "Score": 77,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VRTX",
@@ -11789,15 +11789,15 @@
     "Name": "Vertex Pharmaceuticals Incorpor",
     "Sector": "Healthcare",
     "Industry": "Biotechnology",
-    "Market Cap": 121384067072,
-    "P/E Ratio": 31.193867,
+    "Market Cap": 121400401920,
+    "P/E Ratio": 31.153194,
     "Price": 477.89,
     "EarningsDate": "2026-05-04",
     "Trend Strength": 6.97,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VTRS",
@@ -11822,7 +11822,7 @@
     "Score": 60,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VICI",
@@ -11846,8 +11846,8 @@
     "Trend Strength": -5.21,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "V",
@@ -11865,14 +11865,14 @@
     "Sector": "Financial Services",
     "Industry": "Credit Services",
     "Market Cap": 617878847488,
-    "P/E Ratio": 30.091082,
+    "P/E Ratio": 30.11936,
     "Price": 320.47,
     "EarningsDate": "2026-04-28",
     "Trend Strength": -2.79,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VST",
@@ -11896,8 +11896,8 @@
     "Trend Strength": -10.01,
     "Score": 8,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "VMC",
@@ -11915,14 +11915,14 @@
     "Sector": "Basic Materials",
     "Industry": "Building Materials",
     "Market Cap": 39108108288,
-    "P/E Ratio": 36.27206,
+    "P/E Ratio": 36.36118,
     "Price": 295.98,
     "EarningsDate": "2026-04-30",
     "Trend Strength": 5.44,
     "Score": 47,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WRB",
@@ -11946,8 +11946,8 @@
     "Trend Strength": -1.79,
     "Score": 12,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "GWW",
@@ -11965,14 +11965,14 @@
     "Sector": "Industrials",
     "Industry": "Industrial Distribution",
     "Market Cap": 54608506880,
-    "P/E Ratio": 32.488262,
+    "P/E Ratio": 32.46989,
     "Price": 1148.46,
     "EarningsDate": "2026-05-07",
     "Trend Strength": 6.58,
-    "Score": 62,
+    "Score": 57,
     "Trade Decision": "Rejected \u2013 Universal Filter",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WAB",
@@ -11997,7 +11997,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WMT",
@@ -12015,14 +12015,14 @@
     "Sector": "Consumer Defensive",
     "Industry": "Discount Stores",
     "Market Cap": 1019010088960,
-    "P/E Ratio": 46.988968,
+    "P/E Ratio": 46.645985,
     "Price": 127.81,
     "EarningsDate": "2026-05-14",
     "Trend Strength": 13.71,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "DIS",
@@ -12046,8 +12046,8 @@
     "Trend Strength": -2.57,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WBD",
@@ -12072,7 +12072,7 @@
     "Score": 55,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WM",
@@ -12090,14 +12090,14 @@
     "Sector": "Industrials",
     "Industry": "Waste Management",
     "Market Cap": 98393759744,
-    "P/E Ratio": 36.46487,
+    "P/E Ratio": 36.356186,
     "Price": 243.95,
     "EarningsDate": "2026-04-27",
     "Trend Strength": 1.93,
     "Score": 80,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WAT",
@@ -12115,14 +12115,14 @@
     "Sector": "Healthcare",
     "Industry": "Diagnostics & Research",
     "Market Cap": 31298422784,
-    "P/E Ratio": 29.623026,
+    "P/E Ratio": 29.67814,
     "Price": 319.04,
     "EarningsDate": "2026-05-05",
     "Trend Strength": 6.63,
     "Score": 13,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WEC",
@@ -12147,7 +12147,7 @@
     "Score": 80,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WFC",
@@ -12172,7 +12172,7 @@
     "Score": 52,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WELL",
@@ -12190,14 +12190,14 @@
     "Sector": "Real Estate",
     "Industry": "REIT - Healthcare Facilities",
     "Market Cap": 144330113024,
-    "P/E Ratio": 146.70213,
+    "P/E Ratio": 144.65036,
     "Price": 206.85,
     "EarningsDate": "2026-04-27",
     "Trend Strength": 10.54,
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WST",
@@ -12221,8 +12221,8 @@
     "Trend Strength": 2.09,
     "Score": 23,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 1,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 2,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WDC",
@@ -12247,7 +12247,7 @@
     "Score": 60,
     "Trade Decision": "Reduce",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WY",
@@ -12272,7 +12272,7 @@
     "Score": 45,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WSM",
@@ -12290,14 +12290,14 @@
     "Sector": "Consumer Cyclical",
     "Industry": "Specialty Retail",
     "Market Cap": 23439208448,
-    "P/E Ratio": 21.67108,
+    "P/E Ratio": 21.647188,
     "Price": 196.34,
     "EarningsDate": "2026-03-18",
     "Trend Strength": 8.48,
     "Score": 42,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 5,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 6,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WMB",
@@ -12314,7 +12314,7 @@
     "Name": "Williams Companies, Inc. (The)",
     "Sector": "Energy",
     "Industry": "Oil & Gas Midstream",
-    "Market Cap": 92590931968,
+    "Market Cap": 92557836288,
     "P/E Ratio": 35.40654,
     "Price": 75.77,
     "EarningsDate": "2026-05-04",
@@ -12322,7 +12322,7 @@
     "Score": 75,
     "Trade Decision": "Buy (Small)",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WTW",
@@ -12340,14 +12340,14 @@
     "Sector": "Financial Services",
     "Industry": "Insurance Brokers",
     "Market Cap": 29154494464,
-    "P/E Ratio": 18.714811,
+    "P/E Ratio": 18.737846,
     "Price": 304.49,
     "EarningsDate": "2026-04-23",
     "Trend Strength": -0.66,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WDAY",
@@ -12365,14 +12365,14 @@
     "Sector": "Technology",
     "Industry": "Software - Application",
     "Market Cap": 38191677440,
-    "P/E Ratio": 55.44186,
+    "P/E Ratio": 55.2278,
     "Price": 143.04,
     "EarningsDate": "2026-05-21",
     "Trend Strength": -19.35,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "WYNN",
@@ -12396,8 +12396,8 @@
     "Trend Strength": 1.26,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "XEL",
@@ -12422,7 +12422,7 @@
     "Score": 58,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "XYL",
@@ -12446,8 +12446,8 @@
     "Trend Strength": -0.95,
     "Score": 17,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "YUM",
@@ -12472,7 +12472,7 @@
     "Score": 65,
     "Trade Decision": "Hold",
     "ConsecutiveLowDays": 0,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ZBRA",
@@ -12490,14 +12490,14 @@
     "Sector": "Technology",
     "Industry": "Communication Equipment",
     "Market Cap": 11723792384,
-    "P/E Ratio": 28.290953,
+    "P/E Ratio": 28.32558,
     "Price": 231.42,
     "EarningsDate": "2026-05-12",
     "Trend Strength": -13.05,
     "Score": 10,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ZBH",
@@ -12521,8 +12521,8 @@
     "Trend Strength": -3.26,
     "Score": 28,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   },
   {
     "Symbol": "ZTS",
@@ -12546,7 +12546,7 @@
     "Trend Strength": -10.21,
     "Score": 22,
     "Trade Decision": "Sell",
-    "ConsecutiveLowDays": 8,
-    "LastUpdated": "2026-03-04 18:27:24"
+    "ConsecutiveLowDays": 9,
+    "LastUpdated": "2026-03-04 19:32:44"
   }
 ]
