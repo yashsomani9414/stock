@@ -159,6 +159,16 @@ def extract_earnings_date(ticker_obj, info):
     except: pass
     return None
 
+def calculate_rsi(series, period=14):
+    """Calculate Relative Strength Index (RSI)."""
+    if len(series) < period + 1:
+        return None
+    delta = series.diff()
+    gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
+    rs = gain / loss
+    return 100 - (100 / (1 + rs)).iloc[-1]
+
 def get_batch_stock_info(symbols, delay=1.5):
     """Fetch fundamental data for a batch of tickers."""
     batch_results = []
@@ -231,6 +241,27 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         median_vol = sector_vol_medians.get(row.get('Sector'))
         if vol6m and median_vol and vol6m < median_vol: score += 7
         
+        # E) RSI & OVEREXTENSION (NEW SAFETY CHECKS)
+        rsi = row.get('RSI')
+        dist_from_ma50 = row.get('DistFromMA50') or 0
+        
+        # Penalize overbought
+        if rsi:
+            if rsi > 70: score -= 10
+            if rsi > 80: score -= 20
+            if rsi < 35: score += 5 # Deep value/oversold bounce candidate
+            
+        # Penalize overextended (too far from 50-day average)
+        if dist_from_ma50 > 15: # 15% above 50D MA
+            score -= 15
+        elif dist_from_ma50 > 10:
+            score -= 5
+            
+        # F) REFINED VOLUME WEIGHTS
+        # Reduce single-day spike impact, favor sustained volume
+        if vol1d_ratio >= 1.5: score += 5  # Reduced from 10
+        if vol5d_ratio >= 1.2: score += 7  # Increased from 5 (sustained is better)
+
         final_points = round(max(0, score))
         new_low = prev_low + 1 if final_points < 45 else 0
 
@@ -254,10 +285,13 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
             return final_points, "Reduce", new_low
 
         if (final_points >= 80 and price > ma50 and price > ma200 and vol5d_ratio >= 1.2 and ret6m > 0):
-            if edate_dist > 7: return final_points, "Strong Buy", new_low
+            # Strict safety for Strong Buy
+            if (rsi and rsi < 75) and dist_from_ma50 < 15:
+                if edate_dist > 7: return final_points, "Strong Buy", new_low
 
         if (70 <= final_points <= 79 and price > ma50 and price > ma200 and ret6m > 0):
-            if edate_dist > 7: return final_points, "Buy (Small)", new_low
+            if (rsi and rsi < 80) and dist_from_ma50 < 20:
+                if edate_dist > 7: return final_points, "Buy (Small)", new_low
 
         return final_points, "Hold", new_low
     except Exception as e:
@@ -283,6 +317,10 @@ def fetch_and_save():
                     if len(close) < 200: continue
                     
                     ma50, ma200 = close.tail(50).mean(), close.tail(200).mean()
+                    rsi = calculate_rsi(close)
+                    curr_price = close.iloc[-1]
+                    dist_ma50 = ((curr_price / ma50) - 1) * 100 if ma50 > 0 else 0
+                    
                     ret1d = (close.iloc[-1]/close.iloc[-2]-1)*100 if len(close)>=2 else 0
                     ret5d = (close.iloc[-1]/close.iloc[-6]-1)*100 if len(close)>=6 else 0
                     ret1m = (close.iloc[-1]/close.iloc[-21]-1)*100 if len(close)>=21 else 0
@@ -294,7 +332,11 @@ def fetch_and_save():
                     avg_v5 = float(volume.tail(5).mean())
                     
                     ma_rows.append({
-                        "Symbol": symbol, "50D MA": round(ma50, 2), "200D MA": round(ma200, 2),
+                        "Symbol": symbol, 
+                        "50D MA": round(ma50, 2), 
+                        "200D MA": round(ma200, 2),
+                        "RSI": round(rsi, 2) if rsi is not None else None,
+                        "DistFromMA50": round(dist_ma50, 2),
                         "1D Return": round(ret1d, 2), "5D Return": round(ret5d, 2),
                         "1M Return": round(ret1m, 2), "6M Return": round(ret6m, 2),
                         "6M Volatility": round(vol6m, 2) if vol6m else None,
