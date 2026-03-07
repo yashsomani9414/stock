@@ -262,7 +262,7 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         if vol1d_ratio >= 1.5: score += 5  # Reduced from 10
         if vol5d_ratio >= 1.2: score += 7  # Increased from 5 (sustained is better)
 
-        final_points = round(max(0, score))
+        final_points = min(100, round(max(0, score)))
         new_low = prev_low + 1 if final_points < 45 else 0
 
         # DECISION
@@ -281,16 +281,24 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
                 if -1 <= edate_dist <= 7: return final_points, "Hold", new_low
             except: pass
 
-        if (prev_score and prev_score >= 75 and final_points < 65) or (ret5d < 0 and ret1m < 0):
+        # IMPROVED REDUCE LOGIC: Only reduce if the score is actually low (< 75) 
+        # or if it was a high-scoring stock that just dropped significantly.
+        # This prevents UPS (Score 91) from being marked "Reduce" on a minor dip.
+        if final_points < 75 and (ret5d < 0 and ret1m < 0):
+            return final_points, "Reduce", new_low
+        
+        if (prev_score and prev_score >= 80 and final_points < 70):
             return final_points, "Reduce", new_low
 
-        if (final_points >= 80 and price > ma50 and price > ma200 and vol5d_ratio >= 1.2 and ret6m > 0):
-            # Strict safety for Strong Buy
-            if (rsi and rsi < 75) and dist_from_ma50 < 15:
+        if (final_points >= 85 and price > ma50 and price > ma200 and vol5d_ratio >= 1.1 and ret6m > 0):
+            # Tighter safety for Strong Buy - Avoid ROST/FANG overextension
+            # RSI < 65 (Was 75), DistFromMA50 < 10 (Was 15), 1D Return stability
+            if (rsi and rsi < 65) and dist_from_ma50 < 10 and ret1d > -1.5:
                 if edate_dist > 7: return final_points, "Strong Buy", new_low
 
-        if (70 <= final_points <= 79 and price > ma50 and price > ma200 and ret6m > 0):
-            if (rsi and rsi < 80) and dist_from_ma50 < 20:
+        if (75 <= final_points <= 84 and price > ma50 and price > ma200 and ret6m > 0):
+            # Tighter Buy (Small)
+            if (rsi and rsi < 75) and dist_from_ma50 < 15:
                 if edate_dist > 7: return final_points, "Buy (Small)", new_low
 
         return final_points, "Hold", new_low
