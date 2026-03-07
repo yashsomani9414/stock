@@ -110,25 +110,36 @@ def calculate_sector_data(data):
         })
     return sectors
 
-def get_sp500_tickers():
-    """Scrape S&P 500 tickers from Wikipedia."""
-    try:
-        headers = {"User-Agent": "Mozilla/5.0"}
-        url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-        response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        table = soup.find('table', {'id': 'constituents'})
-        if not table: return []
-        tickers = []
-        for row in table.find_all('tr')[1:]:
-            cells = row.find_all('td')
-            if len(cells) > 0:
-                tickers.append(cells[0].text.strip().replace('.', '-'))
-        return tickers
-    except Exception as e:
-        print(f"Error fetching tickers: {e}")
-        return []
+def get_all_potential_tickers():
+    """Scrape S&P 500, 400, and 600 tickers from Wikipedia."""
+    indices = [
+        {"name": "S&P 500", "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", "id": "constituents"},
+        {"name": "S&P 400", "url": "https://en.wikipedia.org/wiki/List_of_S%26P_400_companies", "id": "constituents"}
+    ]
+    
+    all_tickers = set()
+    headers = {"User-Agent": "Mozilla/5.0"}
+    
+    for index in indices:
+        try:
+            print(f"Fetching tickers for {index['name']}...")
+            response = requests.get(index['url'], headers=headers, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            table = soup.find('table', {'id': index['id']})
+            if not table:
+                continue
+            
+            for row in table.find_all('tr')[1:]:
+                cells = row.find_all('td')
+                if len(cells) > 0:
+                    ticker = cells[0].text.strip().replace('.', '-')
+                    all_tickers.add(ticker)
+            time.sleep(1) # Be nice to Wikipedia
+        except Exception as e:
+            print(f"Error fetching {index['name']} tickers: {e}")
+            
+    return list(all_tickers)
 
 def extract_earnings_date(ticker_obj, info):
     """Extract next earnings date."""
@@ -255,8 +266,9 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
 
 def fetch_and_save():
     print("Starting fetch...")
-    tickers = get_sp500_tickers()
+    tickers = get_all_potential_tickers()
     if not tickers: return
+    print(f"Total potential tickers: {len(tickers)}")
     
     ma_rows = []
     batch_size = 50
@@ -296,10 +308,19 @@ def fetch_and_save():
     ma_df = pd.DataFrame(ma_rows)
     info_rows = []
     symbols = ma_df["Symbol"].tolist()
-    for i in range(0, len(symbols), 20):
-        info_rows.extend(get_batch_stock_info(symbols[i:i+20]))
+    for i in range(0, len(symbols), 50):
+        info_rows.extend(get_batch_stock_info(symbols[i:i+50]))
     
+    # Filter by Market Cap > $5B
     final_df = ma_df.merge(pd.DataFrame(info_rows), left_on="Symbol", right_on="Ticker", how="left").drop(columns=["Ticker"])
+    
+    # Filter: Market Cap > 5 Billion
+    # Some stocks might have None for Market Cap if info fetch failed
+    count_before = len(final_df)
+    final_df = final_df[final_df['Market Cap'] > 5e9]
+    count_after = len(final_df)
+    print(f"Filtered from {count_before} to {count_after} stocks with Market Cap > $5B.")
+    
     final_df['Trend Strength'] = final_df.apply(lambda r: round((r['50D MA']/r['200D MA']-1)*100, 2) if r['200D MA'] else 0, axis=1)
     
     existing = []
