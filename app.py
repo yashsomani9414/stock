@@ -9,6 +9,7 @@ import yfinance as yf
 from bs4 import BeautifulSoup
 import threading
 import re
+from zoneinfo import ZoneInfo
 from fetch_sp500 import load_sp500_data as load_local_data, calculate_sector_data, fetch_and_save, DATA_FILE, sanitize_data
 
 GITHUB_DATA_URL = "https://raw.githubusercontent.com/yashsomani9414/stock/main/sp500_data.json"
@@ -63,9 +64,10 @@ def check_stale_and_refresh():
             last_updated = data[0].get('LastUpdated')
             if last_updated:
                 # LastUpdated is "2024-03-03 17:00:00"
-                last_dt = datetime.datetime.strptime(last_updated, "%Y-%m-%d %H:%M:%S")
+                last_dt = datetime.datetime.strptime(last_updated, "%Y-%m-%d %H:%M:%S").replace(tzinfo=ZoneInfo("America/Los_Angeles"))
                 # If more than 24 hours since last refresh
-                if (datetime.datetime.now() - last_dt).total_seconds() > 86400:
+                now_pt = datetime.datetime.now(ZoneInfo("America/Los_Angeles"))
+                if (now_pt - last_dt).total_seconds() > 86400:
                     needs_refresh = True
             else:
                 needs_refresh = True
@@ -250,7 +252,8 @@ def api_refresh():
             if last_updated:
                 # Basic check: if updated today, skip unless forced
                 last_date = last_updated.split(' ')[0]
-                if last_date == datetime.date.today().isoformat():
+                pt_today = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+                if last_date == pt_today.isoformat():
                     return jsonify({"status": "success", "message": "Data is already up to date."}), 200
 
     thread = threading.Thread(target=fetch_and_update_data_wrapper)

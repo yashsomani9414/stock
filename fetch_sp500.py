@@ -277,7 +277,9 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         edate_dist = 999
         if edate_str:
             try:
-                edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - datetime.date.today()).days
+                # Use Pacific Time for "today" to ensure consistency with LastUpdated
+                pt_today = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+                edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - pt_today).days
                 if -1 <= edate_dist <= 7: return final_points, "Hold", new_low
             except: pass
 
