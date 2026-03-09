@@ -256,6 +256,16 @@ def api_refresh():
                 if last_date == pt_today.isoformat():
                     return jsonify({"status": "success", "message": "Data is already up to date."}), 200
 
+    # In Cloud Run, background threads freeze when the HTTP request finishes.
+    # A 2.5-hour task cannot run here. Manual trigger should only be used locally 
+    # or via GitHub Actions workflow_dispatch.
+    if os.environ.get('K_SERVICE'):  # Cloud Run specific env var
+        return jsonify({
+            "status": "error", 
+            "message": "Manual refresh is disabled on the live site. Data refreshes automatically daily at 5 PM PT via GitHub Actions."
+        }), 400
+
+    # Fallback for local execution
     thread = threading.Thread(target=fetch_and_update_data_wrapper)
     thread.daemon = True
     thread.start()

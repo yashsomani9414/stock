@@ -2,7 +2,9 @@ name: Daily S&P 500 Fetch
 
 on:
   schedule:
-    # Every day at 01:00 UTC (roughly 5 PM PST)
+    # 00:00 UTC = 5 PM PDT (Daylight Saving Time)
+    - cron: '0 00 * * *'
+    # 01:00 UTC = 5 PM PST (Standard Time)
     - cron: '0 01 * * *'
   workflow_dispatch:  # allows manual trigger from GitHub UI
 
@@ -14,24 +16,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Timezone Check
+        id: tz_check
+        run: |
+          PT_HOUR=$(TZ='America/Los_Angeles' date +%H)
+          echo "Current PT Hour: $PT_HOUR"
+          # Only proceed if it's 17 (5 PM) or if this was triggered manually
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "Manual run triggered. Proceeding."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          elif [ "$PT_HOUR" != "17" ]; then
+            echo "It is not 5 PM PT. Skipping run."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "It is 5 PM PT. Proceeding."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout repo
+        if: steps.tz_check.outputs.skip != 'true'
         uses: actions/checkout@v3
 
       - name: Set up Python
+        if: steps.tz_check.outputs.skip != 'true'
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
       - name: Install dependencies
+        if: steps.tz_check.outputs.skip != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run fetch script
+        if: steps.tz_check.outputs.skip != 'true'
         run: |
           python fetch_sp500.py
 
       - name: Commit and push updated data
+        if: steps.tz_check.outputs.skip != 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
@@ -43,5 +67,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Trigger live site refresh
+        if: steps.tz_check.outputs.skip != 'true'
         run: |
           curl -X GET "https://stock-732120165537.europe-west1.run.app/api/refresh?force=true"
