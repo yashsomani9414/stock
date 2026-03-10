@@ -205,28 +205,41 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
     
     print(f"Trading days: {len(bt_dates)}  ({bt_dates[0].date()} → {bt_dates[-1].date()})")
     
+    # Calculate SPY 200MA for every day in the backtest (walk-forward)
+    spy_ma200 = spy_close.rolling(200).mean()
+    
     # ─── WALK-FORWARD SIMULATION ──────────────────────────────────────────────
     cash = INITIAL_CAPITAL
-    holdings = {}     # symbol → num_shares
+    holdings = {}     # symbol → {'shares': N, 'highest_price': P, 'trailing_stop': S}
     daily_values = []
     trades_log = []
     monthly_returns = {}
     
     for day_i, date in enumerate(bt_dates):
+        # Determine Market Regime for TODAY
+        spy_curr = float(spy_close.loc[date])
+        spy_ma = float(spy_ma200.loc[date])
+        regime = "BULLISH" if spy_curr >= spy_ma else "BEARISH"
+
         # Build date index map (for walk-forward slicing)
         date_indices = {}
         for sym in available_tickers:
             if date in hist_data[sym].index:
                 date_indices[sym] = hist_data[sym].index.get_loc(date)
         
-        # Mark-to-market: calculate portfolio value
+        # Mark-to-market: calculate portfolio value and update trailing stops
         portfolio_value = cash
-        for sym, shares in holdings.items():
+        for sym, hdata in list(holdings.items()):
             if sym in date_indices:
                 price = float(hist_data[sym]['Close'].iloc[date_indices[sym]])
-                portfolio_value += shares * price
+                portfolio_value += hdata['shares'] * price
+                
+                # Update highest price and trailing stop
+                if price > hdata['highest_price']:
+                    holdings[sym]['highest_price'] = price
+                    holdings[sym]['trailing_stop'] = round(price * 0.90, 2)
         
-        daily_values.append({'Date': date, 'Portfolio': portfolio_value, 'Holdings': len(holdings)})
+        daily_values.append({'Date': date, 'Portfolio': portfolio_value, 'Holdings': len(holdings), 'Regime': regime})
         
         # Track monthly
         month_key = date.strftime('%Y-%m')
@@ -242,58 +255,95 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
                 if sym not in date_indices:
                     continue
                 try:
-                    score, decision = score_on_date(sym, hist_data, date_indices[sym])
-                    if score is not None:
-                        scores[sym] = (score, decision)
-                except:
+                    # history includes HighestPrice for trailing stop logic
+                    hist_for_scoring = holdings.get(sym, {}).copy()
+                    hist_for_scoring['HighestPrice'] = hist_for_scoring.get('highest_price', 0)
+                    hist_for_scoring['Trade Decision'] = "Hold" if sym in holdings else None
+                    
+                    # score_on_date needs to be updated or we call calculate_score directly
+                    # Let's call a modified score_on_date or calculate it here
+                    df = hist_data[sym]
+                    slice_df = df.iloc[:date_indices[sym] + 1]
+                    close = slice_df['Close']
+                    volume = slice_df['Volume']
+                    
+                    if len(close) < MIN_HISTORY_DAYS: continue
+
+                    ma50 = float(close.tail(50).mean())
+                    ma200 = float(close.tail(200).mean())
+                    rsi = calculate_rsi(close)
+                    curr_price = float(close.iloc[-1])
+                    
+                    row = pd.Series({
+                        'Price': curr_price, '50D MA': ma50, '200D MA': ma200,
+                        'Trend Strength': ((ma50 / ma200) - 1) * 100 if ma200 > 0 else 0,
+                        '1D Return': (close.iloc[-1]/close.iloc[-2]-1)*100 if len(close)>=2 else 0,
+                        '5D Return': (close.iloc[-1]/close.iloc[-6]-1)*100 if len(close)>=6 else 0,
+                        '1M Return': (close.iloc[-1]/close.iloc[-21]-1)*100 if len(close)>=21 else 0,
+                        '6M Return': (close.iloc[-1]/close.iloc[-126]-1)*100 if len(close)>=126 else 0,
+                        '6M Volatility': float(close.tail(126).pct_change().std() * (252**0.5) * 100) if len(close)>=126 else 25,
+                        'Volume': float(volume.iloc[-1]),
+                        'Vol Change 1D': ((float(volume.iloc[-1]) / float(volume.tail(20).mean())) - 1) * 100 if len(volume)>=20 else 0,
+                        'Vol Change 5D': ((float(volume.tail(5).mean()) / float(volume.tail(20).mean())) - 1) * 100 if len(volume)>=20 else 0,
+                        'RSI': rsi, 'DistFromMA50': ((curr_price / ma50) - 1) * 100 if ma50 > 0 else 0,
+                        'Market Cap': 50e9, 'Sector': 'Unknown', 'P/E Ratio': None,
+                    })
+                    
+                    res = calculate_score(row, {'Unknown': 25}, {'Unknown': 25}, history=hist_for_scoring, market_regime=regime)
+                    scores[sym] = {
+                        'score': res[0], 'decision': res[1], 'highest_price': res[3], 
+                        'trailing_stop': res[4], 'rec_weight': res[5]
+                    }
+                except Exception as e:
                     continue
             
-            buy_signals = [s for s, (sc, dec) in scores.items() 
-                          if dec in ("Strong Buy", "Buy (Small)")]
-            sell_signals = [s for s, (sc, dec) in scores.items() 
-                          if dec in ("Sell", "Reduce")]
+            buy_candidates = [s for s, data in scores.items() if data['decision'] in ("Strong Buy", "Buy (Small)")]
+            sell_signals = [s for s, data in scores.items() if data['decision'] in ("Sell", "Reduce", "Sell (Profit-Lock)")]
             
             # ─── SELL ─────────────────────────────────────────────────────
             for sym in list(holdings.keys()):
                 if sym in sell_signals or sym not in scores:
                     if sym in date_indices:
                         price = float(hist_data[sym]['Close'].iloc[date_indices[sym]])
-                        proceeds = holdings[sym] * price * (1 - COMMISSION_PCT)
+                        proceeds = holdings[sym]['shares'] * price * (1 - COMMISSION_PCT)
                         cash += proceeds
                         trades_log.append({
-                            'Date': str(date.date()),
-                            'Symbol': sym,
-                            'Action': 'SELL',
-                            'Price': round(price, 2),
-                            'Shares': holdings[sym],
-                            'Decision': scores.get(sym, (0, 'N/A'))[1],
-                            'Score': scores.get(sym, (0,))[0]
+                            'Date': str(date.date()), 'Symbol': sym, 'Action': 'SELL',
+                            'Price': round(price, 2), 'Shares': holdings[sym]['shares'],
+                            'Decision': scores.get(sym, {}).get('decision', 'N/A'),
+                            'Score': scores.get(sym, {}).get('score', 0)
                         })
                         del holdings[sym]
             
             # ─── BUY ──────────────────────────────────────────────────────
-            if buy_signals:
-                new_buys = [s for s in buy_signals if s not in holdings]
+            if buy_candidates:
+                new_buys = [s for s in buy_candidates if s not in holdings]
                 if new_buys and cash > 500:
-                    per_stock = cash / len(new_buys)
+                    # Risk-Adjusted Position Sizing: Use RecWeight
+                    total_rec_weight = sum([scores[s]['rec_weight'] for s in new_buys])
                     for sym in new_buys:
-                        if per_stock < 100:
-                            continue
                         if sym in date_indices:
                             price = float(hist_data[sym]['Close'].iloc[date_indices[sym]])
-                            shares = int((per_stock * (1 - COMMISSION_PCT)) / price)
+                            # Weight as % of PORTFOLIO value, not just cash
+                            target_val = portfolio_value * (scores[sym]['rec_weight'] / 100)
+                            # Cap at available cash
+                            buy_val = min(target_val, cash / len(new_buys))
+                            
+                            shares = int((buy_val * (1 - COMMISSION_PCT)) / price)
                             if shares > 0:
                                 cost = shares * price * (1 + COMMISSION_PCT)
                                 cash -= cost
-                                holdings[sym] = shares
+                                holdings[sym] = {
+                                    'shares': shares, 
+                                    'highest_price': price, 
+                                    'trailing_stop': scores[sym]['trailing_stop']
+                                }
                                 trades_log.append({
-                                    'Date': str(date.date()),
-                                    'Symbol': sym,
-                                    'Action': 'BUY',
-                                    'Price': round(price, 2),
-                                    'Shares': shares,
-                                    'Decision': scores[sym][1],
-                                    'Score': scores[sym][0]
+                                    'Date': str(date.date()), 'Symbol': sym, 'Action': 'BUY',
+                                    'Price': round(price, 2), 'Shares': shares,
+                                    'Decision': scores[sym]['decision'],
+                                    'Score': scores[sym]['score'],
+                                    'Weight': f"{scores[sym]['rec_weight']}%"
                                 })
     
     # ─── RESULTS ──────────────────────────────────────────────────────────────

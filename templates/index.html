@@ -390,6 +390,14 @@
                 <span>Last Refreshed (PT): <span id="lastRefreshed">Loading...</span></span>
             </div>
 
+            <div id="marketRegimeBadge" class="stock-count-badge"
+                style="background: var(--bg-card); border: 1px solid var(--border-subtle); display: none; align-items: center; gap: 8px;">
+                <span
+                    style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Market
+                    Signal:</span>
+                <span id="marketRegimeText" class="font-bold" style="font-size: 12px;">BULLISH</span>
+            </div>
+
             <div id="status" class="status-msg"></div>
         </div>
 
@@ -401,6 +409,8 @@
                         <tr>
                             <th>Symbol</th>
                             <th>Price</th>
+                            <th>Stop Loss</th>
+                            <th>Rec. Weight</th>
                             <th>50D MA</th>
                             <th>200D MA</th>
                             <th>Trend Strength</th>
@@ -425,6 +435,8 @@
                                         <label><input type="checkbox" value="Strong Buy"> Strong Buy</label>
                                         <label><input type="checkbox" value="Buy (Small)"> Buy (Small)</label>
                                         <label><input type="checkbox" value="Hold"> Hold</label>
+                                        <label><input type="checkbox" value="Market Risk"> Market Risk</label>
+                                        <label><input type="checkbox" value="Profit-Lock"> Profit-Lock</label>
                                         <label><input type="checkbox" value="Reduce"> Reduce</label>
                                         <label><input type="checkbox" value="Sell"> Sell</label>
                                         <label><input type="checkbox" value="Rejected"> Rejected (All Reasons)</label>
@@ -751,6 +763,26 @@
                         }
                     },
                     { data: 'Price', defaultContent: 'N/A', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
+                    {
+                        data: 'TrailingStop',
+                        defaultContent: 'N/A',
+                        render: function (data, type, row) {
+                            if (!data || data === 0) return 'N/A';
+                            // Alert if price is approaching stop loss
+                            const price = row.Price || 0;
+                            const proximity = price > 0 ? (price / data - 1) * 100 : 999;
+                            const color = proximity < 2 ? 'var(--bearish)' : (proximity < 5 ? 'var(--accent-yellow)' : 'inherit');
+                            return `<span style="color:${color}">$${data.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>`;
+                        }
+                    },
+                    {
+                        data: 'RecWeight',
+                        defaultContent: '1.5',
+                        render: function (data) {
+                            if (!data) return '1.5%';
+                            return `<strong>${data}%</strong>`;
+                        }
+                    },
                     { data: '50D MA', defaultContent: 'N/A', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                     { data: '200D MA', defaultContent: 'N/A', render: $.fn.dataTable.render.number(',', '.', 2, '$') },
                     {
@@ -784,6 +816,8 @@
                             if (normalized === 'STRONG BUY') colorClass = 'text-bullish font-bold';
                             else if (normalized === 'BUY (SMALL)') colorClass = 'text-bullish';
                             else if (normalized === 'HOLD') colorClass = 'text-accent';
+                            else if (normalized.includes('MARKET RISK')) colorClass = 'text-accent font-bold';
+                            else if (normalized.includes('PROFIT-LOCK')) colorClass = 'text-bullish font-bold';
                             else if (normalized === 'REDUCE') colorClass = 'text-bearish';
                             else if (normalized === 'SELL') colorClass = 'text-bearish font-bold';
                             else if (normalized.includes('REJECTED')) colorClass = 'text-bearish';
@@ -1210,7 +1244,6 @@
                 const originalText = btn.html();
 
                 if (forceRefresh) {
-                    console.log("Refresh button clicked");
                     if (!confirm("This will refresh all S&P 500 data from Yahoo Finance. It may take 10-15 minutes but will run in the background. Continue?")) {
                         return;
                     }
@@ -1219,10 +1252,7 @@
                     $('#status').html('<div style="color:var(--text-accent)">Requesting refresh from server...</div>');
 
                     fetch('/api/refresh?force=true')
-                        .then(response => {
-                            console.log("Refresh response status:", response.status);
-                            return response.json();
-                        })
+                        .then(response => response.json())
                         .then(data => {
                             if (data.status === 'success') {
                                 $('#status').html(`<div style="color:var(--accent-blue)">${data.message} You can continue using the app while it updates.</div>`);
@@ -1235,46 +1265,49 @@
                             console.error("Refresh request failed:", err);
                             $('#status').html(`<div style="color:var(--bearish)">Error: ${err.message}</div>`);
                             btn.prop('disabled', false).html(originalText);
-                        })
-                        .finally(() => {
-                            // We don't re-enable the button if polling started
                         });
-
                 } else {
-                    // Normal load from cache
+                    // Normal load from server (API)
                     btn.prop('disabled', true);
                     $('#status').html('<div style="color:var(--text-accent)">Loading current data...</div>');
 
-                    fetch('/api/data')
+                    fetch('/api/stocks')
                         .then(response => response.json())
                         .then(data => {
-                            table.clear();
                             if (data && data.length > 0) {
-                                table.rows.add(data).draw();
-                                $('#status').html(`<div style="color:var(--bullish)">Loaded ${data.length} stocks. Select a stock to view chart.</div>`);
-
-                                // Update last refreshed date
-                                if (data[0] && data[0].LastUpdated) {
-                                    const lastUpdated = data[0].LastUpdated;
-                                    $('#lastRefreshed').text(lastUpdated);
-
-                                    // Update indicator color based on age
-                                    try {
-                                        const lastDate = new Date(lastUpdated.replace(' ', 'T'));
-                                        const diffHours = (new Date() - lastDate) / (1000 * 60 * 60);
-
-                                        const indicator = $('#refreshStatusIndicator');
-                                        if (diffHours < 24) {
-                                            indicator.css('background', 'var(--bullish)').attr('title', 'Data is fresh (updated < 24h ago)');
-                                        } else if (diffHours < 48) {
-                                            indicator.css('background', 'var(--neutral)').attr('title', 'Data is becoming stale (> 24h ago)');
-                                        } else {
-                                            indicator.css('background', 'var(--bearish)').attr('title', 'Data is stale (> 48h ago)');
-                                        }
-                                    } catch (e) {
-                                        console.error("Error calculating data age:", e);
-                                    }
+                                // Update Market Regime Badge (V4)
+                                const first = data[0];
+                                if (first.MarketRegime) {
+                                    $('#marketRegimeText').text(first.MarketRegime);
+                                    $('#marketRegimeText').css('color', first.MarketRegime === 'BULLISH' ? 'var(--bullish)' : 'var(--bearish)');
+                                    $('#marketRegimeBadge').css('display', 'flex');
                                 }
+
+                                table.clear().rows.add(data).draw();
+                                updateSectorDashboard(data);
+                                updateStockCounts(data);
+
+                                // Update last refreshed date/indicator
+                                const lastUpdated = data[0].LastUpdated || 'Unknown';
+                                $('#lastRefreshed').text(lastUpdated);
+
+                                const indicator = $('#refreshStatusIndicator');
+                                try {
+                                    const lastDate = new Date(lastUpdated);
+                                    const diffHours = (new Date() - lastDate) / (1000 * 60 * 60);
+                                    if (diffHours < 24) {
+                                        indicator.css('background', 'var(--bullish)').attr('title', 'Data is fresh (< 24h ago)');
+                                    } else if (diffHours < 48) {
+                                        indicator.css('background', 'var(--accent-yellow)').attr('title', 'Data is becoming stale (> 24h ago)');
+                                    } else {
+                                        indicator.css('background', 'var(--bearish)').attr('title', 'Data is stale (> 48h ago)');
+                                    }
+                                } catch (e) {
+                                    console.error("Error calculating data age:", e);
+                                    indicator.css('background', 'var(--text-muted)');
+                                }
+
+                                $('#status').html(`<div style="color:var(--bullish)">Loaded ${data.length} stocks.</div>`);
                             } else {
                                 $('#status').html('<div style="color:var(--text-muted)">No data found. Click "Refresh Data" to fetch from Yahoo.</div>');
                             }

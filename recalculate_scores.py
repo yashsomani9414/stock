@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import datetime
 from zoneinfo import ZoneInfo
-from fetch_sp500 import calculate_score, DATA_FILE
+from fetch_sp500 import calculate_score, DATA_FILE, get_market_regime
 
 def recalculate():
     if not os.path.exists(DATA_FILE):
@@ -18,27 +18,27 @@ def recalculate():
         return
 
     df = pd.DataFrame(data)
+    regime = get_market_regime()
     
     # Calculate medians from the existing data
     pe_med = df.groupby('Sector')['P/E Ratio'].median().to_dict()
     vol_med = df.groupby('Sector')['6M Volatility'].median().to_dict()
     
-    # Create a history map (the data itself acts as history for consecutive low days etc)
-    # But since we are recalculating the *current* state, we can pass None or the row itself
-    # Actually, calculate_score takes (row, sector_pe_medians, sector_vol_medians, history=None)
-    # history is used for prev_score and ConsecutiveLowDays
-    
-    print("Recalculating scores and decisions...")
+    print(f"Recalculating scores and decisions (Market Regime: {regime})...")
     
     new_results = []
     for _, row in df.iterrows():
-        # Pass the row itself as history to preserve ConsecutiveLowDays if needed, 
-        # but the request is specifically to fix the logic jump.
-        score, decision, low_days = calculate_score(row, pe_med, vol_med, history=row.to_dict())
+        # calculate_score: score, decision, new_low, highest_price, trailing_stop, rec_weight
+        res = calculate_score(row, pe_med, vol_med, history=row.to_dict(), market_regime=regime)
+        
         row_dict = row.to_dict()
-        row_dict['Score'] = score
-        row_dict['Trade Decision'] = decision
-        row_dict['ConsecutiveLowDays'] = low_days
+        row_dict['Score'] = res[0]
+        row_dict['Trade Decision'] = res[1]
+        row_dict['ConsecutiveLowDays'] = res[2]
+        row_dict['HighestPrice'] = res[3]
+        row_dict['TrailingStop'] = res[4]
+        row_dict['RecWeight'] = res[5]
+        row_dict['MarketRegime'] = regime
         new_results.append(row_dict)
 
     # Convert back to clean JSON (NaN -> None)

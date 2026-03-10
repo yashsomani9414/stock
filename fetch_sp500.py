@@ -32,6 +32,24 @@ def load_sp500_data():
             print(f"Error loading {DATA_FILE}: {e}")
             return []
     return []
+    
+def get_market_regime():
+    """Determine if market is BULLISH or BEARISH based on SPY vs 200D MA."""
+    try:
+        print("Fetching Market Regime (SPY)...")
+        spy = yf.download("SPY", period="1y", progress=False)
+        if spy.empty: return "BULLISH"
+        if isinstance(spy.columns, pd.MultiIndex):
+            spy.columns = spy.columns.get_level_values(0)
+        close = spy['Close'].dropna()
+        ma200 = close.tail(200).mean()
+        curr = close.iloc[-1]
+        regime = "BULLISH" if curr >= ma200 else "BEARISH"
+        print(f"Market Regime: {regime} (SPY: {curr:.2f} vs 200MA: {ma200:.2f})")
+        return regime
+    except Exception as e:
+        print(f"Error fetching regime: {e}")
+        return "BULLISH"
 
 def calculate_sector_data(data):
     """Aggregate data by sector."""
@@ -194,8 +212,8 @@ def get_batch_stock_info(symbols, delay=5.0):
     time.sleep(delay)
     return batch_results
 
-def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
-    """Quantitative trading engine scores (0-100)."""
+def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, market_regime="BULLISH"):
+    """Quantitative trading engine scores (0-100) with V4 Strategy Enhancements."""
     try:
         score = 0
         prev_score = history.get('Score') if history else None
@@ -259,6 +277,19 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         elif dist_from_ma50 > 10:
             score -= 5
 
+        # V4: RISK-ADJUSTED POSITION SIZING (Rec Weight)
+        vol6m = row.get('6M Volatility') or 25
+        if vol6m < 15: rec_weight = 5.0      # Low Vol: 5%
+        elif vol6m < 30: rec_weight = 3.0    # Med Vol: 3%
+        else: rec_weight = 1.5               # High Vol: 1.5%
+
+        # V4: TRAILING STOP-LOSS TRACKING
+        curr_price = row.get('Price') or 0
+        prev_highest = history.get('HighestPrice') if history else 0
+        highest_price = max(curr_price, prev_highest)
+        # 10% trailing stop
+        trailing_stop = round(highest_price * 0.90, 2) if highest_price > 0 else 0
+
         final_points = min(100, round(max(0, score)))
         new_low = prev_low + 1 if final_points < 45 else 0
 
@@ -295,24 +326,34 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         if (prev_score and prev_score >= 80 and final_points < 70):
             return final_points, "Reduce", new_low
 
+        # V4: EXIT FOR PROFIT (Trailing Stop)
+        # Only apply if we have a valid history and was previously a Buy
+        if history and history.get('Trade Decision') in ("Strong Buy", "Buy (Small)", "Hold"):
+            if curr_price < trailing_stop and curr_price > 0:
+                return final_points, "Sell (Profit-Lock)", new_low, highest_price, trailing_stop, rec_weight
+
+        # V4: GLOBAL CIRCUIT BREAKER (Market Regime)
+        decision = "Hold"
         if (final_points >= 85 and price > ma50 and price > ma200 and vol5d_ratio >= 1.1 and ret6m > 0):
-            # Tighter safety for Strong Buy - Avoid ROST/FANG overextension
-            # RSI < 65 (Was 75), DistFromMA50 < 10 (Was 15), 1D Return stability
             if (rsi and rsi < 65) and dist_from_ma50 < 10 and ret1d > -1.5:
-                if edate_dist > 7: return final_points, "Strong Buy", new_low
+                if edate_dist > 7: decision = "Strong Buy"
 
-        if (75 <= final_points <= 84 and price > ma50 and price > ma200 and ret6m > 0):
-            # Tighter Buy (Small)
+        elif (75 <= final_points <= 84 and price > ma50 and price > ma200 and ret6m > 0):
             if (rsi and rsi < 75) and dist_from_ma50 < 15:
-                if edate_dist > 7: return final_points, "Buy (Small)", new_low
+                if edate_dist > 7: decision = "Buy (Small)"
 
-        return final_points, "Hold", new_low
+        # Apply Global Circuit Breaker Downgrade
+        if market_regime == "BEARISH" and decision in ("Strong Buy", "Buy (Small)"):
+            decision = "Hold (Market Risk)"
+
+        return final_points, decision, new_low, highest_price, trailing_stop, rec_weight
     except Exception as e:
         print(f"Error scoring: {e}")
-        return 0, "ERROR", 0
+        return 0, "ERROR", 0, 0, 0, 1.5
 
 def fetch_and_save():
     print("Starting fetch...")
+    regime = get_market_regime()
     tickers = get_all_potential_tickers()
     if not tickers: return
     print(f"Total potential tickers: {len(tickers)}")
@@ -395,10 +436,16 @@ def fetch_and_save():
     pe_med = final_df.groupby('Sector')['P/E Ratio'].median().to_dict()
     vol_med = final_df.groupby('Sector')['6M Volatility'].median().to_dict()
     
-    # Calculate scores and decisions for each stock
-    results = final_df.apply(lambda r: calculate_score(r, pe_med, vol_med, hist_map.get(r['Symbol'])), axis=1)
+    # Calculate scores and decisions for each stock (V4)
+    results = final_df.apply(lambda r: calculate_score(r, pe_med, vol_med, hist_map.get(r['Symbol']), regime), axis=1)
     
-    final_df['Score'], final_df['Trade Decision'], final_df['ConsecutiveLowDays'] = [r[0] for r in results], [r[1] for r in results], [r[2] for r in results]
+    final_df['Score'] = [r[0] for r in results]
+    final_df['Trade Decision'] = [r[1] for r in results]
+    final_df['ConsecutiveLowDays'] = [r[2] for r in results]
+    final_df['HighestPrice'] = [r[3] for r in results]
+    final_df['TrailingStop'] = [r[4] for r in results]
+    final_df['RecWeight'] = [r[5] for r in results]
+    final_df['MarketRegime'] = regime
     
     # Get current time in Pacific Time
     pacific_time = datetime.datetime.now(ZoneInfo("America/Los_Angeles"))
