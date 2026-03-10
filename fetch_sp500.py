@@ -228,7 +228,7 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         if price >= ma200:
             if price > ma50: score += 8
             if ma50 > ma200: score += 8
-            if price > ma200: score += 8
+            if price > ma200 * 1.05: score += 8  # Fix #4: require >5% above 200MA
             if trend_strength > 0: score += 11
         
         # B) MOMENTUM (scaled by magnitude)
@@ -277,15 +277,13 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         elif dist_from_ma50 > 10:
             score -= 5
 
-        # V4: RISK-ADJUSTED POSITION SIZING (Rec Weight)
+        # V4: RISK-ADJUSTED POSITION SIZING (smooth inverse-volatility)
         vol6m = row.get('6M Volatility') or 25
-        if vol6m < 15: rec_weight = 5.0      # Low Vol: 5%
-        elif vol6m < 30: rec_weight = 3.0    # Med Vol: 3%
-        else: rec_weight = 1.5               # High Vol: 1.5%
+        rec_weight = round(min(5.0, max(1.0, 75 / vol6m)), 1)  # Fix #6: smooth scaling
 
         # V4: TRAILING STOP-LOSS TRACKING
         curr_price = row.get('Price') or 0
-        prev_highest = history.get('HighestPrice') if history else 0
+        prev_highest = (history.get('HighestPrice') or 0) if history else 0  # Fix #2: guard None
         highest_price = max(curr_price, prev_highest)
         # 10% trailing stop
         trailing_stop = round(highest_price * 0.90, 2) if highest_price > 0 else 0
@@ -296,7 +294,7 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         # DECISION
         avg_vol_20d = row.get('Volume') / vol1d_ratio if row.get('Volume') and row.get('Vol Change 1D') is not None else 0
         if mcap < 2e9 or avg_vol_20d < 500000 or price < 10:
-            return final_points, "Rejected – Universal Filter", new_low
+            return final_points, "Rejected – Universal Filter", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
 
         sell_signals = sum([
             price < ma200,
@@ -305,7 +303,7 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
             new_low >= 3
         ])
         if sell_signals >= 2:
-            return final_points, "Sell", new_low
+            return final_points, "Sell", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
 
         edate_str = row.get('EarningsDate')
         edate_dist = 999
@@ -314,31 +312,29 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
                 # Use Pacific Time for "today" to ensure consistency with LastUpdated
                 pt_today = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
                 edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - pt_today).days
-                if -1 <= edate_dist <= 7: return final_points, "Hold", new_low
+                if -1 <= edate_dist <= 7: return final_points, "Hold", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
             except: pass
 
-        # IMPROVED REDUCE LOGIC: Only reduce if the score is actually low (< 75) 
-        # or if it was a high-scoring stock that just dropped significantly.
-        # This prevents UPS (Score 91) from being marked "Reduce" on a minor dip.
+        # IMPROVED REDUCE LOGIC
         if final_points < 75 and (ret5d < 0 and ret1m < 0):
-            return final_points, "Reduce", new_low
+            return final_points, "Reduce", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
         
         if (prev_score and prev_score >= 80 and final_points < 70):
-            return final_points, "Reduce", new_low
+            return final_points, "Reduce", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
 
-        # V4: EXIT FOR PROFIT (Trailing Stop)
-        # Only apply if we have a valid history and was previously a Buy
-        if history and history.get('Trade Decision') in ("Strong Buy", "Buy (Small)", "Hold"):
+        # V4: EXIT FOR PROFIT (Trailing Stop) — Fix #3: only for actual Buy decisions
+        if history and history.get('Trade Decision') in ("Strong Buy", "Buy (Small)"):
             if curr_price < trailing_stop and curr_price > 0:
                 return final_points, "Sell (Profit-Lock)", new_low, highest_price, trailing_stop, rec_weight
 
         # V4: GLOBAL CIRCUIT BREAKER (Market Regime)
         decision = "Hold"
-        if (final_points >= 85 and price > ma50 and price > ma200 and vol5d_ratio >= 1.1 and ret6m > 0):
+        # Fix #5: Widened buy gates — Strong Buy >= 75, Buy >= 60
+        if (final_points >= 75 and price > ma50 and price > ma200 and vol5d_ratio >= 1.1 and ret6m > 0):
             if (rsi and rsi < 65) and dist_from_ma50 < 10 and ret1d > -1.5:
                 if edate_dist > 7: decision = "Strong Buy"
 
-        elif (75 <= final_points <= 84 and price > ma50 and price > ma200 and ret6m > 0):
+        elif (60 <= final_points < 75 and price > ma50 and price > ma200 and ret6m > 0):
             if (rsi and rsi < 75) and dist_from_ma50 < 15:
                 if edate_dist > 7: decision = "Buy (Small)"
 
