@@ -64,6 +64,11 @@ def load_stock_metadata():
                     'P/E Ratio': d.get('P/E Ratio'),
                     'Market Cap': d.get('Market Cap', 50e9),
                     'EarningsDate': d.get('EarningsDate'),
+                    # V8: Quality Factor inputs
+                    'ROE': d.get('ROE'),
+                    'Gross Margin': d.get('Gross Margin'),
+                    'FCF Margin': d.get('FCF Margin'),
+                    'Debt/Equity': d.get('Debt/Equity'),
                 }
     return metadata
 
@@ -279,6 +284,11 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
                         'Sector': meta.get('Sector', 'Unknown'),
                         'P/E Ratio': meta.get('P/E Ratio'),
                         'EarningsDate': meta.get('EarningsDate'),
+                        # V8: Quality Factor inputs
+                        'ROE': meta.get('ROE'),
+                        'Gross Margin': meta.get('Gross Margin'),
+                        'FCF Margin': meta.get('FCF Margin'),
+                        'Debt/Equity': meta.get('Debt/Equity'),
                     })
                     
                     res = calculate_score(row, sector_pe_med, sector_vol_med, history=hist_for_scoring, market_regime=regime)

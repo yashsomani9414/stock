@@ -196,6 +196,12 @@ def get_batch_stock_info(symbols, delay=5.0):
     for symbol in symbols:
         try:
             info = tickers_obj.tickers[symbol].info
+            
+            # Calculate FCF Margin = Free Cash Flow / Total Revenue
+            fcf = info.get("freeCashflow")
+            revenue = info.get("totalRevenue")
+            fcf_margin = (fcf / revenue) if fcf and revenue and revenue > 0 else None
+            
             batch_results.append({
                 "Ticker": symbol,
                 "Name": info.get("shortName", "N/A"),
@@ -204,7 +210,12 @@ def get_batch_stock_info(symbols, delay=5.0):
                 "Market Cap": info.get("marketCap"),
                 "P/E Ratio": info.get("trailingPE"),
                 "Price": info.get("currentPrice") or info.get("regularMarketPrice"),
-                "EarningsDate": extract_earnings_date(tickers_obj.tickers[symbol], info)
+                "EarningsDate": extract_earnings_date(tickers_obj.tickers[symbol], info),
+                # V8: Quality Factor inputs
+                "ROE": info.get("returnOnEquity"),        # e.g. 0.35 = 35%
+                "Gross Margin": info.get("grossMargins"),  # e.g. 0.45 = 45%
+                "FCF Margin": fcf_margin,                  # calculated
+                "Debt/Equity": info.get("debtToEquity"),   # e.g. 150 = 1.5x (in %)
             })
         except Exception as e:
             print(f"Error info {symbol}: {e}")
@@ -214,12 +225,12 @@ def get_batch_stock_info(symbols, delay=5.0):
 
 def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, market_regime="BULLISH"):
     """
-    Weighted-Average Scoring Engine (V6)
+    Weighted-Average Scoring Engine (V8)
     =====================================
     Each dimension scores 0–100 independently, then combined via weights.
     No single factor can dominate beyond its allocated weight.
     
-    Weights: Trend 30% | Momentum 25% | Valuation 20% | Volume 15% | Safety 10%
+    Weights: Trend 25% | Momentum 20% | Valuation 20% | Quality 15% | Volume 10% | Safety 10%
     """
     try:
         prev_score = history.get('Score') if history else None
@@ -242,6 +253,12 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         vol6m_raw = row.get('6M Volatility')
         median_pe = sector_pe_medians.get(row.get('Sector'))
         median_vol = sector_vol_medians.get(row.get('Sector'))
+        
+        # V8: Quality Factor inputs
+        roe = row.get('ROE')                # e.g. 0.35 = 35%
+        gross_margin = row.get('Gross Margin')  # e.g. 0.45 = 45%
+        fcf_margin = row.get('FCF Margin')    # e.g. 0.12 = 12%
+        debt_equity = row.get('Debt/Equity')  # e.g. 150 = 1.5x (yfinance returns in %)
 
         # ═══════════════════════════════════════════════════════════════
         # A) TREND SUB-SCORE (0–100)
@@ -273,16 +290,21 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
                 trend_score += min(25, trend_strength * 5)  # Full at +5%
 
         # ═══════════════════════════════════════════════════════════════
-        # B) MOMENTUM SUB-SCORE (0–100)
+        # B) MOMENTUM SUB-SCORE (0–100) — V8: Risk-Adjusted
         # ═══════════════════════════════════════════════════════════════
         mom_score = 0
+        vol_divisor = max(vol6m_raw or 25, 10)  # Floor at 10% to avoid division explosion
         
-        # Individual return contributions (V7: More realistic thresholds)
-        mom_score += min(25, max(0, ret6m * 1.25))   # Full at +20%
-        mom_score += min(25, max(0, ret1m * 2.5))    # Full at +10%
-        mom_score += min(25, max(0, ret5d * 5.0))    # Full at +5%
+        # Risk-adjusted return contributions (return / volatility)
+        adj_ret6m = ret6m / vol_divisor           # e.g. 20% ret / 20% vol = 1.0
+        adj_ret1m = (ret1m * 12) / vol_divisor    # Annualized 1M / vol
+        adj_ret5d = (ret5d * 52) / vol_divisor    # Annualized 5D / vol
         
-        # Acceleration bonus: annualized rates for fair comparison
+        mom_score += min(25, max(0, adj_ret6m * 25))   # Full at ratio=1.0
+        mom_score += min(25, max(0, adj_ret1m * 12.5))  # Full at ratio=2.0
+        mom_score += min(25, max(0, adj_ret5d * 12.5))  # Full at ratio=2.0
+        
+        # Acceleration bonus: is momentum accelerating across timeframes?
         ann_5d =  ret5d * 52    # 5-day return annualized
         ann_1m =  ret1m * 12    # 1-month return annualized
         ann_6m =  ret6m * 2     # 6-month return annualized
@@ -354,13 +376,61 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         safety_score = max(0, min(100, safety_score))
 
         # ═══════════════════════════════════════════════════════════════
-        # WEIGHTED AVERAGE COMPOSITE SCORE
+        # F) QUALITY SUB-SCORE (0–100) — V8: New Factor
+        # ═══════════════════════════════════════════════════════════════
+        quality_score = 50  # Start neutral (no data = neutral)
+        has_quality_data = False
+        
+        # ROE: 0–25 pts. Full at 20% ROE
+        if roe is not None:
+            has_quality_data = True
+            roe_pct = roe * 100  # Convert 0.35 → 35
+            if roe_pct > 0:
+                quality_score += min(25, roe_pct * 1.25) - 12.5  # Centered: 10% ROE = neutral
+            else:
+                quality_score -= 15  # Negative ROE is a red flag
+        
+        # Gross Margin: 0–25 pts. Full at 50%
+        if gross_margin is not None:
+            has_quality_data = True
+            gm_pct = gross_margin * 100  # Convert 0.45 → 45
+            if gm_pct > 20:
+                quality_score += min(25, (gm_pct - 20) * 0.833) - 12.5
+            else:
+                quality_score -= 10  # Low margin business
+        
+        # FCF Margin: 0–25 pts. Full at 15%
+        if fcf_margin is not None:
+            has_quality_data = True
+            fcf_pct = fcf_margin * 100  # Convert 0.12 → 12
+            if fcf_pct > 0:
+                quality_score += min(25, fcf_pct * 1.667) - 12.5
+            else:
+                quality_score -= 10  # Negative FCF is concerning
+        
+        # Debt/Equity: 0–25 pts. yfinance returns as %, so 150 = 1.5x
+        if debt_equity is not None:
+            has_quality_data = True
+            if debt_equity < 50:       # < 0.5x leverage
+                quality_score += 15
+            elif debt_equity < 100:     # < 1.0x leverage
+                quality_score += 5
+            elif debt_equity > 200:     # > 2.0x leverage
+                quality_score -= 15
+            elif debt_equity > 150:     # > 1.5x leverage
+                quality_score -= 5
+        
+        quality_score = max(0, min(100, quality_score))
+
+        # ═══════════════════════════════════════════════════════════════
+        # WEIGHTED AVERAGE COMPOSITE SCORE (V8 Weights)
         # ═══════════════════════════════════════════════════════════════
         WEIGHTS = {
-            'trend': 0.30,
-            'momentum': 0.25,
+            'trend': 0.25,
+            'momentum': 0.20,
             'valuation': 0.20,
-            'volume': 0.15,
+            'quality': 0.15,
+            'volume': 0.10,
             'safety': 0.10,
         }
         
@@ -368,6 +438,7 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
             trend_score * WEIGHTS['trend'] +
             mom_score * WEIGHTS['momentum'] +
             val_score * WEIGHTS['valuation'] +
+            quality_score * WEIGHTS['quality'] +
             vol_score * WEIGHTS['volume'] +
             safety_score * WEIGHTS['safety']
         )
