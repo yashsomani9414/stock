@@ -213,27 +213,27 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
             if price > ma200: score += 8
             if trend_strength > 0: score += 11
         
-        # B) MOMENTUM
+        # B) MOMENTUM (scaled by magnitude)
         ret5d, ret1m, ret6m = row.get('5D Return') or 0, row.get('1M Return') or 0, row.get('6M Return') or 0
-        if ret6m > 0: score += 5
-        if ret1m > 0: score += 5
-        if ret5d > 0: score += 5
+        score += min(5, max(0, ret6m / 8))    # 0-5 pts, full credit at +40%
+        score += min(5, max(0, ret1m / 4))    # 0-5 pts, full credit at +20%
+        score += min(5, max(0, ret5d / 2))    # 0-5 pts, full credit at +10%
         if ret5d > ret1m > ret6m and ret5d > 0: score += 10  # Accelerating momentum
-        if ret5d < 0 and ret1m > 0: score -= 5
+        if ret5d < 0 and ret1m > 0: score -= 3  # Short-term weakness, scaled down from -5
         
-        # C) VOLUME
+        # C) VOLUME (scaled by ratio)
         ret1d = row.get('1D Return') or 0
         vol1d_ratio = 1 + (row.get('Vol Change 1D') or 0) / 100
         vol5d_ratio = 1 + (row.get('Vol Change 5D') or 0) / 100
         
-        if vol5d_ratio >= 1.2: score += 5
-        if vol1d_ratio >= 1.5: score += 10
-        if ret1d > 0 and (row.get('Vol Change 1D') or 0) > 0: score += 5
-        if ret1d < 0 and vol1d_ratio >= 2.0: score -= 10
+        score += min(5, max(0, (vol5d_ratio - 1.0) * 25))  # 0-5 pts, full at 1.2x
+        score += min(7, max(0, (vol1d_ratio - 1.0) * 14))  # 0-7 pts, full at 1.5x
+        if ret1d > 0 and (row.get('Vol Change 1D') or 0) > 0: score += 3  # Up day on volume
+        if ret1d < 0 and vol1d_ratio >= 2.0: score -= 10  # Distribution day
         
         # D) RISK & VALUATION
         mcap = row.get('Market Cap') or 0
-        if mcap > 10e9: score += 5
+        # No size bonus — market cap is used only for universal filter, not scoring
         pe = row.get('P/E Ratio')
         median_pe = sector_pe_medians.get(row.get('Sector'))
         if pe and median_pe:

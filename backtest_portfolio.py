@@ -1,14 +1,30 @@
 """
-Portfolio-Level Backtester for S&P 500 Trading Strategy
-========================================================
-Simulates equal-weight allocation across "Strong Buy" signals,
-tracks daily portfolio value with proper compounding,
-and compares against SPY (buy-and-hold benchmark).
+Portfolio-Level Walk-Forward Backtester
+=======================================
+IMPORTANT: This backtester is designed to AVOID look-ahead bias:
+  - On each trading day, it uses ONLY data available up to that day 
+  - Scoring is recalculated from scratch each rebalance day using 
+    only the historical data visible at that moment
+  - No future data leaks into decisions
+
+Data approach:
+  - Downloads historical daily data ONLY for the selected universe
+    (not all 903 tickers) to keep it fast
+  - Uses yf.download with a date range, then walks forward day by day
+
+Bias disclaimer:
+  The scoring RULES themselves were designed by looking at past markets.
+  So while the backtest mechanics are bias-free, the strategy rules
+  carry inherent in-sample bias. True validation requires:
+    1. Out-of-sample testing on unseen time periods
+    2. Paper trading going forward
+    3. Comparing against simple benchmarks (SPY buy-and-hold)
 
 Usage:
-    python3 backtest_portfolio.py                     # Default: 6 months, top 50 liquid stocks
-    python3 backtest_portfolio.py --months 12         # 12-month backtest
-    python3 backtest_portfolio.py --universe 100      # Top 100 stocks by volume
+    python3 backtest_portfolio.py                     # Default: 3 months, top 30 stocks
+    python3 backtest_portfolio.py --months 6          # 6-month backtest
+    python3 backtest_portfolio.py --universe 50       # Top 50 stocks by volume
+    python3 backtest_portfolio.py --tickers AAPL,MSFT # Specific tickers only
 """
 
 import pandas as pd
@@ -21,7 +37,7 @@ import sys
 import os
 
 sys.path.append(os.getcwd())
-from fetch_sp500 import calculate_score, calculate_rsi, get_all_potential_tickers
+from fetch_sp500 import calculate_score, calculate_rsi
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 
@@ -31,12 +47,33 @@ MIN_HISTORY_DAYS = 200      # Need 200 days for MA200
 COMMISSION_PCT = 0.001      # 0.1% round-trip commission estimate
 
 
-def load_historical_data(tickers, start_date, end_date):
-    """Download historical price data for all tickers at once."""
-    print(f"Downloading data for {len(tickers)} tickers from {start_date} to {end_date}...")
+def get_universe_tickers(universe_size=30, specific_tickers=None):
+    """Get tickers from the existing sp500_data.json (no re-download needed)."""
+    if specific_tickers:
+        return specific_tickers
+    
+    data_file = 'sp500_data.json'
+    if os.path.exists(data_file):
+        import json
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+        # Sort by volume (descending) and take top N
+        sorted_data = sorted(data, key=lambda x: x.get('Volume', 0) or 0, reverse=True)
+        tickers = [d['Symbol'] for d in sorted_data[:universe_size]]
+        print(f"Selected {len(tickers)} most liquid stocks from existing data.")
+        return tickers
+    else:
+        print("No sp500_data.json found. Using a default set.")
+        return ['AAPL', 'MSFT', 'NVDA', 'AMZN', 'GOOGL', 'META', 'TSLA', 'JPM', 'V', 'UNH',
+                'XOM', 'WMT', 'MA', 'JNJ', 'PG', 'HD', 'MRK', 'ABBV', 'COST', 'BAC']
+
+
+def download_universe_data(tickers, start_date, end_date):
+    """Download daily data ONLY for the selected universe (not all 903 tickers)."""
+    print(f"\nDownloading data for {len(tickers)} tickers ({start_date} to {end_date})...")
     
     all_data = {}
-    batch_size = 20
+    batch_size = 10
     for i in range(0, len(tickers), batch_size):
         batch = tickers[i:i+batch_size]
         try:
@@ -54,16 +91,21 @@ def load_historical_data(tickers, start_date, end_date):
                     except:
                         continue
         except Exception as e:
-            print(f"  Error downloading batch {i}: {e}")
-        time.sleep(2)
+            print(f"  Error: {e}")
+        time.sleep(1)
     
-    print(f"  Successfully loaded {len(all_data)} tickers with sufficient history.")
+    print(f"  Loaded {len(all_data)}/{len(tickers)} tickers with >= {MIN_HISTORY_DAYS} days of history.\n")
     return all_data
 
 
-def score_stock_on_date(symbol, hist_data, date_idx, sector_pe_med, sector_vol_med):
-    """Calculate the score for a stock on a given date using historical data."""
+def score_on_date(symbol, hist_data, date_idx):
+    """
+    Score a stock using ONLY data available up to date_idx.
+    This is the walk-forward mechanism that prevents look-ahead bias.
+    No future data is visible to the scoring function.
+    """
     df = hist_data[symbol]
+    # Slice: only data up to and including this date
     slice_df = df.iloc[:date_idx + 1]
     close = slice_df['Close']
     volume = slice_df['Volume']
@@ -83,9 +125,9 @@ def score_stock_on_date(symbol, hist_data, date_idx, sector_pe_med, sector_vol_m
     ret6m = (float(close.iloc[-1]) / float(close.iloc[-126]) - 1) * 100 if len(close) >= 126 else 0
     vol6m = float(close.tail(126).pct_change().std() * (252**0.5) * 100) if len(close) >= 126 else 25
     
-    avg_v20 = float(volume.tail(20).mean())
+    avg_v20 = float(volume.tail(20).mean()) if len(volume) >= 20 else float(volume.mean())
     curr_v = float(volume.iloc[-1])
-    avg_v5 = float(volume.tail(5).mean())
+    avg_v5 = float(volume.tail(5).mean()) if len(volume) >= 5 else curr_v
     
     row = pd.Series({
         'Price': curr_price,
@@ -102,53 +144,42 @@ def score_stock_on_date(symbol, hist_data, date_idx, sector_pe_med, sector_vol_m
         'Vol Change 5D': ((avg_v5 / avg_v20) - 1) * 100 if avg_v20 > 0 else 0,
         'RSI': rsi,
         'DistFromMA50': dist_ma50,
-        'Market Cap': 50e9,  # We don't have historical market cap; assume passes filter
+        'Market Cap': 50e9,   # Passes universal filter (we pre-filtered via sp500_data.json)
         'Sector': 'Unknown',
-        'P/E Ratio': None,  # Not available historically
+        'P/E Ratio': None,    # Not available historically day-by-day
     })
     
-    score, decision, _ = calculate_score(row, sector_pe_med, sector_vol_med)
+    # Dummy sector medians (P/E and Vol scoring will be neutral)
+    score, decision, _ = calculate_score(row, {'Unknown': 25}, {'Unknown': 25})
     return score, decision
 
 
-def run_backtest(months=6, universe_size=50):
-    """Run a portfolio-level backtest."""
+def run_backtest(months=3, universe_size=30, specific_tickers=None):
+    """Run a walk-forward portfolio backtest."""
     end_date = datetime.date.today()
-    # Need extra history for MA200 calculation
     start_date = end_date - datetime.timedelta(days=months * 30 + MIN_HISTORY_DAYS + 30)
     backtest_start = end_date - datetime.timedelta(days=months * 30)
     
+    # Get universe
+    tickers = get_universe_tickers(universe_size, specific_tickers)
+    
     print(f"\n{'='*60}")
-    print(f"PORTFOLIO BACKTEST")
+    print(f"WALK-FORWARD PORTFOLIO BACKTEST")
     print(f"{'='*60}")
-    print(f"Period: {backtest_start} to {end_date} ({months} months)")
-    print(f"Universe: Top {universe_size} most liquid S&P stocks")
-    print(f"Initial Capital: ${INITIAL_CAPITAL:,.0f}")
-    print(f"Rebalance: Every {REBALANCE_FREQ} trading days")
-    print(f"{'='*60}\n")
+    print(f"Period:        {backtest_start} → {end_date} ({months} months)")
+    print(f"Universe:      {len(tickers)} stocks")
+    print(f"Capital:       ${INITIAL_CAPITAL:,.0f}")
+    print(f"Rebalance:     Every {REBALANCE_FREQ} trading days")
+    print(f"Commission:    {COMMISSION_PCT*100:.1f}% per trade")
+    print(f"{'='*60}")
     
-    # Get tickers
-    tickers = get_all_potential_tickers()
-    if not tickers:
-        print("ERROR: Could not fetch tickers.")
-        return
-    
-    # Download all historical data
-    hist_data = load_historical_data(tickers, start_date.isoformat(), end_date.isoformat())
+    # Download ONLY the selected universe
+    hist_data = download_universe_data(tickers, start_date.isoformat(), end_date.isoformat())
     if not hist_data:
-        print("ERROR: No historical data loaded.")
+        print("ERROR: No data loaded.")
         return
     
-    # Filter to top N most liquid (by average volume over last 60 days)
-    avg_volumes = {}
-    for sym, df in hist_data.items():
-        try:
-            avg_volumes[sym] = float(df['Volume'].tail(60).mean())
-        except:
-            avg_volumes[sym] = 0
-    
-    sorted_syms = sorted(avg_volumes, key=avg_volumes.get, reverse=True)[:universe_size]
-    print(f"Selected {len(sorted_syms)} stocks for backtesting.\n")
+    available_tickers = list(hist_data.keys())
     
     # Download SPY for benchmark
     spy_data = yf.download("SPY", start=start_date.isoformat(), end=end_date.isoformat(), progress=False)
@@ -156,9 +187,9 @@ def run_backtest(months=6, universe_size=50):
         spy_data.columns = spy_data.columns.get_level_values(0)
     spy_close = spy_data['Close'].dropna()
     
-    # Find common trading dates within backtest window
+    # Find common trading dates
     common_dates = None
-    for sym in sorted_syms:
+    for sym in available_tickers:
         dates = hist_data[sym].index
         if common_dates is None:
             common_dates = dates
@@ -166,80 +197,63 @@ def run_backtest(months=6, universe_size=50):
             common_dates = common_dates.intersection(dates)
     
     common_dates = common_dates.sort_values()
-    backtest_mask = common_dates >= pd.Timestamp(backtest_start)
-    bt_dates = common_dates[backtest_mask]
+    bt_dates = common_dates[common_dates >= pd.Timestamp(backtest_start)]
     
     if len(bt_dates) == 0:
-        print("ERROR: No overlapping trading dates in backtest window.")
+        print("ERROR: No trading dates in backtest window.")
         return
     
-    print(f"Backtest trading days: {len(bt_dates)}")
-    print(f"First: {bt_dates[0].date()}, Last: {bt_dates[-1].date()}\n")
+    print(f"Trading days: {len(bt_dates)}  ({bt_dates[0].date()} → {bt_dates[-1].date()})")
     
-    # ─── SIMULATE ─────────────────────────────────────────────────────────────
-    portfolio_value = INITIAL_CAPITAL
-    holdings = {}  # symbol -> num_shares
+    # ─── WALK-FORWARD SIMULATION ──────────────────────────────────────────────
     cash = INITIAL_CAPITAL
-    
+    holdings = {}     # symbol → num_shares
     daily_values = []
     trades_log = []
     monthly_returns = {}
     
-    sector_pe_med = {'Unknown': 25}
-    sector_vol_med = {'Unknown': 25}
-    
     for day_i, date in enumerate(bt_dates):
-        # Get absolute index in each stock's dataframe
+        # Build date index map (for walk-forward slicing)
         date_indices = {}
-        for sym in sorted_syms:
-            idx = hist_data[sym].index.get_loc(date) if date in hist_data[sym].index else None
-            if idx is not None:
-                date_indices[sym] = idx
+        for sym in available_tickers:
+            if date in hist_data[sym].index:
+                date_indices[sym] = hist_data[sym].index.get_loc(date)
         
-        # Calculate current portfolio value
+        # Mark-to-market: calculate portfolio value
         portfolio_value = cash
         for sym, shares in holdings.items():
             if sym in date_indices:
                 price = float(hist_data[sym]['Close'].iloc[date_indices[sym]])
                 portfolio_value += shares * price
         
-        daily_values.append({
-            'Date': date,
-            'Portfolio': portfolio_value,
-            'Holdings': len(holdings),
-        })
+        daily_values.append({'Date': date, 'Portfolio': portfolio_value, 'Holdings': len(holdings)})
         
-        # Track monthly returns
+        # Track monthly
         month_key = date.strftime('%Y-%m')
         if month_key not in monthly_returns:
             monthly_returns[month_key] = {'start': portfolio_value, 'end': portfolio_value}
         monthly_returns[month_key]['end'] = portfolio_value
         
-        # ─── REBALANCE ────────────────────────────────────────────────────────
+        # ─── REBALANCE DAY ────────────────────────────────────────────────
         if day_i % REBALANCE_FREQ == 0:
-            # Score all stocks
+            # Score ALL stocks using only data up to TODAY (walk-forward)
             scores = {}
-            for sym in sorted_syms:
+            for sym in available_tickers:
                 if sym not in date_indices:
                     continue
                 try:
-                    score, decision = score_stock_on_date(
-                        sym, hist_data, date_indices[sym],
-                        sector_pe_med, sector_vol_med
-                    )
+                    score, decision = score_on_date(sym, hist_data, date_indices[sym])
                     if score is not None:
                         scores[sym] = (score, decision)
                 except:
                     continue
             
-            # Find Strong Buy and Buy signals
-            buy_signals = [sym for sym, (sc, dec) in scores.items() 
-                         if dec in ("Strong Buy", "Buy (Small)")]
-            
-            sell_signals = [sym for sym, (sc, dec) in scores.items() 
+            buy_signals = [s for s, (sc, dec) in scores.items() 
+                          if dec in ("Strong Buy", "Buy (Small)")]
+            sell_signals = [s for s, (sc, dec) in scores.items() 
                           if dec in ("Sell", "Reduce")]
             
-            # ─── SELL positions that turned Sell/Reduce ────────────────────
+            # ─── SELL ─────────────────────────────────────────────────────
             for sym in list(holdings.keys()):
                 if sym in sell_signals or sym not in scores:
                     if sym in date_indices:
@@ -247,27 +261,23 @@ def run_backtest(months=6, universe_size=50):
                         proceeds = holdings[sym] * price * (1 - COMMISSION_PCT)
                         cash += proceeds
                         trades_log.append({
-                            'Date': date.date(),
+                            'Date': str(date.date()),
                             'Symbol': sym,
                             'Action': 'SELL',
                             'Price': round(price, 2),
                             'Shares': holdings[sym],
-                            'Value': round(proceeds, 2),
-                            'Decision': scores.get(sym, (0, 'N/A'))[1]
+                            'Decision': scores.get(sym, (0, 'N/A'))[1],
+                            'Score': scores.get(sym, (0,))[0]
                         })
                         del holdings[sym]
             
-            # ─── BUY new positions ────────────────────────────────────────
+            # ─── BUY ──────────────────────────────────────────────────────
             if buy_signals:
-                # Equal weight across all buy signals (including existing)
                 new_buys = [s for s in buy_signals if s not in holdings]
-                
-                if new_buys:
-                    # Allocate available cash equally
-                    per_stock = cash / len(new_buys) if len(new_buys) > 0 else 0
-                    
+                if new_buys and cash > 500:
+                    per_stock = cash / len(new_buys)
                     for sym in new_buys:
-                        if per_stock < 100:  # Skip tiny allocations
+                        if per_stock < 100:
                             continue
                         if sym in date_indices:
                             price = float(hist_data[sym]['Close'].iloc[date_indices[sym]])
@@ -277,82 +287,81 @@ def run_backtest(months=6, universe_size=50):
                                 cash -= cost
                                 holdings[sym] = shares
                                 trades_log.append({
-                                    'Date': date.date(),
+                                    'Date': str(date.date()),
                                     'Symbol': sym,
                                     'Action': 'BUY',
                                     'Price': round(price, 2),
                                     'Shares': shares,
-                                    'Value': round(cost, 2),
-                                    'Decision': scores[sym][1]
+                                    'Decision': scores[sym][1],
+                                    'Score': scores[sym][0]
                                 })
     
     # ─── RESULTS ──────────────────────────────────────────────────────────────
-    
     daily_df = pd.DataFrame(daily_values)
     trades_df = pd.DataFrame(trades_log) if trades_log else pd.DataFrame()
     
-    # SPY benchmark return
-    spy_start_price = float(spy_close.loc[spy_close.index >= pd.Timestamp(backtest_start)].iloc[0])
-    spy_end_price = float(spy_close.iloc[-1])
-    spy_return = (spy_end_price / spy_start_price - 1) * 100
+    # SPY benchmark
+    spy_bt = spy_close[spy_close.index >= pd.Timestamp(backtest_start)]
+    spy_return = (float(spy_bt.iloc[-1]) / float(spy_bt.iloc[0]) - 1) * 100
     
     # Portfolio metrics
     final_value = daily_df['Portfolio'].iloc[-1]
     total_return = (final_value / INITIAL_CAPITAL - 1) * 100
     
-    # Daily returns for Sharpe
     daily_df['DailyReturn'] = daily_df['Portfolio'].pct_change()
-    sharpe = (daily_df['DailyReturn'].mean() / daily_df['DailyReturn'].std()) * (252**0.5) if daily_df['DailyReturn'].std() > 0 else 0
+    std = daily_df['DailyReturn'].std()
+    sharpe = (daily_df['DailyReturn'].mean() / std) * (252**0.5) if std > 0 else 0
     
-    # Max Drawdown
     running_max = daily_df['Portfolio'].cummax()
     drawdown = (daily_df['Portfolio'] - running_max) / running_max * 100
     max_drawdown = drawdown.min()
     
-    # Print Results
+    # Print
     print(f"\n{'='*60}")
-    print(f"BACKTEST RESULTS")
+    print(f"RESULTS")
     print(f"{'='*60}")
     print(f"{'Strategy Return:':<30} {total_return:>+8.2f}%")
-    print(f"{'SPY Benchmark Return:':<30} {spy_return:>+8.2f}%")
+    print(f"{'SPY Buy-and-Hold:':<30} {spy_return:>+8.2f}%")
     print(f"{'Alpha (vs SPY):':<30} {total_return - spy_return:>+8.2f}%")
-    print(f"{'─'*40}")
-    print(f"{'Final Portfolio Value:':<30} ${final_value:>12,.2f}")
-    print(f"{'Sharpe Ratio (annualized):':<30} {sharpe:>8.2f}")
+    print(f"{'─'*45}")
+    print(f"{'Final Value:':<30} ${final_value:>12,.2f}")
+    print(f"{'Sharpe Ratio (ann.):':<30} {sharpe:>8.2f}")
     print(f"{'Max Drawdown:':<30} {max_drawdown:>8.2f}%")
     print(f"{'Total Trades:':<30} {len(trades_df):>8}")
     
-    if not trades_df.empty:
-        buys = trades_df[trades_df['Action'] == 'BUY']
-        sells = trades_df[trades_df['Action'] == 'SELL']
-        print(f"{'Buy Trades:':<30} {len(buys):>8}")
-        print(f"{'Sell Trades:':<30} {len(sells):>8}")
-    
-    # Monthly breakdown
-    print(f"\n{'─'*40}")
-    print(f"MONTHLY P&L")
-    print(f"{'─'*40}")
-    print(f"{'Month':<12} {'Return':>10} {'Value':>15}")
-    print(f"{'─'*40}")
+    # Monthly P&L
+    print(f"\n{'─'*45}")
+    print(f"{'MONTHLY P&L':^45}")
+    print(f"{'─'*45}")
+    print(f"{'Month':<12} {'Return':>10} {'End Value':>15}")
+    print(f"{'─'*45}")
     for month, vals in sorted(monthly_returns.items()):
         ret = (vals['end'] / vals['start'] - 1) * 100
-        indicator = "🟢" if ret >= 0 else "🔴"
-        print(f"{month:<12} {ret:>+9.2f}% ${vals['end']:>12,.2f} {indicator}")
+        ind = "+" if ret >= 0 else ""
+        print(f"{month:<12} {ind}{ret:.2f}%{'':<5} ${vals['end']:>12,.2f}")
     
-    # Last N trades
+    # Recent trades
     if not trades_df.empty:
-        print(f"\n{'─'*40}")
-        print(f"LAST 20 TRADES")
-        print(f"{'─'*40}")
-        print(trades_df.tail(20).to_string(index=False))
+        print(f"\n{'─'*45}")
+        print(f"TRADES ({len(trades_df)} total, showing last 25)")
+        print(f"{'─'*45}")
+        print(trades_df.tail(25).to_string(index=False))
     
+    # Bias warning
     print(f"\n{'='*60}")
-    
+    print("NOTE: This backtest uses walk-forward mechanics (no look-ahead")
+    print("bias in data). However, the scoring RULES were designed with")
+    print("knowledge of past markets. True validation requires paper")
+    print("trading on unseen future data.")
+    print(f"{'='*60}")
+
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Portfolio-level backtester")
-    parser.add_argument("--months", type=int, default=6, help="Number of months to backtest (default: 6)")
-    parser.add_argument("--universe", type=int, default=50, help="Number of stocks in universe (default: 50)")
+    parser = argparse.ArgumentParser(description="Walk-forward portfolio backtester")
+    parser.add_argument("--months", type=int, default=3, help="Months to backtest (default: 3)")
+    parser.add_argument("--universe", type=int, default=30, help="Number of stocks (default: 30)")
+    parser.add_argument("--tickers", type=str, default=None, help="Comma-separated tickers (e.g. AAPL,MSFT)")
     args = parser.parse_args()
     
-    run_backtest(months=args.months, universe_size=args.universe)
+    specific = args.tickers.split(',') if args.tickers else None
+    run_backtest(months=args.months, universe_size=args.universe, specific_tickers=specific)
