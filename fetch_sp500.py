@@ -248,10 +248,15 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         # ═══════════════════════════════════════════════════════════════
         trend_score = 0
         if price > 0 and ma200 > 0:
-            # Price above 200MA: 0-30 pts (scaled by distance)
             pct_above_200 = ((price / ma200) - 1) * 100
-            if pct_above_200 > 0:
+            
+            # Trend Score: scaled points for being above/near 200MA
+            if pct_above_200 >= 0:
                 trend_score += min(30, pct_above_200 * 3)  # Full at +10%
+            else:
+                # Downtrend granularity: Penalty for being deep below 200MA
+                # -1% -> 27 pts, -5% -> 15 pts, -10% -> 0 pts
+                trend_score += max(0, 30 + (pct_above_200 * 6)) 
             
             # Golden cross: MA50 > MA200
             if ma50 > ma200:
@@ -260,6 +265,8 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
             # Price above 50MA
             if price > ma50:
                 trend_score += 20
+            elif price > ma200:
+                trend_score += 5 # Near-term consolidating but above 200MA
             
             # Trend strength (scaled)
             if trend_strength > 0:
@@ -270,21 +277,21 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         # ═══════════════════════════════════════════════════════════════
         mom_score = 0
         
-        # Individual return contributions (annualized comparison)
-        mom_score += min(25, max(0, ret6m / 1.6))   # 0-25 pts, full at +40%
-        mom_score += min(25, max(0, ret1m * 1.25))   # 0-25 pts, full at +20%
-        mom_score += min(25, max(0, ret5d * 2.5))    # 0-25 pts, full at +10%
+        # Individual return contributions (V7: More realistic thresholds)
+        mom_score += min(25, max(0, ret6m * 1.25))   # Full at +20%
+        mom_score += min(25, max(0, ret1m * 2.5))    # Full at +10%
+        mom_score += min(25, max(0, ret5d * 5.0))    # Full at +5%
         
         # Acceleration bonus: annualized rates for fair comparison
         ann_5d =  ret5d * 52    # 5-day return annualized
         ann_1m =  ret1m * 12    # 1-month return annualized
         ann_6m =  ret6m * 2     # 6-month return annualized
-        if ann_5d > ann_1m > ann_6m and ret5d > 0:
+        if ann_5d > ann_1m > ann_6m and ret5d > 0.5:
             mom_score += 25  # True acceleration
         
         # Short-term weakness penalty
-        if ret5d < 0 and ret1m > 0:
-            mom_score = max(0, mom_score - 10)
+        if ret5d < -2 and ret1m > 0:
+            mom_score = max(0, mom_score - 15)
 
         # ═══════════════════════════════════════════════════════════════
         # C) VALUATION SUB-SCORE (0–100)
@@ -295,50 +302,37 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         if pe and median_pe and median_pe > 0:
             pe_ratio = pe / median_pe
             if pe_ratio < 0.7:
-                val_score += 30       # Deep value
+                val_score += 30       # Value
             elif pe_ratio < 1.0:
-                val_score += min(30, (1.0 - pe_ratio) * 100)  # Scaled value
+                val_score += (1.0 - pe_ratio) * 100
             elif pe_ratio > 2.0:
-                val_score -= 30       # Extremely overvalued
-            elif pe_ratio > 1.5:
-                val_score -= 20       # Overvalued
-            elif pe_ratio > 1.0:
-                val_score -= min(10, (pe_ratio - 1.0) * 20)  # Slightly expensive
+                val_score -= 30       # Expensive
+            elif pe_ratio > 1.2:
+                val_score -= min(25, (pe_ratio - 1.2) * 31)
 
         # Volatility relative to sector (up to ±20 pts)
         if vol6m_raw and median_vol and median_vol > 0:
             vol_ratio = vol6m_raw / median_vol
-            if vol_ratio < 0.7:
-                val_score += 20       # Very stable
-            elif vol_ratio < 1.0:
-                val_score += min(20, (1.0 - vol_ratio) * 67)
+            if vol_ratio < 0.8:
+                val_score += 20       # Stable
             elif vol_ratio > 1.5:
-                val_score -= 20
-            elif vol_ratio > 1.0:
-                val_score -= min(10, (vol_ratio - 1.0) * 20)
+                val_score -= 20       # High absolute risk
         
         val_score = max(0, min(100, val_score))
 
         # ═══════════════════════════════════════════════════════════════
         # D) VOLUME SUB-SCORE (0–100)
         # ═══════════════════════════════════════════════════════════════
-        vol_score = 30  # Baseline (neutral volume)
+        vol_score = 40  # Baseline
         
-        # 5-day volume trend (0-35 pts)
-        vol_score += min(35, max(0, (vol5d_ratio - 1.0) * 175))  # Full at 1.2x
+        vol_score += min(30, max(0, (vol5d_ratio - 1.0) * 150))  # Full at 1.2x
+        vol_score += min(20, max(0, (vol1d_ratio - 1.0) * 40))   # Full at 1.5x
         
-        # 1-day volume confirmation (0-25 pts)
-        vol_score += min(25, max(0, (vol1d_ratio - 1.0) * 50))   # Full at 1.5x
+        if ret1d > 0.5 and vol1d_ratio > 1.1:
+            vol_score += 10 # Accumulation
         
-        # Price-volume confirmation bonus
-        if ret1d > 0 and vol1d_ratio > 1.0:
-            vol_score += 10  # Up day on above-avg volume
-        
-        # Distribution day penalty (heavy selling)
-        if ret5d < -3 and vol5d_ratio >= 1.5:
-            vol_score = max(0, vol_score - 40)
-        elif ret1d < -2 and vol1d_ratio >= 2.0:
-            vol_score = max(0, vol_score - 30)
+        if ret5d < -3 and vol5d_ratio >= 1.3:
+            vol_score = max(0, vol_score - 40) # Distribution
         
         vol_score = max(0, min(100, vol_score))
 
@@ -348,22 +342,14 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         safety_score = 70  # Start healthy
         
         if rsi:
-            if rsi > 80:
-                safety_score -= 60    # Extremely overbought
-            elif rsi > 70:
-                safety_score -= 30    # Overbought
-            elif rsi < 30:
-                safety_score += 20    # Oversold bounce potential
-            elif rsi < 40:
-                safety_score += 10    # Mildly oversold
+            if rsi > 75: safety_score -= 40
+            elif rsi > 70: safety_score -= 20
+            elif rsi < 35: safety_score += 20
         
-        # Overextension from 50MA
-        if dist_from_ma50 > 15:
+        if dist_from_ma50 > 18:  # Widened to 18% for Strong Buy candidates
             safety_score -= 40
-        elif dist_from_ma50 > 10:
-            safety_score -= 20
-        elif dist_from_ma50 > 5:
-            safety_score -= 5
+        elif dist_from_ma50 > 12:
+            safety_score -= 15
         
         safety_score = max(0, min(100, safety_score))
 
@@ -408,12 +394,12 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         if mcap < 2e9 or avg_vol_20d < 500000 or price < 10:
             return final_points, "Rejected – Universal Filter", new_low, highest_price, trailing_stop, rec_weight
 
-        # SELL: Use 5D metrics to reduce whipsaw (not 1D)
+        # SELL: Use 5D metrics to reduce whipsaw
         sell_signals = sum([
             price < ma200,
-            ret5d < -5 and vol5d_ratio >= 1.3,   # Sustained selling over 5 days
-            trend_strength < -2,                   # Meaningful trend breakdown
-            new_low >= 3
+            ret5d < -7 and vol5d_ratio >= 1.2, # Significant breakdown
+            trend_strength < -3,
+            new_low >= 5 # Increased from 3
         ])
         if sell_signals >= 2:
             return final_points, "Sell", new_low, highest_price, trailing_stop, rec_weight
@@ -429,33 +415,36 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
                     return final_points, "Hold", new_low, highest_price, trailing_stop, rec_weight
             except: pass
 
-        # V4: EXIT FOR PROFIT (Trailing Stop) — before Reduce so it's not hijacked
+        # V4: EXIT FOR PROFIT
         if history and history.get('Trade Decision') in ("Strong Buy", "Buy (Small)"):
             if curr_price < trailing_stop and curr_price > 0:
                 return final_points, "Sell (Profit-Lock)", new_low, highest_price, trailing_stop, rec_weight
 
         # V4: GLOBAL CIRCUIT BREAKER + BUY DECISIONS
-        # Note: no vol5d gate — volume is already scored in the composite
         decision = "Hold"
-        if final_points >= 70 and price > ma50 and price > ma200:
-            if (rsi and rsi < 70) and dist_from_ma50 < 12 and edate_dist > 7:
+        # V7: Added momentum floor (ret1m > -2) to Buy decisions to stop falling knives
+        if final_points >= 70 and price > ma50 and price > ma200 and ret1m > -2:
+            if (rsi and rsi < 75) and dist_from_ma50 < 22 and edate_dist > 7:
                 decision = "Strong Buy"
-        elif final_points >= 55 and price > ma50 and price > ma200:
-            if (rsi and rsi < 75) and dist_from_ma50 < 15 and edate_dist > 7:
+        elif final_points >= 55 and price > ma50 and price > ma200 and ret1m > -4:
+            if (rsi and rsi < 80) and dist_from_ma50 < 25 and edate_dist > 5:
                 decision = "Buy (Small)"
 
         # Apply Global Circuit Breaker Downgrade
         if market_regime == "BEARISH" and decision in ("Strong Buy", "Buy (Small)"):
             decision = "Hold (Market Risk)"
 
-        # REDUCE: moved AFTER buy/trailing stop logic so it doesn't hijack the flow
+        # REDUCE
         if decision == "Hold":
-            if final_points < 40 and ret5d < 0 and ret1m < 0:
+            if final_points < 35 and ret5d < -3 and ret1m < -3:
                 decision = "Reduce"
             elif prev_score and prev_score >= 65 and final_points < 45:
                 decision = "Reduce"
 
         return final_points, decision, new_low, highest_price, trailing_stop, rec_weight
+    except Exception as e:
+        print(f"Error scoring: {e}")
+        return 0, "ERROR", 0, 0, 0, 1.5
     except Exception as e:
         print(f"Error scoring: {e}")
         return 0, "ERROR", 0, 0, 0, 1.5
