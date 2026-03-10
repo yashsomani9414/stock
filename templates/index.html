@@ -445,44 +445,6 @@
                             </th>
                             <th>
                                 1D Ret
-                                <div class="filter-dropdown range-filter" data-column="7">
-                                    <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
-                                    <div class="filter-dropdown-content range-filter-container">
-                                        <div class="range-input-group">
-                                            <div class="range-input-row">
-                                                <label>Min</label>
-                                                <input type="number" step="0.1" class="min-range" placeholder="-∞">
-                                            </div>
-                                            <div class="range-input-row">
-                                                <label>Max</label>
-                                                <input type="number" step="0.1" class="max-range" placeholder="∞">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="filter-active-indicator"></span>
-                            </th>
-                            <th>
-                                5D Ret
-                                <div class="filter-dropdown range-filter" data-column="8">
-                                    <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
-                                    <div class="filter-dropdown-content range-filter-container">
-                                        <div class="range-input-group">
-                                            <div class="range-input-row">
-                                                <label>Min</label>
-                                                <input type="number" step="0.1" class="min-range" placeholder="-∞">
-                                            </div>
-                                            <div class="range-input-row">
-                                                <label>Max</label>
-                                                <input type="number" step="0.1" class="max-range" placeholder="∞">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="filter-active-indicator"></span>
-                            </th>
-                            <th>
-                                1M Ret
                                 <div class="filter-dropdown range-filter" data-column="9">
                                     <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
                                     <div class="filter-dropdown-content range-filter-container">
@@ -501,8 +463,46 @@
                                 <span class="filter-active-indicator"></span>
                             </th>
                             <th>
-                                6M Ret
+                                5D Ret
                                 <div class="filter-dropdown range-filter" data-column="10">
+                                    <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
+                                    <div class="filter-dropdown-content range-filter-container">
+                                        <div class="range-input-group">
+                                            <div class="range-input-row">
+                                                <label>Min</label>
+                                                <input type="number" step="0.1" class="min-range" placeholder="-∞">
+                                            </div>
+                                            <div class="range-input-row">
+                                                <label>Max</label>
+                                                <input type="number" step="0.1" class="max-range" placeholder="∞">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="filter-active-indicator"></span>
+                            </th>
+                            <th>
+                                1M Ret
+                                <div class="filter-dropdown range-filter" data-column="11">
+                                    <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
+                                    <div class="filter-dropdown-content range-filter-container">
+                                        <div class="range-input-group">
+                                            <div class="range-input-row">
+                                                <label>Min</label>
+                                                <input type="number" step="0.1" class="min-range" placeholder="-∞">
+                                            </div>
+                                            <div class="range-input-row">
+                                                <label>Max</label>
+                                                <input type="number" step="0.1" class="max-range" placeholder="∞">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="filter-active-indicator"></span>
+                            </th>
+                            <th>
+                                6M Ret
+                                <div class="filter-dropdown range-filter" data-column="12">
                                     <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
                                     <div class="filter-dropdown-content range-filter-container">
                                         <div class="range-input-group">
@@ -522,7 +522,7 @@
                             <th>Volume</th>
                             <th>
                                 Vol Chg 1D
-                                <div class="filter-dropdown range-filter" data-column="12">
+                                <div class="filter-dropdown range-filter" data-column="14">
                                     <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
                                     <div class="filter-dropdown-content range-filter-container">
                                         <div class="range-input-group">
@@ -541,7 +541,7 @@
                             </th>
                             <th>
                                 Vol Chg 5D
-                                <div class="filter-dropdown range-filter" data-column="13">
+                                <div class="filter-dropdown range-filter" data-column="15">
                                     <div class="filter-dropdown-btn"><span style="font-size:8px;">F</span></div>
                                     <div class="filter-dropdown-content range-filter-container">
                                         <div class="range-input-group">
@@ -967,11 +967,11 @@
                         });
 
                         if (selectedValues.length === 0) {
-                            dtApi.column(6).search('').draw();
+                            dtApi.column(8).search('').draw();
                             $('.filter-dropdown-btn').html('Filter Decisions <span style="font-size:8px;">▼</span>');
                         } else {
                             const regexStr = selectedValues.join('|');
-                            dtApi.column(6).search(regexStr, true, false).draw();
+                            dtApi.column(8).search(regexStr, true, false).draw();
                             $('.filter-dropdown-btn').html(`Filtered (${selectedValues.length}) <span style="font-size:8px;">▼</span>`);
                         }
                     });
