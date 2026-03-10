@@ -218,7 +218,7 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         if ret6m > 0: score += 5
         if ret1m > 0: score += 5
         if ret5d > 0: score += 5
-        if ret6m > ret1m > ret5d: score += 10
+        if ret5d > ret1m > ret6m and ret5d > 0: score += 10  # Accelerating momentum
         if ret5d < 0 and ret1m > 0: score -= 5
         
         # C) VOLUME
@@ -238,12 +238,12 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         median_pe = sector_pe_medians.get(row.get('Sector'))
         if pe and median_pe:
             if pe < median_pe: score += 5
-            elif pe > median_pe and (ret1m > 0 or ret6m > 0): score += 3
+            elif pe > median_pe * 1.5: score -= 3  # Penalize significantly overvalued
         vol6m = row.get('6M Volatility')
         median_vol = sector_vol_medians.get(row.get('Sector'))
         if vol6m and median_vol and vol6m < median_vol: score += 7
         
-        # E) RSI & OVEREXTENSION (NEW SAFETY CHECKS)
+        # E) RSI & OVEREXTENSION SAFETY CHECKS
         rsi = row.get('RSI')
         dist_from_ma50 = row.get('DistFromMA50') or 0
         
@@ -258,11 +258,6 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
             score -= 15
         elif dist_from_ma50 > 10:
             score -= 5
-            
-        # F) REFINED VOLUME WEIGHTS
-        # Reduce single-day spike impact, favor sustained volume
-        if vol1d_ratio >= 1.5: score += 5  # Reduced from 10
-        if vol5d_ratio >= 1.2: score += 7  # Increased from 5 (sustained is better)
 
         final_points = min(100, round(max(0, score)))
         new_low = prev_low + 1 if final_points < 45 else 0
@@ -272,7 +267,13 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None):
         if mcap < 2e9 or avg_vol_20d < 500000 or price < 10:
             return final_points, "Rejected – Universal Filter", new_low
 
-        if price < ma200 or (ret1d < 0 and vol1d_ratio >= 2.0) or trend_strength < 0 or new_low >= 3:
+        sell_signals = sum([
+            price < ma200,
+            ret1d < 0 and vol1d_ratio >= 2.0,
+            trend_strength < 0,
+            new_low >= 3
+        ])
+        if sell_signals >= 2:
             return final_points, "Sell", new_low
 
         edate_str = row.get('EarningsDate')
