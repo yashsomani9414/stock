@@ -213,9 +213,15 @@ def get_batch_stock_info(symbols, delay=5.0):
     return batch_results
 
 def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, market_regime="BULLISH"):
-    """Quantitative trading engine scores (0-100) with V4 Strategy Enhancements."""
+    """
+    Weighted-Average Scoring Engine (V6)
+    =====================================
+    Each dimension scores 0–100 independently, then combined via weights.
+    No single factor can dominate beyond its allocated weight.
+    
+    Weights: Trend 30% | Momentum 25% | Valuation 20% | Volume 15% | Safety 10%
+    """
     try:
-        score = 0
         prev_score = history.get('Score') if history else None
         prev_low = history.get('ConsecutiveLowDays', 0) if history else 0
         
@@ -223,124 +229,231 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
         ma50 = row.get('50D MA') or 0
         ma200 = row.get('200D MA') or 0
         trend_strength = row.get('Trend Strength') or 0
-        
-        # A) TREND
-        if price >= ma200:
-            if price > ma50: score += 8
-            if ma50 > ma200: score += 8
-            if price > ma200 * 1.05: score += 8  # Fix #4: require >5% above 200MA
-            if trend_strength > 0: score += 11
-        
-        # B) MOMENTUM (scaled by magnitude)
-        ret5d, ret1m, ret6m = row.get('5D Return') or 0, row.get('1M Return') or 0, row.get('6M Return') or 0
-        score += min(5, max(0, ret6m / 8))    # 0-5 pts, full credit at +40%
-        score += min(5, max(0, ret1m / 4))    # 0-5 pts, full credit at +20%
-        score += min(5, max(0, ret5d / 2))    # 0-5 pts, full credit at +10%
-        if ret5d > ret1m > ret6m and ret5d > 0: score += 10  # Accelerating momentum
-        if ret5d < 0 and ret1m > 0: score -= 3  # Short-term weakness, scaled down from -5
-        
-        # C) VOLUME (scaled by ratio)
         ret1d = row.get('1D Return') or 0
-        vol1d_ratio = 1 + (row.get('Vol Change 1D') or 0) / 100
-        vol5d_ratio = 1 + (row.get('Vol Change 5D') or 0) / 100
-        
-        score += min(5, max(0, (vol5d_ratio - 1.0) * 25))  # 0-5 pts, full at 1.2x
-        score += min(7, max(0, (vol1d_ratio - 1.0) * 14))  # 0-7 pts, full at 1.5x
-        if ret1d > 0 and (row.get('Vol Change 1D') or 0) > 0: score += 3  # Up day on volume
-        if ret1d < 0 and vol1d_ratio >= 2.0: score -= 10  # Distribution day
-        
-        # D) RISK & VALUATION
-        mcap = row.get('Market Cap') or 0
-        # No size bonus — market cap is used only for universal filter, not scoring
-        pe = row.get('P/E Ratio')
-        median_pe = sector_pe_medians.get(row.get('Sector'))
-        if pe and median_pe:
-            if pe < median_pe: score += 5
-            elif pe > median_pe * 1.5: score -= 3  # Penalize significantly overvalued
-        vol6m = row.get('6M Volatility')
-        median_vol = sector_vol_medians.get(row.get('Sector'))
-        if vol6m and median_vol and vol6m < median_vol: score += 7
-        
-        # E) RSI & OVEREXTENSION SAFETY CHECKS
+        ret5d = row.get('5D Return') or 0
+        ret1m = row.get('1M Return') or 0
+        ret6m = row.get('6M Return') or 0
         rsi = row.get('RSI')
         dist_from_ma50 = row.get('DistFromMA50') or 0
-        
-        # Penalize overbought
-        if rsi:
-            if rsi > 70: score -= 10
-            if rsi > 80: score -= 20
-            if rsi < 35: score += 5 # Deep value/oversold bounce candidate
-            
-        # Penalize overextended (too far from 50-day average)
-        if dist_from_ma50 > 15: # 15% above 50D MA
-            score -= 15
-        elif dist_from_ma50 > 10:
-            score -= 5
+        vol1d_ratio = 1 + (row.get('Vol Change 1D') or 0) / 100
+        vol5d_ratio = 1 + (row.get('Vol Change 5D') or 0) / 100
+        mcap = row.get('Market Cap') or 0
+        pe = row.get('P/E Ratio')
+        vol6m_raw = row.get('6M Volatility')
+        median_pe = sector_pe_medians.get(row.get('Sector'))
+        median_vol = sector_vol_medians.get(row.get('Sector'))
 
-        # V4: RISK-ADJUSTED POSITION SIZING (smooth inverse-volatility)
-        vol6m = row.get('6M Volatility') or 25
-        rec_weight = round(min(5.0, max(1.0, 75 / vol6m)), 1)  # Fix #6: smooth scaling
+        # ═══════════════════════════════════════════════════════════════
+        # A) TREND SUB-SCORE (0–100)
+        # ═══════════════════════════════════════════════════════════════
+        trend_score = 0
+        if price > 0 and ma200 > 0:
+            # Price above 200MA: 0-30 pts (scaled by distance)
+            pct_above_200 = ((price / ma200) - 1) * 100
+            if pct_above_200 > 0:
+                trend_score += min(30, pct_above_200 * 3)  # Full at +10%
+            
+            # Golden cross: MA50 > MA200
+            if ma50 > ma200:
+                trend_score += 25
+            
+            # Price above 50MA
+            if price > ma50:
+                trend_score += 20
+            
+            # Trend strength (scaled)
+            if trend_strength > 0:
+                trend_score += min(25, trend_strength * 5)  # Full at +5%
+
+        # ═══════════════════════════════════════════════════════════════
+        # B) MOMENTUM SUB-SCORE (0–100)
+        # ═══════════════════════════════════════════════════════════════
+        mom_score = 0
+        
+        # Individual return contributions (annualized comparison)
+        mom_score += min(25, max(0, ret6m / 1.6))   # 0-25 pts, full at +40%
+        mom_score += min(25, max(0, ret1m * 1.25))   # 0-25 pts, full at +20%
+        mom_score += min(25, max(0, ret5d * 2.5))    # 0-25 pts, full at +10%
+        
+        # Acceleration bonus: annualized rates for fair comparison
+        ann_5d =  ret5d * 52    # 5-day return annualized
+        ann_1m =  ret1m * 12    # 1-month return annualized
+        ann_6m =  ret6m * 2     # 6-month return annualized
+        if ann_5d > ann_1m > ann_6m and ret5d > 0:
+            mom_score += 25  # True acceleration
+        
+        # Short-term weakness penalty
+        if ret5d < 0 and ret1m > 0:
+            mom_score = max(0, mom_score - 10)
+
+        # ═══════════════════════════════════════════════════════════════
+        # C) VALUATION SUB-SCORE (0–100)
+        # ═══════════════════════════════════════════════════════════════
+        val_score = 50  # Start neutral
+        
+        # P/E relative to sector (up to ±30 pts)
+        if pe and median_pe and median_pe > 0:
+            pe_ratio = pe / median_pe
+            if pe_ratio < 0.7:
+                val_score += 30       # Deep value
+            elif pe_ratio < 1.0:
+                val_score += min(30, (1.0 - pe_ratio) * 100)  # Scaled value
+            elif pe_ratio > 2.0:
+                val_score -= 30       # Extremely overvalued
+            elif pe_ratio > 1.5:
+                val_score -= 20       # Overvalued
+            elif pe_ratio > 1.0:
+                val_score -= min(10, (pe_ratio - 1.0) * 20)  # Slightly expensive
+
+        # Volatility relative to sector (up to ±20 pts)
+        if vol6m_raw and median_vol and median_vol > 0:
+            vol_ratio = vol6m_raw / median_vol
+            if vol_ratio < 0.7:
+                val_score += 20       # Very stable
+            elif vol_ratio < 1.0:
+                val_score += min(20, (1.0 - vol_ratio) * 67)
+            elif vol_ratio > 1.5:
+                val_score -= 20
+            elif vol_ratio > 1.0:
+                val_score -= min(10, (vol_ratio - 1.0) * 20)
+        
+        val_score = max(0, min(100, val_score))
+
+        # ═══════════════════════════════════════════════════════════════
+        # D) VOLUME SUB-SCORE (0–100)
+        # ═══════════════════════════════════════════════════════════════
+        vol_score = 30  # Baseline (neutral volume)
+        
+        # 5-day volume trend (0-35 pts)
+        vol_score += min(35, max(0, (vol5d_ratio - 1.0) * 175))  # Full at 1.2x
+        
+        # 1-day volume confirmation (0-25 pts)
+        vol_score += min(25, max(0, (vol1d_ratio - 1.0) * 50))   # Full at 1.5x
+        
+        # Price-volume confirmation bonus
+        if ret1d > 0 and vol1d_ratio > 1.0:
+            vol_score += 10  # Up day on above-avg volume
+        
+        # Distribution day penalty (heavy selling)
+        if ret5d < -3 and vol5d_ratio >= 1.5:
+            vol_score = max(0, vol_score - 40)
+        elif ret1d < -2 and vol1d_ratio >= 2.0:
+            vol_score = max(0, vol_score - 30)
+        
+        vol_score = max(0, min(100, vol_score))
+
+        # ═══════════════════════════════════════════════════════════════
+        # E) SAFETY SUB-SCORE (0–100)
+        # ═══════════════════════════════════════════════════════════════
+        safety_score = 70  # Start healthy
+        
+        if rsi:
+            if rsi > 80:
+                safety_score -= 60    # Extremely overbought
+            elif rsi > 70:
+                safety_score -= 30    # Overbought
+            elif rsi < 30:
+                safety_score += 20    # Oversold bounce potential
+            elif rsi < 40:
+                safety_score += 10    # Mildly oversold
+        
+        # Overextension from 50MA
+        if dist_from_ma50 > 15:
+            safety_score -= 40
+        elif dist_from_ma50 > 10:
+            safety_score -= 20
+        elif dist_from_ma50 > 5:
+            safety_score -= 5
+        
+        safety_score = max(0, min(100, safety_score))
+
+        # ═══════════════════════════════════════════════════════════════
+        # WEIGHTED AVERAGE COMPOSITE SCORE
+        # ═══════════════════════════════════════════════════════════════
+        WEIGHTS = {
+            'trend': 0.30,
+            'momentum': 0.25,
+            'valuation': 0.20,
+            'volume': 0.15,
+            'safety': 0.10,
+        }
+        
+        composite = (
+            trend_score * WEIGHTS['trend'] +
+            mom_score * WEIGHTS['momentum'] +
+            val_score * WEIGHTS['valuation'] +
+            vol_score * WEIGHTS['volume'] +
+            safety_score * WEIGHTS['safety']
+        )
+        
+        final_points = min(100, round(max(0, composite)))
+        new_low = prev_low + 1 if final_points < 40 else 0
+
+        # ═══════════════════════════════════════════════════════════════
+        # V4: RISK-ADJUSTED POSITION SIZING
+        # ═══════════════════════════════════════════════════════════════
+        vol6m = vol6m_raw or 25
+        rec_weight = round(min(5.0, max(1.0, 75 / vol6m)), 1)
 
         # V4: TRAILING STOP-LOSS TRACKING
-        curr_price = row.get('Price') or 0
-        prev_highest = (history.get('HighestPrice') or 0) if history else 0  # Fix #2: guard None
+        curr_price = price
+        prev_highest = (history.get('HighestPrice') or 0) if history else 0
         highest_price = max(curr_price, prev_highest)
-        # 10% trailing stop
         trailing_stop = round(highest_price * 0.90, 2) if highest_price > 0 else 0
 
-        final_points = min(100, round(max(0, score)))
-        new_low = prev_low + 1 if final_points < 45 else 0
-
-        # DECISION
+        # ═══════════════════════════════════════════════════════════════
+        # DECISION LOGIC
+        # ═══════════════════════════════════════════════════════════════
         avg_vol_20d = row.get('Volume') / vol1d_ratio if row.get('Volume') and row.get('Vol Change 1D') is not None else 0
         if mcap < 2e9 or avg_vol_20d < 500000 or price < 10:
-            return final_points, "Rejected – Universal Filter", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
+            return final_points, "Rejected – Universal Filter", new_low, highest_price, trailing_stop, rec_weight
 
+        # SELL: Use 5D metrics to reduce whipsaw (not 1D)
         sell_signals = sum([
             price < ma200,
-            ret1d < 0 and vol1d_ratio >= 2.0,
-            trend_strength < 0,
+            ret5d < -5 and vol5d_ratio >= 1.3,   # Sustained selling over 5 days
+            trend_strength < -2,                   # Meaningful trend breakdown
             new_low >= 3
         ])
         if sell_signals >= 2:
-            return final_points, "Sell", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
+            return final_points, "Sell", new_low, highest_price, trailing_stop, rec_weight
 
+        # EARNINGS BLACKOUT
         edate_str = row.get('EarningsDate')
         edate_dist = 999
         if edate_str:
             try:
-                # Use Pacific Time for "today" to ensure consistency with LastUpdated
                 pt_today = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
                 edate_dist = (datetime.datetime.strptime(edate_str, '%Y-%m-%d').date() - pt_today).days
-                if -1 <= edate_dist <= 7: return final_points, "Hold", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
+                if -1 <= edate_dist <= 7:
+                    return final_points, "Hold", new_low, highest_price, trailing_stop, rec_weight
             except: pass
 
-        # IMPROVED REDUCE LOGIC
-        if final_points < 75 and (ret5d < 0 and ret1m < 0):
-            return final_points, "Reduce", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
-        
-        if (prev_score and prev_score >= 80 and final_points < 70):
-            return final_points, "Reduce", new_low, highest_price, trailing_stop, rec_weight  # Fix #1
-
-        # V4: EXIT FOR PROFIT (Trailing Stop) — Fix #3: only for actual Buy decisions
+        # V4: EXIT FOR PROFIT (Trailing Stop) — before Reduce so it's not hijacked
         if history and history.get('Trade Decision') in ("Strong Buy", "Buy (Small)"):
             if curr_price < trailing_stop and curr_price > 0:
                 return final_points, "Sell (Profit-Lock)", new_low, highest_price, trailing_stop, rec_weight
 
-        # V4: GLOBAL CIRCUIT BREAKER (Market Regime)
+        # V4: GLOBAL CIRCUIT BREAKER + BUY DECISIONS
+        # Note: no vol5d gate — volume is already scored in the composite
         decision = "Hold"
-        # Fix #5: Widened buy gates — Strong Buy >= 75, Buy >= 60
-        if (final_points >= 75 and price > ma50 and price > ma200 and vol5d_ratio >= 1.1 and ret6m > 0):
-            if (rsi and rsi < 65) and dist_from_ma50 < 10 and ret1d > -1.5:
-                if edate_dist > 7: decision = "Strong Buy"
-
-        elif (60 <= final_points < 75 and price > ma50 and price > ma200 and ret6m > 0):
-            if (rsi and rsi < 75) and dist_from_ma50 < 15:
-                if edate_dist > 7: decision = "Buy (Small)"
+        if final_points >= 70 and price > ma50 and price > ma200:
+            if (rsi and rsi < 70) and dist_from_ma50 < 12 and edate_dist > 7:
+                decision = "Strong Buy"
+        elif final_points >= 55 and price > ma50 and price > ma200:
+            if (rsi and rsi < 75) and dist_from_ma50 < 15 and edate_dist > 7:
+                decision = "Buy (Small)"
 
         # Apply Global Circuit Breaker Downgrade
         if market_regime == "BEARISH" and decision in ("Strong Buy", "Buy (Small)"):
             decision = "Hold (Market Risk)"
+
+        # REDUCE: moved AFTER buy/trailing stop logic so it doesn't hijack the flow
+        if decision == "Hold":
+            if final_points < 40 and ret5d < 0 and ret1m < 0:
+                decision = "Reduce"
+            elif prev_score and prev_score >= 65 and final_points < 45:
+                decision = "Reduce"
 
         return final_points, decision, new_low, highest_price, trailing_stop, rec_weight
     except Exception as e:
