@@ -1271,7 +1271,7 @@
                     btn.prop('disabled', true);
                     $('#status').html('<div style="color:var(--text-accent)">Loading current data...</div>');
 
-                    fetch('/api/stocks')
+                    fetch('/api/data')
                         .then(response => response.json())
                         .then(data => {
                             if (data && data.length > 0) {
