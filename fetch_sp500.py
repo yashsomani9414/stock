@@ -618,7 +618,20 @@ def fetch_and_save():
     final_df['LastUpdated'] = pacific_time.strftime("%Y-%m-%d %H:%M:%S")
     
     output = final_df.where(pd.notnull(final_df), None).to_dict(orient='records')
-    with open(DATA_FILE, 'w') as f: json.dump(output, f, indent=2)
+    
+    # Deep sanitize: replace any surviving NaN/Inf with None (fixes browser JSON.parse errors)
+    import math
+    def deep_sanitize(obj):
+        if isinstance(obj, dict):
+            return {k: deep_sanitize(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [deep_sanitize(x) for x in obj]
+        elif isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
+            return None
+        return obj
+    
+    output = deep_sanitize(output)
+    with open(DATA_FILE, 'w') as f: json.dump(output, f, indent=2, allow_nan=False)
     print(f"Done. Saved {len(output)} stocks.")
 
 if __name__ == "__main__":

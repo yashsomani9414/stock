@@ -1,309 +1,876 @@
 {
-  "snapshot_date": "2026-03-09",
-  "snapshot_time": "2026-03-09 23:40:49 PT",
-  "spy_entry_price": 678.27,
-  "total_stocks": 25,
-  "market_regime": "BULLISH",
-  "positions": [
-    {
-      "symbol": "ROST",
-      "decision": "Strong Buy",
-      "score": 87,
-      "entry_price": 212.15,
-      "sector": "Consumer Cyclical",
-      "rec_weight": 3.2,
-      "portfolio_weight": 4.75,
-      "rsi_at_entry": 68.0,
-      "6m_return_at_entry": 40.7,
-      "trailing_stop": 190.94
+  "start_date": "2026-03-10",
+  "cash": 400.0,
+  "benchmark_spy_shares": 14.743390850314988,
+  "benchmark_spy_entry": 678.27001953125,
+  "positions": {
+    "CAH": {
+      "shares": 0.22494151520604644,
+      "avg_entry": 222.28,
+      "sector": "Healthcare"
     },
-    {
-      "symbol": "CF",
-      "decision": "Strong Buy",
-      "score": 84,
-      "entry_price": 111.04,
-      "sector": "Basic Materials",
-      "rec_weight": 2.3,
-      "portfolio_weight": 3.42,
-      "rsi_at_entry": 72.7,
-      "6m_return_at_entry": 32.9,
-      "trailing_stop": 99.94
+    "AA": {
+      "shares": 0.8175277959450622,
+      "avg_entry": 61.16,
+      "sector": "Basic Materials"
     },
-    {
-      "symbol": "LNTH",
-      "decision": "Strong Buy",
-      "score": 83,
-      "entry_price": 80.01,
-      "sector": "Healthcare",
-      "rec_weight": 2.0,
-      "portfolio_weight": 2.97,
-      "rsi_at_entry": 68.3,
-      "6m_return_at_entry": 49.2,
-      "trailing_stop": 72.01
+    "OGE": {
+      "shares": 1.0431879824744419,
+      "avg_entry": 47.93,
+      "sector": "Utilities"
     },
-    {
-      "symbol": "DOW",
-      "decision": "Strong Buy",
-      "score": 83,
-      "entry_price": 34.31,
-      "sector": "Basic Materials",
-      "rec_weight": 1.6,
-      "portfolio_weight": 2.38,
-      "rsi_at_entry": 67.7,
-      "6m_return_at_entry": 46.9,
-      "trailing_stop": 30.88
+    "NFG": {
+      "shares": 1.0765421466250404,
+      "avg_entry": 92.89,
+      "sector": "Energy"
     },
-    {
-      "symbol": "HCA",
-      "decision": "Strong Buy",
-      "score": 82,
-      "entry_price": 545.13,
-      "sector": "Healthcare",
-      "rec_weight": 2.7,
-      "portfolio_weight": 4.01,
-      "rsi_at_entry": 55.5,
-      "6m_return_at_entry": 30.8,
-      "trailing_stop": 490.62
+    "DVN": {
+      "shares": 2.2311468094600624,
+      "avg_entry": 44.82,
+      "sector": "Energy"
     },
-    {
-      "symbol": "MPC",
-      "decision": "Strong Buy",
-      "score": 81,
-      "entry_price": 215.7,
-      "sector": "Energy",
-      "rec_weight": 2.3,
-      "portfolio_weight": 3.42,
-      "rsi_at_entry": 65.0,
-      "6m_return_at_entry": 20.2,
-      "trailing_stop": 194.13
+    "HAS": {
+      "shares": 0.522029651284193,
+      "avg_entry": 95.78,
+      "sector": "Consumer Cyclical"
     },
-    {
-      "symbol": "TGT",
-      "decision": "Strong Buy",
-      "score": 79,
-      "entry_price": 120.14,
-      "sector": "Consumer Defensive",
-      "rec_weight": 2.5,
-      "portfolio_weight": 3.71,
-      "rsi_at_entry": 58.4,
-      "6m_return_at_entry": 34.3,
-      "trailing_stop": 108.13
+    "WELL": {
+      "shares": 0.24075500770416025,
+      "avg_entry": 207.68,
+      "sector": "Real Estate"
     },
-    {
-      "symbol": "FANG",
-      "decision": "Strong Buy",
-      "score": 78,
-      "entry_price": 182.86,
-      "sector": "Energy",
-      "rec_weight": 2.6,
-      "portfolio_weight": 3.86,
-      "rsi_at_entry": 70.3,
-      "6m_return_at_entry": 34.9,
-      "trailing_stop": 164.57
+    "SBUX": {
+      "shares": 0.5011526510975243,
+      "avg_entry": 99.77,
+      "sector": "Consumer Cyclical"
     },
-    {
-      "symbol": "DVN",
-      "decision": "Strong Buy",
-      "score": 76,
-      "entry_price": 44.82,
-      "sector": "Energy",
-      "rec_weight": 2.3,
-      "portfolio_weight": 3.42,
-      "rsi_at_entry": 55.0,
-      "6m_return_at_entry": 31.6,
-      "trailing_stop": 40.34
+    "NEM": {
+      "shares": 0.4274965800273598,
+      "avg_entry": 116.96,
+      "sector": "Basic Materials"
     },
-    {
-      "symbol": "AKAM",
-      "decision": "Strong Buy",
-      "score": 76,
-      "entry_price": 102.11,
-      "sector": "Technology",
-      "rec_weight": 1.6,
-      "portfolio_weight": 2.38,
-      "rsi_at_entry": 41.2,
-      "6m_return_at_entry": 29.4,
-      "trailing_stop": 91.9
+    "ATI": {
+      "shares": 0.3190810465858328,
+      "avg_entry": 156.7,
+      "sector": "Industrials"
     },
-    {
-      "symbol": "PSX",
-      "decision": "Strong Buy",
-      "score": 75,
-      "entry_price": 163.0,
-      "sector": "Energy",
-      "rec_weight": 2.6,
-      "portfolio_weight": 3.86,
-      "rsi_at_entry": 62.2,
-      "6m_return_at_entry": 27.3,
-      "trailing_stop": 146.7
+    "OHI": {
+      "shares": 1.0471204188481675,
+      "avg_entry": 47.75,
+      "sector": "Real Estate"
     },
-    {
-      "symbol": "ROIV",
-      "decision": "Strong Buy",
-      "score": 75,
-      "entry_price": 29.53,
-      "sector": "Healthcare",
-      "rec_weight": 1.6,
-      "portfolio_weight": 2.38,
-      "rsi_at_entry": 66.1,
-      "6m_return_at_entry": 128.7,
-      "trailing_stop": 26.58
+    "NEE": {
+      "shares": 0.5434191935659167,
+      "avg_entry": 92.01,
+      "sector": "Utilities"
     },
-    {
-      "symbol": "EIX",
-      "decision": "Strong Buy",
-      "score": 74,
-      "entry_price": 70.73,
-      "sector": "Utilities",
-      "rec_weight": 3.1,
-      "portfolio_weight": 4.61,
-      "rsi_at_entry": 47.5,
-      "6m_return_at_entry": 36.7,
-      "trailing_stop": 63.66
+    "PEG": {
+      "shares": 0.5949547834364588,
+      "avg_entry": 84.04,
+      "sector": "Utilities"
     },
-    {
-      "symbol": "AEP",
-      "decision": "Strong Buy",
-      "score": 73,
-      "entry_price": 131.86,
-      "sector": "Utilities",
-      "rec_weight": 4.1,
-      "portfolio_weight": 6.09,
-      "rsi_at_entry": 55.3,
-      "6m_return_at_entry": 24.6,
-      "trailing_stop": 118.67
+    "NJR": {
+      "shares": 1.826817683595177,
+      "avg_entry": 54.74,
+      "sector": "Utilities"
     },
-    {
-      "symbol": "CTRA",
-      "decision": "Strong Buy",
-      "score": 73,
-      "entry_price": 31.18,
-      "sector": "Energy",
-      "rec_weight": 2.6,
-      "portfolio_weight": 3.86,
-      "rsi_at_entry": 50.9,
-      "6m_return_at_entry": 31.8,
-      "trailing_stop": 28.06
+    "TXT": {
+      "shares": 0.5311238580837051,
+      "avg_entry": 94.14,
+      "sector": "Industrials"
     },
-    {
-      "symbol": "FDX",
-      "decision": "Buy (Small)",
-      "score": 73,
-      "entry_price": 361.1,
-      "sector": "Industrials",
-      "rec_weight": 3.1,
-      "portfolio_weight": 4.61,
-      "rsi_at_entry": 38.9,
-      "6m_return_at_entry": 61.3,
-      "trailing_stop": 324.99
+    "TGT": {
+      "shares": 0.8323622440486099,
+      "avg_entry": 120.14,
+      "sector": "Consumer Defensive"
     },
-    {
-      "symbol": "THC",
-      "decision": "Strong Buy",
-      "score": 73,
-      "entry_price": 240.59,
-      "sector": "Healthcare",
-      "rec_weight": 1.8,
-      "portfolio_weight": 2.67,
-      "rsi_at_entry": 57.1,
-      "6m_return_at_entry": 25.0,
-      "trailing_stop": 216.53
+    "LNT": {
+      "shares": 0.6982265046781175,
+      "avg_entry": 71.61,
+      "sector": "Utilities"
     },
-    {
-      "symbol": "NJR",
-      "decision": "Strong Buy",
-      "score": 71,
-      "entry_price": 54.74,
-      "sector": "Utilities",
-      "rec_weight": 4.3,
-      "portfolio_weight": 6.39,
-      "rsi_at_entry": 55.3,
-      "6m_return_at_entry": 20.8,
-      "trailing_stop": 49.27
+    "MRK": {
+      "shares": 0.426949022286739,
+      "avg_entry": 117.11,
+      "sector": "Healthcare"
     },
-    {
-      "symbol": "KEX",
-      "decision": "Strong Buy",
-      "score": 71,
-      "entry_price": 125.81,
-      "sector": "Industrials",
-      "rec_weight": 2.4,
-      "portfolio_weight": 3.57,
-      "rsi_at_entry": 48.0,
-      "6m_return_at_entry": 40.9,
-      "trailing_stop": 113.23
+    "AMAT": {
+      "shares": 0.14751873487932968,
+      "avg_entry": 338.94,
+      "sector": "Technology"
     },
-    {
-      "symbol": "VZ",
-      "decision": "Strong Buy",
-      "score": 71,
-      "entry_price": 50.45,
-      "sector": "Communication Services",
-      "rec_weight": 2.9,
-      "portfolio_weight": 4.31,
-      "rsi_at_entry": 60.8,
-      "6m_return_at_entry": 20.5,
-      "trailing_stop": 45.41
+    "LAMR": {
+      "shares": 0.3675930010292604,
+      "avg_entry": 136.02,
+      "sector": "Real Estate"
     },
-    {
-      "symbol": "OKE",
-      "decision": "Strong Buy",
-      "score": 71,
-      "entry_price": 85.96,
-      "sector": "Energy",
-      "rec_weight": 3.0,
-      "portfolio_weight": 4.46,
-      "rsi_at_entry": 51.0,
-      "6m_return_at_entry": 22.3,
-      "trailing_stop": 77.36
+    "GEV": {
+      "shares": 0.060233706782315384,
+      "avg_entry": 830.1,
+      "sector": "Industrials"
     },
-    {
-      "symbol": "NFG",
-      "decision": "Strong Buy",
-      "score": 70,
-      "entry_price": 92.89,
-      "sector": "Energy",
-      "rec_weight": 3.9,
-      "portfolio_weight": 5.79,
-      "rsi_at_entry": 73.8,
-      "6m_return_at_entry": 10.2,
-      "trailing_stop": 83.6
+    "FANG": {
+      "shares": 0.5468664552116372,
+      "avg_entry": 182.86,
+      "sector": "Energy"
     },
-    {
-      "symbol": "PCG",
-      "decision": "Strong Buy",
-      "score": 70,
-      "entry_price": 18.17,
-      "sector": "Utilities",
-      "rec_weight": 2.9,
-      "portfolio_weight": 4.31,
-      "rsi_at_entry": 53.1,
-      "6m_return_at_entry": 25.4,
-      "trailing_stop": 16.35
+    "KEX": {
+      "shares": 0.3974246880216199,
+      "avg_entry": 125.81,
+      "sector": "Industrials"
     },
-    {
-      "symbol": "NYT",
-      "decision": "Strong Buy",
-      "score": 70,
-      "entry_price": 80.81,
-      "sector": "Communication Services",
-      "rec_weight": 3.5,
-      "portfolio_weight": 5.2,
-      "rsi_at_entry": 71.5,
-      "6m_return_at_entry": 38.2,
-      "trailing_stop": 72.73
+    "SPG": {
+      "shares": 0.25929575273557015,
+      "avg_entry": 192.83,
+      "sector": "Real Estate"
     },
+    "HCA": {
+      "shares": 0.1834424816098912,
+      "avg_entry": 545.13,
+      "sector": "Healthcare"
+    },
+    "WPC": {
+      "shares": 0.6906077348066297,
+      "avg_entry": 72.4,
+      "sector": "Real Estate"
+    },
+    "TTC": {
+      "shares": 0.5011526510975243,
+      "avg_entry": 99.77,
+      "sector": "Industrials"
+    },
+    "FE": {
+      "shares": 0.9811616954474097,
+      "avg_entry": 50.96,
+      "sector": "Utilities"
+    },
+    "LNTH": {
+      "shares": 1.2498437695288087,
+      "avg_entry": 80.01,
+      "sector": "Healthcare"
+    },
+    "POR": {
+      "shares": 0.9450009450009451,
+      "avg_entry": 52.91,
+      "sector": "Utilities"
+    },
+    "PCG": {
+      "shares": 2.7517886626307098,
+      "avg_entry": 18.17,
+      "sector": "Utilities"
+    },
+    "NYT": {
+      "shares": 0.6187353050365053,
+      "avg_entry": 80.81,
+      "sector": "Communication Services"
+    },
+    "DE": {
+      "shares": 0.08340561820244212,
+      "avg_entry": 599.48,
+      "sector": "Industrials"
+    },
+    "RGLD": {
+      "shares": 0.17739303200170298,
+      "avg_entry": 281.86,
+      "sector": "Basic Materials"
+    },
+    "SON": {
+      "shares": 0.9363295880149813,
+      "avg_entry": 53.4,
+      "sector": "Consumer Cyclical"
+    },
+    "EVRG": {
+      "shares": 0.6014675808973896,
+      "avg_entry": 83.13,
+      "sector": "Utilities"
+    },
+    "ADM": {
+      "shares": 0.7361601884570083,
+      "avg_entry": 67.92,
+      "sector": "Consumer Defensive"
+    },
+    "EXC": {
+      "shares": 1.0175010175010175,
+      "avg_entry": 49.14,
+      "sector": "Utilities"
+    },
+    "WMB": {
+      "shares": 0.6832467887400928,
+      "avg_entry": 73.18,
+      "sector": "Energy"
+    },
+    "HAL": {
+      "shares": 1.443001443001443,
+      "avg_entry": 34.65,
+      "sector": "Energy"
+    },
+    "ELS": {
+      "shares": 0.7404116688879017,
+      "avg_entry": 67.53,
+      "sector": "Real Estate"
+    },
+    "O": {
+      "shares": 0.769941484447182,
+      "avg_entry": 64.94,
+      "sector": "Real Estate"
+    },
+    "KEYS": {
+      "shares": 0.177292390610595,
+      "avg_entry": 282.02,
+      "sector": "Technology"
+    },
+    "ODFL": {
+      "shares": 0.2535239833688267,
+      "avg_entry": 197.22,
+      "sector": "Industrials"
+    },
+    "CMS": {
+      "shares": 0.647332988089073,
+      "avg_entry": 77.24,
+      "sector": "Utilities"
+    },
+    "YUM": {
+      "shares": 0.3127932436659368,
+      "avg_entry": 159.85,
+      "sector": "Consumer Cyclical"
+    },
+    "PSX": {
+      "shares": 0.6134969325153374,
+      "avg_entry": 163.0,
+      "sector": "Energy"
+    },
+    "HII": {
+      "shares": 0.1163927557148843,
+      "avg_entry": 429.58,
+      "sector": "Industrials"
+    },
+    "MTDR": {
+      "shares": 0.8904719501335708,
+      "avg_entry": 56.15,
+      "sector": "Energy"
+    },
+    "MCD": {
+      "shares": 0.15114873035066506,
+      "avg_entry": 330.8,
+      "sector": "Consumer Cyclical"
+    },
+    "HR": {
+      "shares": 2.7129679869777537,
+      "avg_entry": 18.43,
+      "sector": "Real Estate"
+    },
+    "AME": {
+      "shares": 0.22215310792197984,
+      "avg_entry": 225.07,
+      "sector": "Industrials"
+    },
+    "KMI": {
+      "shares": 1.5015015015015016,
+      "avg_entry": 33.3,
+      "sector": "Energy"
+    },
+    "JNJ": {
+      "shares": 0.20610907292139,
+      "avg_entry": 242.59,
+      "sector": "Healthcare"
+    },
+    "DGX": {
+      "shares": 0.24804048020636965,
+      "avg_entry": 201.58,
+      "sector": "Healthcare"
+    },
+    "SBRA": {
+      "shares": 2.423654871546292,
+      "avg_entry": 20.63,
+      "sector": "Real Estate"
+    },
+    "SWX": {
+      "shares": 0.5700604264051989,
+      "avg_entry": 87.71,
+      "sector": "Utilities"
+    },
+    "GLPI": {
+      "shares": 1.0214504596527068,
+      "avg_entry": 48.95,
+      "sector": "Real Estate"
+    },
+    "ADI": {
+      "shares": 0.15639173000531734,
+      "avg_entry": 319.71,
+      "sector": "Technology"
+    },
+    "HIG": {
+      "shares": 0.36245016310257344,
+      "avg_entry": 137.95,
+      "sector": "Financial Services"
+    },
+    "JHG": {
+      "shares": 0.9761811792268645,
+      "avg_entry": 51.22,
+      "sector": "Financial Services"
+    },
+    "FIVE": {
+      "shares": 0.22745882995177874,
+      "avg_entry": 219.82,
+      "sector": "Consumer Cyclical"
+    },
+    "MCK": {
+      "shares": 0.05306954232826696,
+      "avg_entry": 942.16,
+      "sector": "Healthcare"
+    },
+    "ADC": {
+      "shares": 0.616827041697508,
+      "avg_entry": 81.06,
+      "sector": "Real Estate"
+    },
+    "VZ": {
+      "shares": 1.9821605550049552,
+      "avg_entry": 50.45,
+      "sector": "Communication Services"
+    },
+    "AMGN": {
+      "shares": 0.1326365493275327,
+      "avg_entry": 376.97,
+      "sector": "Healthcare"
+    },
+    "ANET": {
+      "shares": 0.3645111904935482,
+      "avg_entry": 137.17,
+      "sector": "Technology"
+    },
+    "BG": {
+      "shares": 0.42091085108174087,
+      "avg_entry": 118.79,
+      "sector": "Consumer Defensive"
+    },
+    "NOC": {
+      "shares": 0.06690395268552465,
+      "avg_entry": 747.34,
+      "sector": "Industrials"
+    },
+    "EIX": {
+      "shares": 1.4138272303124557,
+      "avg_entry": 70.73,
+      "sector": "Utilities"
+    },
+    "LYV": {
+      "shares": 0.30156815440289503,
+      "avg_entry": 165.8,
+      "sector": "Communication Services"
+    },
+    "KRG": {
+      "shares": 1.9372336303758235,
+      "avg_entry": 25.81,
+      "sector": "Real Estate"
+    },
+    "MPC": {
+      "shares": 0.4636068613815485,
+      "avg_entry": 215.7,
+      "sector": "Energy"
+    },
+    "MO": {
+      "shares": 0.7458233890214796,
+      "avg_entry": 67.04,
+      "sector": "Consumer Defensive"
+    },
+    "DOW": {
+      "shares": 2.914602156805596,
+      "avg_entry": 34.31,
+      "sector": "Basic Materials"
+    },
+    "EOG": {
+      "shares": 0.37973722184248504,
+      "avg_entry": 131.67,
+      "sector": "Energy"
+    },
+    "TJX": {
+      "shares": 0.31617554066017456,
+      "avg_entry": 158.14,
+      "sector": "Consumer Cyclical"
+    },
+    "ATO": {
+      "shares": 0.2699201036493198,
+      "avg_entry": 185.24,
+      "sector": "Utilities"
+    },
+    "RTX": {
+      "shares": 0.2401190990731403,
+      "avg_entry": 208.23,
+      "sector": "Industrials"
+    },
+    "OKE": {
+      "shares": 1.1633317822242903,
+      "avg_entry": 85.96,
+      "sector": "Energy"
+    },
+    "CBOE": {
+      "shares": 0.16711229946524064,
+      "avg_entry": 299.2,
+      "sector": "Financial Services"
+    },
+    "ETR": {
+      "shares": 0.47778308647873863,
+      "avg_entry": 104.65,
+      "sector": "Utilities"
+    },
+    "BRX": {
+      "shares": 1.670564650851988,
+      "avg_entry": 29.93,
+      "sector": "Real Estate"
+    },
+    "GILD": {
+      "shares": 0.3409943394939644,
+      "avg_entry": 146.63,
+      "sector": "Healthcare"
+    },
+    "KNX": {
+      "shares": 0.8658008658008658,
+      "avg_entry": 57.75,
+      "sector": "Industrials"
+    },
+    "CMCSA": {
+      "shares": 1.6108247422680413,
+      "avg_entry": 31.04,
+      "sector": "Communication Services"
+    },
+    "CF": {
+      "shares": 0.9005763688760806,
+      "avg_entry": 111.04,
+      "sector": "Basic Materials"
+    },
+    "ULS": {
+      "shares": 0.606134076857801,
+      "avg_entry": 82.49,
+      "sector": "Industrials"
+    },
+    "CNC": {
+      "shares": 1.154201292705448,
+      "avg_entry": 43.32,
+      "sector": "Healthcare"
+    },
+    "JAZZ": {
+      "shares": 0.2696871628910464,
+      "avg_entry": 185.4,
+      "sector": "Healthcare"
+    },
+    "REGN": {
+      "shares": 0.06397134083930399,
+      "avg_entry": 781.6,
+      "sector": "Healthcare"
+    },
+    "WEC": {
+      "shares": 0.4325633705337832,
+      "avg_entry": 115.59,
+      "sector": "Utilities"
+    },
+    "EBAY": {
+      "shares": 0.5381552039608223,
+      "avg_entry": 92.91,
+      "sector": "Consumer Cyclical"
+    },
+    "BMRN": {
+      "shares": 0.8212877792378449,
+      "avg_entry": 60.88,
+      "sector": "Healthcare"
+    },
+    "WWD": {
+      "shares": 0.13001872269606823,
+      "avg_entry": 384.56,
+      "sector": "Industrials"
+    },
+    "REG": {
+      "shares": 0.6391409945033875,
+      "avg_entry": 78.23,
+      "sector": "Real Estate"
+    },
+    "TRGP": {
+      "shares": 0.21300161881230298,
+      "avg_entry": 234.74,
+      "sector": "Energy"
+    },
+    "VNOM": {
+      "shares": 1.1327594019030358,
+      "avg_entry": 44.14,
+      "sector": "Energy"
+    },
+    "CNP": {
+      "shares": 1.1499540018399266,
+      "avg_entry": 43.48,
+      "sector": "Utilities"
+    },
+    "LMT": {
+      "shares": 0.07528419784687194,
+      "avg_entry": 664.15,
+      "sector": "Industrials"
+    },
+    "WLK": {
+      "shares": 0.47018995674252395,
+      "avg_entry": 106.34,
+      "sector": "Basic Materials"
+    },
+    "BMY": {
+      "shares": 0.8246742536698004,
+      "avg_entry": 60.63,
+      "sector": "Healthcare"
+    },
+    "NI": {
+      "shares": 1.06315118009781,
+      "avg_entry": 47.03,
+      "sector": "Utilities"
+    },
+    "FR": {
+      "shares": 0.8261731658955717,
+      "avg_entry": 60.52,
+      "sector": "Real Estate"
+    },
+    "CVX": {
+      "shares": 0.2639358108108108,
+      "avg_entry": 189.44,
+      "sector": "Energy"
+    },
+    "AEP": {
+      "shares": 0.3791900500530866,
+      "avg_entry": 131.86,
+      "sector": "Utilities"
+    },
+    "CSX": {
+      "shares": 1.2315270935960592,
+      "avg_entry": 40.6,
+      "sector": "Industrials"
+    },
+    "CNX": {
+      "shares": 1.2254901960784315,
+      "avg_entry": 40.8,
+      "sector": "Energy"
+    },
+    "CLH": {
+      "shares": 0.17488632388947187,
+      "avg_entry": 285.9,
+      "sector": "Industrials"
+    },
+    "KO": {
+      "shares": 0.6426735218508998,
+      "avg_entry": 77.8,
+      "sector": "Consumer Defensive"
+    },
+    "FIX": {
+      "shares": 0.03643252696006995,
+      "avg_entry": 1372.4,
+      "sector": "Industrials"
+    },
+    "ES": {
+      "shares": 0.6770480704129994,
+      "avg_entry": 73.85,
+      "sector": "Utilities"
+    },
+    "COP": {
+      "shares": 0.427240878407246,
+      "avg_entry": 117.03,
+      "sector": "Energy"
+    },
+    "TRV": {
+      "shares": 0.1649130908011478,
+      "avg_entry": 303.19,
+      "sector": "Financial Services"
+    },
+    "AHR": {
+      "shares": 0.9580379383023568,
+      "avg_entry": 52.19,
+      "sector": "Real Estate"
+    },
+    "CB": {
+      "shares": 0.15413070283600494,
+      "avg_entry": 324.4,
+      "sector": "Financial Services"
+    },
+    "L": {
+      "shares": 0.4582951420714941,
+      "avg_entry": 109.1,
+      "sector": "Financial Services"
+    },
+    "MTZ": {
+      "shares": 0.1678922803129512,
+      "avg_entry": 297.81,
+      "sector": "Industrials"
+    },
+    "FRT": {
+      "shares": 0.46930730242162566,
+      "avg_entry": 106.54,
+      "sector": "Real Estate"
+    },
+    "BKH": {
+      "shares": 0.6891798759476223,
+      "avg_entry": 72.55,
+      "sector": "Utilities"
+    },
+    "D": {
+      "shares": 0.7947862025115244,
+      "avg_entry": 62.91,
+      "sector": "Utilities"
+    },
+    "VLO": {
+      "shares": 0.23153507756425099,
+      "avg_entry": 215.95,
+      "sector": "Energy"
+    },
+    "XOM": {
+      "shares": 0.33235841531507576,
+      "avg_entry": 150.44,
+      "sector": "Energy"
+    },
+    "CL": {
+      "shares": 0.5376344086021505,
+      "avg_entry": 93.0,
+      "sector": "Consumer Defensive"
+    },
+    "JCI": {
+      "shares": 0.375685626267939,
+      "avg_entry": 133.09,
+      "sector": "Industrials"
+    },
+    "HOLX": {
+      "shares": 0.6614631565021828,
+      "avg_entry": 75.59,
+      "sector": "Healthcare"
+    },
+    "VTR": {
+      "shares": 0.579979120751653,
+      "avg_entry": 86.21,
+      "sector": "Real Estate"
+    },
+    "ROST": {
+      "shares": 0.47136460051850104,
+      "avg_entry": 212.15,
+      "sector": "Consumer Cyclical"
+    },
+    "MU": {
+      "shares": 0.12842905578958183,
+      "avg_entry": 389.32,
+      "sector": "Technology"
+    },
+    "CTRA": {
+      "shares": 3.207184092366902,
+      "avg_entry": 31.18,
+      "sector": "Energy"
+    },
+    "USFD": {
+      "shares": 0.5510856387082552,
+      "avg_entry": 90.73,
+      "sector": "Consumer Defensive"
+    },
+    "ED": {
+      "shares": 0.4472271914132379,
+      "avg_entry": 111.8,
+      "sector": "Utilities"
+    },
+    "WTRG": {
+      "shares": 1.2239902080783354,
+      "avg_entry": 40.85,
+      "sector": "Utilities"
+    },
+    "FTI": {
+      "shares": 0.7880220646178092,
+      "avg_entry": 63.45,
+      "sector": "Energy"
+    },
+    "NNN": {
+      "shares": 1.1001100110011,
+      "avg_entry": 45.45,
+      "sector": "Real Estate"
+    },
+    "AM": {
+      "shares": 2.197802197802198,
+      "avg_entry": 22.75,
+      "sector": "Energy"
+    },
+    "HON": {
+      "shares": 0.21044656761648217,
+      "avg_entry": 237.59,
+      "sector": "Industrials"
+    },
+    "AVGO": {
+      "shares": 0.14461315979754158,
+      "avg_entry": 345.75,
+      "sector": "Technology"
+    },
+    "LHX": {
+      "shares": 0.13467650703011366,
+      "avg_entry": 371.26,
+      "sector": "Industrials"
+    },
+    "XEL": {
+      "shares": 0.6090133982947625,
+      "avg_entry": 82.1,
+      "sector": "Utilities"
+    },
+    "MAR": {
+      "shares": 0.1520403819254394,
+      "avg_entry": 328.86,
+      "sector": "Consumer Cyclical"
+    },
+    "HST": {
+      "shares": 2.6096033402922756,
+      "avg_entry": 19.16,
+      "sector": "Real Estate"
+    },
+    "PWR": {
+      "shares": 0.08802197028378284,
+      "avg_entry": 568.04,
+      "sector": "Industrials"
+    },
+    "CAT": {
+      "shares": 0.07094009818109588,
+      "avg_entry": 704.82,
+      "sector": "Industrials"
+    },
+    "AKAM": {
+      "shares": 0.9793360101850945,
+      "avg_entry": 102.11,
+      "sector": "Technology"
+    },
+    "COR": {
+      "shares": 0.13819789939192925,
+      "avg_entry": 361.8,
+      "sector": "Healthcare"
+    },
+    "ROIV": {
+      "shares": 1.6931933626820181,
+      "avg_entry": 29.53,
+      "sector": "Healthcare"
+    },
+    "EQT": {
+      "shares": 0.8034709946970915,
+      "avg_entry": 62.23,
+      "sector": "Energy"
+    },
+    "GTLS": {
+      "shares": 0.24131274131274133,
+      "avg_entry": 207.2,
+      "sector": "Industrials"
+    },
+    "VTRS": {
+      "shares": 3.5161744022503516,
+      "avg_entry": 14.22,
+      "sector": "Healthcare"
+    },
+    "WAB": {
+      "shares": 0.20242914979757085,
+      "avg_entry": 247.0,
+      "sector": "Industrials"
+    },
+    "BKR": {
+      "shares": 0.8319467554076538,
+      "avg_entry": 60.1,
+      "sector": "Energy"
+    },
+    "DUK": {
+      "shares": 0.3814464449191333,
+      "avg_entry": 131.08,
+      "sector": "Utilities"
+    },
+    "PPL": {
+      "shares": 1.3051422605063951,
+      "avg_entry": 38.31,
+      "sector": "Utilities"
+    },
+    "UNP": {
+      "shares": 0.19715310910453057,
+      "avg_entry": 253.61,
+      "sector": "Industrials"
+    },
+    "NSC": {
+      "shares": 0.1653275138048474,
+      "avg_entry": 302.43,
+      "sector": "Industrials"
+    },
+    "DTE": {
+      "shares": 0.33566058002148225,
+      "avg_entry": 148.96,
+      "sector": "Utilities"
+    },
+    "DTM": {
+      "shares": 0.3570153516601214,
+      "avg_entry": 140.05,
+      "sector": "Energy"
+    },
+    "PLD": {
+      "shares": 0.36995930447650754,
+      "avg_entry": 135.15,
+      "sector": "Real Estate"
+    },
+    "KIM": {
+      "shares": 2.1551724137931036,
+      "avg_entry": 23.2,
+      "sector": "Real Estate"
+    },
+    "WM": {
+      "shares": 0.4056630562654659,
+      "avg_entry": 246.51,
+      "sector": "Industrials"
+    },
+    "AEE": {
+      "shares": 0.44980208708168407,
+      "avg_entry": 111.16,
+      "sector": "Utilities"
+    },
+    "SYY": {
+      "shares": 0.5903187721369539,
+      "avg_entry": 84.7,
+      "sector": "Consumer Defensive"
+    },
+    "SRE": {
+      "shares": 0.5347021708908137,
+      "avg_entry": 93.51,
+      "sector": "Utilities"
+    },
+    "CRS": {
+      "shares": 0.12632642748863063,
+      "avg_entry": 395.8,
+      "sector": "Industrials"
+    },
+    "PFE": {
+      "shares": 1.864975755315181,
+      "avg_entry": 26.81,
+      "sector": "Healthcare"
+    },
+    "CHD": {
+      "shares": 0.4889975550122249,
+      "avg_entry": 102.25,
+      "sector": "Consumer Defensive"
+    },
+    "CME": {
+      "shares": 0.15669560312137643,
+      "avg_entry": 319.09,
+      "sector": "Financial Services"
+    },
+    "PNW": {
+      "shares": 0.9873617693522907,
+      "avg_entry": 101.28,
+      "sector": "Utilities"
+    },
+    "FDX": {
+      "shares": 0.13846579894765992,
+      "avg_entry": 361.1,
+      "sector": "Industrials"
+    },
+    "THC": {
+      "shares": 0.4156448730204913,
+      "avg_entry": 240.59,
+      "sector": "Healthcare"
+    },
+    "GD": {
+      "shares": 0.13812917840764682,
+      "avg_entry": 361.98,
+      "sector": "Industrials"
+    }
+  },
+  "history": [
     {
-      "symbol": "BG",
-      "decision": "Strong Buy",
-      "score": 70,
-      "entry_price": 118.79,
-      "sector": "Consumer Defensive",
-      "rec_weight": 2.4,
-      "portfolio_weight": 3.57,
-      "rsi_at_entry": 43.1,
-      "6m_return_at_entry": 42.7,
-      "trailing_stop": 106.91
+      "date": "2026-03-10 00:13",
+      "total_value": 10000.0,
+      "cash": 10000.0,
+      "spy_value": 10000.0
     }
   ]
 }

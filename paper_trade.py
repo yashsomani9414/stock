@@ -1,19 +1,13 @@
 """
-Paper Trading Validator
-========================
-Validates the model's recommendations against S&P 500 (SPY) over time.
+Dynamic Paper Trading Validator
+================================
+Simulates a live trading account with $10,000 starting cash.
+Applies real trades based on daily model signals.
 
 Usage:
-    python3 paper_trade.py snapshot     # Take a snapshot of today's Buy signals
-    python3 paper_trade.py check        # Check performance vs SPY since snapshot
-    python3 paper_trade.py report       # Full report with per-stock breakdown
-
-How it works:
-    1. `snapshot` freezes today's Strong Buy & Buy (Small) signals with their
-       entry prices into paper_portfolio.json
-    2. `check` downloads current prices and compares weighted portfolio return
-       vs SPY return over the same period
-    3. Run `check` daily, weekly, or at the end of the month
+    python3 paper_trade.py auto       # Runs daily update: mark-to-market, logs P&L, trades new signals
+    python3 paper_trade.py report     # Shows current holdings, cash, and performance vs SPY
+    python3 paper_trade.py reset      # Resets account back to $10,000 cash
 """
 
 import json
@@ -26,267 +20,252 @@ from zoneinfo import ZoneInfo
 
 PORTFOLIO_FILE = 'paper_portfolio.json'
 DATA_FILE = 'sp500_data.json'
+STARTING_CASH = 10000.0
 
 
-def take_snapshot():
-    """Freeze today's Buy signals into a paper portfolio."""
-    if not os.path.exists(DATA_FILE):
-        print("ERROR: sp500_data.json not found. Run fetch_sp500.py first.")
-        return
-    
-    with open(DATA_FILE, 'r') as f:
-        data = json.load(f)
-    
-    buys = [d for d in data if d.get('Trade Decision') in ('Strong Buy', 'Buy (Small)')]
-    
-    if not buys:
-        print("No Buy signals found. Nothing to snapshot.")
-        return
-    
-    # Sort by score descending
-    buys.sort(key=lambda x: x.get('Score', 0), reverse=True)
-    
-    # Cap at 25 positions (matching MAX_POSITIONS)
-    buys = buys[:25]
-    
-    # Normalize weights so they sum to ~100%
-    total_weight = sum(b.get('RecWeight', 3.0) for b in buys)
-    
-    now = datetime.datetime.now(ZoneInfo("America/Los_Angeles"))
-    
+def initialize_portfolio():
+    """Start a fresh paper trading account."""
     portfolio = {
-        'snapshot_date': now.strftime('%Y-%m-%d'),
-        'snapshot_time': now.strftime('%Y-%m-%d %H:%M:%S PT'),
-        'spy_entry_price': None,
-        'total_stocks': len(buys),
-        'market_regime': buys[0].get('MarketRegime', 'UNKNOWN') if buys else 'UNKNOWN',
-        'positions': []
+        'start_date': datetime.datetime.now(ZoneInfo("America/Los_Angeles")).strftime('%Y-%m-%d'),
+        'cash': STARTING_CASH,
+        'benchmark_spy_shares': 0.0,
+        'benchmark_spy_entry': 0.0,
+        'positions': {},  # symbol -> {shares, avg_entry, current_value, sector}
+        'history': []
     }
     
-    # Get SPY price at snapshot
+    # Get SPY start price
     try:
         spy = yf.download("SPY", period="5d", progress=False)
         if isinstance(spy.columns, pd.MultiIndex):
             spy.columns = spy.columns.get_level_values(0)
-        portfolio['spy_entry_price'] = round(float(spy['Close'].iloc[-1]), 2)
+        spy_price = float(spy['Close'].dropna().iloc[-1])
+        portfolio['benchmark_spy_entry'] = spy_price
+        portfolio['benchmark_spy_shares'] = STARTING_CASH / spy_price
     except:
-        print("WARNING: Could not fetch SPY price.")
-    
-    for b in buys:
-        weight_normalized = round((b.get('RecWeight', 3.0) / total_weight) * 100, 2)
-        portfolio['positions'].append({
-            'symbol': b['Symbol'],
-            'decision': b['Trade Decision'],
-            'score': b['Score'],
-            'entry_price': b.get('Price'),
-            'sector': b.get('Sector', 'Unknown'),
-            'rec_weight': b.get('RecWeight', 3.0),
-            'portfolio_weight': weight_normalized,
-            'rsi_at_entry': round(b.get('RSI') or 0, 1),
-            '6m_return_at_entry': round(b.get('6M Return') or 0, 1),
-            'trailing_stop': b.get('TrailingStop', 0),
-        })
-    
+        pass
+        
     with open(PORTFOLIO_FILE, 'w') as f:
         json.dump(portfolio, f, indent=2)
-    
-    print(f"\n{'='*60}")
-    print(f"📸 PAPER PORTFOLIO SNAPSHOT")
-    print(f"{'='*60}")
-    print(f"Date:          {portfolio['snapshot_date']}")
-    print(f"SPY Entry:     ${portfolio['spy_entry_price']}")
-    print(f"Positions:     {portfolio['total_stocks']}")
-    print(f"Market Regime: {portfolio['market_regime']}")
-    print(f"{'─'*60}")
-    print(f"{'Sym':6s} {'Score':>5s} {'Decision':15s} {'Entry $':>9s} {'Wt%':>6s} {'Sector':>18s}")
-    print(f"{'─'*60}")
-    for p in portfolio['positions']:
-        print(f"{p['symbol']:6s} {p['score']:5d} {p['decision']:15s} ${p['entry_price']:>8.2f} {p['portfolio_weight']:>5.1f}% {p['sector']:>18s}")
-    print(f"{'='*60}")
-    print(f"Saved to {PORTFOLIO_FILE}")
-    print(f"Run 'python3 paper_trade.py check' anytime to see performance vs SPY.\n")
+    print(f"Account reset. Starting Cash: ${STARTING_CASH}")
+    return portfolio
 
 
-def check_performance(full_report=False):
-    """Check current performance of the paper portfolio vs SPY."""
+def load_portfolio():
     if not os.path.exists(PORTFOLIO_FILE):
-        print("ERROR: No snapshot found. Run 'python3 paper_trade.py snapshot' first.")
-        return
-    
+        return initialize_portfolio()
     with open(PORTFOLIO_FILE, 'r') as f:
         portfolio = json.load(f)
+        
+    # Migrate old static format to dynamic format if necessary
+    if 'cash' not in portfolio:
+        print("Migrating old snapshot to dynamic format...")
+        return initialize_portfolio()
+        
+    return portfolio
+
+
+def auto_update():
+    """Daily job: mark-to-market current portfolio, log performance, then trade new signals."""
+    portfolio = load_portfolio()
     
-    positions = portfolio['positions']
-    snapshot_date = portfolio['snapshot_date']
-    spy_entry = portfolio['spy_entry_price']
-    
-    if not positions:
-        print("No positions in portfolio.")
+    if not os.path.exists(DATA_FILE):
+        print(f"ERROR: {DATA_FILE} not found.")
         return
+        
+    with open(DATA_FILE, 'r') as f:
+        data = json.load(f)
+    signal_map = {d['Symbol']: d for d in data}
     
-    # Get current prices
-    symbols = [p['symbol'] for p in positions]
-    print(f"Fetching prices for {len(symbols)} stocks + SPY...")
+    now_pt = datetime.datetime.now(ZoneInfo("America/Los_Angeles"))
+    date_str = now_pt.strftime('%Y-%m-%d %H:%M')
+    
+    # 1. Update prices for current positions & SPY
+    symbols = list(portfolio['positions'].keys())
+    prices = {}
     
     try:
-        current_data = yf.download(symbols + ['SPY'], period='5d', progress=False)
-        if isinstance(current_data.columns, pd.MultiIndex):
-            # Multi-ticker download
-            prices = {}
+        curr_data = yf.download(symbols + ['SPY'] if symbols else ['SPY'], period='5d', progress=False)
+        if isinstance(curr_data.columns, pd.MultiIndex):
             for sym in symbols + ['SPY']:
-                try:
-                    prices[sym] = float(current_data[sym]['Close'].dropna().iloc[-1])
-                except:
-                    pass
+                try: prices[sym] = float(curr_data[sym]['Close'].dropna().iloc[-1])
+                except: pass
         else:
-            # Single ticker
-            prices = {symbols[0]: float(current_data['Close'].dropna().iloc[-1])}
+            prices[symbols[0] if symbols else 'SPY'] = float(curr_data['Close'].dropna().iloc[-1])
     except Exception as e:
-        print(f"ERROR fetching prices: {e}")
-        return
+        print("Error fetching live prices, falling back to JSON data:", e)
     
-    spy_current = prices.get('SPY')
-    
-    # Calculate returns
-    now = datetime.datetime.now(ZoneInfo("America/Los_Angeles"))
-    days_elapsed = (now.date() - datetime.datetime.strptime(snapshot_date, '%Y-%m-%d').date()).days
-    
-    # Weighted portfolio return
-    total_return_weighted = 0
-    total_weight = 0
-    winners = 0
-    losers = 0
-    results = []
-    
-    for p in positions:
-        sym = p['symbol']
-        entry = p['entry_price']
-        curr = prices.get(sym)
-        weight = p['portfolio_weight']
+    # Fallback to JSON data if yfinance fails
+    for sym in symbols:
+        if sym not in prices and sym in signal_map:
+            prices[sym] = signal_map[sym].get('Price', 0)
+    if 'SPY' not in prices:
+        prices['SPY'] = portfolio['benchmark_spy_entry']
         
-        if curr and entry and entry > 0:
-            ret = ((curr / entry) - 1) * 100
-            total_return_weighted += ret * (weight / 100)
-            total_weight += weight
-            if ret > 0:
-                winners += 1
-            else:
-                losers += 1
-            
-            # Check if trailing stop was hit
-            stop_hit = "🛑" if curr < p.get('trailing_stop', 0) else ""
-            
-            results.append({
-                'symbol': sym,
-                'entry': entry,
-                'current': round(curr, 2),
-                'return': round(ret, 2),
-                'weight': weight,
-                'contribution': round(ret * (weight / 100), 3),
-                'decision': p['decision'],
-                'sector': p['sector'],
-                'stop_hit': stop_hit,
-            })
-    
-    # SPY return
-    spy_return = ((spy_current / spy_entry) - 1) * 100 if spy_current and spy_entry else 0
-    alpha = total_return_weighted - spy_return
-    
-    # Print Results
-    print(f"\n{'='*65}")
-    print(f"📊 PAPER PORTFOLIO PERFORMANCE")
-    print(f"{'='*65}")
-    print(f"Snapshot Date:    {snapshot_date}")
-    print(f"Days Elapsed:     {days_elapsed}")
-    print(f"{'─'*65}")
-    print(f"{'Portfolio Return:':30s} {total_return_weighted:>+8.2f}%")
-    print(f"{'SPY Return:':30s} {spy_return:>+8.2f}%")
-    print(f"{'Alpha (Portfolio - SPY):':30s} {alpha:>+8.2f}%  {'✅' if alpha > 0 else '❌'}")
-    print(f"{'─'*65}")
-    print(f"{'Winners:':30s} {winners:>8d}")
-    print(f"{'Losers:':30s} {losers:>8d}")
-    print(f"{'Win Rate:':30s} {winners/(winners+losers)*100 if (winners+losers) > 0 else 0:>7.1f}%")
-    
-    if full_report:
-        print(f"\n{'─'*65}")
-        print(f"{'POSITION DETAIL':^65}")
-        print(f"{'─'*65}")
-        print(f"{'Sym':6s} {'Entry':>8s} {'Now':>8s} {'Ret%':>7s} {'Wt%':>5s} {'Contrib':>8s} {'Stop':>4s}")
-        print(f"{'─'*65}")
-        for r in sorted(results, key=lambda x: x['return'], reverse=True):
-            sign = "+" if r['return'] >= 0 else ""
-            print(f"{r['symbol']:6s} ${r['entry']:>7.2f} ${r['current']:>7.2f} {sign}{r['return']:>6.2f}% {r['weight']:>4.1f}% {r['contribution']:>+7.3f}% {r['stop_hit']}")
+    spy_price = prices.get('SPY', portfolio['benchmark_spy_entry'])
+
+    # 2. Mark to Market (Log performance before trading)
+    total_value = portfolio['cash']
+    for sym, p in portfolio['positions'].items():
+        curr_p = prices.get(sym, p['avg_entry'])
+        total_value += p['shares'] * curr_p
         
-        # Sector breakdown
-        from collections import Counter
-        sector_returns = {}
-        for r in results:
-            sec = r['sector']
-            if sec not in sector_returns:
-                sector_returns[sec] = {'total_ret': 0, 'count': 0, 'total_wt': 0}
-            sector_returns[sec]['total_ret'] += r['return'] * r['weight']
-            sector_returns[sec]['count'] += 1
-            sector_returns[sec]['total_wt'] += r['weight']
-        
-        print(f"\n{'─'*65}")
-        print(f"{'SECTOR BREAKDOWN':^65}")
-        print(f"{'─'*65}")
-        print(f"{'Sector':20s} {'Stocks':>6s} {'Weight':>8s} {'Avg Ret':>8s}")
-        print(f"{'─'*65}")
-        for sec, v in sorted(sector_returns.items(), key=lambda x: -x[1]['total_wt']):
-            avg_ret = v['total_ret'] / v['total_wt'] if v['total_wt'] > 0 else 0
-            print(f"{sec:20s} {v['count']:>6d} {v['total_wt']:>7.1f}% {avg_ret:>+7.2f}%")
+    spy_value = portfolio['benchmark_spy_shares'] * spy_price
     
-    print(f"\n{'='*65}")
-    
-    # Save check results
-    check_log_file = 'paper_checks.json'
-    checks = []
-    if os.path.exists(check_log_file):
-        with open(check_log_file, 'r') as f:
-            checks = json.load(f)
-    
-    checks.append({
-        'check_date': now.strftime('%Y-%m-%d %H:%M'),
-        'days_elapsed': days_elapsed,
-        'portfolio_return': round(total_return_weighted, 3),
-        'spy_return': round(spy_return, 3),
-        'alpha': round(alpha, 3),
-        'winners': winners,
-        'losers': losers,
+    portfolio['history'].append({
+        'date': date_str,
+        'total_value': round(total_value, 2),
+        'cash': round(portfolio['cash'], 2),
+        'spy_value': round(spy_value, 2)
     })
     
-    with open(check_log_file, 'w') as f:
-        json.dump(checks, f, indent=2)
+    # 3. Execute Trades based on new signals
+    print(f"\nEvaluating Trades ({date_str})...")
+    trades_made = 0
     
-    print(f"Check logged to {check_log_file}")
-    
-    # Show historical checks if >1
-    if len(checks) > 1:
-        print(f"\n{'─'*50}")
-        print(f"{'TRACKING HISTORY':^50}")
-        print(f"{'─'*50}")
-        print(f"{'Date':15s} {'Day':>4s} {'Port%':>8s} {'SPY%':>8s} {'Alpha':>8s}")
-        print(f"{'─'*50}")
-        for c in checks:
-            print(f"{c['check_date']:15s} {c['days_elapsed']:>4d} {c['portfolio_return']:>+7.2f}% {c['spy_return']:>+7.2f}% {c['alpha']:>+7.2f}%")
+    for sym, signal_data in signal_map.items():
+        decision = signal_data.get('Trade Decision', 'Hold')
+        price = signal_data.get('Price', 0)
+        
+        if not price or price <= 0:
+            continue
+            
+        pos = portfolio['positions'].get(sym)
+        
+        if decision == 'Sell' and pos:
+            # Sell completely
+            value = pos['shares'] * price
+            portfolio['cash'] += value
+            print(f"SELL: {sym} (Sold {pos['shares']:.2f} shares at ${price:.2f} for ${value:.2f})")
+            del portfolio['positions'][sym]
+            trades_made += 1
+            
+        elif decision == 'Reduce' and pos:
+            # Sell half
+            shares_to_sell = pos['shares'] / 2.0
+            value = shares_to_sell * price
+            portfolio['cash'] += value
+            portfolio['positions'][sym]['shares'] -= shares_to_sell
+            print(f"REDUCE: {sym} (Sold {shares_to_sell:.2f} shares at ${price:.2f} for ${value:.2f})")
+            trades_made += 1
+            
+        elif decision == 'Strong Buy' and not pos:
+            # Buy $100
+            if portfolio['cash'] >= 100:
+                shares = 100.0 / price
+                portfolio['cash'] -= 100.0
+                portfolio['positions'][sym] = {
+                    'shares': shares, 
+                    'avg_entry': price,
+                    'sector': signal_data.get('Sector', 'Unknown')
+                }
+                print(f"STRONG BUY: {sym} (Bought {shares:.2f} shares at ${price:.2f} for $100.00)")
+                trades_made += 1
+                
+        elif decision == 'Buy (Small)' and not pos:
+            # Buy $50
+            if portfolio['cash'] >= 50:
+                shares = 50.0 / price
+                portfolio['cash'] -= 50.0
+                portfolio['positions'][sym] = {
+                    'shares': shares, 
+                    'avg_entry': price,
+                    'sector': signal_data.get('Sector', 'Unknown')
+                }
+                print(f"BUY (SMALL): {sym} (Bought {shares:.2f} shares at ${price:.2f} for $50.00)")
+                trades_made += 1
+
+    if trades_made == 0:
+        print("No trades triggered.")
+
+    with open(PORTFOLIO_FILE, 'w') as f:
+        json.dump(portfolio, f, indent=2)
+    print(f"Auto-update complete. Total Portfolio Value: ${total_value:.2f}")
 
 
+def report():
+    portfolio = load_portfolio()
+    
+    symbols = list(portfolio['positions'].keys())
+    prices = {}
+    try:
+        if symbols:
+            curr_data = yf.download(symbols + ['SPY'], period='5d', progress=False)
+            if isinstance(curr_data.columns, pd.MultiIndex):
+                for sym in symbols + ['SPY']:
+                    try: prices[sym] = float(curr_data[sym]['Close'].dropna().iloc[-1])
+                    except: pass
+            else:
+                prices[symbols[0]] = float(curr_data['Close'].dropna().iloc[-1])
+        else:
+            prices['SPY'] = float(yf.download('SPY', period='5d', progress=False)['Close'].dropna().iloc[-1])
+    except Exception as e:
+        print("Error fetching prices:", e)
+        
+    total_val = portfolio['cash']
+    results = []
+    
+    for sym, p in portfolio['positions'].items():
+        curr_p = prices.get(sym, p['avg_entry'])
+        val = p['shares'] * curr_p
+        total_val += val
+        
+        ret_pct = ((curr_p / p['avg_entry']) - 1) * 100 if p['avg_entry'] > 0 else 0
+        results.append({
+            'sym': sym,
+            'shares': p['shares'],
+            'entry': p['avg_entry'],
+            'current': curr_p,
+            'value': val,
+            'ret_pct': ret_pct,
+            'sector': p.get('sector', 'Unknown')
+        })
+
+    spy_price = prices.get('SPY', portfolio['benchmark_spy_entry'])
+    spy_value = portfolio['benchmark_spy_shares'] * spy_price
+    
+    port_ret = ((total_val / STARTING_CASH) - 1) * 100
+    spy_ret = ((spy_value / STARTING_CASH) - 1) * 100
+    alpha = port_ret - spy_ret
+    
+    print(f"\n{'='*70}")
+    print(f"📊 DYNAMIC PAPER PORTFOLIO REPORT")
+    print(f"{'='*70}")
+    print(f"Start Date:       {portfolio['start_date']}")
+    print(f"Available Cash:   ${portfolio['cash']:.2f}")
+    print(f"Total Value:      ${total_val:.2f}")
+    print(f"{'─'*70}")
+    print(f"Portfolio Return: {port_ret:>+7.2f}%")
+    print(f"SPY Return:       {spy_ret:>+7.2f}%")
+    print(f"Alpha vs SPY:     {alpha:>+7.2f}%  {'✅' if alpha > 0 else '❌'}")
+    
+    if results:
+        print(f"\n{'─'*70}")
+        print(f"{'OPEN POSITIONS':^70}")
+        print(f"{'─'*70}")
+        print(f"{'Sym':6s} {'Shares':>8s} {'Entry':>8s} {'Current':>8s} {'Value':>9s} {'Ret%':>8s}")
+        print(f"{'─'*70}")
+        for r in sorted(results, key=lambda x: x['ret_pct'], reverse=True):
+            sign = "+" if r['ret_pct'] > 0 else ""
+            print(f"{r['sym']:6s} {r['shares']:>8.2f} ${r['entry']:>7.2f} ${r['current']:>7.2f} ${r['value']:>8.2f} {sign}{r['ret_pct']:>7.2f}%")
+            
+    print(f"\n{'='*70}")
+    
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  python3 paper_trade.py snapshot   — Freeze today's Buy signals")
-        print("  python3 paper_trade.py check      — Quick performance vs SPY")
-        print("  python3 paper_trade.py report      — Full per-stock breakdown")
+        print("  python3 paper_trade.py auto       — Daily run: mark-to-market, trades signals")
+        print("  python3 paper_trade.py report     — Show portfolio metrics and open positions")
+        print("  python3 paper_trade.py reset      — Clear portfolio and start over with $10,000")
         sys.exit(1)
-    
+        
     cmd = sys.argv[1].lower()
-    if cmd == 'snapshot':
-        take_snapshot()
-    elif cmd == 'check':
-        check_performance(full_report=False)
+    if cmd == 'auto':
+        auto_update()
     elif cmd == 'report':
-        check_performance(full_report=True)
+        report()
+    elif cmd == 'reset':
+        initialize_portfolio()
     else:
         print(f"Unknown command: {cmd}")
-        print("Use: snapshot, check, or report")
+        print("Use: auto, report, or reset")
