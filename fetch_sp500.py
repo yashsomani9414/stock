@@ -62,6 +62,7 @@ def calculate_sector_data(data):
         trend_series = pd.to_numeric(group['Trend Strength'], errors='coerce')
         avg_trend = trend_series.mean()
         
+        avg_ret_1d = group.get('1D Return', pd.Series([None])).mean()
         avg_ret_5d = group.get('5D Return', pd.Series([None])).mean()
         avg_ret_1m = group.get('1M Return', pd.Series([None])).mean()
         avg_ret_6m = group.get('6M Return', pd.Series([None])).mean()
@@ -101,6 +102,7 @@ def calculate_sector_data(data):
             "Avg 50D MA": round(avg_50d, 2) if avg_50d and not pd.isna(avg_50d) else None,
             "Avg 200D MA": round(avg_200d, 2) if avg_200d and not pd.isna(avg_200d) else None,
             "Avg Trend Strength": round(avg_trend, 2) if avg_trend is not None and not pd.isna(avg_trend) else None,
+            "Avg 1D Return": round(avg_ret_1d, 2) if avg_ret_1d is not None and not pd.isna(avg_ret_1d) else None,
             "Avg 5D Return": round(avg_ret_5d, 2) if avg_ret_5d is not None and not pd.isna(avg_ret_5d) else None,
             "Avg 1M Return": round(avg_ret_1m, 2) if avg_ret_1m is not None and not pd.isna(avg_ret_1m) else None,
             "Avg 6M Return": round(avg_ret_6m, 2) if avg_ret_6m is not None and not pd.isna(avg_ret_6m) else None,
@@ -169,7 +171,7 @@ def calculate_rsi(series, period=14):
     rs = gain / loss
     return 100 - (100 / (1 + rs)).iloc[-1]
 
-def get_batch_stock_info(symbols, delay=1.5):
+def get_batch_stock_info(symbols, delay=5.0):
     """Fetch fundamental data for a batch of tickers."""
     batch_results = []
     tickers_obj = yf.Tickers(" ".join(symbols))

@@ -375,6 +375,7 @@
                                     </div>
                                 </div>
                             </th>
+                            <th>1D Ret</th>
                             <th>5D Ret</th>
                             <th>1M Ret</th>
                             <th>6M Ret</th>
@@ -470,6 +471,8 @@
                         <div class="glossary-item"><span class="glossary-label">6M Return > 0</span> <span
                                 class="glossary-points">+5</span></div>
                         <div class="glossary-item"><span class="glossary-label">1M Return > 0</span> <span
+                                class="glossary-points">+5</span></div>
+                        <div class="glossary-item"><span class="glossary-label">1D Return > 0 (with Volume)</span> <span
                                 class="glossary-points">+5</span></div>
                         <div class="glossary-item"><span class="glossary-label">5D Return > 0</span> <span
                                 class="glossary-points">+5</span></div>
@@ -623,6 +626,14 @@
                             else colorClass = 'text-muted';
 
                             return `<span class="${colorClass}">${data}</span>`;
+                        }
+                    },
+                    {
+                        data: '1D Return',
+                        defaultContent: 'N/A',
+                        render: function (data) {
+                            if (data === null || data === undefined) return 'N/A';
+                            return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
                         }
                     },
                     {

@@ -110,6 +110,7 @@
                         <th>Market Cap</th>
                         <th>P/E</th>
                         <th>Trend</th>
+                        <th>1D %</th>
                         <th>5D %</th>
                         <th>1M %</th>
                         <th>6M %</th>
@@ -174,6 +175,13 @@
                             const colorClass = data >= 0 ? 'text-bullish' : 'text-bearish';
                             const icon = data >= 0 ? '▲' : '▼';
                             return `<span class="${colorClass} font-bold">${icon} ${data}%</span>`;
+                        }
+                    },
+                    {
+                        data: 'Avg 1D Return',
+                        render: function (data) {
+                            if (data === null || data === undefined) return 'N/A';
+                            return `<span class="${data >= 0 ? 'text-bullish' : 'text-bearish'}">${data}%</span>`;
                         }
                     },
                     {

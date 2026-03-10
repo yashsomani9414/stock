@@ -3,9 +3,9 @@ name: Daily S&P 500 Fetch
 on:
   schedule:
     # 00:00 UTC = 5 PM PDT (Daylight Saving Time)
-    - cron: '0 00 * * *'
+    - cron: '0 0 * * *'
     # 01:00 UTC = 5 PM PST (Standard Time)
-    - cron: '0 01 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:  # allows manual trigger from GitHub UI
 
 permissions:
