@@ -41,7 +41,7 @@ def recalculate():
         row_dict['MarketRegime'] = regime
         new_results.append(row_dict)
 
-    # Convert back to clean JSON (NaN -> None)
+    # Convert back to clean JSON (NaN -> None) with double-sanitize
     output_df = pd.DataFrame(new_results)
     
     # Update LastUpdated timestamp in PT
@@ -50,8 +50,21 @@ def recalculate():
 
     output = output_df.where(pd.notnull(output_df), None).to_dict(orient='records')
     
+    # Deep sanitize: walk every value and replace any surviving NaN/Inf with None
+    import math
+    def deep_sanitize(obj):
+        if isinstance(obj, dict):
+            return {k: deep_sanitize(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [deep_sanitize(x) for x in obj]
+        elif isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
+            return None
+        return obj
+    
+    output = deep_sanitize(output)
+    
     with open(DATA_FILE, 'w') as f:
-        json.dump(output, f, indent=2)
+        json.dump(output, f, indent=2, allow_nan=False)
     
     print(f"Recalculation complete. Updated {len(output)} records.")
     
