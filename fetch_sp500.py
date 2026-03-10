@@ -317,11 +317,21 @@ def fetch_and_save():
     print(f"Total potential tickers: {len(tickers)}")
     
     ma_rows = []
-    batch_size = 50
+    batch_size = 10
     for i in range(0, len(tickers), batch_size):
         batch = tickers[i:i+batch_size]
-        try:
-            data = yf.download(batch, period="1y", group_by='ticker', progress=False)
+        success = False
+        for attempt in range(3):
+            try:
+                data = yf.download(batch, period="1y", group_by='ticker', progress=False)
+                if not data.empty:
+                    success = True
+                    break
+            except Exception as e:
+                print(f"Download error for batch {i} (attempt {attempt+1}): {e}")
+                time.sleep(20)
+        
+        if success:
             for symbol in batch:
                 try:
                     hist = data[symbol] if len(batch) > 1 else data
@@ -356,8 +366,7 @@ def fetch_and_save():
                         "Vol Change 5D": round((avg_v5/avg_v20-1)*100, 2) if avg_v20>0 else 0
                     })
                 except: continue
-        except: continue
-        time.sleep(1)
+        time.sleep(5)
 
     ma_df = pd.DataFrame(ma_rows)
     info_rows = []
