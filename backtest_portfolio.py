@@ -45,6 +45,27 @@ REBALANCE_FREQ = 5          # Rebalance every N trading days
 INITIAL_CAPITAL = 100_000   # Starting portfolio value
 MIN_HISTORY_DAYS = 200      # Need 200 days for MA200
 COMMISSION_PCT = 0.001      # 0.1% round-trip commission estimate
+MAX_POSITIONS = 25          # Max concurrent positions to prevent over-allocation
+
+
+def load_stock_metadata():
+    """Load sector, P/E, and earnings data from sp500_data.json for valuation-aware backtesting."""
+    data_file = 'sp500_data.json'
+    metadata = {}
+    if os.path.exists(data_file):
+        import json
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+        for d in data:
+            sym = d.get('Symbol')
+            if sym:
+                metadata[sym] = {
+                    'Sector': d.get('Sector', 'Unknown'),
+                    'P/E Ratio': d.get('P/E Ratio'),
+                    'Market Cap': d.get('Market Cap', 50e9),
+                    'EarningsDate': d.get('EarningsDate'),
+                }
+    return metadata
 
 
 def get_universe_tickers(universe_size=30, specific_tickers=None):
@@ -98,70 +119,15 @@ def download_universe_data(tickers, start_date, end_date):
     return all_data
 
 
-def score_on_date(symbol, hist_data, date_idx):
-    """
-    Score a stock using ONLY data available up to date_idx.
-    This is the walk-forward mechanism that prevents look-ahead bias.
-    No future data is visible to the scoring function.
-    """
-    df = hist_data[symbol]
-    # Slice: only data up to and including this date
-    slice_df = df.iloc[:date_idx + 1]
-    close = slice_df['Close']
-    volume = slice_df['Volume']
-    
-    if len(close) < MIN_HISTORY_DAYS:
-        return None, None
-    
-    ma50 = float(close.tail(50).mean())
-    ma200 = float(close.tail(200).mean())
-    rsi = calculate_rsi(close)
-    curr_price = float(close.iloc[-1])
-    dist_ma50 = ((curr_price / ma50) - 1) * 100 if ma50 > 0 else 0
-    
-    ret1d = (float(close.iloc[-1]) / float(close.iloc[-2]) - 1) * 100 if len(close) >= 2 else 0
-    ret5d = (float(close.iloc[-1]) / float(close.iloc[-6]) - 1) * 100 if len(close) >= 6 else 0
-    ret1m = (float(close.iloc[-1]) / float(close.iloc[-21]) - 1) * 100 if len(close) >= 21 else 0
-    ret6m = (float(close.iloc[-1]) / float(close.iloc[-126]) - 1) * 100 if len(close) >= 126 else 0
-    vol6m = float(close.tail(126).pct_change().std() * (252**0.5) * 100) if len(close) >= 126 else 25
-    
-    avg_v20 = float(volume.tail(20).mean()) if len(volume) >= 20 else float(volume.mean())
-    curr_v = float(volume.iloc[-1])
-    avg_v5 = float(volume.tail(5).mean()) if len(volume) >= 5 else curr_v
-    
-    row = pd.Series({
-        'Price': curr_price,
-        '50D MA': ma50,
-        '200D MA': ma200,
-        'Trend Strength': ((ma50 / ma200) - 1) * 100 if ma200 > 0 else 0,
-        '1D Return': ret1d,
-        '5D Return': ret5d,
-        '1M Return': ret1m,
-        '6M Return': ret6m,
-        '6M Volatility': vol6m,
-        'Volume': curr_v,
-        'Vol Change 1D': ((curr_v / avg_v20) - 1) * 100 if avg_v20 > 0 else 0,
-        'Vol Change 5D': ((avg_v5 / avg_v20) - 1) * 100 if avg_v20 > 0 else 0,
-        'RSI': rsi,
-        'DistFromMA50': dist_ma50,
-        'Market Cap': 50e9,   # Passes universal filter (we pre-filtered via sp500_data.json)
-        'Sector': 'Unknown',
-        'P/E Ratio': None,    # Not available historically day-by-day
-    })
-    
-    # Dummy sector medians (P/E and Vol scoring will be neutral)
-    score, decision, _ = calculate_score(row, {'Unknown': 25}, {'Unknown': 25})
-    return score, decision
-
-
 def run_backtest(months=3, universe_size=30, specific_tickers=None):
     """Run a walk-forward portfolio backtest."""
     end_date = datetime.date.today()
     start_date = end_date - datetime.timedelta(days=months * 30 + MIN_HISTORY_DAYS + 30)
     backtest_start = end_date - datetime.timedelta(days=months * 30)
     
-    # Get universe
+    # Get universe + metadata (sector, P/E, earnings)
     tickers = get_universe_tickers(universe_size, specific_tickers)
+    stock_meta = load_stock_metadata()
     
     print(f"\n{'='*60}")
     print(f"WALK-FORWARD PORTFOLIO BACKTEST")
@@ -169,6 +135,7 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
     print(f"Period:        {backtest_start} → {end_date} ({months} months)")
     print(f"Universe:      {len(tickers)} stocks")
     print(f"Capital:       ${INITIAL_CAPITAL:,.0f}")
+    print(f"Max Positions: {MAX_POSITIONS}")
     print(f"Rebalance:     Every {REBALANCE_FREQ} trading days")
     print(f"Commission:    {COMMISSION_PCT*100:.1f}% per trade")
     print(f"{'='*60}")
@@ -249,6 +216,28 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
         
         # ─── REBALANCE DAY ────────────────────────────────────────────────
         if day_i % REBALANCE_FREQ == 0:
+            # Build sector-aware rows and compute medians for this date
+            rows_for_medians = []
+            for sym in available_tickers:
+                if sym not in date_indices:
+                    continue
+                meta = stock_meta.get(sym, {})
+                sector = meta.get('Sector', 'Unknown')
+                pe = meta.get('P/E Ratio')
+                
+                df = hist_data[sym]
+                slice_df = df.iloc[:date_indices[sym] + 1]
+                close = slice_df['Close']
+                if len(close) >= 126:
+                    vol6m = float(close.tail(126).pct_change().std() * (252**0.5) * 100)
+                else:
+                    vol6m = 25
+                rows_for_medians.append({'Symbol': sym, 'Sector': sector, 'P/E Ratio': pe, '6M Volatility': vol6m})
+            
+            med_df = pd.DataFrame(rows_for_medians)
+            sector_pe_med = med_df.groupby('Sector')['P/E Ratio'].median().to_dict() if not med_df.empty else {}
+            sector_vol_med = med_df.groupby('Sector')['6M Volatility'].median().to_dict() if not med_df.empty else {}
+            
             # Score ALL stocks using only data up to TODAY (walk-forward)
             scores = {}
             for sym in available_tickers:
@@ -260,8 +249,6 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
                     hist_for_scoring['HighestPrice'] = hist_for_scoring.get('highest_price', 0)
                     hist_for_scoring['Trade Decision'] = "Hold" if sym in holdings else None
                     
-                    # score_on_date needs to be updated or we call calculate_score directly
-                    # Let's call a modified score_on_date or calculate it here
                     df = hist_data[sym]
                     slice_df = df.iloc[:date_indices[sym] + 1]
                     close = slice_df['Close']
@@ -273,6 +260,8 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
                     ma200 = float(close.tail(200).mean())
                     rsi = calculate_rsi(close)
                     curr_price = float(close.iloc[-1])
+                    
+                    meta = stock_meta.get(sym, {})
                     
                     row = pd.Series({
                         'Price': curr_price, '50D MA': ma50, '200D MA': ma200,
@@ -286,10 +275,13 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
                         'Vol Change 1D': ((float(volume.iloc[-1]) / float(volume.tail(20).mean())) - 1) * 100 if len(volume)>=20 else 0,
                         'Vol Change 5D': ((float(volume.tail(5).mean()) / float(volume.tail(20).mean())) - 1) * 100 if len(volume)>=20 else 0,
                         'RSI': rsi, 'DistFromMA50': ((curr_price / ma50) - 1) * 100 if ma50 > 0 else 0,
-                        'Market Cap': 50e9, 'Sector': 'Unknown', 'P/E Ratio': None,
+                        'Market Cap': meta.get('Market Cap', 50e9),
+                        'Sector': meta.get('Sector', 'Unknown'),
+                        'P/E Ratio': meta.get('P/E Ratio'),
+                        'EarningsDate': meta.get('EarningsDate'),
                     })
                     
-                    res = calculate_score(row, {'Unknown': 25}, {'Unknown': 25}, history=hist_for_scoring, market_regime=regime)
+                    res = calculate_score(row, sector_pe_med, sector_vol_med, history=hist_for_scoring, market_regime=regime)
                     scores[sym] = {
                         'score': res[0], 'decision': res[1], 'highest_price': res[3], 
                         'trailing_stop': res[4], 'rec_weight': res[5]
@@ -315,9 +307,17 @@ def run_backtest(months=3, universe_size=30, specific_tickers=None):
                         })
                         del holdings[sym]
             
-            # ─── BUY ──────────────────────────────────────────────────────
+            # ─── BUY (with position cap) ─────────────────────────────────
             if buy_candidates:
                 new_buys = [s for s in buy_candidates if s not in holdings]
+                # Enforce position count cap
+                slots_available = MAX_POSITIONS - len(holdings)
+                if slots_available <= 0:
+                    new_buys = []
+                elif len(new_buys) > slots_available:
+                    # Prioritize by score (highest first)
+                    new_buys = sorted(new_buys, key=lambda s: scores[s]['score'], reverse=True)[:slots_available]
+                
                 if new_buys and cash > 500:
                     # Risk-Adjusted Position Sizing: Use RecWeight
                     total_rec_weight = sum([scores[s]['rec_weight'] for s in new_buys])

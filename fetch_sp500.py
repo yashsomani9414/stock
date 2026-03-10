@@ -422,11 +422,11 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
 
         # V4: GLOBAL CIRCUIT BREAKER + BUY DECISIONS
         decision = "Hold"
-        # V7: Added momentum floor (ret1m > -2) to Buy decisions to stop falling knives
-        if final_points >= 70 and price > ma50 and price > ma200 and ret1m > -2:
+        # V7: Momentum floors to stop falling knives and crash buys
+        if final_points >= 70 and price > ma50 and price > ma200 and ret1m > -2 and ret5d > -7:
             if (rsi and rsi < 75) and dist_from_ma50 < 22 and edate_dist > 7:
                 decision = "Strong Buy"
-        elif final_points >= 55 and price > ma50 and price > ma200 and ret1m > -4:
+        elif final_points >= 55 and price > ma50 and price > ma200 and ret1m > -4 and ret5d > -10:
             if (rsi and rsi < 80) and dist_from_ma50 < 25 and edate_dist > 5:
                 decision = "Buy (Small)"
 
@@ -442,9 +442,6 @@ def calculate_score(row, sector_pe_medians, sector_vol_medians, history=None, ma
                 decision = "Reduce"
 
         return final_points, decision, new_low, highest_price, trailing_stop, rec_weight
-    except Exception as e:
-        print(f"Error scoring: {e}")
-        return 0, "ERROR", 0, 0, 0, 1.5
     except Exception as e:
         print(f"Error scoring: {e}")
         return 0, "ERROR", 0, 0, 0, 1.5
