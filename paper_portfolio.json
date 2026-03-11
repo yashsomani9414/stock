@@ -1,6 +1,6 @@
 {
   "start_date": "2026-03-10",
-  "cash": 400.0,
+  "cash": 42.012927054478325,
   "benchmark_spy_shares": 14.743390850314988,
   "benchmark_spy_entry": 678.27001953125,
   "positions": {
@@ -444,11 +444,6 @@
       "avg_entry": 82.49,
       "sector": "Industrials"
     },
-    "CNC": {
-      "shares": 1.154201292705448,
-      "avg_entry": 43.32,
-      "sector": "Healthcare"
-    },
     "JAZZ": {
       "shares": 0.2696871628910464,
       "avg_entry": 185.4,
@@ -863,6 +858,46 @@
       "shares": 0.13812917840764682,
       "avg_entry": 361.98,
       "sector": "Industrials"
+    },
+    "GE": {
+      "shares": 0.15312997672424355,
+      "avg_entry": 326.52,
+      "sector": "Industrials"
+    },
+    "ALL": {
+      "shares": 0.24096385542168675,
+      "avg_entry": 207.5,
+      "sector": "Financial Services"
+    },
+    "LSCC": {
+      "shares": 0.5453157378121932,
+      "avg_entry": 91.69,
+      "sector": "Technology"
+    },
+    "STAG": {
+      "shares": 1.3031013812874643,
+      "avg_entry": 38.37,
+      "sector": "Real Estate"
+    },
+    "RRC": {
+      "shares": 1.2303149606299213,
+      "avg_entry": 40.64,
+      "sector": "Energy"
+    },
+    "FN": {
+      "shares": 0.09207763986593497,
+      "avg_entry": 543.02,
+      "sector": "Technology"
+    },
+    "STRL": {
+      "shares": 0.12149782518892913,
+      "avg_entry": 411.53,
+      "sector": "Industrials"
+    },
+    "FCX": {
+      "shares": 0.8012820512820513,
+      "avg_entry": 62.4,
+      "sector": "Basic Materials"
     }
   },
   "history": [
@@ -870,6 +905,12 @@
       "date": "2026-03-10 00:13",
       "total_value": 10000.0,
       "cash": 10000.0,
+      "spy_value": 10000.0
+    },
+    {
+      "date": "2026-03-10 22:08",
+      "total_value": 9949.82,
+      "cash": 400.0,
       "spy_value": 10000.0
     }
   ]
