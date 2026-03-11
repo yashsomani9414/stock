@@ -29,12 +29,12 @@ jobs:
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "Manual run triggered. Proceeding."
             echo "skip=false" >> "$GITHUB_OUTPUT"
-          elif [ "$PT_HOUR" != "17" ]; then
-            echo "It is not 5 PM PT (it's ${PT_HOUR}:00 PT). Skipping."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "It is 5 PM PT. Proceeding with daily fetch."
+          elif [ "$PT_HOUR" -ge 16 ] && [ "$PT_HOUR" -le 20 ]; then
+            echo "It is around 5 PM PT (current hour: ${PT_HOUR}). Proceeding with daily fetch."
             echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "It is entirely the wrong time (${PT_HOUR}:00 PT). Skipping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout repo

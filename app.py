@@ -53,6 +53,9 @@ def load_sp500_data():
 def check_stale_and_refresh():
     """Trigger background refresh if data is older than 24h OR never refreshed.
     Safe for Cloud Run (non-blocking)."""
+    if os.environ.get('K_SERVICE'):
+        return
+
     global refresh_status
     try:
         data = load_sp500_data()
