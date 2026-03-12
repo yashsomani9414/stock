@@ -2,12 +2,12 @@ name: Daily S&P 500 Fetch
 
 on:
   schedule:
-    # Run at 5 PM PT every weekday (Mon-Fri)
-    # During PDT (Mar-Nov): 5 PM PT = 00:00 UTC next day
-    # During PST (Nov-Mar): 5 PM PT = 01:00 UTC next day
+    # Run at 2 PM PT every weekday (Mon-Fri)
+    # During PDT (Mar-Nov): 2 PM PT = 21:00 UTC
+    # During PST (Nov-Mar): 2 PM PT = 22:00 UTC
     # We run at both times; the timezone check ensures only one executes
-    - cron: '0 0 * * 1-5'
-    - cron: '0 1 * * 1-5'
+    - cron: '0 21 * * 1-5'
+    - cron: '0 22 * * 1-5'
   workflow_dispatch:  # allows manual trigger from GitHub UI
 
 permissions:
@@ -25,12 +25,12 @@ jobs:
           PT_HOUR=$(TZ='America/Los_Angeles' date +%H)
           PT_DOW=$(TZ='America/Los_Angeles' date +%u)
           echo "Current PT Hour: $PT_HOUR, Day of Week: $PT_DOW"
-          # Only proceed if it's 5 PM PT (hour 17) or manual trigger
+          # Only proceed if it's 2 PM PT (hour 14) or manual trigger
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "Manual run triggered. Proceeding."
             echo "skip=false" >> "$GITHUB_OUTPUT"
-          elif [ "$PT_HOUR" -ge 16 ] && [ "$PT_HOUR" -le 20 ]; then
-            echo "It is around 5 PM PT (current hour: ${PT_HOUR}). Proceeding with daily fetch."
+          elif [ "$PT_HOUR" -eq 14 ]; then
+            echo "It is 2 PM PT (current hour: ${PT_HOUR}). Proceeding with daily fetch."
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
             echo "It is entirely the wrong time (${PT_HOUR}:00 PT). Skipping."
