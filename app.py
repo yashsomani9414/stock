@@ -29,6 +29,26 @@ refresh_lock = threading.Lock()
 def load_sp500_data():
     """Load data with GitHub fallback if local is stale or missing."""
     local_data = load_local_data()
+    
+    # In Cloud Run, the local file is part of the container image and static.
+    # We fetch the latest data from GitHub if the local version is older.
+    try:
+        resp = requests.get(GITHUB_DATA_URL, timeout=5)
+        if resp.status_code == 200:
+            github_data = resp.json()
+            if github_data and len(github_data) > 0:
+                gh_updated = github_data[0].get('LastUpdated')
+                loc_updated = local_data[0].get('LastUpdated') if local_data else None
+                
+                # Compare timestamps (Lexicographical works for YYYY-MM-DD HH:MM:SS)
+                if not loc_updated or (gh_updated and gh_updated > loc_updated):
+                    print("Updating local cache from GitHub Raw.")
+                    # We don't write to DATA_FILE in production (ephemeral)
+                    # but we return the fresh data.
+                    return github_data
+    except Exception as e:
+        print(f"GitHub fallback failed: {e}")
+        
     return local_data
 
 def check_stale_and_refresh():
@@ -628,4 +648,4 @@ def api_earnings_calendar():
     return jsonify(sanitize_data(earnings_stocks))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    app.run(debug=True, use_reloader=False, port=5000)
