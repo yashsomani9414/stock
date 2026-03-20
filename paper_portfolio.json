@@ -1,6 +1,6 @@
 {
   "start_date": "2026-03-10",
-  "cash": 42.012927054478325,
+  "cash": 131.60802939905756,
   "benchmark_spy_shares": 14.743390850314988,
   "benchmark_spy_entry": 678.27001953125,
   "positions": {
@@ -464,11 +464,6 @@
       "avg_entry": 92.91,
       "sector": "Consumer Cyclical"
     },
-    "BMRN": {
-      "shares": 0.8212877792378449,
-      "avg_entry": 60.88,
-      "sector": "Healthcare"
-    },
     "WWD": {
       "shares": 0.13001872269606823,
       "avg_entry": 384.56,
@@ -553,11 +548,6 @@
       "shares": 0.03643252696006995,
       "avg_entry": 1372.4,
       "sector": "Industrials"
-    },
-    "ES": {
-      "shares": 0.6770480704129994,
-      "avg_entry": 73.85,
-      "sector": "Utilities"
     },
     "COP": {
       "shares": 0.427240878407246,
@@ -958,6 +948,12 @@
     {
       "date": "2026-03-19 14:46",
       "total_value": 9889.15,
+      "cash": 42.01,
+      "spy_value": 10000.0
+    },
+    {
+      "date": "2026-03-20 14:40",
+      "total_value": 9714.4,
       "cash": 42.01,
       "spy_value": 10000.0
     }
